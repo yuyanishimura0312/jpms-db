@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMS-DB | 日本私立中学校 包括基盤データベース</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --akashiro-red-light:#E63D2C;
+    --bg:#FFFFFF;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --line:#E5E5E5;
+    --bg-soft:#FAFAFA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Noto Sans JP',-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:15px;
+  }
+  header{
+    border-bottom:3px solid var(--akashiro-red);
+    padding:32px 48px 24px;
+    background:var(--bg);
+    position:sticky;top:0;z-index:10;
+  }
+  .brand{display:flex;align-items:baseline;gap:18px}
+  .brand h1{
+    font-family:'Noto Serif JP',serif;
+    font-size:24px;font-weight:700;letter-spacing:0.05em;
+    color:var(--akashiro-red);
+  }
+  .brand .sub{font-size:13px;color:var(--ink-soft);font-weight:400}
+  nav{margin-top:14px;display:flex;gap:24px;font-size:13px}
+  nav a{color:var(--ink-soft);text-decoration:none;padding-bottom:4px}
+  nav a:hover{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  main{max-width:1280px;margin:0 auto;padding:32px 48px 80px}
+  .hero{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+  .hero h2{font-family:'Noto Serif JP',serif;font-size:36px;font-weight:700;line-height:1.4;margin-bottom:16px}
+  .hero p{color:var(--ink-soft);max-width:760px}
+  .stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);margin:32px 0;
+  }
+  .stat{background:var(--bg);padding:24px}
+  .stat .num{font-family:'Noto Serif JP',serif;font-size:36px;color:var(--akashiro-red);font-weight:700;line-height:1}
+  .stat .label{font-size:12px;color:var(--ink-soft);margin-top:8px;letter-spacing:0.05em}
+  section{margin-bottom:64px}
+  h3{
+    font-family:'Noto Serif JP',serif;font-size:22px;
+    border-left:5px solid var(--akashiro-red);
+    padding-left:16px;margin-bottom:24px;
+  }
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  @media(max-width:880px){.grid-2{grid-template-columns:1fr}}
+  .card{
+    background:var(--bg);border:1px solid var(--line);
+    padding:24px;
+  }
+  .card h4{font-size:14px;color:var(--akashiro-red);margin-bottom:16px;font-weight:700;letter-spacing:0.05em}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--bg-soft);font-weight:500;color:var(--ink-soft);font-size:12px}
+  td.right,th.right{text-align:right}
+  .filter-bar{
+    display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;align-items:center;
+    padding:16px;background:var(--bg-soft);border:1px solid var(--line);
+  }
+  .filter-bar input,.filter-bar select{
+    padding:8px 12px;border:1px solid var(--line);background:var(--bg);
+    font-family:inherit;font-size:13px;
+  }
+  .filter-bar input{flex:1;min-width:200px}
+  #school-table{max-height:560px;overflow-y:auto;border:1px solid var(--line)}
+  #school-table table{width:100%}
+  #school-table thead th{position:sticky;top:0;background:var(--bg-soft)}
+  .badge{
+    display:inline-block;padding:2px 8px;font-size:11px;
+    background:var(--bg-soft);border:1px solid var(--line);margin-right:4px;
+  }
+  .badge.boys{background:#E0E8FF}
+  .badge.girls{background:#FFE0F0}
+  .badge.coed{background:#E8F0E0}
+  .badge.catholic,.badge.protestant,.badge.anglican{background:#FFF0E0;color:#8A4500}
+  .badge.buddhist{background:#F0E8FF;color:#4A1A88}
+  .school-row{cursor:pointer;transition:background 0.1s}
+  .school-row:hover{background:var(--bg-soft)}
+  .modal-bg{
+    display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:100;
+    align-items:center;justify-content:center;padding:24px;
+  }
+  .modal-bg.open{display:flex}
+  .modal{
+    background:var(--bg);max-width:760px;width:100%;max-height:90vh;overflow-y:auto;
+    border:1px solid var(--line);padding:32px;
+  }
+  .modal h3{margin-bottom:8px}
+  .modal .meta{color:var(--ink-soft);font-size:13px;margin-bottom:16px}
+  .modal .philosophy{
+    border-left:3px solid var(--akashiro-red);padding:12px 16px;margin:16px 0;
+    background:var(--bg-soft);font-family:'Noto Serif JP',serif;
+  }
+  .modal .testimonials{margin-top:24px}
+  .testimonial{
+    border:1px solid var(--line);padding:16px;margin-bottom:12px;
+  }
+  .testimonial .who{font-size:12px;color:var(--ink-soft);margin-bottom:8px}
+  .testimonial .quote{font-family:'Noto Serif JP',serif;font-size:14px}
+  .close-btn{
+    background:var(--akashiro-red);color:#fff;border:none;padding:8px 16px;
+    cursor:pointer;font-family:inherit;float:right;
+  }
+  footer{
+    border-top:1px solid var(--line);padding:24px 48px;
+    color:var(--ink-soft);font-size:12px;text-align:center;
+  }
+  .chart-container{position:relative;height:280px}
+  .progress-bar{
+    height:8px;background:var(--bg-soft);position:relative;margin:4px 0;
+  }
+  .progress-bar .fill{height:100%;background:var(--akashiro-red)}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>JPMS-DB</h1>
+    <span class="sub">日本私立中学校 包括的基盤データベース</span>
+  </div>
+  <nav>
+    <a href="#overview">概要</a>
+    <a href="#schools">学校</a>
+    <a href="#concepts">教育学概念</a>
+    <a href="#outcomes">成果次元</a>
+    <a href="#testimonials">関係者の声</a>
+    <a href="#methodology">方法論</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="overview">
+    <h2>三層統合で読み解く<br>日本の私立中学校</h2>
+    <p>
+      JPMS-DBは、日本国内の私立中学校（全785校）の<strong>学校実態</strong>と、子どもの教育に関する最先端の<strong>教育学術知見</strong>、そして両者の交差点として記述される<strong>成長軌道仮説</strong>の三層を統合する基盤データベースです。一次情報を最大限活用し、保護者の学校選び、学校の自己改革、研究者の実証分析、政策決定者の俯瞰のすべてを支える知識基盤を目指します。
+    </p>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section id="schools">
+    <h3>学校実態 — 関東圏網羅から全国展開へ</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>都道府県別 投入校数</h4>
+        <div class="chart-container"><canvas id="prefChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h4>男女別 / 宗教系列</h4>
+        <div class="chart-container"><canvas id="genderChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="filter-bar" style="margin-top:32px">
+      <input id="search" placeholder="学校名で検索（例: 開成）">
+      <select id="filter-pref"><option value="">全都道府県</option></select>
+      <select id="filter-gender">
+        <option value="">男女問わず</option>
+        <option value="coed">共学</option>
+        <option value="boys">男子校</option>
+        <option value="girls">女子校</option>
+      </select>
+      <select id="filter-religion">
+        <option value="">宗教問わず</option>
+      </select>
+    </div>
+    <div id="school-table">
+      <table>
+        <thead>
+          <tr><th>学校名</th><th>所在地</th><th>性別</th><th>系列</th><th>設立</th><th class="right">情報量</th></tr>
+        </thead>
+        <tbody id="schools-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="concepts">
+    <h3>教育学術概念 — 14サブフィールド</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>サブフィールド分布</h4>
+        <div class="chart-container"><canvas id="subfieldChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h4>主要概念TOP10（中学生関連度）</h4>
+        <table>
+          <thead><tr><th>概念</th><th>サブフィールド</th><th class="right">関連度</th></tr></thead>
+          <tbody id="top-concepts"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <h3>成果次元 — OECD/CASEL/PERMA/P21/日本独自を統合</h3>
+    <div class="card">
+      <table>
+        <thead><tr><th>成果次元</th><th>フレームワーク</th><th>測定可能性</th><th>対象年齢</th></tr></thead>
+        <tbody id="outcomes-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h3>関係者の声 — 一次情報の核心</h3>
+    <p style="color:var(--ink-soft);margin-bottom:16px">学校HP・パンフ・取材から取得した校長・教員・在校生・卒業生・保護者の発言を、引用倫理（rights_level）を厳格に管理して収録しています。</p>
+    <div id="testimonials-list"></div>
+  </section>
+
+  <section id="methodology">
+    <h3>方法論</h3>
+    <div class="card">
+      <p>本DBは <strong>academic-db-build</strong> エージェントによる7フェーズ方法論に従い構築されています。Phase 0（スコーピング）では10並列リサーチワーカーが約76,000字の調査出力を統合し、Phase 1（情報収集設計）では教育学概念と成果次元を文献ベースで投入、Phase 2（大規模並列収集）で関東圏約335校を網羅。</p>
+      <p style="margin-top:12px"><strong>Research Precision Protocol</strong>に準拠し、key_works はDOI／SS Paper ID／ISBNの付記を必須とし、自己申告 verified を排除。一次情報の出典管理は<code>jpms_sources</code>テーブルにより信頼度・rights_status・primary_or_secondaryで属性化されます。</p>
+      <p style="margin-top:12px"><strong>倫理ポリシー</strong>: CC-BY-NC + 一部会員制ハイブリッド。未成年情報は原則匿名化、削除依頼受付フローを整備。</p>
+    </div>
+  </section>
+</main>
+
+<div class="modal-bg" id="modal-bg" onclick="if(event.target.id==='modal-bg')closeModal()">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<footer>
+  JPMS-DB v0.1 (Phase 2) | 日本私立中学校 包括的基盤データベース | 2026-05-05生成
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
