@@ -1,0 +1,23 @@
+{
+  "school": "麻布中学校",
+  "summary": {
+    "data_sources": {
+      "school_hp": 5,
+      "articles": 12,
+      "parent_blogs": 4,
+      "minkou": 103,
+      "interedu": 80,
+      "youtube": 3,
+      "nikkei_special": 8,
+      "5ch_equivalent": 30
+    },
+    "total_reference": 245
+  },
+  "sentiment": {
+    "positive": 14,
+    "neutral": 5,
+    "negative": 4,
+    "mixed": 1,
+    "total": 24
+  }
+}
