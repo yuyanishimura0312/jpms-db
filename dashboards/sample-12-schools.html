@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サンプル12校レポート | JPMS-DB</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --akashiro-red-light:#E63D2C;
+    --bg:#FFFFFF;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --line:#E5E5E5;
+    --bg-soft:#FAFAFA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Noto Serif JP',serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:15px;
+    font-weight:400;
+  }
+  header{
+    border-bottom:3px solid var(--akashiro-red);
+    padding:36px 56px 24px;
+    background:var(--bg);
+  }
+  .brand{display:flex;align-items:baseline;gap:18px;font-family:'Noto Sans JP',sans-serif}
+  .brand h1{
+    font-family:'Noto Serif JP',serif;
+    font-size:24px;font-weight:700;letter-spacing:0.05em;
+    color:var(--akashiro-red);
+  }
+  .brand .sub{font-size:13px;color:var(--ink-soft);font-weight:400}
+  nav{margin-top:14px;font-family:'Noto Sans JP',sans-serif;font-size:13px}
+  nav a{color:var(--ink-soft);text-decoration:none;margin-right:24px}
+  nav a:hover{color:var(--akashiro-red)}
+  main{max-width:880px;margin:0 auto;padding:48px 56px 100px}
+
+  .doc-meta{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:12px;color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:16px;margin-bottom:48px;
+    letter-spacing:0.05em;
+  }
+  h1.title{
+    font-size:38px;font-weight:700;line-height:1.45;
+    margin-bottom:16px;letter-spacing:0.02em;
+  }
+  .subtitle{
+    font-size:18px;color:var(--akashiro-red);font-weight:400;
+    margin-bottom:32px;font-family:'Noto Sans JP',sans-serif;
+  }
+  .lead{
+    font-size:16px;line-height:2;
+    margin-bottom:48px;color:var(--ink);
+  }
+
+  h2{
+    font-size:24px;font-weight:700;margin:64px 0 24px;
+    padding:12px 0 12px 20px;
+    border-left:6px solid var(--akashiro-red);
+    line-height:1.5;
+  }
+  h2 .num{
+    color:var(--akashiro-red);font-size:14px;
+    display:block;letter-spacing:0.1em;
+    font-family:'Noto Sans JP',sans-serif;font-weight:500;
+    margin-bottom:4px;
+  }
+  h3{
+    font-size:16px;font-weight:700;margin:32px 0 12px;
+    color:var(--akashiro-red-light);
+    font-family:'Noto Sans JP',sans-serif;letter-spacing:0.05em;
+  }
+  p{margin-bottom:18px;text-align:justify}
+
+  .card{
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-left:4px solid var(--akashiro-red);
+    padding:20px 24px;margin:24px 0;
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:13px;line-height:1.85;
+  }
+  .card .label{
+    font-size:11px;color:var(--akashiro-red);
+    letter-spacing:0.1em;font-weight:700;
+    margin-bottom:6px;display:block;
+  }
+  .meta-table{
+    width:100%;border-collapse:collapse;
+    font-family:'Noto Sans JP',sans-serif;font-size:13px;
+    margin:16px 0 28px;
+  }
+  .meta-table th,.meta-table td{
+    padding:8px 14px;text-align:left;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .meta-table th{
+    background:var(--bg-soft);color:var(--akashiro-red);
+    font-weight:500;width:130px;font-size:12px;
+    letter-spacing:0.05em;
+  }
+  blockquote{
+    border-left:3px solid var(--akashiro-red);
+    padding:12px 20px;margin:18px 0;
+    background:var(--bg-soft);
+    font-size:14px;color:var(--ink-soft);
+    font-style:italic;
+  }
+  blockquote .who{
+    display:block;font-style:normal;font-size:11px;
+    color:var(--akashiro-red);margin-top:8px;
+    letter-spacing:0.05em;font-family:'Noto Sans JP',sans-serif;
+  }
+
+  .compare-table{
+    width:100%;border-collapse:collapse;font-size:12px;
+    font-family:'Noto Sans JP',sans-serif;
+    margin:24px 0;
+  }
+  .compare-table th{
+    background:var(--akashiro-red);color:#fff;
+    padding:10px 8px;text-align:left;font-weight:500;
+    font-size:11px;letter-spacing:0.05em;
+  }
+  .compare-table td{
+    padding:8px;border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .compare-table tr:nth-child(even){background:var(--bg-soft)}
+
+  .academic-link{
+    display:inline-block;background:#FFF4F0;
+    border:1px solid var(--akashiro-red);
+    padding:2px 8px;font-size:11px;color:var(--akashiro-red);
+    margin-right:6px;font-family:'Noto Sans JP',sans-serif;
+    border-radius:2px;letter-spacing:0.02em;
+  }
+
+  .summary-box{
+    margin:48px 0;padding:32px;
+    border:2px solid var(--akashiro-red);
+    background:var(--bg-soft);
+  }
+  .summary-box h3{
+    color:var(--akashiro-red);margin-top:0;font-size:18px;
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:32px 56px;text-align:center;
+    color:var(--ink-soft);font-size:12px;
+    font-family:'Noto Sans JP',sans-serif;
+  }
+
+  .toc{
+    background:var(--bg-soft);
+    padding:24px 32px;margin-bottom:48px;
+    font-family:'Noto Sans JP',sans-serif;font-size:13px;
+    border-left:4px solid var(--akashiro-red);
+  }
+  .toc h3{margin-top:0}
+  .toc ol{padding-left:20px;line-height:1.9}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--akashiro-red)}
+
+  @media(max-width:680px){
+    main{padding:32px 20px 80px}
+    h1.title{font-size:28px}
+    .toc{padding:16px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>JPMS-DB</h1>
+    <span class="sub">日本私立中学校 包括的基盤データベース</span>
+  </div>
+  <nav>
+    <a href="./">ダッシュボード</a>
+    <a href="./sample-12-schools.html">サンプル12校レポート</a>
+  </nav>
+</header>
+
+<main>
+  <div class="doc-meta">REPORT — 2026年5月5日 | JPMS-DBサンプル分析 | SAPIX主催学校説明会対象</div>
+
+  <h1 class="title">最難関12校から読み解く<br>私立中学校の教育設計</h1>
+  <p class="subtitle">SAPIX主催学校説明会2026・5月～6月 訪問予定校のJPMS-DB横断分析</p>
+
+  <p class="lead">
+    本稿は、2026年5月から6月にかけてSAPIX主催で開催される学校説明会のうち、首都圏・関西の最難関校12校（サレジオ学院・海城・慶應義塾中等部・浅野・麻布・駒場東邦・開成・栄光学園・聖光学院・東京農業大学第一・渋谷教育学園渋谷・灘）について、JPMS-DBが収録する学校実態・教育学術知見・関係者発言の三層データから読み解いた包括レポートである。各校をランキング指標で比較するのではなく、それぞれが独自に追求している教育設計の構造を明らかにし、子ども一人ひとりの成長軌道と学校選択の関係を俯瞰する素材を提供することを目的とする。
+  </p>
+
+  <div class="toc">
+    <h3>目次</h3>
+    <ol>
+      <li><a href="#intro">序章 ― 12校の選定とサンプルの意義</a></li>
+      <li><a href="#s01">サレジオ学院中学校（神奈川・男子・カトリック）</a></li>
+      <li><a href="#s02">海城中学校（東京・男子・無宗教）</a></li>
+      <li><a href="#s03">慶應義塾中等部（東京・共学・無宗教）</a></li>
+      <li><a href="#s04">浅野中学校（神奈川・男子・無宗教）</a></li>
+      <li><a href="#s05">麻布中学校（東京・男子・無宗教）</a></li>
+      <li><a href="#s06">駒場東邦中学校（東京・男子・無宗教）</a></li>
+      <li><a href="#s07">開成中学校（東京・男子・無宗教）</a></li>
+      <li><a href="#s08">栄光学園中学校（神奈川・男子・カトリック）</a></li>
+      <li><a href="#s09">聖光学院中学校（神奈川・男子・カトリック）</a></li>
+      <li><a href="#s10">東京農業大学第一中等部（東京・共学・無宗教）</a></li>
+      <li><a href="#s11">渋谷教育学園渋谷中学校（東京・共学・無宗教）</a></li>
+      <li><a href="#s12">灘中学校（兵庫・男子・無宗教）</a></li>
+      <li><a href="#summary">結語 ― 12校が示す日本の私立中等教育の射程</a></li>
+    </ol>
+  </div>
+
+  <h2 id="intro"><span class="num">序章</span>12校の選定とサンプルの意義</h2>
+
+  <p>
+    SAPIX主催学校説明会は、首都圏中学受験における主要な情報接点であり、保護者が学校に直接触れる貴重な機会となっている。本稿が対象とする12校の説明会日程は、5月18日のサレジオ学院から始まり、6月25日の灘までの約一カ月強にわたって設定されている。会場は学校自体とSAPIX代々木ホールの二系統で、保護者向けに限定されるものと塾生も同伴可能なものに分かれる。
+  </p>
+
+  <p>
+    この12校は、いずれも入試難易度の点で「最難関」と称される進学校であるが、その教育設計は驚くほど多様である。男子校が10校・共学校が2校、宗教系が3校（いずれもカトリック）、地域は東京7校・神奈川4校・兵庫1校。創立年は1871年（開成）から1947年（慶應中等部・海城・浅野・栄光学園）、そして1957年（駒場東邦）まで広く分布し、戦後の中等教育再編期に多くの学校が今日の形をとった経緯が読み取れる。
+  </p>
+
+  <p>
+    JPMS-DBはこの12校について、学校実態（建学の精神・教育方針・カリキュラム特性）、教育学術観点（OECD Learning Compass・CASEL SEL・Heckmanの非認知能力研究等への接続）、関係者の声（校長・教員・在校生・卒業生の発言）を統合的に保有する。本稿はそのデータを地の文として再構成し、各校が「どのような子どもを、どのように育てようとしているのか」を読み解いていく。
+  </p>
+
+  <table class="compare-table">
+    <thead>
+      <tr><th>学校</th><th>所在</th><th>性別</th><th>系列</th><th>創立</th><th>説明会日程</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>サレジオ学院</td><td>神奈川・横浜市都筑区</td><td>男子</td><td>カトリック</td><td>1872</td><td>5/18 10:00–12:15</td></tr>
+      <tr><td>海城</td><td>東京・新宿区</td><td>男子</td><td>無宗教</td><td>1891</td><td>5/21 13:00–14:30</td></tr>
+      <tr><td>慶應義塾中等部</td><td>東京・港区</td><td>共学</td><td>無宗教</td><td>1947</td><td>5/22 14:00–15:30</td></tr>
+      <tr><td>浅野</td><td>神奈川・横浜市神奈川区</td><td>男子</td><td>無宗教</td><td>1920</td><td>5/24 10:00–11:30</td></tr>
+      <tr><td>麻布</td><td>東京・港区</td><td>男子</td><td>無宗教</td><td>1895</td><td>5/28 10:30–12:00</td></tr>
+      <tr><td>駒場東邦</td><td>東京・世田谷区</td><td>男子</td><td>無宗教</td><td>1957</td><td>6/7 13:30–14:30</td></tr>
+      <tr><td>開成</td><td>東京・荒川区</td><td>男子</td><td>無宗教</td><td>1871</td><td>6/8 10:30–12:00</td></tr>
+      <tr><td>栄光学園</td><td>神奈川・鎌倉市</td><td>男子</td><td>カトリック</td><td>1947</td><td>6/9 10:00–11:30</td></tr>
+      <tr><td>聖光学院</td><td>神奈川・横浜市中区</td><td>男子</td><td>カトリック</td><td>1958</td><td>6/15 10:00–12:00</td></tr>
+      <tr><td>東京農大第一</td><td>東京・世田谷区</td><td>共学</td><td>無宗教</td><td>2005</td><td>6/17 10:00–11:10</td></tr>
+      <tr><td>渋渋（渋谷教育学園渋谷）</td><td>東京・渋谷区</td><td>共学</td><td>無宗教</td><td>1924</td><td>6/19 11:00–12:40</td></tr>
+      <tr><td>灘</td><td>兵庫・神戸市東灘区</td><td>男子</td><td>無宗教</td><td>1928</td><td>6/25 10:00–11:30</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="s01"><span class="num">01</span>サレジオ学院中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>神奈川県横浜市都筑区</td></tr>
+    <tr><th>創立</th><td>1872年（戦後現校名で再編・1947年中学設置）</td></tr>
+    <tr><th>系列</th><td>男子校 / カトリック・サレジオ修道会</td></tr>
+    <tr><th>建学の精神</th><td>「Sistema Preventivo（予防教育法）」に基づくドン・ボスコの教育理念。理性・宗教・慈愛を三本柱に、若者の善性を信じて育てる教育。</td></tr>
+  </table>
+
+  <p>
+    サレジオ学院は、19世紀イタリアの聖人ドン・ボスコが創設したサレジオ修道会の教育理念を受け継ぐ男子校である。最大の特徴は、教育を「規律によって誤りを抑える」のではなく「子どもの善性を信じて引き出す」予防教育法（Sistema Preventivo）として実践してきた点にある。教師は監視者ではなく伴走者として位置づけられ、休み時間や課外活動においても生徒との対話を通じた信頼関係の構築が重視される。
+  </p>
+
+  <p>
+    JPMS-DBの教育学術層から見ると、この設計はDeci & Ryanの<span class="academic-link">自己決定理論</span>（自律性・有能感・関係性の三欲求の充足）と高い親和性を示す。生徒の主体性を制約ではなく信頼で引き出す姿勢は、内発的動機づけ研究が示す最適発達条件と重なる。また、宗教教育とSEL研究の交点として、CASEL Frameworkの「責任ある意思決定」のモデルとしても読める。中堅進学校として近年は東大・国公立医学部への合格者を着実に伸ばしているが、進学実績の背後には「人格形成を急がず時間をかけて醸成する」サレジオ独自の発達観が一貫している。
+  </p>
+
+  <h2 id="s02"><span class="num">02</span>海城中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>東京都新宿区</td></tr>
+    <tr><th>創立</th><td>1891年（古賀喜三郎による海軍予備校が源流、戦後現校名）</td></tr>
+    <tr><th>系列</th><td>男子校 / 無宗教</td></tr>
+    <tr><th>建学の精神</th><td>「リベラルでフェアな精神を持った新しい紳士の育成」を新教育目標として掲げる。</td></tr>
+  </table>
+
+  <p>
+    海城は、1990年代に教育目標を全面改訂し、伝統校でありながら新しい教育像を打ち出した稀有な学校である。「新しい紳士」のキーワードは、リベラル（自由で偏見のない思考）、フェア（公正性）、新しさ（前例にとらわれない態度）の三軸で構成される。具体的なカリキュラム上の特色として、社会科の「総合学習」が知られ、現代社会の論争的問題を生徒自身が調査・発表・討論する一連のプロセスが中学2年から高校2年まで連続的に組み込まれている。
+  </p>
+
+  <p>
+    教育学術観点からは、この設計はProject-Based Learningの先駆的実践である。<span class="academic-link">PBL</span><span class="academic-link">21世紀型スキル</span>のうちCritical Thinking、Communication & Collaboration、Creativity & Innovationを中核に育てる構造は、P21 Frameworkの教育目標とほぼ一致する。海城が30年以上にわたりこの方向性を貫いてきたことは、エビデンスベース教育（EEFやWWC）が後発で実証してきた「探究と協働の効果」を、現場の実践として先取りしていたことを意味する。
+  </p>
+
+  <h2 id="s03"><span class="num">03</span>慶應義塾中等部</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>東京都港区</td></tr>
+    <tr><th>創立</th><td>1947年</td></tr>
+    <tr><th>系列</th><td>共学校（伝統的に男女別学級）/ 無宗教</td></tr>
+    <tr><th>建学の精神</th><td>福澤諭吉の「独立自尊」を継承。「自我作古（われよりいにしえをなす）」の精神で先導者を育てる。</td></tr>
+  </table>
+
+  <p>
+    慶應義塾中等部は、慶應義塾大学までの一貫教育の中で、最も「外の世界に触れる」段階として位置づけられる学校である。普通部（男子）・湘南藤沢中等部とともに慶應系列の中学校を構成するが、中等部は港区の都心立地と男女共学（学級は別）が特徴。「独立自尊」という教育思想は、福澤諭吉の『学問のすゝめ』に源流を持ち、自分の頭で考え自分の足で立つ人間を育てるという原則的な人間観を貫いている。
+  </p>
+
+  <p>
+    JPMS-DBの<span class="academic-link">SDT</span>と<span class="academic-link">Self-Efficacy</span>の観点から読むと、慶應の独立自尊は単なる個人主義ではなく、「他者と協働する自律」を含意している。中等部から普通部・SFCへと進む経路と、義塾全体が共有する「半学半教（学ぶ者と教える者の境界を曖昧にする）」の思想は、メタ認知的・協働的な学習文化を構造的に支えている。早期から「一貫の中の独立」というバランスを身体化していくことが、中等部の最大の教育設計と言える。
+  </p>
+
+  <h2 id="s04"><span class="num">04</span>浅野中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>神奈川県横浜市神奈川区</td></tr>
+    <tr><th>創立</th><td>1920年（実業家・浅野總一郎による創立）</td></tr>
+    <tr><th>系列</th><td>男子校 / 無宗教</td></tr>
+    <tr><th>校訓</th><td>「九転十起（くてんじゅっき）」— 何度倒れてもまた立ち上がる</td></tr>
+  </table>
+
+  <p>
+    浅野中学校の最大の特徴は、校訓「九転十起」に凝縮されている。これは創立者・浅野總一郎の人生哲学を継承するもので、失敗を恐れず挑戦を続ける精神の重要性を強調する。校長メッセージにはこの精神が一貫して反映されており、「失敗をすることは必ずしも悪いことではない。大切なのは、失敗をしても諦めずに、もう一度そこから学んで、挑戦をしていくことだ」という言葉に象徴される。
+  </p>
+
+  <blockquote>
+    失敗は成長するためのチャンス。どんどん挑戦してほしい。12歳から18歳までの6年間に出会い経験することが大切です。
+    <span class="who">— 浅野中学校 教員</span>
+  </blockquote>
+
+  <p>
+    教育学術観点では、この校風は<span class="academic-link">Growth Mindset</span>（Carol Dweck）と<span class="academic-link">GRIT</span>（Angela Duckworth）の理論が示す「能力は努力で伸びる」「長期目標への粘り強さが成果を生む」という核心的知見と完全に重なる。浅野は東大・国公立医学部・早慶への高い合格実績で知られるが、その背後には「結果は失敗の積み重ねの先にある」という成長軸の思想が一貫して流れている。
+  </p>
+
+  <h2 id="s05"><span class="num">05</span>麻布中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>東京都港区</td></tr>
+    <tr><th>創立</th><td>1895年</td></tr>
+    <tr><th>系列</th><td>男子校 / 無宗教</td></tr>
+    <tr><th>校風</th><td>自主自立・自由闊達の気風。生徒の個性と自由な発想を尊重する。</td></tr>
+  </table>
+
+  <p>
+    麻布は「自由」をもっとも純粋な形で実装している男子校として知られる。校則が極めて少なく、生徒会・文化祭・運動会などの学校行事はすべて生徒主体で運営される。校長メッセージにはこの校風が明確に表現されている。
+  </p>
+
+  <blockquote>
+    本校ではあらゆる生徒に居場所があります。麻布生はそれぞれの場において存在を発揮し、それぞれの輝きを放っています。個性豊かな生徒一人ひとりの多面体が放つ光がスパークし、交じり合い、総体として多様性あふれる空間を演出しています。それが麻布学園です。
+    <span class="who">— 麻布中学校 校長</span>
+  </blockquote>
+
+  <p>
+    在校生の発言からは、麻布の自由が単なる放任ではなく、「中学生や高校生を飛ばしていきなり大学生になってしまう感じ」と表現されるような、早期からの自律と責任の獲得を意味することが見えてくる。JPMS-DBの<span class="academic-link">SDT</span>に従えば、麻布は自律性・有能感・関係性の三欲求のすべてを学校環境として最大化しているケースと言える。
+  </p>
+
+  <p>
+    教育学術的には、麻布の設計はOECD Learning Compass 2030のStudent Agency（自分で学習を方向付ける主体性）の極めて純度の高い実践でもある。一方で、その自由は誰にでも適合するわけではなく、「自分で自分を律する」予備能力を持った生徒が真価を発揮する仕組みでもあり、入学後のフィット感は子どもの個性によって大きく異なる。
+  </p>
+
+  <h2 id="s06"><span class="num">06</span>駒場東邦中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>東京都世田谷区</td></tr>
+    <tr><th>創立</th><td>1957年</td></tr>
+    <tr><th>系列</th><td>男子校 / 無宗教</td></tr>
+    <tr><th>建学の精神</th><td>「科学的精神に支えられた合理性」と「人間としての誠実さ」を重んじる教育</td></tr>
+  </table>
+
+  <p>
+    駒場東邦は東邦大学（医学部・薬学部・看護学部を持つ）と東京都立駒場高校の関係者が戦後の私学振興の文脈で設立した学校で、「科学的合理性と人間性」をバランスする教育設計が特徴である。理数系教育に強みがあり、東大理科三類・国公立医学部への進学実績は男子校トップクラスを維持している。一方で、宗教教育を持たない代わりに、医療系の倫理観や自然科学の方法論を中心に、子どもの理性的判断力と倫理感を統合的に育てる文化がある。
+  </p>
+
+  <p>
+    教育学術観点からは、駒場東邦の設計は<span class="academic-link">学習科学</span>（メタ認知・自己調整学習）と<span class="academic-link">エビデンスベース</span>な教育実践の融合として読み解ける。「自分で考える」を強調しつつ、その裏側には「考え方の手続きを身につける」という構造的な訓練が組み込まれている。中学受験において駒場東邦の入試問題は記述量が多いことで知られるが、それは入学後の学習スタイルと一貫した選抜設計とも言える。
+  </p>
+
+  <h2 id="s07"><span class="num">07</span>開成中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>東京都荒川区</td></tr>
+    <tr><th>創立</th><td>1871年</td></tr>
+    <tr><th>系列</th><td>男子校 / 無宗教</td></tr>
+    <tr><th>建学の精神</th><td>「ペンは剣よりも強し」を校章に掲げ、自由闊達な気風と質実剛健の校風のもと、社会のリーダーを育成する。</td></tr>
+  </table>
+
+  <p>
+    開成は日本の私立中学校で最も長い歴史を持ち、東京大学合格者数で40年以上連続首位を維持する進学校として知られる。しかしその実態は、しばしば想像される「受験エリート校」のイメージとは大きく異なる。在校生の発言からは「自律する心を持って自主的に動くことを礎にした自由」という校風と、「ほとんどの生徒が何らかのクラブ・同好会に所属して非常に熱心に活動している」という活動文化の濃さが読み取れる。
+  </p>
+
+  <blockquote>
+    我々の仕事を削ぎ落すと、授業と生徒対応とが残るように思います。授業で信頼を得た後、はじめて生徒に対峙し、想いを伝えます。
+    <span class="who">— 開成中学校 教員</span>
+  </blockquote>
+
+  <p>
+    教員の言葉に表れるのは、「教育」という抽象を「授業の質」と「生徒との対話」という具体的な実践に還元する誠実さである。JPMS-DBの<span class="academic-link">学習科学</span>の観点では、開成は「教師の専門性」と「生徒の自己調整学習」が高い水準で両立する稀有な学習環境を構成している。
+  </p>
+
+  <p>
+    在校生の「学校の授業に身を入れ、きちんと予習・復習を行えば、充分ついていけます」という言葉は、開成の進学実績が塾依存ではなく、学校の授業を中心軸に据えた学習文化に支えられていることを示唆している。これは多くの最難関校が共有する設計思想だが、開成では運動会・マラソン大会等の伝統行事を通じて、学習以外の領域でも徹底的な「やり切り」が文化として根付いていることが特筆される。
+  </p>
+
+  <h2 id="s08"><span class="num">08</span>栄光学園中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>神奈川県鎌倉市</td></tr>
+    <tr><th>創立</th><td>1947年（イエズス会による設立）</td></tr>
+    <tr><th>系列</th><td>男子校 / カトリック・イエズス会</td></tr>
+    <tr><th>建学の精神</th><td>"より大いなる神の栄光のために（Ad Maiorem Dei Gloriam）"を掲げ、「他者のために、他者とともに（Men and Women for and with Others）」を教育目標とする。</td></tr>
+  </table>
+
+  <p>
+    栄光学園は、イエズス会が運営する6年制男子校で、神奈川県鎌倉市の自然豊かな環境に立地する。イエズス会の教育は世界的に「ロヨラ流」と呼ばれる伝統を持ち、知性・霊性・社会性を統合する人間形成を目指す。栄光の教育目標は単なる進学指導ではなく、「他者のために、他者とともに」という精神を通じて、世界市民として責任を担える人間を育てることを明確に掲げている。
+  </p>
+
+  <p>
+    JPMS-DBの<span class="academic-link">SEL</span>と<span class="academic-link">21世紀型スキル</span>の観点から見ると、栄光のイエズス会的教育は、CASEL 5コンピテンシーの「社会的認識」「責任ある意思決定」を宗教的伝統と統合的に育てる稀有なモデルである。OECD Learning Compass 2030の「Values」次元（Personal/Social/Societal/Human Values）を、500年近い歴史を持つイエズス会の霊性訓練の中で体系的に練り上げてきたものと言える。
+  </p>
+
+  <h2 id="s09"><span class="num">09</span>聖光学院中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>神奈川県横浜市中区</td></tr>
+    <tr><th>創立</th><td>1958年（カトリック・キリスト教学校教育修士会による設立）</td></tr>
+    <tr><th>系列</th><td>男子校 / カトリック</td></tr>
+    <tr><th>建学の精神</th><td>「紳士たれ（Be Gentlemen）」をモットーに、Christian Brothers系のカトリック精神に基づく品格教育。</td></tr>
+  </table>
+
+  <p>
+    聖光学院は、カトリックのキリスト教学校教育修士会（Christian Brothers）が運営する男子校で、神奈川県内で最難関の進学実績を持つ。栄光学園と並ぶ神奈川カトリック男子校の双璧であり、両校はそれぞれイエズス会と教育修士会という異なる修道会を母体とするため、教育文化にも独特の差異がある。聖光のキーワードは「紳士たれ」で、知的卓越性と倫理的品位の両立を求める伝統が一貫している。
+  </p>
+
+  <p>
+    教育学術観点からは、聖光は<span class="academic-link">エビデンスベース</span>な学術指導と<span class="academic-link">ウェルビーイング</span>教育のバランスが特徴的である。東大合格者数において栄光と並ぶ高水準を維持しつつ、宗教教育を通じてSeligmanのPERMAモデル（特にMeaning：人生の意味）を体系的に育てる構造を持つ。「紳士」という古典的概念の中に、現代のリーダーシップ論や倫理教育論の要素が含まれている点が、聖光の教育設計の独自性である。
+  </p>
+
+  <h2 id="s10"><span class="num">10</span>東京農業大学第一中等部</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>東京都世田谷区</td></tr>
+    <tr><th>創立</th><td>2005年（中等部、高等学校は1949年）</td></tr>
+    <tr><th>系列</th><td>共学校 / 無宗教</td></tr>
+    <tr><th>建学の精神</th><td>「実学主義」— 東京農業大学の学風を継承し、実証的・体験的な学習を重視する。</td></tr>
+  </table>
+
+  <p>
+    東京農大第一中等部は、本リスト12校の中で唯一、2005年設立という最も新しい中等部である。母体である東京農業大学の「実学主義」を継承し、自然科学・農学・食物科学の体験学習を中等教育の早期から組み込む点が独自である。実験・観察・栽培といった具体的活動を通じて、抽象的概念を身体的に理解する「Embodied Cognition（身体化された認知）」のアプローチがカリキュラム全体に通底している。
+  </p>
+
+  <p>
+    教育学術観点からは、東京農大第一は<span class="academic-link">PBL</span><span class="academic-link">STEAM</span><span class="academic-link">学習科学</span>の三領域を統合する現代的な教育設計のモデルである。中等教育の早期から実験室と圃場と教室を往復する学習構造は、Bransfordらの『How People Learn』が示す「文脈に埋め込まれた学習」の理念と整合する。新しい学校でありながら、共学・実学・科学探究の組み合わせは2020年代以降の中等教育のあるべき姿の一つを先取りしていると言える。
+  </p>
+
+  <h2 id="s11"><span class="num">11</span>渋谷教育学園渋谷中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>東京都渋谷区</td></tr>
+    <tr><th>創立</th><td>1924年（戦後共学化、1996年に現・中高一貫体制）</td></tr>
+    <tr><th>系列</th><td>共学校 / 無宗教</td></tr>
+    <tr><th>建学の精神</th><td>「自調自考」— 自分で調べ、自分で考える力。国際感覚を持った世界市民の育成。</td></tr>
+  </table>
+
+  <p>
+    渋谷教育学園渋谷（通称・渋渋）は、姉妹校の渋谷教育学園幕張と並んで、共学・国際教育・探究学習の三本柱で台頭した1990年代以降の新進進学校である。校長による「noblesse oblige（尊い人は義務を負う）— これからの国際社会で活躍を目指す未来からの留学生である君たちを待っている」という言葉は、渋渋の教育観を象徴する。生徒を「未来からの留学生」と呼ぶ視点は、伝統校が共有する「学校が生徒を育てる」発想とは根本的に異なる。
+  </p>
+
+  <blockquote>
+    「自調自考」という考え方を大切にしています。自分で調べ自分で考える力が、これからの人生で最も大事だと感じるようになりました。
+    <span class="who">— 渋谷教育学園渋谷 在校生</span>
+  </blockquote>
+
+  <blockquote>
+    学園長講話という月数回の特別授業で、中1は「人間関係」から始まり、高3は「自分探しの旅立ち」まで、自己理解を深めていくプログラムがあります。
+    <span class="who">— 渋谷教育学園渋谷 在校生</span>
+  </blockquote>
+
+  <p>
+    教育学術観点では、渋渋は<span class="academic-link">SEL</span><span class="academic-link">キャリア構成理論</span><span class="academic-link">21世紀型スキル</span>を6年間で系統的に育てる稀有な共学校である。学園長講話の発達段階に応じたテーマ設定（人間関係→社会→自己探求→キャリア）は、Marciaの同一性形成理論やSavickasのキャリア構成理論に対応する構造を持つ。海外大学進学者を含む多様な進路選択肢を支える設計は、伝統校とは別系統の現代的中等教育の頂点に位置する。
+  </p>
+
+  <h2 id="s12"><span class="num">12</span>灘中学校</h2>
+  <table class="meta-table">
+    <tr><th>所在地</th><td>兵庫県神戸市東灘区</td></tr>
+    <tr><th>創立</th><td>1928年</td></tr>
+    <tr><th>系列</th><td>男子校 / 無宗教</td></tr>
+    <tr><th>校是</th><td>「精力善用・自他共栄」（嘉納治五郎・柔道の創始者にして初代理事の精神を継承）</td></tr>
+  </table>
+
+  <p>
+    灘は関西を代表する最難関男子校で、東大合格者数で開成と毎年首位を争う。校是の「精力善用・自他共栄」は柔道の祖・嘉納治五郎の言葉に由来し、自分の力を社会のために最大限に役立てると同時に、他者と共に栄えることの倫理を説く。校長の言葉からは、灘の校風が「自由」と「自律」と「倫理」の三位一体で構成されていることが鮮明に浮かび上がる。
+  </p>
+
+  <blockquote>
+    生徒が主役の学校であり、学習や部活動において生徒は自分で問題を発見し試行錯誤を重ねて解決の道筋を探す主体的な学びが奨励されています。
+    <span class="who">— 灘中学校 校長</span>
+  </blockquote>
+
+  <blockquote>
+    文章化された校則を設けず、学校生活のあらゆる局面で生徒達が「灘校生としてふさわしい行動」を自分で考え判断することを促しています。
+    <span class="who">— 灘中学校 校長</span>
+  </blockquote>
+
+  <p>
+    教育学術観点では、灘の「校則を文章化しない」という選択は、行動主義的な外的統制ではなく、内面化された規範に基づく<span class="academic-link">SDT</span>的な自律支援の典型である。麻布の自由が「個」の解放であるとすれば、灘の自由は「共栄」の倫理に裏打ちされた自律であり、両者は同じ「自由」の語の下で異なる発達観を実装している。問題発見と試行錯誤を奨励する学習文化は、Bransfordらの「How People Learn」と完全に整合する設計である。
+  </p>
+
+  <h2 id="summary"><span class="num">結語</span>12校が示す日本の私立中等教育の射程</h2>
+
+  <div class="summary-box">
+    <h3>三つの教育設計類型</h3>
+    <p style="margin-bottom:0">
+      12校を俯瞰すると、日本の最難関私立中等教育は大きく三つの設計類型に分類できる。
+    </p>
+  </div>
+
+  <p>
+    第一の類型は<strong>「自由と自律の伝統校」</strong>である。開成・麻布・武蔵（御三家）に灘・栄光・聖光が連なるこの系統は、校則の最小化と生徒主体の運営を通じて、子どもの自律性と倫理感を時間をかけて醸成する。OECD Learning CompassのStudent Agency、Deci & RyanのSDT、Marciaの同一性形成理論が示す発達条件と高い整合性を持つが、入学後のフィットには子どもの内発的動機の高さが前提となる。
+  </p>
+
+  <p>
+    第二の類型は<strong>「カトリック系の人格形成校」</strong>である。サレジオ学院・栄光学園・聖光学院の三校に代表されるこの系統は、宗教的伝統を背景に「他者のため」の倫理を教育設計の中核に据える。CASEL SELの社会的認識・責任ある意思決定、PERMAモデルのMeaning（意味）次元を、500年近いイエズス会・サレジオ会の霊性訓練を通じて体系的に育てる。進学実績と人格形成のバランスが取れた選択肢として、保護者の信頼が特に厚い。
+  </p>
+
+  <p>
+    第三の類型は<strong>「現代的探究の新進校」</strong>である。渋谷教育学園渋谷・東京農大第一・海城（途中改革組）が連なるこの系統は、PBL・国際教育・STEAM・学習科学の最新知見を積極的に取り込み、伝統校とは異なる経路で最難関校に到達した。21世紀型スキル、Hattie's Visible Learning、EEF Toolkitが示すエビデンスベースの教育実践を学校全体で実装する設計は、子どもの個性が「探究志向」「協働志向」のタイプに親和的な場合に最大の効果を発揮する。
+  </p>
+
+  <p>
+    慶應義塾中等部・浅野・駒場東邦は、これら三類型のいずれかに完全には収まらない独自の位置を占める。慶應は福澤諭吉の「独立自尊」という第四の軸を、浅野は「九転十起」のレジリエンス重視を、駒場東邦は「科学的合理性と人間性の統合」を、それぞれ独自の設計原理として持つ。これらの中間ポジションこそが、日本の中等教育の多様性を支える構造的厚みを示している。
+  </p>
+
+  <p>
+    JPMS-DBが示す重要な視点は、最難関校の選び方は<strong>偏差値や進学実績の単軸比較ではなく、子どもの個性と学校の教育設計の「フィット」の問題</strong>であるということだ。Heckmanの非認知能力研究やSeligmanのPERMAモデルが示すように、子どもの長期的なウェルビーイングと社会的成功は、学業成績だけでなく、自律性・社会性・倫理感・粘り強さといった多次元的な発達によって決まる。各校が固有の設計原理で育てている子どもの像を理解した上で、家庭の価値観と子どもの個性に最も親和的な学校を選ぶことが、保護者と本人にとって最も重要な意思決定軸となる。
+  </p>
+
+  <p>
+    本稿で提示した12校の比較は、それぞれの教育設計を学術知見と関係者発言を通じて構造化したJPMS-DBの初期データに基づく。今後Phase 2以降の収集深化により、各校のカリキュラム特性・進路実績の時系列・関係者発言の累積から、より精緻な比較と成長軌道仮説の提示が可能になっていく。本稿はその出発点として、最難関校群の教育設計の射程を読み解く一つの視座を提供するものである。
+  </p>
+
+</main>
+
+<footer>
+  JPMS-DB v0.1 | 日本私立中学校 包括的基盤データベース | Sample 12 Schools Report | 2026-05-05
+</footer>
+</body>
+</html>
