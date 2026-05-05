@@ -1,0 +1,14 @@
+{
+  "task_id": "team_c_llm_tp_integration",
+  "ts": "2026-05-05T20:52:58.177979Z",
+  "inserted_teacher": 99,
+  "inserted_parent": 23,
+  "inserted_total": 122,
+  "rejected": 155,
+  "rejection_reasons": {
+    "duplicate": 155
+  },
+  "final_teacher_total": 757,
+  "final_parent_total": 1079,
+  "final_combined": 1836
+}
