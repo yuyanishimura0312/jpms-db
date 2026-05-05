@@ -24,6 +24,7 @@ ARTICLE_ORDER = [
     ("nodai", "東京農大第一（候補）"),
     ("shibushibu", "渋谷教育学園渋谷（候補）"),
     ("conclusion", "結語"),
+    ("tsukuba", "【追加レポート】筑波大学附属"),
 ]
 
 def read_section(key):
