@@ -1,8 +1,8 @@
 {
   "task_id": "team_c4",
-  "completed": 6,
-  "with_data": 4,
+  "completed": 12,
+  "with_data": 5,
   "total_schools": 32,
-  "records": 625,
-  "ts": "2026-05-05T13:31:37.907486Z"
+  "records": 643,
+  "ts": "2026-05-05T13:32:26.912253Z"
 }
