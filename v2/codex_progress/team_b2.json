@@ -1,0 +1,22 @@
+{
+  "task_id": "team_b2",
+  "team": "B-2",
+  "task": "student/alumni voices extraction",
+  "completed": 115,
+  "items": 15,
+  "ts": "2026-05-05T04:31:25.664354+00:00",
+  "total_schools_scanned": 115,
+  "schools_with_extractions": 7,
+  "schools_without_extractions": 108,
+  "max_per_school": 5,
+  "min_quote_len": 30,
+  "max_quote_len": 300,
+  "output_path": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_b2_students.jsonl",
+  "rights_level": "anonymized_only",
+  "ethics_notes": [
+    "未成年（中学生）情報は完全匿名化。",
+    "個人名・学年は除外、speaker_attributeは generic（中学生/卒業生）。",
+    "公開情報のみを対象。",
+    "ナビゲーション/著作権表示等の非実体テキストは除外。"
+  ]
+}

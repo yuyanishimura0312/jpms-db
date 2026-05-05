@@ -31,6 +31,11 @@ def main():
         out['meta'][r['key']] = r['value']
 
     # Phase E progress stats
+    def safe_count(query):
+        try:
+            return db.execute(query).fetchone()[0]
+        except:
+            return 0
     out['phase_e_progress'] = {
         'schools_with_url': db.execute("SELECT COUNT(*) FROM schools_v2 WHERE homepage_url IS NOT NULL AND homepage_url != ''").fetchone()[0],
         'schools_with_pages': db.execute("SELECT COUNT(DISTINCT school_id) FROM school_homepage_assets").fetchone()[0],
@@ -41,6 +46,10 @@ def main():
         'career_archetypes': db.execute("SELECT COUNT(*) FROM career_archetype").fetchone()[0],
         'official_stats': db.execute("SELECT COUNT(*) FROM school_official_stats").fetchone()[0],
         'lca_assignments': db.execute("SELECT COUNT(*) FROM school_typology_lca").fetchone()[0],
+        'curriculum_records': safe_count("SELECT COUNT(*) FROM school_curriculum_v2"),
+        'event_records': safe_count("SELECT COUNT(*) FROM school_calendar_v2"),
+        'alumni_career_records': safe_count("SELECT COUNT(*) FROM alumni_career"),
+        'family_relation_records': safe_count("SELECT COUNT(*) FROM school_family_relation"),
     }
 
     # Schools

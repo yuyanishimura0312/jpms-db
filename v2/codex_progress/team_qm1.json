@@ -1,0 +1,19 @@
+{
+  "task_id": "team_qm1",
+  "role": "quality_gate_review",
+  "checks": [
+    "quote_length",
+    "personal_info",
+    "rights_level",
+    "source_attribution",
+    "copyright_source"
+  ],
+  "reviewed_files": 9,
+  "total_records": 1634,
+  "approved": 1556,
+  "flagged": 77,
+  "rejected": 1,
+  "approved_rate": 0.9523,
+  "sample_data_used": true,
+  "ts": "2026-05-05T04:29:46.034235+00:00"
+}

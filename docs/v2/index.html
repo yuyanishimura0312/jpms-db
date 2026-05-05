@@ -389,15 +389,19 @@ document.getElementById('stats').innerHTML = statsHTML.map(s =>
 
 // ===== Phase E Progress =====
 const pe = DATA.phase_e_progress || {};
-const totalSchools = DATA.schools.length - 1; // exclude NATIONAL_AGG
+const totalSchools = 528;
 const phaseEStats = [
-  {n: pe.schools_with_url || 0, t: totalSchools, l: 'URL登録校 / 528'},
-  {n: pe.schools_with_pages || 0, t: 528, l: 'HP取得済校 / 528'},
-  {n: pe.pages_fetched || 0, t: '5,280', l: 'HP取得ページ / 目標'},
-  {n: pe.philosophies_total || 0, t: '528+', l: '建学理念データ件数'},
-  {n: pe.testimonials || 0, t: '7,000', l: '関係者声 / 目標'},
-  {n: pe.official_stats || 0, t: '50+', l: '公的統計指標'},
-  {n: pe.career_archetypes || 0, t: '20+', l: 'キャリアアーキタイプ'},
+  {n: pe.schools_with_url || 0, t: totalSchools, l: 'URL登録校'},
+  {n: pe.schools_with_pages || 0, t: 528, l: 'HP取得済校'},
+  {n: pe.pages_fetched || 0, t: 5280, l: 'HP取得ページ'},
+  {n: pe.philosophies_total || 0, t: 528, l: '建学理念データ'},
+  {n: pe.testimonials || 0, t: 7000, l: '関係者声'},
+  {n: pe.curriculum_records || 0, t: 528, l: 'カリキュラム'},
+  {n: pe.event_records || 0, t: 1000, l: '行事レコード'},
+  {n: pe.alumni_career_records || 0, t: 5000, l: '卒業生活躍'},
+  {n: pe.family_relation_records || 0, t: 528, l: '家庭関係データ'},
+  {n: pe.official_stats || 0, t: 150, l: '公的統計指標'},
+  {n: pe.career_archetypes || 0, t: 20, l: 'キャリアアーキタイプ'},
 ];
 document.getElementById('phase-e-stats').innerHTML = phaseEStats.map(s => {
   const pct = typeof s.t === 'number' ? Math.min(100, (s.n*100/s.t).toFixed(1)) : null;

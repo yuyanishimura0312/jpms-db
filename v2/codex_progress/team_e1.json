@@ -2,7 +2,7 @@
   "task_id": "team_e1",
   "team": "E-1",
   "subject": "家庭関係データ抽出",
-  "total_schools_in_cache": 115,
+  "total_schools_in_cache": 114,
   "schools_with_html": 97,
   "schools_processed": 97,
   "schools_with_records": 32,
@@ -64,5 +64,5 @@
   ],
   "output_path": "codex_output/team_e1_family.jsonl",
   "status": "completed",
-  "ts": "2026-05-05T04:28:38.433364+00:00"
+  "ts": "2026-05-05T04:29:08.534888+00:00"
 }
