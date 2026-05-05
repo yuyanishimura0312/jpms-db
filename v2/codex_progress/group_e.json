@@ -1,83 +1,87 @@
 {
   "task_id": "group_e",
   "role": "quality_audit_v2",
-  "ts": "2026-05-05T11:59:16.541760+00:00",
+  "ts": "2026-05-05T12:00:56.672362+00:00",
   "stats": {
-    "total": 6551,
-    "duplicates_exact": 53,
-    "duplicates_prefix": 14,
-    "duplicates_similar": 183,
-    "rejected_length": 792,
+    "total": 5794,
+    "duplicates_exact": 38,
+    "duplicates_prefix": 6,
+    "duplicates_similar": 227,
+    "rejected_length": 31,
     "rejected_garbled": 88,
     "rejected_error_string": 1,
     "rejected_dummy": 1,
-    "rights_downgraded": 4,
-    "pii_masked": 359,
-    "role_reclassified": 7,
+    "rights_downgraded": 0,
+    "pii_masked": 79,
+    "role_reclassified": 0,
     "role_nullified_needs_review": 0,
     "source_invalid": 0,
-    "approved": 5417
+    "approved": 5404
   },
   "status_breakdown": [
     {
       "status": "approved",
-      "count": 5417
+      "count": 5404
     },
     {
-      "status": "qm1_passed_v5",
-      "count": 206
+      "status": "group_d_alumni_wp",
+      "count": 1735
     },
     {
       "status": "flagged_dup_similar",
-      "count": 182
+      "count": 226
+    },
+    {
+      "status": "qm1_passed",
+      "count": 220
     },
     {
       "status": "rejected",
-      "count": 111
+      "count": 121
     },
     {
       "status": "flagged_dup_exact",
-      "count": 53
+      "count": 38
     },
     {
       "status": "flagged_dup_prefix",
-      "count": 13
-    },
-    {
-      "status": "anonymized_only_forced",
-      "count": 4
+      "count": 5
     }
   ],
   "role_breakdown": [
     {
+      "role": "chairperson",
+      "count": 3
+    },
+    {
       "role": "parent",
-      "count": 1114
+      "count": 1117
     },
     {
       "role": "principal",
-      "count": 1367
+      "count": 1369
     },
     {
       "role": "student_alumni",
-      "count": 1399
+      "count": 3066
     },
     {
       "role": "student_current",
-      "count": 1344
+      "count": 1433
     },
     {
       "role": "teacher",
-      "count": 762
+      "count": 761
     }
   ],
   "rights_breakdown": [
     {
       "rights": "anonymized_only",
-      "count": 2785
+      "count": 2871
     },
     {
       "rights": "quoted_with_attribution",
-      "count": 3201
+      "count": 4878
     }
   ],
   "delete_candidates": [
