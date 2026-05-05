@@ -174,18 +174,167 @@
     text-decoration:none;
     font-family:'Noto Sans JP',sans-serif;
     box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    z-index:40;
+  }
+
+  /* === Sidebar Navigation === */
+  html{scroll-behavior:smooth;scroll-padding-top:24px}
+  body{padding-left:260px}
+  .sidebar{
+    position:fixed;top:0;left:0;
+    width:260px;height:100vh;
+    background:#fff;border-right:1px solid var(--line);
+    overflow-y:auto;padding:28px 0 80px;
+    z-index:50;
+    font-family:'Noto Sans JP',sans-serif;font-size:12.5px;
+  }
+  .sidebar .sb-brand{
+    padding:0 24px 16px;margin-bottom:8px;
+    border-bottom:2px solid var(--akashiro-red);
+  }
+  .sidebar .sb-brand a{
+    text-decoration:none;color:var(--akashiro-red);
+    font-family:'Noto Serif JP',serif;font-size:16px;
+    font-weight:700;letter-spacing:0.05em;
+  }
+  .sidebar .sb-brand .sub{
+    display:block;font-size:10.5px;color:var(--ink-soft);
+    margin-top:4px;font-weight:400;font-family:'Noto Sans JP',sans-serif;
+    letter-spacing:0.02em;
+  }
+  .sidebar h4{
+    font-size:11px;color:var(--akashiro-red);
+    padding:14px 24px 6px;margin:0;
+    letter-spacing:0.12em;font-weight:700;
+  }
+  .sidebar ol{list-style:none;padding:0;margin:0;line-height:1.5}
+  .sidebar ol li a{
+    display:block;padding:8px 18px 8px 24px;
+    color:var(--ink-soft);text-decoration:none;
+    border-left:3px solid transparent;
+    transition:all 0.12s;font-size:12.5px;
+    line-height:1.5;
+  }
+  .sidebar ol li a:hover{
+    color:var(--akashiro-red);background:var(--bg-soft);
+    border-left-color:var(--akashiro-red-light);
+  }
+  .sidebar ol li a.active{
+    color:var(--akashiro-red);font-weight:700;
+    background:#FFF7F5;border-left-color:var(--akashiro-red);
+  }
+  .sidebar .sb-footer{
+    padding:24px;margin-top:24px;
+    border-top:1px solid var(--line);
+    color:var(--ink-soft);font-size:11px;line-height:1.7;
+  }
+  .sidebar .sb-footer a{
+    color:var(--akashiro-red);text-decoration:none;
+    display:block;margin-top:6px;
+  }
+
+  /* セクション内ナビ（前/次） */
+  .section-nav{
+    display:flex;justify-content:space-between;
+    margin:48px 0 0;padding:18px 0;
+    border-top:1px solid var(--line);
+    font-family:'Noto Sans JP',sans-serif;font-size:12.5px;
+    gap:12px;
+  }
+  .section-nav a{
+    color:var(--ink-soft);text-decoration:none;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 14px;border:1px solid var(--line);
+    transition:all 0.12s;flex:0 1 auto;max-width:48%;
+  }
+  .section-nav a:hover{
+    color:var(--akashiro-red);border-color:var(--akashiro-red);
+    background:var(--bg-soft);
+  }
+  .section-nav .arrow{color:var(--akashiro-red);font-size:14px;font-weight:700}
+  .section-nav .nav-prev{margin-right:auto}
+  .section-nav .nav-next{margin-left:auto;text-align:right}
+  .section-nav .nav-label{
+    display:block;font-size:10px;color:var(--akashiro-red);
+    letter-spacing:0.1em;margin-bottom:2px;
+  }
+
+  /* ハンバーガーメニュー（モバイル） */
+  .menu-toggle{
+    display:none;position:fixed;top:12px;left:12px;
+    z-index:60;background:var(--akashiro-red);color:#fff;
+    border:none;padding:8px 12px;font-size:13px;font-weight:700;
+    font-family:'Noto Sans JP',sans-serif;cursor:pointer;
+    letter-spacing:0.05em;
+  }
+  .menu-overlay{
+    display:none;position:fixed;inset:0;
+    background:rgba(0,0,0,0.4);z-index:45;
+  }
+  .menu-overlay.open{display:block}
+
+  @media(max-width:980px){
+    body{padding-left:0}
+    .sidebar{
+      transform:translateX(-100%);
+      transition:transform 0.25s ease;
+      width:280px;box-shadow:2px 0 16px rgba(0,0,0,0.15);
+    }
+    .sidebar.open{transform:translateX(0)}
+    .menu-toggle{display:block}
+    main{padding-top:60px}
+    header{padding-top:54px}
   }
 
   @media(max-width:680px){
-    main{padding:32px 20px 80px}
+    main{padding:60px 20px 80px}
     h1.title{font-size:28px}
     h2{font-size:21px}
     .toc ol{column-count:1}
     .toc{padding:18px}
+    .section-nav{flex-direction:column;gap:8px}
+    .section-nav a{max-width:100%}
+    .section-nav .nav-next{text-align:left}
   }
 </style>
 </head>
 <body id="top">
+
+<button class="menu-toggle" aria-label="目次を開く" onclick="toggleSidebar()">☰ 目次</button>
+<div class="menu-overlay" onclick="closeSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sb-brand">
+    <a href="#top">JPMS-DB
+      <span class="sub">最難関12校レポート</span>
+    </a>
+  </div>
+  <h4>目次</h4>
+  <ol>
+    <li><a href="#overview">概要編</a></li>
+<li><a href="#s-seiko">聖光学院（第一志望）</a></li>
+<li><a href="#s-eiko">栄光学園</a></li>
+<li><a href="#s-asano">浅野</a></li>
+<li><a href="#s-salesio">サレジオ学院</a></li>
+<li><a href="#s-kaijo">海城</a></li>
+<li><a href="#s-keio">慶應義塾中等部</a></li>
+<li><a href="#s-azabu">麻布</a></li>
+<li><a href="#s-komaba">駒場東邦</a></li>
+<li><a href="#s-kaisei">開成</a></li>
+<li><a href="#s-nada">灘</a></li>
+<li><a href="#s-nodai">東京農大第一（候補）</a></li>
+<li><a href="#s-shibushibu">渋谷教育学園渋谷（候補）</a></li>
+<li><a href="#conclusion">結語</a></li>
+<li><a href="#s-tsukuba">【追加レポート】筑波大学附属</a></li>
+  </ol>
+  <div class="sb-footer">
+    JPMS-DB v0.2<br>
+    本文 約11万字 / 関係者発言 236件超<br>
+    <a href="./">ダッシュボードへ →</a>
+    <a href="https://github.com/yuyanishimura0312/jpms-db" target="_blank" rel="noopener">GitHub →</a>
+  </div>
+</aside>
+
 <header>
   <div class="brand">
     <h1>JPMS-DB</h1>
@@ -303,6 +452,7 @@
 <p>本書にはネガティブな発言が一定量含まれます。それらは特定の学校を批判する意図で収録したものではなく、「合わない子もいる」「改善の余地もある」という現実をご家庭の判断材料に変えるためのものです。完全に肯定的な情報だけが並ぶレポートは、結果的に親御さんの判断を誤らせます。たとえば「校舎が老朽化している」という指摘は、その学校が悪いということではなく、「お子さんが学習環境に敏感なタイプであれば、訪問して空気感を確認した方がよい」というアラートとして機能します。「宿題が多い」という指摘は、それを負担と感じるか挑戦と感じるかが、お子さんの性質と家庭の価値観に依存することを示します。「自主自立への暗黙の要求」という聖光・栄光・麻布で繰り返し聞かれる指摘は、お子さんが自走できるタイプかどうかを、ご家庭で点検する観点を与えます。ネガティブ発言を読んで「この学校はだめだ」と即断するのではなく、「うちの子の場合はどうだろうか」と立ち止まって考える材料としてお使いください。</p>
 <p>第一志望を聖光学院に置きつつ、栄光・浅野・サレジオ・海城・慶應・麻布・駒場東邦・開成・灘の各校を等しく検討対象として読まれることをお勧めします。第一志望以外の学校の章を読むことは、「なぜ我が家は聖光なのか」を逆照射する作業でもあります。比較によって初めて見えてくる「うちの子に必要なもの／必要でないもの」の輪郭があります。候補2校（東京農業大学第一・渋谷教育学園渋谷）の章は、確定検討校とは少し違う角度の「現代探究型」の選択肢として、参考読みをお勧めします。</p>
 <p>そして最終的な判断は、必ずご家庭で、お子さんの実際の様子を一番よく知る親御さんが下してください。本書はあくまで判断の材料を提供するものであり、決定を代替するものではありません。可能な限り、文化祭・体育祭・学校説明会・授業見学に親子で足を運び、空気感を確かめてください。本書で紹介する関係者の声は、現地で感じる空気感を「読み解くための予備知識」として最も力を発揮します。学校選びは、お子さんとご家庭の人生に長く影響する選択です。本書が、その選択を少しでも納得感のあるものにする一助となれば幸いです。各校の章では、関係者の生の声をさらに具体的に紹介していきます。一人ひとりの言葉に耳を澄ませながら、お子さんの未来を一緒に描いていただければと思います。</p>
+<div class="section-nav"><a class="nav-next" href="#s-seiko"><span><span class="nav-label">次</span>聖光学院（第一志望）</span> <span class="arrow">→</span></a></div>
 </section>
 
 <section id="s-seiko" class="school-section">
@@ -641,6 +791,7 @@
 
 <p>東大合格者数日本一という事実は強烈な引力を持ちますが、それは聖光学院の教育が生み出す結果のひとつであって、入学した全員に等しく約束される未来ではありません。校長の語る「人間力」、教員の見捨てない姿勢、友人との切磋琢磨、聖光塾と体験型学習の豊かさ、宗教と科学を架橋する倫理教育──これらの肯定的側面と、寄付金を含む経済負担、無言の規範、自主性に依存する設計、カトリック的前提への違和感、心理的プレッシャー、通学負担、部活動の弱さ、経済階層の同質化──これらの慎重に扱うべき側面を同じ天秤に乗せることが、第一志望校に向き合う保護者として最初にすべき作業です。本稿で紹介した在校生・保護者・卒業生・教員・OB・記者・塾講師の率直な声を補助線として、わが家にとっての聖光学院の像を立体的に描き直していただければと思います。最終的な選択がどちらに転んでも、入学前に多面的な像を持っていたという事実が、入学後の小さな違和感に向き合うご家庭の力になります。聖光学院は、お子さんとご家庭にとって正しい選択であれば、間違いなく日本で最も豊かな六年間とその先の人生を提供する学校の一つです。第一志望としての覚悟をデータと声の両方から固めていく伴走として、本稿が役に立てば幸いです。</p>
 
+<div class="section-nav"><a class="nav-prev" href="#overview"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>概要編</span></span></a><a class="nav-next" href="#s-eiko"><span><span class="nav-label">次</span>栄光学園</span> <span class="arrow">→</span></a></div>
 </section>
 
 <section id="s-eiko" class="school-section">
@@ -792,6 +943,7 @@
 
 <p>栄光学園は単に東大に多く入る学校ではなく、お子さんが思春期の六年間を過ごす中で、「自分は何のために学ぶのか」「自分は他者にとって何ができるのか」を問い続ける環境です。この問いを面倒くさいと感じるなら栄光は合わないでしょう。逆にこの問いを抱えながら成長することを「自分の人生を意味あるものにする」と感じるなら、栄光はおそらく日本で最も豊かな六年間を提供する学校の一つです。聖光学院との併願に当たっては、もしお子さんが両校に合格した場合に「結果重視で聖光を選ぶか、人格重視で栄光を選ぶか」をご家庭で事前に話し合っておくことを強くお勧めします。</p>
 
+<div class="section-nav"><a class="nav-prev" href="#s-seiko"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>聖光学院（第一志望）</span></span></a><a class="nav-next" href="#s-asano"><span><span class="nav-label">次</span>浅野</span> <span class="arrow">→</span></a></div>
 </section>
 
 <section id="s-asano">
@@ -817,7 +969,8 @@
     </blockquote>
 
     <p>「3番手」時代の記憶を組織のDNAに残しつつ進学実績で堂々たる結果を出すという二重性が、浅野の校風を形作っています。聖光・栄光が「上から下りてくる」校風であるのに対し、浅野は「下から積み上げてきた」校風を今もアイデンティティの核として保持しています。</p>
-  </section>
+  <div class="section-nav"><a class="nav-prev" href="#s-eiko"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>栄光学園</span></span></a><a class="nav-next" href="#s-salesio"><span><span class="nav-label">次</span>サレジオ学院</span> <span class="arrow">→</span></a></div>
+</section>
 
   <section class="sub-section">
     <h3>2. 「打越魂」 ― 日常に組み込まれたレジリエンス教育</h3>
@@ -1102,6 +1255,7 @@
 <p><strong>慎重に検討したいお子さん</strong>は、第一に、宗教的儀式や祈りの時間に強い違和感を持ちやすいお子さん、第二に、宿題量に押しつぶされそうな学習タイプで家庭でも伴走の余力が乏しいご家庭、第三に、自由闊達な雰囲気を強く好み、SNSや髪型などへの細かな指導を圧迫と感じやすいお子さんは、入学後に窮屈さを感じる可能性があります。価値観の根本的な不一致から登校困難に発展した過去事例が実在する点も、入学前に冷静に共有しておく価値があります。</p>
 
 <p>聖光が第一志望のご家庭にとって、サレジオは単なる併願先以上の意味を持つ学校です。両校はカトリック男子校という大枠を共有しながら、修道会の伝統と家庭への期待値において性格を明確に異にします。学校説明会やミサ見学で、お子さん本人がこの空気に身を置いた感覚を確かめてください。「25歳の男づくり」に共鳴できるか。その一点が最終分岐点になります。</p>
+<div class="section-nav"><a class="nav-prev" href="#s-asano"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>浅野</span></span></a><a class="nav-next" href="#s-kaijo"><span><span class="nav-label">次</span>海城</span> <span class="arrow">→</span></a></div>
 </section>
 
 <section id="s-kaijo">
@@ -1116,7 +1270,8 @@
     <p>しかし、海城が注目されるのは、単に「進学実績がいいから」という理由だけではありません。むしろ、その実績を支えている社会科総合学習やKSプロジェクトと呼ばれる探究型のカリキュラムが、いま熱い視線を集めています。</p>
     <blockquote class="who" data-who="2024年度合格家庭・保護者ブログ">「入学してしばらく経って実感したのは、必要なことが全て整っているということでした。探究も、グローバル経験も、難関大への進学指導も、過不足なく揃っている。あれもない、これもないと不安になる場面が本当に少ない学校です。」</blockquote>
     <p>「必要なことが全て整っている」という素朴な賛辞は、聖光学院のように一点豪華な進学実績で語られる学校とは別種の評価軸です。本稿では良い面だけでなく合わなかった家庭の不満まで、率直に拾います。</p>
-  </section>
+  <div class="section-nav"><a class="nav-prev" href="#s-salesio"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>サレジオ学院</span></span></a><a class="nav-next" href="#s-keio"><span><span class="nav-label">次</span>慶應義塾中等部</span> <span class="arrow">→</span></a></div>
+</section>
 
   <section class="sub-section">
     <h3>2. 二度の改革と「新しい紳士」 ― 教育理念のかたち</h3>
@@ -1361,6 +1516,7 @@
       聖光学院を第一志望とされるご家庭にとって、慶應中等部は単なる「滑り止め」ではなく、「進学実績重視・男子校・手厚い伴走」という聖光の重力と、「大学一貫・共学・自助前提」という慶應の重力のどちらに身を寄せたいかを入学前に明確にすべき選択肢です。学校の良し悪しではなく、お子さんと家庭にとっての適合性こそが、十二歳の選択を後悔のないものにする鍵です。本稿は約四百件規模の参照情報から代表的声を抽出したものですが、最終的には学校説明会・文化祭などで在校生や保護者と直接お話しし、進学後に苦労した家庭の声や経済的負担に関する率直な声にも耳を傾けてみてください。
     </p>
   </article>
+<div class="section-nav"><a class="nav-prev" href="#s-kaijo"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>海城</span></span></a><a class="nav-next" href="#s-azabu"><span><span class="nav-label">次</span>麻布</span> <span class="arrow">→</span></a></div>
 </section>
 
 <section id="s-azabu" class="school-article">
@@ -1383,7 +1539,8 @@
     <blockquote class="who" data-who="学園紛争経験世代・元校長">
       外部の規則は人を改善しない。自分の中に基準を持つ人間に育てることだけが解決策だと学んだ。だから校則も生徒会もなくした。
     </blockquote>
-  </section>
+  <div class="section-nav"><a class="nav-prev" href="#s-keio"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>慶應義塾中等部</span></span></a><a class="nav-next" href="#s-komaba"><span><span class="nav-label">次</span>駒場東邦</span> <span class="arrow">→</span></a></div>
+</section>
 
   <section class="article-subsection" id="s-azabu-2">
     <h3>2. 「個性が花開く」ポジティブ側の証言</h3>
@@ -1512,7 +1669,8 @@
   <section class="sub-section" id="s-komaba-1">
     <h3>1. はじめに ― 聖光学院の対岸として読み解く</h3>
     <p>聖光学院（神奈川・横浜）が「紳士たれ」というカトリックの校訓と東大合格者数日本一を結びつけて自己定義する学校だとすれば、駒場東邦（東京・三軒茶屋）は「自主独立の気概と科学的精神を養う」という、科学を背骨に据えた学校です。両校はしばしば「管理型進学校」と一括されますが、内実は異質です。聖光が倫理と紳士性を価値の中心に置くのに対し、駒場東邦は合理性と論証可能性を中心に置きます。聖光が「神」を媒介に他者性を学ばせるのに対し、駒場東邦は「実験」と「論文」を媒介に世界を捉え直させます。本稿はこの差異を拾いながら、聖光を第一志望にしている家庭が駒場東邦をどう位置づけるべきかを考えます。</p>
-  </section>
+  <div class="section-nav"><a class="nav-prev" href="#s-azabu"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>麻布</span></span></a><a class="nav-next" href="#s-kaisei"><span><span class="nav-label">次</span>開成</span> <span class="arrow">→</span></a></div>
+</section>
 
   <section class="sub-section" id="s-komaba-2">
     <h3>2. 建学理念 ― 「自由」ではなく「科学的精神と自主独立」</h3>
@@ -1622,7 +1780,8 @@
       <cite>──開成中学校・高等学校「教育理念」HP（教員・教育理念層）</cite>
     </blockquote>
     <p>「ペンは剣よりも強し」「質実剛健」「自由」という三語は、創立から100年以上ほぼ変わらぬ哲学です。聖光学院の「紳士たれ」が日々の振る舞いに及ぶ生活規範として機能しているのに対し、開成の三語は「学ぶ姿勢そのものの根」に向けた言葉に近く、生徒は校則よりも校風の磁場のなかで自分のスタイルを形成していきます。「校舎が古い」というイメージは、2024年9月竣工の150周年記念新校舎で過去のものになりました。</p>
-  </section>
+  <div class="section-nav"><a class="nav-prev" href="#s-komaba"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>駒場東邦</span></span></a><a class="nav-next" href="#s-nada"><span><span class="nav-label">次</span>灘</span> <span class="arrow">→</span></a></div>
+</section>
 
   <section class="sub-section">
     <h3>2. 「東大一直線」からの脱却──野水勉校長が語る教育転換</h3>
@@ -1883,6 +2042,7 @@
 
 <p>灘校は、東大合格者数の上位校という外見の奥に、自由と選別、加速と均質性、個の育成と進路の同調圧力という、互いに矛盾するように見える複数の現実を抱えています。第一志望に聖光学院を置くご家庭にとって、灘は「もう一段強い加速と密度を提供する代替選択肢」ではなく、「家族と離れて全国最上位の同質集団に身を置く、構造の違う選択肢」です。聖光のハイブリッド型と灘の純粋自由型のどちらがわが子に合うかを、通学距離・家族との時間・ピアエフェクトの質という三点で具体的に重ね合わせて見ること。それが、第一志望と併願校の役割をご家庭の中で明確に分けるための、もっとも誠実な手順だと思います。</p>
 
+<div class="section-nav"><a class="nav-prev" href="#s-kaisei"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>開成</span></span></a><a class="nav-next" href="#s-nodai"><span><span class="nav-label">次</span>東京農大第一（候補）</span> <span class="arrow">→</span></a></div>
 </section>
 
 <section id="s-nodai">
@@ -1898,7 +2058,8 @@
     <p>聖光がすでに東大日本一を「歴史の蓄積」として語れる段階にあるのに対し、東農大第一は校訓を「これから歴史にしていく」段階にあります。コアネット教育総合研究所の第三者分析にはこんな記述があります。</p>
     <blockquote class="who">「2005年に完全中高一貫進学校へ転換。当初『ぬるま湯体質』で受験者減少が課題だったが、塾回りを徹底し説明会参加を積極化。『国公立・早慶上智大学50％合格』という進学目標を掲げ、農業大学への進学中心からレベルの高い他大学への進学指導へ方針転換」（コアネット教育総合研究所）</blockquote>
     <p>ここ二十年は「ぬるま湯から進学校への自己改革」のプロセスでした。2025年には高校外部募集を停止し完全中高一貫制へ移行。これから入学するお子さんは「新しい東農大第一」の最初期メンバーになるということでもあり、安定期の聖光に求めるような完成度を期待しすぎないことが保護者の心構えとして欠かせません。</p>
-  </section>
+  <div class="section-nav"><a class="nav-prev" href="#s-nada"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>灘</span></span></a><a class="nav-next" href="#s-shibushibu"><span><span class="nav-label">次</span>渋谷教育学園渋谷（候補）</span> <span class="arrow">→</span></a></div>
+</section>
 
   <section class="sub-section">
     <h3>2. 「知耕実学」という教育の核 ― 三年間の実学カリキュラム</h3>
@@ -1988,7 +2149,8 @@
     <p>ご家庭にとって渋渋は第一志望ではなく、聖光との比較で「我が子に合うのは何か」を浮かび上がらせる候補2校（参考校）です。聖光が男子校・カトリック・百年規模の伝統を骨格に持つのに対し、渋渋は共学・無宗教・創立三十年未満という反対の三点を骨格に、自由度・グローバル・帰国生比率の三本柱で進学実績を打ち立てます。</p>
     <p>聖光の校訓「紳士たれ」と渋渋の理念「自調自考」はいずれも人格形成を志向しますが実装は異なります。聖光が共同体の規範をゆるやかに内面化させるのに対し、渋渋は校則を最小化し判断を生徒個人に委ねます。渋渋は格下の滑り止めではなく、性格の異なる難関校として正面から比較する姿勢が最終判断の精度を高めます。ある進学塾講師は次のように評しています。</p>
     <blockquote class="who">2026年東大合格者は36名（新卒34名）。創立30年に満たない新興進学校でありながら、東大合格数は姉妹校の渋幕並みで、ここまで短期間で躍進した進学校は稀である。</blockquote>
-  </section>
+  <div class="section-nav"><a class="nav-prev" href="#s-nodai"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>東京農大第一（候補）</span></span></a><a class="nav-next" href="#conclusion"><span><span class="nav-label">次</span>結語</span> <span class="arrow">→</span></a></div>
+</section>
 
   <section class="sub-section">
     <h3>2. 「自調自考」と学園長講話 ── 88歳の学園長が直接語る人格教育</h3>
@@ -2100,6 +2262,7 @@
 
 <h3>8. 本レポートの限界と今後</h3>
 <p>本レポートはJPMS-DBの試行版として、SAPIX 2026年度説明会候補からご家庭が選定された10校（および参考2校）に絞って編集したものです。データ収集には網羅性と公正性を期しましたが、口コミや掲示板依存の発言は感情の偏りを含み、一次取材の比率を上げることが今後の課題です。合格実績や偏差値といった定量データは各校の公式情報や直近の学校説明会資料を必ず併せてご確認ください。最後に、最終決定はご家庭の中でなさってください。本レポートは判断材料を提供するものであって、判断そのものを代替するものではありません。お子さんの表情、ご家庭の価値観、そして何より「ここでこの子を育てたい」というご両親の感覚を信じてください。学校選びは「正解を当てる」作業ではなく、ご家族の物語の一章を選ぶ営みです。お子さんの中学校生活がご家族にとって祝福に満ちた6年間になることを、心から願っております。</p>
+<div class="section-nav"><a class="nav-prev" href="#s-shibushibu"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>渋谷教育学園渋谷（候補）</span></span></a><a class="nav-next" href="#s-tsukuba"><span><span class="nav-label">次</span>【追加レポート】筑波大学附属</span> <span class="arrow">→</span></a></div>
 </section>
 
 <section id="s-tsukuba" class="school-section">
@@ -2261,6 +2424,7 @@
 
 <p>ご家庭にとって最大の問いは「私立完全中高一貫の保護的環境を求めるか、国立の自由と自走を求めるか」という教育観の選択です。聖光を第一志望とするご家庭は前者を選ぼうとしているわけですから、筑附は併願校・第二志望としては有力ですが、第一志望を聖光から筑附に切り替えるかどうかは、お子さんの本質的な気質とご家庭の教育観の双方を根本から問い直したうえで判断していただきたい選択です。聖光の坂を上ったときの息遣いと、茗荷谷の住宅地を歩いて校門をくぐったときの空気の違いを、お子さん自身が体で覚えていることが、最終判断の精度を決めます。筑附は、お子さんとご家庭にとって正しい選択であれば、明治以来の「日本のリーダー輩出校」という歴史的資産と、自由・自主・自律の校風と、国立校としての経済的優位を、六年間にわたって惜しみなく提供してくれる学校です。</p>
 
+<div class="section-nav"><a class="nav-prev" href="#conclusion"><span><span class="arrow">←</span> <span><span class="nav-label">前</span>結語</span></span></a></div>
 </section>
 
 </main>
@@ -2269,7 +2433,72 @@
 
 <footer>
   JPMS-DB v0.2 | 日本私立中学校 包括的基盤データベース | Sample 12 Schools Extended Report | 2026-05-05<br>
-  約9万字 / 関係者発言280件超 / 出典はWeb公開情報のみ・口コミは傾向集約のみ・未成年情報は匿名化
+  約11万字 / 関係者発言236件超 / 出典はWeb公開情報のみ・口コミは傾向集約のみ・未成年情報は匿名化
 </footer>
+
+<script>
+// === Sidebar toggle (mobile) ===
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.querySelector('.menu-overlay').classList.toggle('open');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.querySelector('.menu-overlay').classList.remove('open');
+}
+// サイドバーのリンクをクリックしたら自動で閉じる（モバイル）
+document.querySelectorAll('.sidebar a[href^="#"]').forEach(a => {
+  a.addEventListener('click', () => {
+    if(window.innerWidth <= 980) closeSidebar();
+  });
+});
+
+// === IntersectionObserver: 現在のセクションをハイライト ===
+const sectionEls = document.querySelectorAll('main section[id], main > section[id]');
+const sidebarLinks = document.querySelectorAll('.sidebar ol a');
+const linkMap = {};
+sidebarLinks.forEach(a => {
+  const href = a.getAttribute('href');
+  if(href && href.startsWith('#')) linkMap[href.slice(1)] = a;
+});
+
+const observer = new IntersectionObserver(entries => {
+  // 表示中のセクションを特定（最も上にあるもの）
+  let topId = null;
+  let topY = Infinity;
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const y = entry.boundingClientRect.top;
+      if(y < topY){
+        topY = y;
+        topId = entry.target.id;
+      }
+    }
+  });
+  if(topId && linkMap[topId]){
+    sidebarLinks.forEach(a => a.classList.remove('active'));
+    linkMap[topId].classList.add('active');
+    // サイドバー内でアクティブ項目が見えるようスクロール
+    const link = linkMap[topId];
+    const sidebar = document.getElementById('sidebar');
+    const linkRect = link.getBoundingClientRect();
+    const sbRect = sidebar.getBoundingClientRect();
+    if(linkRect.top < sbRect.top + 80 || linkRect.bottom > sbRect.bottom - 40){
+      link.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+    }
+  }
+}, {
+  rootMargin: '-20% 0px -60% 0px',
+  threshold: [0, 0.1, 0.5]
+});
+
+sectionEls.forEach(s => {
+  // 主要セクションのみ監視（s-XXX または overview/conclusion）
+  const id = s.id;
+  if(id && (id.startsWith('s-') || id === 'overview' || id === 'conclusion')) {
+    observer.observe(s);
+  }
+});
+</script>
 </body>
 </html>

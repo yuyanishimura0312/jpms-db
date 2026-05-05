@@ -50,11 +50,41 @@ for key, label in ARTICLE_ORDER:
     sec_id = m.group(1) if m else key
     toc_items.append((sec_id, label))
 
-content = "\n\n".join(sections_html)
-toc_html = "\n".join([
+def add_section_nav(section_html, idx, items):
+    """各セクション末尾にprev/nextナビゲーションを追加"""
+    prev_link = ""
+    next_link = ""
+    if idx > 0:
+        prev_id, prev_label = items[idx - 1]
+        prev_link = (
+            f'<a class="nav-prev" href="#{prev_id}">'
+            f'<span><span class="arrow">←</span> '
+            f'<span><span class="nav-label">前</span>{prev_label}</span></span></a>'
+        )
+    if idx < len(items) - 1:
+        next_id, next_label = items[idx + 1]
+        next_link = (
+            f'<a class="nav-next" href="#{next_id}">'
+            f'<span><span class="nav-label">次</span>{next_label}</span> '
+            f'<span class="arrow">→</span></a>'
+        )
+    nav = f'<div class="section-nav">{prev_link}{next_link}</div>'
+    # 末尾の </section> の直前に挿入
+    if "</section>" in section_html:
+        section_html = section_html.replace("</section>", nav + "\n</section>", 1)
+    return section_html
+
+
+# セクションごとにprev/nextナビを差し込む
+sections_with_nav = [add_section_nav(s, i, toc_items) for i, s in enumerate(sections_html)]
+content = "\n\n".join(sections_with_nav)
+
+# サイドバー用目次（章のみ、簡潔ラベル）と本文用目次
+sidebar_toc_html = "\n".join([
     f'<li><a href="#{sid}">{label}</a></li>'
     for sid, label in toc_items
 ])
+toc_html = sidebar_toc_html  # 本文の目次にも使う
 
 # ベースHTML
 html = f"""<!DOCTYPE html>
@@ -233,18 +263,153 @@ html = f"""<!DOCTYPE html>
     text-decoration:none;
     font-family:'Noto Sans JP',sans-serif;
     box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    z-index:40;
+  }}
+
+  /* === Sidebar Navigation === */
+  html{{scroll-behavior:smooth;scroll-padding-top:24px}}
+  body{{padding-left:260px}}
+  .sidebar{{
+    position:fixed;top:0;left:0;
+    width:260px;height:100vh;
+    background:#fff;border-right:1px solid var(--line);
+    overflow-y:auto;padding:28px 0 80px;
+    z-index:50;
+    font-family:'Noto Sans JP',sans-serif;font-size:12.5px;
+  }}
+  .sidebar .sb-brand{{
+    padding:0 24px 16px;margin-bottom:8px;
+    border-bottom:2px solid var(--akashiro-red);
+  }}
+  .sidebar .sb-brand a{{
+    text-decoration:none;color:var(--akashiro-red);
+    font-family:'Noto Serif JP',serif;font-size:16px;
+    font-weight:700;letter-spacing:0.05em;
+  }}
+  .sidebar .sb-brand .sub{{
+    display:block;font-size:10.5px;color:var(--ink-soft);
+    margin-top:4px;font-weight:400;font-family:'Noto Sans JP',sans-serif;
+    letter-spacing:0.02em;
+  }}
+  .sidebar h4{{
+    font-size:11px;color:var(--akashiro-red);
+    padding:14px 24px 6px;margin:0;
+    letter-spacing:0.12em;font-weight:700;
+  }}
+  .sidebar ol{{list-style:none;padding:0;margin:0;line-height:1.5}}
+  .sidebar ol li a{{
+    display:block;padding:8px 18px 8px 24px;
+    color:var(--ink-soft);text-decoration:none;
+    border-left:3px solid transparent;
+    transition:all 0.12s;font-size:12.5px;
+    line-height:1.5;
+  }}
+  .sidebar ol li a:hover{{
+    color:var(--akashiro-red);background:var(--bg-soft);
+    border-left-color:var(--akashiro-red-light);
+  }}
+  .sidebar ol li a.active{{
+    color:var(--akashiro-red);font-weight:700;
+    background:#FFF7F5;border-left-color:var(--akashiro-red);
+  }}
+  .sidebar .sb-footer{{
+    padding:24px;margin-top:24px;
+    border-top:1px solid var(--line);
+    color:var(--ink-soft);font-size:11px;line-height:1.7;
+  }}
+  .sidebar .sb-footer a{{
+    color:var(--akashiro-red);text-decoration:none;
+    display:block;margin-top:6px;
+  }}
+
+  /* セクション内ナビ（前/次） */
+  .section-nav{{
+    display:flex;justify-content:space-between;
+    margin:48px 0 0;padding:18px 0;
+    border-top:1px solid var(--line);
+    font-family:'Noto Sans JP',sans-serif;font-size:12.5px;
+    gap:12px;
+  }}
+  .section-nav a{{
+    color:var(--ink-soft);text-decoration:none;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 14px;border:1px solid var(--line);
+    transition:all 0.12s;flex:0 1 auto;max-width:48%;
+  }}
+  .section-nav a:hover{{
+    color:var(--akashiro-red);border-color:var(--akashiro-red);
+    background:var(--bg-soft);
+  }}
+  .section-nav .arrow{{color:var(--akashiro-red);font-size:14px;font-weight:700}}
+  .section-nav .nav-prev{{margin-right:auto}}
+  .section-nav .nav-next{{margin-left:auto;text-align:right}}
+  .section-nav .nav-label{{
+    display:block;font-size:10px;color:var(--akashiro-red);
+    letter-spacing:0.1em;margin-bottom:2px;
+  }}
+
+  /* ハンバーガーメニュー（モバイル） */
+  .menu-toggle{{
+    display:none;position:fixed;top:12px;left:12px;
+    z-index:60;background:var(--akashiro-red);color:#fff;
+    border:none;padding:8px 12px;font-size:13px;font-weight:700;
+    font-family:'Noto Sans JP',sans-serif;cursor:pointer;
+    letter-spacing:0.05em;
+  }}
+  .menu-overlay{{
+    display:none;position:fixed;inset:0;
+    background:rgba(0,0,0,0.4);z-index:45;
+  }}
+  .menu-overlay.open{{display:block}}
+
+  @media(max-width:980px){{
+    body{{padding-left:0}}
+    .sidebar{{
+      transform:translateX(-100%);
+      transition:transform 0.25s ease;
+      width:280px;box-shadow:2px 0 16px rgba(0,0,0,0.15);
+    }}
+    .sidebar.open{{transform:translateX(0)}}
+    .menu-toggle{{display:block}}
+    main{{padding-top:60px}}
+    header{{padding-top:54px}}
   }}
 
   @media(max-width:680px){{
-    main{{padding:32px 20px 80px}}
+    main{{padding:60px 20px 80px}}
     h1.title{{font-size:28px}}
     h2{{font-size:21px}}
     .toc ol{{column-count:1}}
     .toc{{padding:18px}}
+    .section-nav{{flex-direction:column;gap:8px}}
+    .section-nav a{{max-width:100%}}
+    .section-nav .nav-next{{text-align:left}}
   }}
 </style>
 </head>
 <body id="top">
+
+<button class="menu-toggle" aria-label="目次を開く" onclick="toggleSidebar()">☰ 目次</button>
+<div class="menu-overlay" onclick="closeSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sb-brand">
+    <a href="#top">JPMS-DB
+      <span class="sub">最難関12校レポート</span>
+    </a>
+  </div>
+  <h4>目次</h4>
+  <ol>
+    {sidebar_toc_html}
+  </ol>
+  <div class="sb-footer">
+    JPMS-DB v0.2<br>
+    本文 約11万字 / 関係者発言 236件超<br>
+    <a href="./">ダッシュボードへ →</a>
+    <a href="https://github.com/yuyanishimura0312/jpms-db" target="_blank" rel="noopener">GitHub →</a>
+  </div>
+</aside>
+
 <header>
   <div class="brand">
     <h1>JPMS-DB</h1>
@@ -281,8 +446,73 @@ html = f"""<!DOCTYPE html>
 
 <footer>
   JPMS-DB v0.2 | 日本私立中学校 包括的基盤データベース | Sample 12 Schools Extended Report | 2026-05-05<br>
-  約9万字 / 関係者発言280件超 / 出典はWeb公開情報のみ・口コミは傾向集約のみ・未成年情報は匿名化
+  約11万字 / 関係者発言236件超 / 出典はWeb公開情報のみ・口コミは傾向集約のみ・未成年情報は匿名化
 </footer>
+
+<script>
+// === Sidebar toggle (mobile) ===
+function toggleSidebar(){{
+  document.getElementById('sidebar').classList.toggle('open');
+  document.querySelector('.menu-overlay').classList.toggle('open');
+}}
+function closeSidebar(){{
+  document.getElementById('sidebar').classList.remove('open');
+  document.querySelector('.menu-overlay').classList.remove('open');
+}}
+// サイドバーのリンクをクリックしたら自動で閉じる（モバイル）
+document.querySelectorAll('.sidebar a[href^="#"]').forEach(a => {{
+  a.addEventListener('click', () => {{
+    if(window.innerWidth <= 980) closeSidebar();
+  }});
+}});
+
+// === IntersectionObserver: 現在のセクションをハイライト ===
+const sectionEls = document.querySelectorAll('main section[id], main > section[id]');
+const sidebarLinks = document.querySelectorAll('.sidebar ol a');
+const linkMap = {{}};
+sidebarLinks.forEach(a => {{
+  const href = a.getAttribute('href');
+  if(href && href.startsWith('#')) linkMap[href.slice(1)] = a;
+}});
+
+const observer = new IntersectionObserver(entries => {{
+  // 表示中のセクションを特定（最も上にあるもの）
+  let topId = null;
+  let topY = Infinity;
+  entries.forEach(entry => {{
+    if(entry.isIntersecting){{
+      const y = entry.boundingClientRect.top;
+      if(y < topY){{
+        topY = y;
+        topId = entry.target.id;
+      }}
+    }}
+  }});
+  if(topId && linkMap[topId]){{
+    sidebarLinks.forEach(a => a.classList.remove('active'));
+    linkMap[topId].classList.add('active');
+    // サイドバー内でアクティブ項目が見えるようスクロール
+    const link = linkMap[topId];
+    const sidebar = document.getElementById('sidebar');
+    const linkRect = link.getBoundingClientRect();
+    const sbRect = sidebar.getBoundingClientRect();
+    if(linkRect.top < sbRect.top + 80 || linkRect.bottom > sbRect.bottom - 40){{
+      link.scrollIntoView({{block: 'nearest', behavior: 'smooth'}});
+    }}
+  }}
+}}, {{
+  rootMargin: '-20% 0px -60% 0px',
+  threshold: [0, 0.1, 0.5]
+}});
+
+sectionEls.forEach(s => {{
+  // 主要セクションのみ監視（s-XXX または overview/conclusion）
+  const id = s.id;
+  if(id && (id.startsWith('s-') || id === 'overview' || id === 'conclusion')) {{
+    observer.observe(s);
+  }}
+}});
+</script>
 </body>
 </html>
 """
