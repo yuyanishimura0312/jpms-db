@@ -3,13 +3,13 @@
   "team": "B-2",
   "task": "student/alumni voices extraction",
   "completed": 115,
-  "items": 20,
-  "ts": "2026-05-05T04:33:39.793683+00:00",
+  "items": 10,
+  "ts": "2026-05-05T04:37:35.679052+00:00",
   "total_schools_scanned": 115,
-  "schools_with_extractions": 10,
-  "schools_without_extractions": 105,
+  "schools_with_extractions": 4,
+  "schools_without_extractions": 111,
   "max_per_school": 5,
-  "min_quote_len": 30,
+  "min_quote_len": 35,
   "max_quote_len": 300,
   "output_path": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_b2_students.jsonl",
   "rights_level": "anonymized_only",
@@ -17,6 +17,15 @@
     "未成年（中学生）情報は完全匿名化。",
     "個人名・学年は除外、speaker_attributeは generic（中学生/卒業生）。",
     "公開情報のみを対象。",
-    "ナビゲーション/著作権表示等の非実体テキストは除外。"
+    "ナビゲーション/著作権表示等の非実体テキストは除外。",
+    "校長メッセージ・教員紹介・学校PRは speaker_role=student_* から除外。",
+    "school-PR句（『〇〇学校では…』）と404/イベント告知は機械的に除外。"
+  ],
+  "data_constraints": [
+    "raw_html_cache に存在する HTML は学校トップ＋数ページのみ。",
+    "実際の在校生・卒業生インタビューは多くの場合、リンク先の別URLにあり未取得。",
+    "voice.html を持つ学校は12校、schoollife.html を持つ学校は14校のみ。",
+    "残り90+校は root.html しかなく、ナビゲーション構造のみ。",
+    "目標200-500件は、別ページ取得（Phase E延長）が必要。"
   ]
 }

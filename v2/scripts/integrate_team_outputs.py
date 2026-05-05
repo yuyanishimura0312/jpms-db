@@ -76,6 +76,39 @@ def integrate_b1(db):
     return {'name':'B-1', 'inserted':inserted, 'rejected':rejected, 'reasons':rejection_reasons}
 
 
+def integrate_b2(db):
+    """Team B-2: 在校生・卒業生声 → testimonials_v2."""
+    f = OUT_DIR / 'team_b2_students.jsonl'
+    if not f.exists():
+        return {'name':'B-2', 'status':'no_file'}
+    inserted, rejected = 0, 0
+    rejection_reasons = {}
+    with f.open() as fh:
+        for line in fh:
+            d = json.loads(line)
+            ok, reason = gate_testimonial(d)
+            if not ok:
+                rejected += 1
+                rejection_reasons[reason] = rejection_reasons.get(reason, 0) + 1
+                continue
+            sch = db.execute("SELECT 1 FROM schools_v2 WHERE id=?", (d['school_id'],)).fetchone()
+            if not sch:
+                rejected += 1
+                continue
+            db.execute("""INSERT INTO testimonials_v2
+                (school_id, speaker_role, speaker_attribute, quote_text, quote_summary, context,
+                 source_type, source_url, rights_level, retrieved_at, ethics_review_status)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
+                (d['school_id'], d.get('speaker_role','student_current'),
+                 d.get('speaker_attribute',''), d['quote_text'],
+                 d.get('quote_summary',''), d.get('context',''),
+                 'school_website', d.get('source_url'),
+                 d.get('rights_level','anonymized_only'),
+                 datetime.now().isoformat(), 'qm1_passed'))
+            inserted += 1
+    return {'name':'B-2', 'inserted':inserted, 'rejected':rejected, 'reasons':rejection_reasons}
+
+
 def integrate_b3(db):
     """Team B-3: 教員声 → testimonials_v2."""
     f = OUT_DIR / 'team_b3_teachers.jsonl'
@@ -250,6 +283,8 @@ def main():
     results = []
     print("=== Integrating Team Outputs ===\n")
     results.append(integrate_b1(db))
+    db.commit()
+    results.append(integrate_b2(db))
     db.commit()
     results.append(integrate_b3(db))
     db.commit()
