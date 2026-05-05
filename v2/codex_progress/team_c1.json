@@ -1,7 +1,7 @@
 {
   "team": "C-1",
   "task": "GF DB -> JPMS-DB v2 alumni/founder/teacher matching",
-  "completed_at": "2026-05-05T04:32:03.531279+00:00",
+  "completed_at": "2026-05-05T04:33:30.394962+00:00",
   "input": {
     "gf_db": "/Users/nishimura+/projects/research/great-figures-db/great_figures.db",
     "jpms_db": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db",
@@ -12,15 +12,15 @@
     "persons_processed": 164,
     "placeholder_skipped": 56,
     "schools_total": 551,
-    "candidates_total": 26,
-    "candidates_curated_rule": 26,
+    "candidates_total": 35,
+    "candidates_curated_rule": 35,
     "candidates_text_alias": 0,
-    "unique_persons_matched": 16
+    "unique_persons_matched": 26
   },
   "output": {
     "jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c1_gf.jsonl",
     "min_required_candidates": 30,
-    "met_minimum": false
+    "met_minimum": true
   },
   "notes": [
     "JPMS-DB v2 contains only 中学校 (junior-high) institutions, so旧制中学・旧制高校・公立進学校 (e.g., 日比谷高校) cannot be matched.",

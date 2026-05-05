@@ -1,0 +1,965 @@
+{
+  "reviewed_files": [
+    {
+      "file": "team_b1_principal.jsonl",
+      "table_type": "testimonials",
+      "total": 47,
+      "approved": 22,
+      "flagged": 25,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": [
+        {
+          "record_index": 6,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 11,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 12,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 13,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 14,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 15,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 16,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 17,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 18,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 22,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 23,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 24,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 25,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 26,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 27,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 31,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 32,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 33,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 36,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 38,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 39,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 40,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 41,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 42,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 43,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "team_b2_students.jsonl",
+      "table_type": "testimonials",
+      "total": 19,
+      "approved": 19,
+      "flagged": 0,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": []
+    },
+    {
+      "file": "team_b3_teachers.jsonl",
+      "table_type": "testimonials",
+      "total": 94,
+      "approved": 94,
+      "flagged": 0,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": []
+    },
+    {
+      "file": "team_b4_curriculum.jsonl",
+      "table_type": "unknown",
+      "total": 349,
+      "approved": 349,
+      "flagged": 0,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": []
+    },
+    {
+      "file": "team_b4_events.jsonl",
+      "table_type": "unknown",
+      "total": 889,
+      "approved": 889,
+      "flagged": 0,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": []
+    },
+    {
+      "file": "team_c1_gf.jsonl",
+      "table_type": "alumni",
+      "total": 18,
+      "approved": 18,
+      "flagged": 0,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": []
+    },
+    {
+      "file": "team_d1_stats.jsonl",
+      "table_type": "unknown",
+      "total": 104,
+      "approved": 104,
+      "flagged": 0,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": []
+    },
+    {
+      "file": "team_e1_family.jsonl",
+      "table_type": "alumni",
+      "total": 106,
+      "approved": 59,
+      "flagged": 47,
+      "rejected": 0,
+      "parse_errors": [],
+      "issues": [
+        {
+          "record_index": 12,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 13,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 14,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 15,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 16,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 17,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 18,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 19,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 20,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 21,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 32,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 33,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 34,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 35,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 36,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 37,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 40,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 41,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 42,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 52,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 54,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 55,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 57,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 58,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 59,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 60,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 61,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 62,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 63,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 64,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 65,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 66,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 67,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 68,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 69,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 70,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 71,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 72,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 77,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 82,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 88,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 89,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 96,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 97,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 98,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 99,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 103,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "team_sample_qm1_test.jsonl",
+      "table_type": "testimonials",
+      "total": 8,
+      "approved": 2,
+      "flagged": 5,
+      "rejected": 1,
+      "parse_errors": [],
+      "issues": [
+        {
+          "record_index": 1,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "quote_length",
+              "severity": "medium",
+              "message": "quote_text 310字 > 300字"
+            }
+          ]
+        },
+        {
+          "record_index": 2,
+          "status": "rejected",
+          "issues": [
+            {
+              "check": "personal_info_minor_name",
+              "severity": "critical",
+              "message": "未成年に氏名パターン: ['田中 花子']"
+            }
+          ]
+        },
+        {
+          "record_index": 3,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "rights_level_missing",
+              "severity": "high",
+              "message": "rights_level 未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 4,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "source_missing",
+              "severity": "high",
+              "message": "出典未設定"
+            }
+          ]
+        },
+        {
+          "record_index": 5,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "copyright_non_official",
+              "severity": "high",
+              "message": "非公式ソース: https://ameblo.jp/some-parent/entry-12345.html"
+            }
+          ]
+        },
+        {
+          "record_index": 6,
+          "status": "flagged",
+          "issues": [
+            {
+              "check": "rights_level_invalid",
+              "severity": "medium",
+              "message": "rights_level 'public_domain' が規定外"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 1634,
+    "approved": 1556,
+    "flagged": 77,
+    "rejected": 1,
+    "approved_rate": 0.9523,
+    "input_dir": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output",
+    "sample_data_used": true
+  },
+  "ts": "2026-05-05T04:29:46.034235+00:00"
+}
