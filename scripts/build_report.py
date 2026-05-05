@@ -6,21 +6,23 @@ import re
 ROOT = Path("/Users/nishimura+/projects/research/jpms-db")
 REPORTS = ROOT / "reports"
 
-# 表示順（栄光が第一志望のため概要直後に配置）
+# 表示順（聖光が第一志望のため概要直後に配置）
+# 確定検討10校（聖光・栄光・浅野＝神奈川男子御三家を先に、その後カトリック→東京有名校→灘）
+# 候補2校（東京農大第一・渋渋）は結語の前に
 ARTICLE_ORDER = [
     ("overview", "概要編"),
+    ("seiko", "聖光学院（第一志望）"),
     ("eiko", "栄光学園"),
+    ("asano", "浅野"),
     ("salesio", "サレジオ学院"),
     ("kaijo", "海城"),
     ("keio", "慶應義塾中等部"),
-    ("asano", "浅野"),
     ("azabu", "麻布"),
     ("komaba", "駒場東邦"),
     ("kaisei", "開成"),
-    ("seiko", "聖光学院"),
-    ("nodai", "東京農大第一"),
-    ("shibushibu", "渋谷教育学園渋谷"),
     ("nada", "灘"),
+    ("nodai", "東京農大第一（候補）"),
+    ("shibushibu", "渋谷教育学園渋谷（候補）"),
     ("conclusion", "結語"),
 ]
 
@@ -29,8 +31,8 @@ def read_section(key):
     if not p.exists():
         return f"<!-- missing: {key} -->"
     text = p.read_text(encoding="utf-8")
-    # <section>～</section>を抽出
-    m = re.search(r"<section[^>]*>.*?</section>", text, re.DOTALL)
+    # <section>～</section>を抽出（greedy版で sub-section 含む全体取得）
+    m = re.search(r"<section[^>]*>.*</section>", text, re.DOTALL)
     if m:
         return m.group(0)
     # sectionタグがない場合は本文丸ごと
