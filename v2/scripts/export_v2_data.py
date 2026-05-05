@@ -52,6 +52,23 @@ def main():
         'family_relation_records': safe_count("SELECT COUNT(*) FROM school_family_relation"),
     }
 
+    # Alumni TOP schools
+    out['alumni_top_schools'] = []
+    try:
+        for r in db.execute("""SELECT s.name_ja, COUNT(*) AS n FROM alumni_career a
+            JOIN schools_v2 s ON s.id=a.school_id
+            GROUP BY a.school_id ORDER BY n DESC LIMIT 15""").fetchall():
+            out['alumni_top_schools'].append({'name': r[0], 'count': r[1]})
+    except: pass
+
+    # Alumni by category
+    out['alumni_by_category'] = {}
+    try:
+        for r in db.execute("""SELECT career_field, COUNT(*) FROM alumni_career
+            GROUP BY career_field ORDER BY COUNT(*) DESC""").fetchall():
+            out['alumni_by_category'][r[0]] = r[1]
+    except: pass
+
     # Schools
     for r in db.execute("""SELECT id, legacy_id, name_ja, name_kana, establishment_year,
                                   school_corporation, religious_affiliation, gender_type,

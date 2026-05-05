@@ -1,15 +1,233 @@
 {
   "started_at": "2026-05-05T13:30:42",
   "schools_total": 30,
-  "schools_done": 1,
-  "records_emitted": 20,
-  "requests_made": 26,
+  "schools_done": 30,
+  "records_emitted": 281,
+  "requests_made": 543,
   "per_school": {
     "jpms_s_0001": {
       "name": "開成中学校",
       "persons_checked": 25,
       "persons_matched": 20,
       "used_title": "開成中学校・高等学校の人物一覧"
+    },
+    "jpms_s_0002": {
+      "name": "麻布中学校",
+      "persons_checked": 25,
+      "persons_matched": 25,
+      "used_title": "麻布中学校・高等学校の人物一覧"
+    },
+    "jpms_s_0013": {
+      "name": "暁星中学校",
+      "persons_checked": 7,
+      "persons_matched": 7,
+      "used_title": "暁星中学校・高等学校"
+    },
+    "jpms_s_0023": {
+      "name": "慶應義塾中等部",
+      "persons_checked": 25,
+      "persons_matched": 13,
+      "used_title": "慶應義塾中等部"
+    },
+    "jpms_s_0025": {
+      "name": "芝中学校",
+      "persons_checked": 24,
+      "persons_matched": 21,
+      "used_title": "芝中学校・高等学校"
+    },
+    "jpms_s_0034": {
+      "name": "海城中学校",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "海城中学校・高等学校",
+        "海城中学校",
+        "海城"
+      ]
+    },
+    "jpms_s_0039": {
+      "name": "早稲田中学校",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "早稲田中学校・高等学校",
+        "早稲田中学校",
+        "早稲田"
+      ]
+    },
+    "jpms_s_0040": {
+      "name": "青山学院中等部",
+      "persons_checked": 25,
+      "persons_matched": 6,
+      "used_title": "青山学院中等部"
+    },
+    "jpms_s_0062": {
+      "name": "駒場東邦中学校",
+      "persons_checked": 24,
+      "persons_matched": 7,
+      "used_title": "駒場東邦中学校・高等学校"
+    },
+    "jpms_s_0063": {
+      "name": "成城学園中学校",
+      "persons_checked": 11,
+      "persons_matched": 11,
+      "used_title": "成城学園中学校高等学校"
+    },
+    "jpms_s_0067": {
+      "name": "攻玉社中学校",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "攻玉社中学校・高等学校",
+        "攻玉社中学校",
+        "攻玉社"
+      ]
+    },
+    "jpms_s_0122": {
+      "name": "浅野中学校",
+      "persons_checked": 24,
+      "persons_matched": 13,
+      "used_title": "浅野中学校・高等学校"
+    },
+    "jpms_s_0133": {
+      "name": "慶應義塾普通部",
+      "persons_checked": 25,
+      "persons_matched": 24,
+      "used_title": "慶應義塾普通部"
+    },
+    "jpms_s_0401": {
+      "name": "本郷中学校",
+      "persons_checked": 24,
+      "persons_matched": 5,
+      "used_title": "本郷中学校・高等学校"
+    },
+    "jpms_s_0402": {
+      "name": "立教池袋中学校",
+      "persons_checked": 23,
+      "persons_matched": 17,
+      "used_title": "立教池袋中学校・高等学校"
+    },
+    "jpms_s_0404": {
+      "name": "学習院中等科",
+      "persons_checked": 25,
+      "persons_matched": 3,
+      "used_title": "学習院中等科"
+    },
+    "jpms_s_0405": {
+      "name": "巣鴨中学校",
+      "persons_checked": 25,
+      "persons_matched": 5,
+      "used_title": "巣鴨中学校・高等学校"
+    },
+    "jpms_s_0417": {
+      "name": "城北中学校",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "城北中学校・高等学校 (東京都)",
+        "城北中学校・高等学校",
+        "城北中学校",
+        "城北"
+      ]
+    },
+    "jpms_s_0450": {
+      "name": "成蹊中学校",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "成蹊中学校・高等学校",
+        "成蹊中学校",
+        "成蹊"
+      ]
+    },
+    "jpms_s_0457": {
+      "name": "明治大学付属明治中学校",
+      "persons_checked": 24,
+      "persons_matched": 18,
+      "used_title": "明治大学付属明治高等学校・中学校"
+    },
+    "jpms_s_0472": {
+      "name": "早稲田実業学校中等部",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "早稲田実業学校",
+        "早稲田実業学校中等部・高等部",
+        "早稲田実業学校中等部",
+        "早稲田実業学校中等部中学校・高等学校"
+      ]
+    },
+    "jpms_s_0473": {
+      "name": "中央大学附属中学校",
+      "persons_checked": 24,
+      "persons_matched": 12,
+      "used_title": "中央大学附属中学校・高等学校"
+    },
+    "jpms_s_0479": {
+      "name": "桐朋中学校",
+      "persons_checked": 24,
+      "persons_matched": 23,
+      "used_title": "桐朋中学校・高等学校"
+    },
+    "jpms_s_0600": {
+      "name": "大阪星光学院中学校",
+      "persons_checked": 18,
+      "persons_matched": 15,
+      "used_title": "大阪星光学院中学校・高等学校"
+    },
+    "jpms_s_0601": {
+      "name": "清風南海中学校",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "清風南海中学校・高等学校",
+        "清風南海中学校",
+        "清風南海"
+      ]
+    },
+    "jpms_s_0700": {
+      "name": "東海中学校",
+      "persons_checked": 0,
+      "persons_matched": 0,
+      "note": "no alumni section",
+      "tried": [
+        "東海中学校・高等学校 (愛知県)",
+        "東海中学校・高等学校",
+        "東海中学校",
+        "東海"
+      ]
+    },
+    "jpms_s_0701": {
+      "name": "南山中学校男子部",
+      "persons_checked": 22,
+      "persons_matched": 9,
+      "used_title": "南山中学校・高等学校男子部"
+    },
+    "jpms_s_0703": {
+      "name": "滝中学校",
+      "persons_checked": 23,
+      "persons_matched": 3,
+      "used_title": "滝中学校・高等学校"
+    },
+    "jpms_s_p3_001": {
+      "name": "栄光学園中学校",
+      "persons_checked": 23,
+      "persons_matched": 12,
+      "used_title": "栄光学園中学校・高等学校"
+    },
+    "jpms_s_p3_003": {
+      "name": "聖光学院中学校",
+      "persons_checked": 23,
+      "persons_matched": 12,
+      "used_title": "聖光学院中学校・高等学校"
     }
-  }
+  },
+  "finished_at": "2026-05-05T14:25:49"
 }

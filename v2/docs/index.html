@@ -105,6 +105,7 @@
     <a href="#outcomes">成果次元100+</a>
     <a href="#era">時代変遷</a>
     <a href="#culture">学校文化10次元</a>
+    <a href="#alumni">卒業生活躍</a>
     <a href="#schools">全528校</a>
     <a href="#methodology">方法論</a>
     <a href="../dashboards/index.html">v1ダッシュボード</a>
@@ -251,6 +252,31 @@
       <h4>主要校の文化プロファイル比較</h4>
       <div class="chart-container"><canvas id="cultureRadar"></canvas></div>
       <p style="font-size:12px;color:var(--ink-soft);margin-top:8px">5校のレーダーチャート。学校選択時の参考に。</p>
+    </div>
+  </div>
+</section>
+
+<section id="alumni">
+  <h3>卒業生活躍データ — Layer 3 alumni_career</h3>
+  <p style="color:var(--ink-soft);max-width:880px;margin-bottom:16px">
+    Wikipedia ja・GF DB（歴史構造DB 9,178人物）から、私立中学校の著名な卒業生・創立者・関係者を抽出して紐付けました。
+    本レイヤーは Layer 3「成果次元」の実証部分で、各校が育てた人材の領域分布を示します。
+    倫理規律: 公開人物のみ（Wikipedia 立項基準）、privacy_status='public_record'、anonymous_id ハッシュ化。
+  </p>
+  <div class="grid-2">
+    <div class="card">
+      <h4>TOP15 学校（紐付け人数）</h4>
+      <table id="alumni-top-table">
+        <thead><tr><th>学校</th><th class="right">人数</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h4>領域別分布</h4>
+      <div class="chart-container short"><canvas id="alumniCategoryChart"></canvas></div>
+      <p class="footnote" style="font-size:12px;color:var(--ink-mute);margin-top:8px">
+        academic（学者・研究者）が中核、writer・cultural・artist・statesman が続く。Team C-3（起業家・経営者）追加投入予定。
+      </p>
     </div>
   </div>
 </section>
@@ -600,6 +626,33 @@ function renderSchools() {
 }
 [search, filterPref, filterGender, filterReligion].forEach(e => e.addEventListener('input', renderSchools));
 renderSchools();
+
+// ===== Alumni TOP schools =====
+const alumniTop = DATA.alumni_top_schools || [];
+if (alumniTop.length > 0) {
+  document.querySelector('#alumni-top-table tbody').innerHTML = alumniTop.map(a =>
+    `<tr><td><strong>${a.name}</strong></td><td class="right">${a.count}</td></tr>`
+  ).join('');
+}
+
+// ===== Alumni by category chart =====
+const alumniCat = DATA.alumni_by_category || {};
+if (Object.keys(alumniCat).length > 0) {
+  const cats = Object.keys(alumniCat);
+  const counts = Object.values(alumniCat);
+  new Chart(document.getElementById('alumniCategoryChart'), {
+    type: 'bar',
+    data: {
+      labels: cats,
+      datasets: [{label:'人数', data: counts, backgroundColor: RED}]
+    },
+    options: {
+      indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:GRID}}, y:{grid:{color:GRID}}}
+    }
+  });
+}
 </script>
 
 </body>
