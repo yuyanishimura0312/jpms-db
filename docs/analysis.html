@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMS-DB | 全525校 成果次元・関係性 深掘り解析</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="school_profiles.js"></script>
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --akashiro-red-light:#E63D2C;
+    --bg:#FFFFFF;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --line:#E5E5E5;
+    --bg-soft:#FAFAFA;
+    --c-cognitive:#1B5E9A;
+    --c-social:#C7438C;
+    --c-values:#7A4F1C;
+    --c-agency:#1F8A4D;
+    --c-wellbeing:#9056C0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px}
+  header{border-bottom:3px solid var(--akashiro-red);padding:32px 48px 24px;background:var(--bg);position:sticky;top:0;z-index:10}
+  .brand{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .brand h1{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;letter-spacing:0.05em;color:var(--akashiro-red)}
+  .brand .sub{font-size:13px;color:var(--ink-soft);font-weight:400}
+  .back{margin-left:auto;color:var(--ink-soft);text-decoration:none;font-size:13px;border:1px solid var(--line);padding:8px 16px}
+  .back:hover{color:var(--akashiro-red);border-color:var(--akashiro-red)}
+  nav{margin-top:14px;display:flex;gap:24px;font-size:13px;flex-wrap:wrap}
+  nav a{color:var(--ink-soft);text-decoration:none;padding-bottom:4px}
+  nav a:hover{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  main{max-width:1400px;margin:0 auto;padding:32px 48px 80px}
+  .hero{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+  .hero h2{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;line-height:1.4;margin-bottom:16px}
+  .hero p{color:var(--ink-soft);max-width:880px;margin-bottom:8px}
+  .notice{background:#FFF7F5;border-left:4px solid var(--akashiro-red);padding:16px 20px;margin:24px 0;font-size:13.5px;color:var(--ink-soft)}
+  .notice strong{color:var(--ink)}
+  section{margin-bottom:64px}
+  h3{font-family:'Noto Serif JP',serif;font-size:22px;border-left:5px solid var(--akashiro-red);padding-left:16px;margin-bottom:24px}
+  h4{font-size:15px;color:var(--akashiro-red);margin-bottom:12px;font-weight:700;letter-spacing:0.04em}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:880px){.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}}
+  .card{background:var(--bg);border:1px solid var(--line);padding:24px}
+  .card-soft{background:var(--bg-soft);border:1px solid var(--line);padding:20px}
+  .chart-container{position:relative;height:360px;margin-top:8px}
+  .cluster-card{padding:18px;border:1px solid var(--line);background:var(--bg);border-top:4px solid var(--ink)}
+  .cluster-card.cognitive{border-top-color:var(--c-cognitive)}
+  .cluster-card.social_emotional{border-top-color:var(--c-social)}
+  .cluster-card.values_morals{border-top-color:var(--c-values)}
+  .cluster-card.agency_civic{border-top-color:var(--c-agency)}
+  .cluster-card.wellbeing{border-top-color:var(--c-wellbeing)}
+  .cluster-card h4{margin-top:0}
+  .cluster-card .count{font-family:'Noto Serif JP',serif;font-size:28px;color:var(--ink);font-weight:700}
+  .cluster-card .count small{font-size:13px;color:var(--ink-soft);font-weight:400}
+  .cluster-card p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--bg-soft);font-weight:500;color:var(--ink-soft);font-size:12px;letter-spacing:0.02em}
+  td.right,th.right{text-align:right}
+  .filter-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;align-items:center;padding:16px;background:var(--bg-soft);border:1px solid var(--line)}
+  .filter-bar input,.filter-bar select{padding:8px 12px;border:1px solid var(--line);background:var(--bg);font-family:inherit;font-size:13px}
+  .filter-bar input{flex:1;min-width:200px}
+  .badge{display:inline-block;padding:2px 8px;font-size:11px;background:var(--bg-soft);border:1px solid var(--line);margin-right:4px;white-space:nowrap}
+  .badge.boys{background:#E0E8FF}
+  .badge.girls{background:#FFE0F0}
+  .badge.coed{background:#E8F0E0}
+  .badge.cognitive{background:#E0EAF5;color:var(--c-cognitive)}
+  .badge.social_emotional{background:#FBE0EE;color:var(--c-social)}
+  .badge.values_morals{background:#F4E8D4;color:var(--c-values)}
+  .badge.agency_civic{background:#DDF1E2;color:var(--c-agency)}
+  .badge.wellbeing{background:#EEDDF8;color:var(--c-wellbeing)}
+  #table-wrap{max-height:560px;overflow-y:auto;border:1px solid var(--line)}
+  #table-wrap thead th{position:sticky;top:0;background:var(--bg-soft);z-index:1}
+  .matrix{display:grid;grid-template-columns:120px repeat(7,1fr);gap:1px;background:var(--line);border:1px solid var(--line);font-size:12px}
+  .matrix > div{background:var(--bg);padding:8px 6px;text-align:center;min-height:40px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+  .matrix .head{background:var(--bg-soft);font-weight:500;color:var(--ink-soft);font-size:11px;letter-spacing:0.02em}
+  .matrix .row-head{background:var(--bg-soft);font-weight:500;color:var(--ink-soft);font-size:11px;letter-spacing:0.02em}
+  .matrix .cell .n{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--akashiro-red);font-weight:700}
+  .matrix .cell.empty{background:#fafafa;color:#bbb}
+  .relmap{position:relative;height:480px;background:var(--bg-soft);border:1px solid var(--line);overflow:hidden}
+  .relmap svg{width:100%;height:100%}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--ink-soft);margin-top:12px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .footnote{font-size:12px;color:var(--ink-soft);margin-top:8px}
+  footer{border-top:1px solid var(--line);padding:24px 48px;color:var(--ink-soft);font-size:12px;text-align:center}
+  .arrow-flow{font-size:13px;line-height:2;color:var(--ink-soft)}
+  .arrow-flow strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>JPMS-DB</h1>
+    <span class="sub">深掘り解析: 全525校の成果次元・関係性マッピング</span>
+    <a href="index.html" class="back">← ダッシュボードに戻る</a>
+  </div>
+  <nav>
+    <a href="#outcome-frame">成果次元の枠組み</a>
+    <a href="#outcome-map">出口ベースのマッピング</a>
+    <a href="#process-map">プロセスベースの構造</a>
+    <a href="#school-table">全525校 一覧</a>
+    <a href="#methodology">注意事項</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <h2>全525校を「何を育てるか」と<br>「どう育てるか」の二層で読み解く</h2>
+  <p>
+    本ページは、JPMS-DBに収録された全525校を、<strong>成果次元（出口ベース：何を育てる学校か）</strong>と
+    <strong>プロセス次元（プロセスベース：どう育てる学校か）</strong>の二つの軸で位置づけ、関係性を可視化する深掘り解析ページです。
+  </p>
+  <p>
+    成果次元は OECD Learning Compass 2030・CASEL・PERMA・PISA Wellbeing・P21・日本独自カテゴリ（道徳・地域貢献・集団協調・社会的自立）の
+    25項目を、5つの大クラスタ — <strong>認知・学術／社会情動／価値観・道徳／主体性・市民性／ウェルビーイング</strong> — に集約して用います。
+    プロセス次元は宗教系列・性別構成・接続形態（付属／完全一貫／独立／連携）の3軸で構成されます。
+  </p>
+  <div class="notice">
+    <strong>本ページの位置づけ</strong>。各校の成果プロファイルは、現時点で取得済みの構造データ（宗教系列・性別・接続形態・建学理念テキスト）から
+    教育学文献の知見を踏まえて<strong>ヒューリスティックに推定</strong>したものです。実際の教育実態の評定ではなく、
+    全体構造を俯瞰するための「読み解きの補助線」としてご活用ください。個別校の精緻な特性把握には別途、現地ヒアリング・パンフ精読が必要です。
+  </div>
+</section>
+
+<section id="outcome-frame">
+  <h3>1. 成果次元の枠組み — 25項目を6フレームワーク × 5クラスタで整理</h3>
+  <p style="color:var(--ink-soft);margin-bottom:24px">
+    JPMS-DBが用いる成果次元は国際的に確立された6つのフレームワークから構成されます。これらを「出口」（卒業時に育っていることが期待される姿）の観点から
+    5つの大クラスタに集約することで、学校間の比較が可能な座標系をつくります。
+  </p>
+
+  <div class="grid-3">
+    <div class="cluster-card cognitive">
+      <h4>認知・学術</h4>
+      <div class="count">3<small> / 25項目</small></div>
+      <p>批判的思考（P21）／創造性・革新性（P21）／学際的知識（OECD）。<br>知識基盤と思考力。</p>
+    </div>
+    <div class="cluster-card social_emotional">
+      <h4>社会情動</h4>
+      <div class="count">7<small> / 25項目</small></div>
+      <p>CASEL5要素（自己認識・自己管理・社会的認識・対人関係・責任ある意思決定）／PERMA人間関係／PISA友人関係。<br>自他の感情と関係を扱う力。</p>
+    </div>
+    <div class="cluster-card values_morals">
+      <h4>価値観・道徳</h4>
+      <div class="count">4<small> / 25項目</small></div>
+      <p>OECD価値観／道徳性・倫理観／地域貢献意識／集団協調性。<br>判断と行動の規範。</p>
+    </div>
+    <div class="cluster-card agency_civic">
+      <h4>主体性・市民性</h4>
+      <div class="count">5<small> / 25項目</small></div>
+      <p>OECD変革コンピテンシー／OECDスキル統合／OECD学びへの態度／社会的自立性／コミュニケーション・協働（P21）。<br>自分で動かす力と公への参与。</p>
+    </div>
+    <div class="cluster-card wellbeing">
+      <h4>ウェルビーイング</h4>
+      <div class="count">6<small> / 25項目</small></div>
+      <p>PERMA5要素（ポジティブ感情・エンゲージメント・意味・達成・人間関係）／PISA学校環境ウェルビーイング／PISA達成意欲。<br>幸福感と充実の質。</p>
+    </div>
+  </div>
+
+  <div class="card-soft" style="margin-top:32px">
+    <h4 style="color:var(--ink)">フレームワーク内訳</h4>
+    <div class="grid-2" style="gap:12px;font-size:13px">
+      <div>
+        <strong>OECD Learning Compass 2030</strong> (5項目)<br>
+        <span style="color:var(--ink-soft)">学際的知識／スキル／学びへの態度／価値観／変革コンピテンシー</span>
+      </div>
+      <div>
+        <strong>CASEL（社会情動的学習）</strong> (5項目)<br>
+        <span style="color:var(--ink-soft)">自己認識／自己管理／社会的認識／対人関係スキル／責任ある意思決定</span>
+      </div>
+      <div>
+        <strong>PERMA（Seligmanウェルビーイング）</strong> (5項目)<br>
+        <span style="color:var(--ink-soft)">ポジティブ感情／エンゲージメント／人間関係／意味／達成</span>
+      </div>
+      <div>
+        <strong>P21（21st Century Skills）</strong> (3項目)<br>
+        <span style="color:var(--ink-soft)">批判的思考／コミュニケーション・協働／創造性・革新性</span>
+      </div>
+      <div>
+        <strong>PISA Wellbeing</strong> (3項目)<br>
+        <span style="color:var(--ink-soft)">学校環境ウェルビーイング／友人関係／達成意欲・学業期待</span>
+      </div>
+      <div>
+        <strong>日本独自カテゴリ</strong> (4項目)<br>
+        <span style="color:var(--ink-soft)">社会的自立性／地域貢献意識／道徳性・倫理観／集団協調性</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="outcome-map">
+  <h3>2. 出口ベースのマッピング — 5クラスタ別の主要傾向</h3>
+  <p style="color:var(--ink-soft);margin-bottom:16px">
+    525校それぞれについて、構造特徴（宗教系列・性別・接続形態・理念テキスト）から各クラスタの強調度を推定し、最も強調度の高いクラスタを「主軸」、次点を「副軸」として位置づけました。
+    全体としては<strong>認知・学術を主軸とする学校が最も多く、次いで社会情動、価値観・道徳、主体性・市民性</strong>の順になっています。
+  </p>
+
+  <div class="grid-3" id="primary-counts" style="margin-bottom:32px"></div>
+
+  <h4 style="color:var(--ink);margin-top:24px;font-size:14px">出口クラスタ × 学校型 の分布（主軸クラスタ別、性別×宗教の組み合わせ）</h4>
+  <div class="card" style="margin-top:8px">
+    <div class="chart-container" style="height:420px"><canvas id="scatter"></canvas></div>
+    <p class="footnote">
+      横軸: 認知・学術スコア（高いほど学術強調）／縦軸: 社会情動スコア（高いほど社会情動強調）。点の色は主軸クラスタ。各校をプロットしています。
+    </p>
+  </div>
+
+  <div class="grid-2" style="margin-top:32px">
+    <div class="card">
+      <h4>クラスタ別 構成校の特徴</h4>
+      <table id="cluster-traits"></table>
+    </div>
+    <div class="card">
+      <h4>主軸×副軸の組み合わせ TOP10</h4>
+      <table id="combo-table">
+        <thead><tr><th>主軸 → 副軸</th><th class="right">校数</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="process-map">
+  <h3>3. プロセスベースの構造 — 宗教系列 × 性別構成 のマトリクス</h3>
+  <p style="color:var(--ink-soft);margin-bottom:16px">
+    プロセス次元は「どう育てるか」を決定する基盤です。本DBが収録する525校の組み合わせ分布を以下のマトリクスで示します。
+    色の濃さは校数を表します。<strong>無宗教共学</strong>が圧倒的多数派（約36%）ですが、<strong>カトリック女子校（26校）</strong>や
+    <strong>プロテスタント女子校（14校）</strong>のような少数派が独自の出口プロファイルを保っています。
+  </p>
+
+  <div class="card">
+    <h4>宗教系列 × 性別構成（校数）</h4>
+    <div class="matrix" id="process-matrix"></div>
+    <p class="footnote">出典: jpms.db / 校数=525</p>
+  </div>
+
+  <div class="grid-2" style="margin-top:32px">
+    <div class="card">
+      <h4>接続形態の分布（ "どこに接続される教育か" ）</h4>
+      <ul style="font-size:14px;line-height:2;color:var(--ink-soft);padding-left:20px">
+        <li><strong>付属型 (attached) — 421校 / 80.2%</strong>：高校・大学等への内部進学経路を持つ。学術連続性と進路安定性が特徴。</li>
+        <li><strong>完全一貫 (full) — 58校 / 11.0%</strong>：中高6年間（または中高大）が一体で運営される。カリキュラムの自由度が高い。</li>
+        <li><strong>独立 (none) — 37校 / 7.0%</strong>：単独中学校。自校文化の純度が高く、進路は外部高校へ。</li>
+        <li><strong>連携 (linked) — 9校 / 1.7%</strong>：他校との緩やかな接続。中高一貫実質運営の場合も多い。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>創立年代の分布（学校文化の堆積）</h4>
+      <div class="chart-container" style="height:280px"><canvas id="yearChart"></canvas></div>
+      <p class="footnote">明治期創立（1870-1900）の老舗校から、戦後・高度成長期、そして2000年代以降の新興校まで、複層の学校文化が併存しています。</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:32px">
+    <h4>出口×プロセスの関係図 — どの組み合わせが何を育てる傾向にあるか</h4>
+    <div class="relmap">
+      <svg viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid meet">
+        <!-- Process side (left) -->
+        <g font-family="Noto Sans JP" font-size="13">
+          <text x="200" y="40" text-anchor="middle" font-weight="700" fill="#0E0E0E">プロセス側（どう育てる）</text>
+          <rect x="60" y="60" width="280" height="50" fill="#fff" stroke="#999"/>
+          <text x="200" y="92" text-anchor="middle">無宗教 × 共学 × 付属（187校）</text>
+
+          <rect x="60" y="120" width="280" height="50" fill="#fff" stroke="#999"/>
+          <text x="200" y="152" text-anchor="middle">無宗教 × 女子 × 付属（56校）</text>
+
+          <rect x="60" y="180" width="280" height="50" fill="#fff" stroke="#999"/>
+          <text x="200" y="212" text-anchor="middle">無宗教 × 男子 × 付属（33校）</text>
+
+          <rect x="60" y="240" width="280" height="50" fill="#fff" stroke="#999"/>
+          <text x="200" y="272" text-anchor="middle">カトリック × 女子（26校）</text>
+
+          <rect x="60" y="300" width="280" height="50" fill="#fff" stroke="#999"/>
+          <text x="200" y="332" text-anchor="middle">プロテスタント × 女子（14校）</text>
+
+          <rect x="60" y="360" width="280" height="50" fill="#fff" stroke="#999"/>
+          <text x="200" y="392" text-anchor="middle">仏教系（27校合計）</text>
+        </g>
+
+        <!-- Outcome side (right) -->
+        <g font-family="Noto Sans JP" font-size="13">
+          <text x="1000" y="40" text-anchor="middle" font-weight="700" fill="#0E0E0E">出口側（何を育てる）</text>
+          <rect x="860" y="60"  width="280" height="50" fill="#E0EAF5" stroke="#1B5E9A"/>
+          <text x="1000" y="92" text-anchor="middle" fill="#1B5E9A">認知・学術</text>
+
+          <rect x="860" y="120" width="280" height="50" fill="#FBE0EE" stroke="#C7438C"/>
+          <text x="1000" y="152" text-anchor="middle" fill="#C7438C">社会情動</text>
+
+          <rect x="860" y="180" width="280" height="50" fill="#F4E8D4" stroke="#7A4F1C"/>
+          <text x="1000" y="212" text-anchor="middle" fill="#7A4F1C">価値観・道徳</text>
+
+          <rect x="860" y="240" width="280" height="50" fill="#DDF1E2" stroke="#1F8A4D"/>
+          <text x="1000" y="272" text-anchor="middle" fill="#1F8A4D">主体性・市民性</text>
+
+          <rect x="860" y="300" width="280" height="50" fill="#EEDDF8" stroke="#9056C0"/>
+          <text x="1000" y="332" text-anchor="middle" fill="#9056C0">ウェルビーイング</text>
+        </g>
+
+        <!-- Arrows -->
+        <g stroke-width="2" fill="none" opacity="0.7">
+          <!-- 無宗教共学付属 → 認知 -->
+          <path d="M340 85 C 600 85, 600 85, 860 85" stroke="#1B5E9A"/>
+          <!-- 無宗教女子 → 社会情動・認知 -->
+          <path d="M340 145 C 600 145, 600 145, 860 145" stroke="#C7438C"/>
+          <path d="M340 145 C 600 100, 600 100, 860 95" stroke="#1B5E9A" stroke-dasharray="4,2"/>
+          <!-- 無宗教男子 → 認知・主体性 -->
+          <path d="M340 205 C 600 145, 600 100, 860 95" stroke="#1B5E9A"/>
+          <path d="M340 205 C 600 230, 600 250, 860 265" stroke="#1F8A4D" stroke-dasharray="4,2"/>
+          <!-- カトリック女子 → 価値観・社会情動 -->
+          <path d="M340 265 C 600 230, 600 220, 860 205" stroke="#7A4F1C"/>
+          <path d="M340 265 C 600 175, 600 160, 860 145" stroke="#C7438C" stroke-dasharray="4,2"/>
+          <!-- プロテスタント女子 → 価値観・主体性 -->
+          <path d="M340 325 C 600 270, 600 240, 860 205" stroke="#7A4F1C"/>
+          <path d="M340 325 C 600 290, 600 280, 860 265" stroke="#1F8A4D" stroke-dasharray="4,2"/>
+          <!-- 仏教 → 価値観・ウェルビーイング -->
+          <path d="M340 385 C 600 330, 600 280, 860 215" stroke="#7A4F1C"/>
+          <path d="M340 385 C 600 360, 600 340, 860 325" stroke="#9056C0" stroke-dasharray="4,2"/>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><span class="legend-dot" style="background:#1B5E9A"></span>認知・学術</span>
+      <span><span class="legend-dot" style="background:#C7438C"></span>社会情動</span>
+      <span><span class="legend-dot" style="background:#7A4F1C"></span>価値観・道徳</span>
+      <span><span class="legend-dot" style="background:#1F8A4D"></span>主体性・市民性</span>
+      <span><span class="legend-dot" style="background:#9056C0"></span>ウェルビーイング</span>
+      <span style="margin-left:24px">実線: 主軸／破線: 副軸（傾向）</span>
+    </div>
+    <p class="footnote">この関係図は構造特徴を踏まえた傾向の整理であり、個別校の実態評価ではありません。</p>
+  </div>
+</section>
+
+<section id="school-table">
+  <h3>4. 全525校 一覧 — 主軸クラスタ・副軸クラスタ・原型でフィルタ</h3>
+  <div class="filter-bar">
+    <input id="search" placeholder="学校名で検索">
+    <select id="filter-primary">
+      <option value="">主軸クラスタ全て</option>
+      <option value="cognitive">認知・学術</option>
+      <option value="social_emotional">社会情動</option>
+      <option value="values_morals">価値観・道徳</option>
+      <option value="agency_civic">主体性・市民性</option>
+      <option value="wellbeing">ウェルビーイング</option>
+    </select>
+    <select id="filter-gender">
+      <option value="">性別全て</option>
+      <option value="boys">男子</option>
+      <option value="girls">女子</option>
+      <option value="coed">共学</option>
+    </select>
+    <select id="filter-religion">
+      <option value="">系列全て</option>
+      <option value="catholic">カトリック</option>
+      <option value="protestant">プロテスタント</option>
+      <option value="anglican">聖公会</option>
+      <option value="buddhist">仏教</option>
+      <option value="non_religious">無宗教</option>
+      <option value="unknown">不明</option>
+    </select>
+    <span id="result-count" style="font-size:12px;color:var(--ink-soft)"></span>
+  </div>
+  <div id="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>学校名</th>
+          <th>所在</th>
+          <th>原型</th>
+          <th>主軸</th>
+          <th>副軸</th>
+          <th class="right">認知</th>
+          <th class="right">社会情動</th>
+          <th class="right">価値観</th>
+          <th class="right">主体性</th>
+          <th class="right">ウェルビ</th>
+        </tr>
+      </thead>
+      <tbody id="schools-tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="methodology">
+  <h3>5. 注意事項と読み方の補助線</h3>
+  <div class="card">
+    <h4>本解析の方法とその限界</h4>
+    <p style="color:var(--ink-soft);margin-bottom:12px">
+      各校の成果プロファイルは、<strong>(a) 構造特徴（宗教系列・性別・接続形態）から想定される教育傾向</strong>と、
+      <strong>(b) 取得済みの建学理念・教育方針テキストに含まれるキーワード</strong>を組み合わせて、教育学文献の知見をもとに5クラスタへのウェイトとして推定したものです。
+      525校のうち建学理念テキストが取得できているのは99校（19%）であり、残る426校はプロファイル構造特徴のみからの推定になります。
+    </p>
+    <p style="color:var(--ink-soft);margin-bottom:12px">
+      したがって本ページの結果は、<strong>個別校の優劣評価でも実態認定でもなく</strong>、全体構造を俯瞰し、
+      「どのプロセス組み合わせが、文献的にどの出口を強調しやすいか」という<strong>関係性の見取り図</strong>として読まれることを意図しています。
+      個別校の実態については、Phase 3（コア19項目精査）以降の収集データ、ヒアリング、現地観察と組み合わせて検証する必要があります。
+    </p>
+    <h4 style="margin-top:20px">推定ロジックの透明化</h4>
+    <ul style="font-size:13.5px;line-height:1.9;color:var(--ink-soft);padding-left:20px">
+      <li><strong>カトリック</strong>: 価値観 +22, 社会情動 +12, ウェルビーイング +6（道徳教育・人格陶冶の伝統）</li>
+      <li><strong>プロテスタント</strong>: 価値観 +18, 主体性 +12, 社会情動 +10（自由意志と社会参与の重視）</li>
+      <li><strong>仏教</strong>: 価値観 +20, ウェルビーイング +12, 社会情動 +4（精神性と内省の伝統）</li>
+      <li><strong>無宗教</strong>: 認知 +6（学術重視の一般傾向）</li>
+      <li><strong>男子校</strong>: 認知 +10, 主体性 +8（古典的なエリート教育傾向）</li>
+      <li><strong>女子校</strong>: 社会情動 +14, ウェルビーイング +10, 価値観 +4（人間関係と内省の重視）</li>
+      <li><strong>共学</strong>: 主体性 +6, 社会情動 +4（多様性とリーダーシップ）</li>
+      <li><strong>付属・完全一貫</strong>: 認知 +6（進路継続性による学術強調）</li>
+      <li><strong>独立</strong>: 主体性 +8, 認知 +4（自校文化の強調）</li>
+      <li><strong>キーワード加点</strong>: 「自立」「批判」「友愛」「奉仕」「探究」「共感」など、各クラスタごとに6点／回</li>
+    </ul>
+    <p class="footnote" style="margin-top:16px">
+      これらの重みは教育学一般文献における傾向値を参照していますが、絶対的な真値ではありません。Phase 3以降のデータ拡充に応じて再キャリブレーションします。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>JPMS-DB v0.1 | 全525校 深掘り解析ページ | 2026-05-05生成</div>
+  <div style="margin-top:8px">
+    <a href="index.html" style="color:var(--akashiro-red);text-decoration:none">ダッシュボードへ戻る</a>
+  </div>
+</footer>
+
+<script>
+const COLORS = {
+  cognitive: '#1B5E9A',
+  social_emotional: '#C7438C',
+  values_morals: '#7A4F1C',
+  agency_civic: '#1F8A4D',
+  wellbeing: '#9056C0',
+};
+const LABEL_JA = {
+  cognitive: '認知・学術',
+  social_emotional: '社会情動',
+  values_morals: '価値観・道徳',
+  agency_civic: '主体性・市民性',
+  wellbeing: 'ウェルビーイング',
+};
+const RELIGION_JA = {
+  catholic:'カトリック', protestant:'プロテスタント', anglican:'聖公会',
+  buddhist:'仏教', non_religious:'無宗教', unknown:'不明', other:'他'
+};
+const GENDER_JA = {boys:'男子', girls:'女子', coed:'共学'};
+
+let DATA = null;
+
+async function load(){
+  if (window.JPMS_PROFILES) {
+    DATA = window.JPMS_PROFILES;
+  } else {
+    const r = await fetch('school_profiles.json');
+    DATA = await r.json();
+  }
+  renderPrimaryCounts();
+  renderClusterTraits();
+  renderComboTable();
+  renderScatter();
+  renderProcessMatrix();
+  renderYearChart();
+  renderSchoolTable();
+}
+
+function renderPrimaryCounts(){
+  const counts = {};
+  DATA.profiles.forEach(p=>{ counts[p.primary] = (counts[p.primary]||0)+1; });
+  const order = ['cognitive','social_emotional','values_morals','agency_civic','wellbeing'];
+  const total = DATA.profiles.length;
+  const html = order.map(k=>{
+    const c = counts[k]||0;
+    const pct = (c*100/total).toFixed(1);
+    return `<div class="cluster-card ${k}">
+      <h4>${LABEL_JA[k]}</h4>
+      <div class="count">${c}<small> 校 / ${pct}%</small></div>
+    </div>`;
+  }).join('');
+  document.getElementById('primary-counts').innerHTML = html;
+}
+
+function renderClusterTraits(){
+  const traits = {
+    cognitive: '無宗教・付属型（特に共学・男子）の主軸。学校文化として学術連続性を強調。',
+    social_emotional: '女子校（特に無宗教女子・カトリック女子）の主軸。人間関係と内省を中核に置く。',
+    values_morals: 'カトリック・プロテスタント・仏教の宗教系列で主軸となりやすい。建学精神由来の価値観基盤。',
+    agency_civic: 'プロテスタント・独立型・新興共学校の主軸。自由意志と社会参与の伝統と新しいリーダー像が交差。',
+    wellbeing: '仏教系・キリスト教系女子校の副軸として頻出。心理的安全と内省の質を重視。',
+  };
+  const html = '<thead><tr><th>クラスタ</th><th>典型的な学校型</th></tr></thead><tbody>' +
+    Object.keys(traits).map(k=>`<tr><td><span class="badge ${k}">${LABEL_JA[k]}</span></td><td>${traits[k]}</td></tr>`).join('') +
+    '</tbody>';
+  document.getElementById('cluster-traits').innerHTML = html;
+}
+
+function renderComboTable(){
+  const counts = {};
+  DATA.profiles.forEach(p=>{
+    const k = `${p.primary}|${p.secondary}`;
+    counts[k] = (counts[k]||0)+1;
+  });
+  const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  const tbody = document.querySelector('#combo-table tbody');
+  tbody.innerHTML = sorted.map(([k,c])=>{
+    const [p,s] = k.split('|');
+    return `<tr><td><span class="badge ${p}">${LABEL_JA[p]}</span> → <span class="badge ${s}">${LABEL_JA[s]}</span></td><td class="right">${c}</td></tr>`;
+  }).join('');
+}
+
+function renderScatter(){
+  const datasets = ['cognitive','social_emotional','values_morals','agency_civic','wellbeing'].map(cluster=>{
+    const data = DATA.profiles.filter(p=>p.primary===cluster).map(p=>({
+      x: p.outcomes.cognitive,
+      y: p.outcomes.social_emotional,
+      label: p.name
+    }));
+    return {
+      label: LABEL_JA[cluster],
+      data,
+      backgroundColor: COLORS[cluster],
+      borderColor: COLORS[cluster],
+      pointRadius: 4,
+      pointHoverRadius: 7,
+    };
+  });
+  new Chart(document.getElementById('scatter'), {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position:'bottom' },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => ctx.raw.label + ' (' + ctx.raw.x + ', ' + ctx.raw.y + ')'
+          }
+        }
+      },
+      scales: {
+        x: { title:{display:true,text:'認知・学術スコア (0-100)'}, min:30, max:90, grid:{color:'#eee'} },
+        y: { title:{display:true,text:'社会情動スコア (0-100)'}, min:30, max:90, grid:{color:'#eee'} }
+      }
+    }
+  });
+}
+
+function renderProcessMatrix(){
+  const religions = ['catholic','protestant','anglican','buddhist','non_religious','unknown','other'];
+  const genders = ['boys','girls','coed'];
+  // Count
+  const counts = {};
+  DATA.profiles.forEach(p=>{
+    const r = p.religion || 'unknown';
+    const g = p.gender || 'coed';
+    counts[r] = counts[r] || {};
+    counts[r][g] = (counts[r][g]||0) + 1;
+  });
+  const max = Math.max(...religions.flatMap(r=>genders.map(g=>(counts[r]||{})[g]||0)));
+
+  let html = '<div class="head"></div>';
+  genders.forEach(g => {
+    html += `<div class="head">${GENDER_JA[g]}</div>`;
+  });
+  // sum column header
+  html += '<div class="head">合計</div>';
+  // padding placeholder until 7 cols matched (1 + 3 + 1 = 5, we set grid to 7 cols so add empties)
+  // Actually let's redo: 1 row label + 3 gender cols + 1 sum = 5 cols; let's adjust style
+  // Use a fresh grid with 5 cols.
+
+  // Reset DOM and re-render with 5 cols
+  const matrix = document.getElementById('process-matrix');
+  matrix.style.gridTemplateColumns = '160px 1fr 1fr 1fr 100px';
+  let h = '<div class="head"></div>';
+  genders.forEach(g => h += `<div class="head">${GENDER_JA[g]}</div>`);
+  h += '<div class="head">合計</div>';
+  religions.forEach(r=>{
+    h += `<div class="row-head">${RELIGION_JA[r]}</div>`;
+    let row_total = 0;
+    genders.forEach(g=>{
+      const n = (counts[r]||{})[g]||0;
+      row_total += n;
+      const op = n/max;
+      const bg = n>0 ? `rgba(204,20,0,${0.10+op*0.55})` : '#fafafa';
+      h += `<div class="cell ${n===0?'empty':''}" style="background:${bg}"><div class="n">${n||'-'}</div></div>`;
+    });
+    h += `<div class="cell" style="background:#f5f5f5"><div class="n" style="color:var(--ink)">${row_total}</div></div>`;
+  });
+  // total row
+  h += '<div class="row-head">合計</div>';
+  let grand = 0;
+  genders.forEach(g=>{
+    const t = religions.reduce((s,r)=>s+((counts[r]||{})[g]||0),0);
+    grand += t;
+    h += `<div class="cell" style="background:#f5f5f5"><div class="n" style="color:var(--ink)">${t}</div></div>`;
+  });
+  h += `<div class="cell" style="background:#FFE6E0"><div class="n">${grand}</div></div>`;
+  matrix.innerHTML = h;
+}
+
+function renderYearChart(){
+  const decades = {};
+  DATA.profiles.forEach(p=>{
+    if (!p.establishment_year) return;
+    const d = Math.floor(p.establishment_year/10)*10;
+    decades[d] = (decades[d]||0)+1;
+  });
+  const sorted = Object.keys(decades).map(Number).sort((a,b)=>a-b);
+  new Chart(document.getElementById('yearChart'), {
+    type:'bar',
+    data:{
+      labels: sorted.map(d=>d+'年代'),
+      datasets:[{label:'校数', data:sorted.map(d=>decades[d]), backgroundColor:'#CC1400'}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#eee'}},y:{beginAtZero:true,grid:{color:'#eee'}}}}
+  });
+}
+
+function renderSchoolTable(){
+  const tbody = document.getElementById('schools-tbody');
+  const search = document.getElementById('search');
+  const fp = document.getElementById('filter-primary');
+  const fg = document.getElementById('filter-gender');
+  const fr = document.getElementById('filter-religion');
+  const count = document.getElementById('result-count');
+
+  function render(){
+    const q = search.value.trim();
+    const profiles = DATA.profiles.filter(p=>{
+      if (q && !p.name.includes(q)) return false;
+      if (fp.value && p.primary !== fp.value) return false;
+      if (fg.value && p.gender !== fg.value) return false;
+      if (fr.value && p.religion !== fr.value) return false;
+      return true;
+    });
+    count.textContent = `${profiles.length} 校 / 全525校`;
+    // sort by cognitive desc as default
+    profiles.sort((a,b)=>b.outcomes.cognitive - a.outcomes.cognitive);
+    tbody.innerHTML = profiles.slice(0,200).map(p=>{
+      return `<tr>
+        <td><strong>${p.name}</strong></td>
+        <td>${p.pref||''}</td>
+        <td><span class="badge ${p.gender}">${GENDER_JA[p.gender]||''}</span><span class="badge">${(p.archetype||'').split('・')[0]}</span></td>
+        <td><span class="badge ${p.primary}">${LABEL_JA[p.primary]}</span></td>
+        <td><span class="badge ${p.secondary}">${LABEL_JA[p.secondary]}</span></td>
+        <td class="right">${p.outcomes.cognitive}</td>
+        <td class="right">${p.outcomes.social_emotional}</td>
+        <td class="right">${p.outcomes.values_morals}</td>
+        <td class="right">${p.outcomes.agency_civic}</td>
+        <td class="right">${p.outcomes.wellbeing}</td>
+      </tr>`;
+    }).join('') + (profiles.length>200?`<tr><td colspan="10" style="text-align:center;color:#999">先頭200校を表示中。フィルタで絞ってください。</td></tr>`:'');
+  }
+  [search, fp, fg, fr].forEach(el=>el.addEventListener('input', render));
+  render();
+}
+
+load();
+</script>
+
+</body>
+</html>
