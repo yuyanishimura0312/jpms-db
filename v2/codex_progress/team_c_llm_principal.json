@@ -1,16 +1,48 @@
 {
   "task_id": "team_c_llm_principal",
-  "completed_schools": 223,
-  "schools_covered_new": 34,
-  "schools_zero_existing_now_covered": 22,
-  "schools_low_existing_now_augmented": 8,
+  "schools_covered_new": 51,
+  "schools_zero_existing_now_covered": 12,
+  "schools_1_2_augmented": 8,
+  "schools_3_4_augmented": 2,
+  "schools_5plus_augmented": 29,
   "total_new_quotes": 72,
-  "ts": "2026-05-05T20:20:44.491730Z",
-  "method": "3-axis context scoring (philosophy x personal-tone x length)",
+  "ts": "2026-05-05T20:26:39.261179Z",
+  "method": "3-axis (philosophy x personal-tone x length) + sentence grouping; tiered cap by existing count",
   "thresholds": {
     "min_score": 5,
     "min_len": 60,
     "max_len": 700,
     "quote_max": 395
-  }
+  },
+  "tiered_cap": {
+    "0-2_existing": 10,
+    "3-4_existing": 6,
+    "5-7_existing": 4,
+    "8-11_existing": 2,
+    "12+": 0
+  },
+  "integration_status": "completed",
+  "integration_inserted": 72,
+  "integration_rejected": 0,
+  "integration_reasons": {},
+  "integration_completed_at": "2026-05-05T20:27:58.345607",
+  "testimonials_v2_post_state": {
+    "chairperson": 9,
+    "principal": 1058
+  },
+  "testimonials_v2_total": 3312,
+  "schools_with_principal_post": 144,
+  "round2_inserted": 58,
+  "round2_rejected": 0,
+  "round2_reasons": {},
+  "total_inserted": 204,
+  "completed_at": "2026-05-05T20:38:06.285083",
+  "round3_inserted": 54,
+  "round3_rejected": 1,
+  "round3_reasons": {
+    "duplicate": 1
+  },
+  "round4_inserted": 20,
+  "round4_rejected": 0,
+  "team_c_llm_principal_total_contribution": 204
 }

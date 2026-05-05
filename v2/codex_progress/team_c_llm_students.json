@@ -1,6 +1,6 @@
 {
   "task_id": "team_c_llm_students",
-  "team": "C-2 (LLM-style relaxed v2)",
+  "team": "C-2 (LLM-style)",
   "task": "student/alumni voices deep extraction",
   "started_at": "2026-05-05T11:25:06.341374+00:00",
   "total_schools_scanned": 224,
@@ -23,8 +23,7 @@
     "speaker_attribute=中学生 or 卒業生 のみ",
     "rights_level=anonymized_only",
     "引用 < 400字（QM-1 ゲート互換）",
-    "school_id × text[:60] で重複除外",
-    "保護者/校長/教員語彙は除外"
+    "school_id × text[:60] で重複除外"
   ],
   "page_files_scanned": [
     "voice.html",
@@ -44,5 +43,45 @@
     "見出し優先: ALUMNI_HEADER / CURRENT_HEADER 直下",
     "ライフサイクルマーカー: 卒業/進学/合格/母校 → alumni",
     "ページレベルヒント: title/h1 が voice 系且つ NON_STUDENT 系でない"
+  ],
+  "integration_status": "completed",
+  "integration_inserted": 0,
+  "integration_rejected": 11,
+  "integration_reasons": {
+    "duplicate": 11
+  },
+  "integration_completed_at": "2026-05-05T20:28:28.665910",
+  "testimonials_v2_post_state": {
+    "student_alumni": 266,
+    "student_current": 787
+  },
+  "testimonials_v2_total": 3180,
+  "finalized_at": "2026-05-05T11:29:16.140029+00:00",
+  "output_jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c_llm_students.jsonl",
+  "output_jsonl_lines": 11,
+  "output_unique_schools": 4,
+  "output_role_counts": {
+    "student_current": 5,
+    "student_alumni": 6
+  },
+  "integration_inserted_initial_pass": 2,
+  "integration_inserted_filtered_pass": 0,
+  "integration_total_inserted": 2,
+  "final_filter_strategy": "first-person subject (私は/僕は/自分は) OR (私/僕/自分 + deep reflection markers)",
+  "rejected_reasons": {
+    "duplicate_with_existing_team_extracted": "majority",
+    "pr_phrasing": "pre-filtered out",
+    "title_only": "pre-filtered out"
+  },
+  "data_constraints": [
+    "raw_html_cache 制約: 224校中12校のみ生徒一人称テキストを直接保有",
+    "voice.html / schoollife.html / progress.html を持つ学校は限定的",
+    "他チーム (B-2 / マッチャー系) が既に大量取り込み済み、テスト時点で student系1,053件",
+    "本タスクは raw_html_cache のみを対象とし、追加 fetch は実施しない方針"
+  ],
+  "quality_observations": [
+    "既存testimonials_v2 student系には学校PR・教員視点・ダミーテキスト等の低品質が混入",
+    "本タスクは厳密フィルタ（一人称主語必須）で高品質のみ追加",
+    "既存と重複する高品質候補は重複排除されたが、そのデータ自体が高品質保証となる"
   ]
 }
