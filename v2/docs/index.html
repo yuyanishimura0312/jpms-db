@@ -217,9 +217,9 @@
     これは過去理解だけでなく、<strong>2030年代以降の人材要件を予測する基盤</strong>でもあります。
   </p>
   <div class="card">
-    <div class="chart-container tall"><canvas id="eraHeatmap"></canvas></div>
+    <div id="eraHeatmapTable" style="overflow-x:auto"></div>
     <p style="font-size:12px;color:var(--ink-soft);margin-top:12px">
-      横軸: 8時代区分（明治〜2050年代） / 縦軸: 主要成果次元 / 色濃度: 関連度（1-10）。
+      横軸: 8時代区分（明治〜2050年代） / 縦軸: 主要成果次元 / 色濃度・数値: 関連度（1-10）。
       令和以降「主体性・市民性」「創造・卓越」「市場・経営」が一気に重要度を増す傾向。
     </p>
   </div>
@@ -430,46 +430,47 @@ DATA.era_relevance.forEach(r => {
 const totals = Object.entries(eraOutcomes).map(([k,v]) => [k, Object.values(v).reduce((a,b)=>a+b,0)]).sort((a,b)=>b[1]-a[1]);
 const topOutcomes = totals.slice(0,15).map(t => t[0]);
 
-const heatData = [];
-const labels = [];
+// Build HTML table heatmap (readable with axis labels)
+const outcomeRows = [];
 topOutcomes.forEach(oid => {
   const o = DATA.outcome_dims.find(x => x.id === oid);
   if (!o) return;
-  labels.push(o.name_ja);
-  ERA_ORDER.forEach((era, eIdx) => {
-    const v = (eraOutcomes[oid] && eraOutcomes[oid][era]) || 0;
-    heatData.push({x: eIdx, y: labels.length-1, v: v});
+  outcomeRows.push({
+    id: oid,
+    name: o.name_ja,
+    cluster: o.cluster_id,
+    values: ERA_ORDER.map(era => (eraOutcomes[oid] && eraOutcomes[oid][era]) || 0)
   });
 });
 
-const ctxHeat = document.getElementById('eraHeatmap').getContext('2d');
-new Chart(ctxHeat, {
-  type: 'scatter',
-  data: {
-    datasets: [{
-      label: '関連度',
-      data: heatData.map(d => ({x: d.x, y: d.y, r: Math.max(2, d.v*2)})),
-      backgroundColor: heatData.map(d => `rgba(204,20,0,${0.15 + (d.v/10)*0.7})`),
-      pointRadius: heatData.map(d => Math.max(4, d.v*1.6)),
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: {display:false},
-      tooltip: {callbacks: {
-        label: ctx => {
-          const d = heatData[ctx.dataIndex];
-          return `${labels[d.y]} × ${ERA_NAMES[ERA_ORDER[d.x]]}: ${d.v}/10`;
-        }
-      }}
-    },
-    scales: {
-      x: {min:-0.5, max:7.5, ticks:{stepSize:1, callback:v=>ERA_NAMES[ERA_ORDER[v]]||''}, grid:{color:GRID}},
-      y: {min:-0.5, max:labels.length-0.5, reverse:true, ticks:{stepSize:1, callback:v=>labels[v]||''}, grid:{color:GRID}}
-    }
-  }
-});
+const heatHTML = `
+<table style="border-collapse:separate;border-spacing:0;font-size:12px;width:100%;min-width:760px">
+  <thead>
+    <tr>
+      <th style="background:#fff;padding:10px 12px;text-align:left;border-bottom:2px solid var(--akashiro-red);min-width:160px;font-weight:700;color:var(--ink)">成果次元</th>
+      ${ERA_ORDER.map(era => `<th style="background:#fff;padding:10px 6px;text-align:center;border-bottom:2px solid var(--akashiro-red);font-weight:700;color:var(--ink);min-width:62px">${ERA_NAMES[era]}</th>`).join('')}
+    </tr>
+  </thead>
+  <tbody>
+    ${outcomeRows.map(row => {
+      const cls = CLUSTER_BADGE[row.cluster];
+      const clusterColor = CLUSTER_COLORS[row.cluster];
+      return `<tr>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line);font-weight:500">
+          <span class="badge ${cls}" style="font-size:10px;margin-right:6px">${row.cluster.replace('_',' ').slice(0,3)}</span>
+          ${row.name}
+        </td>
+        ${row.values.map(v => {
+          const opacity = v === 0 ? 0 : 0.10 + (v/10) * 0.75;
+          const textColor = v >= 7 ? '#fff' : (v >= 4 ? '#0E0E0E' : '#999');
+          const display = v === 0 ? '·' : v;
+          return `<td title="関連度 ${v}/10" style="padding:0;border-bottom:1px solid var(--line);background:rgba(204,20,0,${opacity});text-align:center;font-weight:${v>=7?'700':'500'};color:${textColor};font-variant-numeric:tabular-nums">${display}</td>`;
+        }).join('')}
+      </tr>`;
+    }).join('')}
+  </tbody>
+</table>`;
+document.getElementById('eraHeatmapTable').innerHTML = heatHTML;
 
 // ===== Culture distribution =====
 const cultDistData = {};
