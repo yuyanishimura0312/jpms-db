@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMS-DB v2 サンプル統合レポート — 関東圏12校 多層分析</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="v2_data.js"></script>
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --akashiro-red-dark:#9C0F00;
+    --bg:#FFFFFF;
+    --bg-soft:#FAFAFA;
+    --bg-paper:#FBF8F5;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --ink-mute:#6B6B6B;
+    --line:#E5E5E5;
+    --sidebar-bg:#F5F0E9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;font-size:15px}
+  /* textbook layout */
+  .layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+  .sidebar{background:var(--sidebar-bg);padding:32px 24px;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow-y:auto}
+  .sidebar h1{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--akashiro-red);margin-bottom:8px;line-height:1.4}
+  .sidebar .badge-v2{display:inline-block;background:var(--akashiro-red);color:#fff;font-size:10px;padding:2px 8px;letter-spacing:0.1em;font-weight:700;margin-bottom:16px}
+  .sidebar .meta{font-size:11px;color:var(--ink-mute);margin-bottom:24px;line-height:1.6}
+  .sidebar nav h2{font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.1em;margin:16px 0 8px;font-weight:500}
+  .sidebar nav a{display:block;padding:6px 10px;color:var(--ink-soft);text-decoration:none;font-size:13px;border-left:2px solid transparent;line-height:1.5}
+  .sidebar nav a:hover{color:var(--akashiro-red);border-left-color:var(--akashiro-red);background:rgba(204,20,0,0.04)}
+  .sidebar .back-link{display:inline-block;margin-top:24px;padding:8px 14px;border:1px solid var(--line);font-size:11px;color:var(--ink-soft);text-decoration:none}
+  .sidebar .back-link:hover{border-color:var(--akashiro-red);color:var(--akashiro-red)}
+  main{padding:48px 64px 80px;max-width:920px;margin:0 auto}
+  @media(max-width:1100px){.layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto}main{padding:32px 24px}}
+  h1.title{font-family:'Noto Serif JP',serif;font-size:34px;font-weight:700;line-height:1.4;margin:0 0 8px;letter-spacing:0.01em;color:var(--ink)}
+  .subtitle{font-size:14px;color:var(--ink-mute);margin-bottom:48px;border-bottom:3px solid var(--akashiro-red);padding-bottom:24px}
+  h2{font-family:'Noto Serif JP',serif;font-size:24px;color:var(--ink);margin:56px 0 20px;padding-bottom:8px;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+  h3{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--akashiro-red);margin:36px 0 14px;scroll-margin-top:24px}
+  h4{font-size:14px;color:var(--ink);font-weight:700;margin:24px 0 10px;letter-spacing:0.02em}
+  p{margin-bottom:18px;color:var(--ink-soft);text-align:justify}
+  p strong{color:var(--ink)}
+  .lead{font-size:16px;color:var(--ink);font-family:'Noto Serif JP',serif;line-height:2;border-left:4px solid var(--akashiro-red);padding:8px 0 8px 18px;margin:24px 0;background:var(--bg-paper)}
+  .school-section{border-top:1px dashed var(--line);padding-top:48px;margin-top:48px;scroll-margin-top:24px}
+  .school-section:first-of-type{border-top:none}
+  .school-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;flex-wrap:wrap;gap:16px}
+  .school-header h2{margin:0;border:none;padding:0}
+  .school-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--ink-mute)}
+  .school-meta span{padding:3px 9px;background:var(--bg-soft);border:1px solid var(--line)}
+  .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}
+  @media(max-width:760px){.profile-grid{grid-template-columns:1fr}}
+  .profile-card{background:var(--bg-paper);border:1px solid var(--line);padding:18px}
+  .profile-card h4{margin-top:0;color:var(--akashiro-red)}
+  .chart-container{position:relative;height:280px;margin:12px 0}
+  .narrative{font-family:'Noto Serif JP',serif;font-size:14.5px;line-height:2.05;text-align:justify}
+  .narrative p{margin-bottom:16px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0}
+  th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--bg-soft);font-weight:500;color:var(--ink-mute);font-size:11px;letter-spacing:0.04em;text-transform:uppercase}
+  td.right,th.right{text-align:right}
+  .pill{display:inline-block;padding:1px 7px;font-size:11px;background:var(--bg-soft);border:1px solid var(--line);margin-right:4px;color:var(--ink-soft)}
+  .pill.warn{background:#FFF7F5;border-color:var(--akashiro-red);color:var(--akashiro-red)}
+  .quote{border-left:3px solid var(--akashiro-red);padding:14px 18px;background:var(--bg-soft);font-size:13.5px;color:var(--ink-soft);margin:18px 0;font-family:'Noto Serif JP',serif}
+  .footnote{font-size:12px;color:var(--ink-mute);font-style:italic;margin-top:12px}
+  .toc-section{padding:8px 0}
+  .toc-section a{font-weight:500}
+  .toc-school a{font-size:12px;padding-left:16px}
+  .axis-bar{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:12px}
+  .axis-label{width:80px;color:var(--ink-mute);font-size:11px}
+  .axis-track{flex:1;height:8px;background:#f0f0f0;border-radius:4px;overflow:hidden;position:relative}
+  .axis-fill{height:100%;background:linear-gradient(90deg,#E63D2C,#CC1400)}
+  .axis-value{width:30px;text-align:right;font-size:11px;color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <h1>JPMS-DB v2 サンプル統合レポート</h1>
+  <span class="badge-v2">VERSION 2.0 サンプル</span>
+  <div class="meta">関東圏12校 多層分析<br>2026-05-05 生成<br>5層モデル × 数理基盤</div>
+
+  <nav>
+    <h2>序</h2>
+    <div class="toc-section"><a href="#preface">本レポートについて</a></div>
+    <div class="toc-section"><a href="#framework">分析フレームワーク</a></div>
+
+    <h2>各校レポート</h2>
+    <div class="toc-school"><a href="#s_seiko">聖光学院</a></div>
+    <div class="toc-school"><a href="#s_kaisei">開成</a></div>
+    <div class="toc-school"><a href="#s_azabu">麻布</a></div>
+    <div class="toc-school"><a href="#s_komaba">駒場東邦</a></div>
+    <div class="toc-school"><a href="#s_oin">桜蔭</a></div>
+    <div class="toc-school"><a href="#s_jg">女子学院</a></div>
+    <div class="toc-school"><a href="#s_futaba">雙葉</a></div>
+    <div class="toc-school"><a href="#s_eiko">栄光学園</a></div>
+    <div class="toc-school"><a href="#s_kaijo">海城</a></div>
+    <div class="toc-school"><a href="#s_shiba">芝</a></div>
+    <div class="toc-school"><a href="#s_asano">浅野</a></div>
+    <div class="toc-school"><a href="#s_keio">慶應普通部</a></div>
+
+    <h2>結論</h2>
+    <div class="toc-section"><a href="#synthesis">12校の構造的比較</a></div>
+    <div class="toc-section"><a href="#era_pivot">時代変遷との関係</a></div>
+    <div class="toc-section"><a href="#methodology">方法と限界</a></div>
+
+    <a href="index.html" class="back-link">← v2ダッシュボードへ</a>
+  </nav>
+</aside>
+
+<main>
+
+<h1 class="title">関東圏12校の多層プロファイル<br>—— 個人特性・学校文化・時代要請の統合分析</h1>
+<div class="subtitle">JPMS-DB v2 サンプル統合レポート | 2026-05-05生成 | 5層モデル × ミラツク36DB接続</div>
+
+<section id="preface">
+<h2>本レポートについて</h2>
+<p class="lead">
+本書は、関東圏で代表性の高い私立中学校12校について、JPMS-DB v2の5層モデル（学校実態・個人特性・成果次元・適合モデル・時代変遷）に依拠して書き下ろした統合プロファイルです。学校選択を考える保護者と本人、学校文化を理解したい教育関係者、そして社会の側から学校教育を眺める研究者・施策立案者の三者を、同じ枠組みで議論できる位置に置くための「読み解きの補助線」を提供します。
+</p>
+<p>
+従来、学校の語られ方は二つの極に分かれてきました。一方では偏差値や進学実績という単一の数字での比較、他方では校風や雰囲気という語感の問題としての比較です。前者は科学を装いますが学校文化を捨象しすぎ、後者は人間に寄り添いますが比較不能になりがちです。本レポートはこの二極を架橋することを試みます。
+</p>
+<p>
+具体的には、各校に対して<strong>学校文化10次元のスコア</strong>、<strong>主軸となる成果次元（7大クラスタ）</strong>、<strong>適合しやすい個人特性パターン</strong>、<strong>時代要請との関係（明治〜2050年代）</strong>を併記し、最後に<strong>関係者の声</strong>と<strong>定性的記述</strong>で締めます。これは「優劣評価」ではなく「個別適合の見取り図」であり、ある生徒には聖光学院が伸び、別の生徒には麻布の自由が伸ばす——そうした個別性を、データと文献の両方から擁護することを目的としています。
+</p>
+<p>
+記述の枠組みは、Eccles の Stage-Environment Fit を中核に、Holland P-E Fit、Edwards 多次元適合、Hoover-Dempsey & Sandler の家庭関与モデル、Lerner の PYD Five Cs、そして偉人研究（Cox 1926, Simonton 2014）・経営研究（Collins 2001, Drucker 1993）・起業家研究（Sarasvathy 2008）・研究者研究（Zuckerman 1977）の知見を統合しています。これらの理論的背景は、本レポートの末尾「方法と限界」と、別冊の <code>THEORETICAL_FOUNDATION.md</code> に詳述しました。
+</p>
+</section>
+
+<section id="framework">
+<h2>分析フレームワーク — 5層 × 7大クラスタ × 8時代</h2>
+<p>
+JPMS-DB v2 は、学校というシステムを以下の5層で記述します。各校のレポートはこの5層に対応する形で書かれています。
+</p>
+<table>
+  <thead><tr><th>層</th><th>記述対象</th><th>主な根拠</th></tr></thead>
+  <tbody>
+    <tr><td><strong>L1</strong></td><td>学校実態（建学理念・カリキュラム・進路・関係者の声）</td><td>学校HP・パンフ・公的統計・取材</td></tr>
+    <tr><td><strong>L2</strong></td><td>個人特性（Big Five・Growth Mindset・GRIT・SDT・PYD）</td><td>McCrae/Dweck/Duckworth/Deci-Ryan/Lerner</td></tr>
+    <tr><td><strong>L3</strong></td><td>成果次元（7大クラスタ × 100+項目）</td><td>OECD/CASEL/PERMA/P21/PISA/Cox/Simonton/Collins/Sarasvathy/Zuckerman</td></tr>
+    <tr><td><strong>L4</strong></td><td>適合・予測（学校文化10次元スコアリング・MLM/SEM/LCA）</td><td>Eccles/Holland/Edwards/Hoover-Dempsey-Sandler</td></tr>
+    <tr><td><strong>L5</strong></td><td>時代変遷（明治〜2050s 8区分の人材要請）</td><td>CLA 127年/MT 18メガトレンド/FK 309機関/AA AI親和/AD AGI論文/第4期教育振興基本計画</td></tr>
+  </tbody>
+</table>
+
+<p>
+成果次元の<strong>7大クラスタ</strong>は、認知・学術／社会情動／価値観・道徳／主体性・市民性／ウェルビーイング／<strong>創造・卓越</strong>／<strong>市場・経営</strong>の構成で、最後の二つは偉人研究・経営研究・起業家研究の知見を新たに導入したものです。これにより、いわゆる「学業優秀な生徒」の枠を越えて、「創造的卓越に向かう生徒」「市場・経営の世界で躍動する生徒」までを射程に入れます。
+</p>
+
+<p>
+学校文化の<strong>10次元</strong>は、自律性／構造度／多様性／学業強度／メンター密度／創造性奨励／競争性／共同体性／国際性／精神性です。各校の構造特徴（性別構成・宗教系列・接続形態）と建学理念テキストを組み合わせて、0-100のスコアに変換しています。なお、本サンプルレポートのスコアは初期推定値であり、Phase E での一次情報拡張後に更新される性質のものです。
+</p>
+</section>
+
+<!-- 各校セクションは Python 生成 -->
+<div id="schools-render"></div>
+
+<section id="synthesis" class="school-section">
+<h2>12校の構造的比較</h2>
+<p>
+ここまで個別に12校を見てきましたが、改めて並べると、関東圏の私立中学校の文化的多様性が立体的に見えてきます。<strong>男子御三家</strong>と呼ばれる開成・麻布・武蔵（本サンプルでは麻布のみ収録）、<strong>女子御三家</strong>の桜蔭・女子学院・雙葉、<strong>新御三家</strong>の海城・芝・浅野。さらに神奈川の聖光学院・栄光学園・駒場東邦、そして付属型の慶應普通部。これらの12校が、どの軸で似ていて、どの軸で異なるかを概観します。
+</p>
+<div class="profile-card">
+<div class="chart-container" style="height:380px"><canvas id="comparison-radar"></canvas></div>
+<p class="footnote">12校×10次元の文化プロファイル比較。レーダーで全体傾向を、別途テーブルで詳細を示す。</p>
+</div>
+
+<p>
+最も明確な分岐は、<strong>「自律性 × 構造度」の対角線</strong>に現れます。麻布は自律性高・構造度低（自由型）の極にあり、雙葉と聖光学院は自律性低めだが構造度・精神性ともに高い（規律＋精神性型）の極にあります。開成と桜蔭はその中間で、構造化されたカリキュラムの中で個々の自律的探求を許す折衷型です。
+</p>
+
+<p>
+第二の分岐軸は<strong>「メンター密度 × 共同体性」</strong>で、ここではキリスト教系・仏教系の宗教校（雙葉・聖光・栄光・浅野）が高い値を示します。教師-生徒関係の親密さと共同体としての学校運営は、宗教系列の長い伝統の所産です。逆に、無宗教大規模校（開成・桜蔭・麻布）は、メンター密度よりも生徒同士のピア・カルチャーが学校文化の中核となります。
+</p>
+
+<p>
+第三の分岐は<strong>「学業強度 × 創造性奨励」</strong>で、難関大学進学を志向する全12校がいずれも学業強度は高い側にありますが、その内側で創造性奨励の度合いが分かれます。麻布・海城・栄光・芝は創造性側に振れており、開成・桜蔭・聖光・雙葉は学業の徹底側に重心があります。これは「同じ偏差値帯でも、卒業後にどんな職業領域に向かう生徒が多いか」という出口の違いを生む構造でもあります。
+</p>
+</section>
+
+<section id="era_pivot" class="school-section">
+<h2>時代変遷との関係 — 明治から2050年代まで</h2>
+<p>
+12校の多くは明治〜大正期に創立されており、日本の近代化と歩みを共にしてきました。創立期の理念がそのまま現代の文化に流れ込んでいる校もあれば、戦後・平成期に大きく改革を重ねた校もあります。<strong>時代の人材要請</strong>と<strong>学校の対応</strong>を照らし合わせて見ると、以下のような構造が浮かびます。
+</p>
+
+<h3>明治期（1868-1912）：立身出世と国民国家</h3>
+<p>
+明治期に創立された開成（1871）、麻布（1895）、海城（1891）、慶應普通部（1898）、雙葉（1909）は、いずれも「近代国家を担う知的エリート」または「キリスト教精神に基づく女子教育」を目的としていました。この時代の人材要請は<strong>論理的思考</strong>（β=10）と<strong>伝統文化尊重×国家統合</strong>（β=10）であり、各校は実学とリベラルアーツの両輪で応えました。
+</p>
+
+<h3>昭和後期（1945-1989）：高度成長と受験競争</h3>
+<p>
+聖光学院（1958）、駒場東邦（1957）、栄光学園（1947）、桜蔭（1924）、女子学院（1870）など、戦後復興期に再編・新設された校群は、高度成長期の<strong>数学リテラシー</strong>（β=10）<strong>論理的思考</strong>（β=10）の要請に対応する受験エリート教育を担いました。この時期にいわゆる「御三家」「新御三家」の階層構造が固まり、進学実績による序列化が学校文化を上書きしていきます。
+</p>
+
+<h3>令和期（2019-2030）：個別最適化と AI 協働</h3>
+<p>
+現在は、文科省の第4期教育振興基本計画が「持続可能な社会の創り手」と「ウェルビーイング」を基本方針に掲げ、OECD Learning Compass 2030 が「変革コンピテンシー」を中核とする時代です。この令和期の人材要請（AI 協働リテラシー β=9、変革コンピテンシー β=9、社会の創り手 β=10）に対して、12校はそれぞれ異なる速度で対応しつつあります。麻布・海城・聖光・栄光は探究学習・国際プログラム・ICT統合で先行し、桜蔭・雙葉・女子学院は伝統的な教養教育の枠内で改革を進めています。
+</p>
+
+<h3>2030年代以降：AGI 時代の人間性</h3>
+<p>
+AA DB（LLM親和領域）と AD DB（AI発展）の知見を統合すると、2030年代に求められる能力は、<strong>AI協働リテラシー</strong>（β=10）、<strong>創造性</strong>（β=10）、<strong>変革コンピテンシー</strong>（β=10）、<strong>共感力</strong>（β=9）、<strong>レジリエンス</strong>（β=9）の組み合わせです。さらに 2050 年代には<strong>社会変革志向</strong>（β=10）と<strong>愛着安定性</strong>（β=9）が中心化し、長寿命社会・ポストAGI社会・地球外活動を前提とする人材像が立ち上がります。
+</p>
+
+<p>
+この未来要請に対する12校の対応可能性を、構造特徴と建学理念から推定すると、<strong>麻布・海城・聖光・栄光</strong>が「未来志向型」、<strong>桜蔭・開成・駒場東邦</strong>が「伝統強化＋緩やかな改革型」、<strong>雙葉・女子学院・慶應普通部</strong>が「精神性・伝統重視型」と位置づけられます。ただしこれは現時点の構造特徴に基づく推定であり、各校の実際の改革ペースは Phase E（一次情報大規模収集）の結果で更新される予定です。
+</p>
+</section>
+
+<section id="methodology" class="school-section">
+<h2>方法と限界</h2>
+<p>
+本レポートの基盤となる JPMS-DB v2 は、現時点（2026-05-05）で Phase A（基盤整備）と Phase B（ベンチマーク・理論基盤）が完了し、Phase C（成果次元 DB 構築）の中盤、Phase D（個人特性・適合モデル）の入口にあります。本レポートで提示している学校文化スコアは構造特徴と建学理念キーワードからのヒューリスティック推定であり、Phase E（HP一次取得・関係者声7,000件）と Phase F（数理モデル MLM/IRT/SEM/LCA/GCM）の完了を待って、より精緻な推定値に更新されます。
+</p>
+
+<p>
+したがって本サンプルレポートは、以下の三つの位置づけで読まれることを意図しています。第一に、<strong>5層モデルがどのような語り口で各校を記述するか</strong>の見本です。第二に、<strong>ミラツク36DBとの接続がどのような付加価値を生むか</strong>の例示です。第三に、<strong>依頼者向けの納品サンプル</strong>として、本格版での仕上がりイメージを共有するためのものです。
+</p>
+
+<p>
+本格版（Phase G 完了後）では、各校で以下が追加されます。<strong>(a) 一次情報からの建学理念全文・教育方針詳細・カリキュラム構成・行事カレンダー・進路実績年度別データ。(b) 関係者声5主体（校長・教員・在校生・卒業生・保護者）×3名以上＝計60件以上。(c) 卒業生活躍データ（IC/IR/UPR/EX 連動）の紐付け。(d) 数理モデルでの予測スコア。(e) Eccles Stage-Environment Fit に基づく個人特性別の入学前適合度推定。</strong>
+</p>
+
+<p>
+最後に、本レポートは特定の学校を推奨・非推奨することを目的とせず、<strong>個別生徒×個別学校の適合は個別事情によって決まる</strong>という前提に立っています。読者には、本レポートを判断材料の一つとして用いつつ、必ず各校の説明会・体験授業・学校訪問で生身の質感を確認することをお願いします。
+</p>
+
+<h3>主要参考文献（30件抜粋）</h3>
+<table>
+  <tbody>
+    <tr><td>McCrae & Costa 1992</td><td>Big Five Personality</td></tr>
+    <tr><td>Dweck 2006</td><td>Mindset</td></tr>
+    <tr><td>Duckworth 2007</td><td>Grit</td></tr>
+    <tr><td>Deci & Ryan 2000</td><td>Self-Determination Theory</td></tr>
+    <tr><td>Marcia 1966</td><td>Identity Status</td></tr>
+    <tr><td>Lerner 2005</td><td>Five Cs / PYD</td></tr>
+    <tr><td>Cox 1926</td><td>Early Mental Traits of Geniuses</td></tr>
+    <tr><td>Simonton 2014</td><td>Wiley Handbook of Genius</td></tr>
+    <tr><td>Csikszentmihalyi 1996</td><td>Flow / Creativity</td></tr>
+    <tr><td>Collins 2001</td><td>Good to Great</td></tr>
+    <tr><td>Sarasvathy 2008</td><td>Effectuation</td></tr>
+    <tr><td>Zuckerman 1977</td><td>Scientific Elite</td></tr>
+    <tr><td>Eccles & Midgley 1989</td><td>Stage-Environment Fit</td></tr>
+    <tr><td>Holland 1997</td><td>RIASEC P-E Fit</td></tr>
+    <tr><td>Edwards 2008</td><td>Multidimensional Person-Environment Fit</td></tr>
+    <tr><td>Hoover-Dempsey & Sandler 2005</td><td>Family Involvement</td></tr>
+    <tr><td>Epstein 1995</td><td>Six Types of Parental Involvement</td></tr>
+    <tr><td>Steinberg 2008</td><td>Adolescent Dual Systems Model</td></tr>
+    <tr><td>Masten 2019</td><td>Ordinary Magic Resilience</td></tr>
+    <tr><td>OECD 2019</td><td>Learning Compass 2030</td></tr>
+    <tr><td>WEF 2025</td><td>Future of Jobs Report</td></tr>
+    <tr><td>文科省 2023</td><td>第4期教育振興基本計画</td></tr>
+    <tr><td>松岡亮二 2019</td><td>教育格差</td></tr>
+    <tr><td>耳塚寛明 2018</td><td>教育格差への処方箋</td></tr>
+    <tr><td>濱本真一 2015</td><td>教育機会不平等構造の中の中学校</td></tr>
+    <tr><td>Inayatullah 1998</td><td>Causal Layered Analysis</td></tr>
+    <tr><td>Wuchty et al. 2007</td><td>Team Science</td></tr>
+    <tr><td>Christensen 1997</td><td>Innovator's Dilemma</td></tr>
+    <tr><td>Drucker 1993</td><td>Post-Capitalist Society</td></tr>
+    <tr><td>Schneider 1987</td><td>ASA Framework</td></tr>
+  </tbody>
+</table>
+</section>
+
+</main>
+
+</div>
+
+<script>
+const DATA = window.JPMS_V2;
+
+const SCHOOLS_TO_RENDER = [
+  {key:'s_seiko', match:['聖光学院'], era:'showa_post', founded:1958, region:'神奈川', archetype:'カトリック男子', primary:'values_morals', secondary:'cognitive',
+    profile:'カトリックの全人教育を背景に、難関大学進学実績と精神性教育を両立させる神奈川男子校の代表格。',
+    fit_pattern:'探究志向＋構造的環境を求める男子。Big Five で C 高、O 中-高、A 中。Identity Achievement に向かう内省的タイプとの相性が良い。',
+    alumni_paths:'医学・法律・官僚・経営層への進学が中心。研究者・国際機関の例も増加。',
+    family:'家族の信仰・教育観の一致が高い適合に寄与。Authoritative parenting 推奨。'
+  },
+  {key:'s_kaisei', match:['開成'], era:'meiji', founded:1871, region:'東京', archetype:'無宗教男子・付属', primary:'cognitive', secondary:'agency_civic',
+    profile:'明治の創立から「ペンは剣よりも強し」の校訓を貫き、徹底的な学業強度の中で個々の知的探求を許容する。難関大進学では国内最高水準。',
+    fit_pattern:'GRIT 高、O 高、Self-Regulation 高、内発的動機強。Identity Achievement 型または Moratorium 型。',
+    alumni_paths:'研究者（東大・京大の学術ポスト）・医師・経営者・官僚が圧倒的多数。最近は起業家・データサイエンティストが増加。',
+    family:'学習資本（家庭の蔵書・知的会話）が中心。親の指導は支援型で十分。'
+  },
+  {key:'s_azabu', match:['麻布'], era:'meiji', founded:1895, region:'東京', archetype:'無宗教男子・付属', primary:'creative_excellence', secondary:'cognitive',
+    profile:'徹底した自由放任主義。校則最少。生徒の自治と創造性が文化の中核。難関大進学実績と並んで、独自の文化人・研究者・起業家を輩出。',
+    fit_pattern:'O 極めて高、E 中-高、C 中、A 低-中、N 中-高。探究者型または創造者型のアーキタイプ。Identity Moratorium で長期間探索する余地を求める。',
+    alumni_paths:'研究者・芸術家・起業家・ジャーナリストが他校比で多い。学術と独立志向の両立。',
+    family:'子どもの自律性を尊重できる家庭でこそ伸びる。指示型は不適合。'
+  },
+  {key:'s_komaba', match:['駒場東邦'], era:'showa_post', founded:1957, region:'東京', archetype:'無宗教男子・付属', primary:'cognitive', secondary:'agency_civic',
+    profile:'「自主独立の気概と科学的精神」を建学。論理思考と実験精神。難関国立大学進学（特に理系）で開成と並ぶ位置。',
+    fit_pattern:'C 高、O 高、論理的思考傾向強。研究者型・技術者型のアーキタイプとの適合。',
+    alumni_paths:'医師・研究者・エンジニアが中心。最近は起業家・スタートアップCxOへの進路も拡大。',
+    family:'家庭の理性的会話、議論する文化が伸びを支える。'
+  },
+  {key:'s_oin', match:['桜蔭'], era:'taisho', founded:1924, region:'東京', archetype:'無宗教女子・付属', primary:'cognitive', secondary:'values_morals',
+    profile:'徹底した学業強度と「礼と勤」の精神。女子最難関で、受験エリート教育の最高峰。学術探究と道徳的自己規律を両立させる。',
+    fit_pattern:'C 極めて高、GRIT 高、Self-Regulation 高、A 中-高。Identity Foreclosure から Achievement に向かうタイプ。',
+    alumni_paths:'医師・研究者・官僚・公認会計士・国際機関職員。専門職への進路が圧倒的。',
+    family:'親の高学歴・高い教育投資。Authoritative > Permissive で伸びやすい。'
+  },
+  {key:'s_jg', match:['女子学院'], era:'meiji', founded:1870, region:'東京', archetype:'プロテスタント女子', primary:'agency_civic', secondary:'social_emotional',
+    profile:'プロテスタントの精神を背景に、自由・自立・社会参与を重視。難関大進学と並んで、社会変革・国際協力・芸術領域への卒業生が目立つ。',
+    fit_pattern:'O 高、A 高、E 中-高、内発的動機強。Identity Moratorium での探索を支える環境。',
+    alumni_paths:'NGO/NPO/国際機関、研究者、ジャーナリスト、芸術家。専門職よりも社会変革志向の進路。',
+    family:'子どもの選択を尊重する家庭。信仰の有無は問わないが価値観の対話が必要。'
+  },
+  {key:'s_futaba', match:['雙葉'], era:'meiji', founded:1909, region:'東京', archetype:'カトリック女子', primary:'values_morals', secondary:'social_emotional',
+    profile:'カトリック修道会の伝統。「德においては純真に、義務においては堅実に」。少数精鋭のメンター密度の高さと精神性教育で、日本のカトリック女子校の象徴。',
+    fit_pattern:'A 高、C 高、N 中、Identity Foreclosure→Achievement 移行型。Caregiver アーキタイプ。',
+    alumni_paths:'医師・教師・公認会計士・官僚に加え、文化・芸術・国際協力。長期的なキャリア形成。',
+    family:'家庭の宗教観・道徳観の一致が大きく寄与。'
+  },
+  {key:'s_eiko', match:['栄光学園'], era:'showa_post', founded:1947, region:'神奈川', archetype:'カトリック男子', primary:'values_morals', secondary:'cognitive',
+    profile:'イエズス会創立。「Men for Others」の精神で、学業と奉仕の両立を求める。鎌倉の自然環境の中での6年一貫教育。',
+    fit_pattern:'A 高、O 高、C 高、A 高。Caregiver と Explorer の融合型。長期目標志向。',
+    alumni_paths:'医師・研究者・官僚・国際機関・社会起業家。Men for Others の影響でNPO/NGO進路も。',
+    family:'家庭の精神的価値観の一致が重要。鎌倉という立地への共感も。'
+  },
+  {key:'s_kaijo', match:['海城'], era:'meiji', founded:1891, region:'東京', archetype:'無宗教男子・付属', primary:'agency_civic', secondary:'cognitive',
+    profile:'「国家社会に有為な人材」の建学。新御三家の一角。社会科探究で全国的に著名。社会変革志向と学業強度を両立させる現代型エリート教育。',
+    fit_pattern:'O 高、E 高、C 高。社交創造者・挑戦者型のアーキタイプ。Identity Achievement に向かう。',
+    alumni_paths:'政治・官僚・経営・社会起業・ジャーナリズム。社会への関与志向が強い。',
+    family:'子どもの社会的関心を支える家庭。新聞・時事の会話が日常にあると伸びる。'
+  },
+  {key:'s_shiba', match:['芝中学校','芝学園'], era:'meiji', founded:1887, region:'東京', archetype:'仏教男子', primary:'values_morals', secondary:'social_emotional',
+    profile:'浄土宗の精神を背景に「遵法自治」を掲げる。新御三家の一角だが、規律と自由のバランスを意識的に取る独自路線。共同体性が高い。',
+    fit_pattern:'A 高、C 高、E 中、Caregiver と Steady の融合。落ち着いた学習環境を求めるタイプ。',
+    alumni_paths:'医師・公認会計士・経営者・教師。安定志向のキャリア構築。',
+    family:'家庭の落ち着き・継続的支援が重要。'
+  },
+  {key:'s_asano', match:['浅野'], era:'taisho', founded:1920, region:'神奈川', archetype:'無宗教男子', primary:'cognitive', secondary:'values_morals',
+    profile:'浅野総一郎が創立。「九転十起」の校訓。実業家精神と学業の両立。神奈川男子校の中核で、医歯薬・理工系の進学実績が強い。',
+    fit_pattern:'C 高、O 高、GRIT 高。挑戦者型・職人型アーキタイプ。',
+    alumni_paths:'医師・歯科医・薬剤師・エンジニアなど専門職。最近は起業家も増加。',
+    family:'実学志向の家庭・継続的努力を価値とする家庭で適合。'
+  },
+  {key:'s_keio', match:['慶應義塾普通部'], era:'meiji', founded:1898, region:'神奈川', archetype:'無宗教男子・付属', primary:'agency_civic', secondary:'cognitive',
+    profile:'福澤諭吉「独立自尊」の精神。慶應義塾大学への内部進学が中心で、12年（中→高→大）一貫教育の中で個性を伸ばす。難関中学受験ではなく、長期的人格形成志向。',
+    fit_pattern:'O 高、E 高、A 中-高。社交創造者型・リーダー型。Marcia Identity Moratorium を 12 年使って探索できる。',
+    alumni_paths:'経営者・起業家・金融・メディア。慶應人脈の強さで多様なキャリア。',
+    family:'家庭の慶應への帰属感、子どもの自由度許容、長期視野が重要。'
+  },
+];
+
+function renderSchool(spec) {
+  const school = DATA.schools.find(s => spec.match.some(m => s.name_ja.includes(m)));
+  if (!school) return '<p>学校データなし: '+spec.match[0]+'</p>';
+  const cs = DATA.culture_scores[school.id] || {};
+
+  const era = DATA.eras.find(e => e.id === spec.era);
+  const eraLabel = era ? `${era.name_ja}期（${era.start_year}-${era.end_year}）` : spec.era;
+
+  const phil = (DATA.philosophy[school.id] && (DATA.philosophy[school.id].founding_philosophy || DATA.philosophy[school.id].education_principle)) || '（建学理念テキストは Phase E で大規模収集予定）';
+
+  const dimNames = {cult_autonomy:'自律',cult_structure:'構造',cult_diversity:'多様',cult_intensity:'強度',cult_mentor:'メンター',cult_creativity:'創造',cult_competition:'競争',cult_community:'共同体',cult_internationality:'国際',cult_spirituality:'精神'};
+
+  const cultureBars = Object.keys(dimNames).map(d => {
+    const v = cs[d] || 50;
+    return `<div class="axis-bar">
+      <span class="axis-label">${dimNames[d]}</span>
+      <span class="axis-track"><span class="axis-fill" style="width:${v}%"></span></span>
+      <span class="axis-value">${v}</span>
+    </div>`;
+  }).join('');
+
+  return `
+  <section class="school-section" id="${spec.key}">
+    <div class="school-header">
+      <h2>${school.name_ja}</h2>
+      <div class="school-meta">
+        <span>${spec.region}</span>
+        <span>${eraLabel} 創立</span>
+        <span>${spec.archetype}</span>
+        <span class="pill warn">主軸: ${spec.primary}</span>
+        <span class="pill">副軸: ${spec.secondary}</span>
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-card">
+        <h4>学校文化10次元プロファイル</h4>
+        ${cultureBars}
+      </div>
+      <div class="profile-card">
+        <h4>建学理念（抜粋）</h4>
+        <div class="quote">${phil}</div>
+        <p style="font-size:13px;color:var(--ink-mute);margin-top:12px">創立: ${school.establishment_year || '?'}年 / ${school.school_corporation || ''}</p>
+      </div>
+    </div>
+
+    <div class="narrative">
+      <h4>1. 学校の輪郭（Layer 1）</h4>
+      <p>${spec.profile}</p>
+
+      <h4>2. 適合する個人特性パターン（Layer 2 × Layer 4）</h4>
+      <p>${spec.fit_pattern}</p>
+
+      <h4>3. 卒業後の活躍経路（Layer 3 alumni_career）</h4>
+      <p>${spec.alumni_paths}</p>
+
+      <h4>4. 家庭との適合（Hoover-Dempsey & Sandler / Epstein）</h4>
+      <p>${spec.family}</p>
+
+      <h4>5. 時代変遷との関係（Layer 5）</h4>
+      <p>${spec.era === 'meiji' ? '明治期に創立された本校は、近代国家形成の人材要請を受けて誕生し、その精神は現代の学校文化にも流れ込んでいる。令和期の「持続可能な社会の創り手」「ウェルビーイング」要請に対する応答は、各校で異なる速度で進んでおり、本校の場合は伝統と改革のバランスが鍵となる。' : spec.era === 'taisho' ? '大正デモクラシー期の教養主義の中で創立された本校は、自由・教養・人格陶冶の精神を持ち、令和期の主体性・市民性要請とは親和性が高い。' : spec.era === 'showa_post' ? '戦後復興期に創立または再編された本校は、高度成長期の人材要請を担い、現代でも難関進学実績で象徴的な位置を占める。令和期の変革コンピテンシー・AI協働リテラシーへの対応が今後の課題である。' : '創立期の人材要請と現代の要請とを照らし合わせて、本校の現代的位置づけを評価する必要がある。'}</p>
+    </div>
+  </section>`;
+}
+
+document.getElementById('schools-render').innerHTML = SCHOOLS_TO_RENDER.map(renderSchool).join('');
+
+// Comparison radar
+const cultDimList = ['cult_autonomy','cult_structure','cult_diversity','cult_intensity','cult_mentor','cult_creativity','cult_competition','cult_community','cult_internationality','cult_spirituality'];
+const cultLabelList = ['自律','構造','多様','強度','メンター','創造','競争','共同体','国際','精神'];
+
+const colors = ['#CC1400','#1B5E9A','#7A4F1C','#1F8A4D','#9056C0','#B86F00','#3D3DBC','#C7438C','#5B5B5B','#2D7060','#A0506C','#4060A0'];
+const datasets = SCHOOLS_TO_RENDER.map((spec, i) => {
+  const school = DATA.schools.find(s => spec.match.some(m => s.name_ja.includes(m)));
+  if (!school) return null;
+  const cs = DATA.culture_scores[school.id] || {};
+  return {
+    label: school.name_ja.replace('中学校','').replace('学園',''),
+    data: cultDimList.map(d => cs[d]||50),
+    borderColor: colors[i],
+    backgroundColor: colors[i] + '14',
+    pointRadius: 1.5,
+    borderWidth: 1.5,
+  };
+}).filter(Boolean);
+
+new Chart(document.getElementById('comparison-radar'), {
+  type: 'radar',
+  data: {labels: cultLabelList, datasets},
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend: {position:'right', labels:{font:{size:10},boxWidth:8}}},
+    scales: {r: {min:30, max:80, ticks:{stepSize:10, font:{size:9}}}}
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMS-DB v2 | 統合知識基盤と予防的適合モデル</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="v2_data.js"></script>
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --akashiro-red-light:#E63D2C;
+    --bg:#FFFFFF;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --ink-mute:#6B6B6B;
+    --line:#E5E5E5;
+    --bg-soft:#FAFAFA;
+    --layer-1:#1B5E9A;
+    --layer-2:#7C2D8C;
+    --layer-3:#C7438C;
+    --layer-4:#1F8A4D;
+    --layer-5:#7A4F1C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px}
+  header{border-bottom:3px solid var(--akashiro-red);padding:32px 48px 24px;background:var(--bg)}
+  .brand{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .brand h1{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;letter-spacing:0.05em;color:var(--akashiro-red)}
+  .brand .sub{font-size:13px;color:var(--ink-soft);font-weight:400}
+  .v2-badge{background:var(--akashiro-red);color:#fff;font-size:11px;padding:3px 10px;letter-spacing:0.1em;font-weight:700}
+  nav{margin-top:14px;display:flex;gap:20px;font-size:13px;flex-wrap:wrap}
+  nav a{color:var(--ink-soft);text-decoration:none;padding-bottom:4px}
+  nav a:hover{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  main{max-width:1400px;margin:0 auto;padding:32px 48px 80px}
+  .hero{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+  .hero h2{font-family:'Noto Serif JP',serif;font-size:32px;font-weight:700;line-height:1.4;margin-bottom:16px}
+  .hero p{color:var(--ink-soft);max-width:880px;margin-bottom:8px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:32px 0}
+  .stat{background:var(--bg);padding:22px 18px}
+  .stat .num{font-family:'Noto Serif JP',serif;font-size:32px;color:var(--akashiro-red);font-weight:700;line-height:1}
+  .stat .label{font-size:11px;color:var(--ink-soft);margin-top:8px;letter-spacing:0.04em}
+  section{margin-bottom:64px}
+  h3{font-family:'Noto Serif JP',serif;font-size:22px;border-left:5px solid var(--akashiro-red);padding-left:16px;margin-bottom:24px}
+  h4{font-size:14px;color:var(--akashiro-red);margin-bottom:12px;font-weight:700;letter-spacing:0.04em}
+  .grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:1100px){.grid-5{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:880px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
+  .layer-card{padding:18px;border:1px solid var(--line);background:var(--bg);border-top:4px solid #999}
+  .layer-card.l1{border-top-color:var(--layer-1)}
+  .layer-card.l2{border-top-color:var(--layer-2)}
+  .layer-card.l3{border-top-color:var(--layer-3)}
+  .layer-card.l4{border-top-color:var(--layer-4)}
+  .layer-card.l5{border-top-color:var(--layer-5)}
+  .layer-card .num{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:var(--ink)}
+  .layer-card .num small{font-size:12px;color:var(--ink-soft);font-weight:400}
+  .layer-card h4{font-size:13px;margin-bottom:8px}
+  .layer-card p{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
+  .card{background:var(--bg);border:1px solid var(--line);padding:24px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--bg-soft);font-weight:500;color:var(--ink-soft);font-size:12px;letter-spacing:0.02em}
+  td.right,th.right{text-align:right}
+  .chart-container{position:relative;height:340px}
+  .chart-container.tall{height:480px}
+  .chart-container.short{height:240px}
+  .filter-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;align-items:center;padding:14px 16px;background:var(--bg-soft);border:1px solid var(--line)}
+  .filter-bar input,.filter-bar select{padding:7px 11px;border:1px solid var(--line);background:var(--bg);font-family:inherit;font-size:13px}
+  .filter-bar input{flex:1;min-width:200px}
+  .badge{display:inline-block;padding:2px 8px;font-size:11px;background:var(--bg-soft);border:1px solid var(--line);margin-right:4px;white-space:nowrap}
+  .badge.cog{background:#E0EAF5;color:#1B5E9A;border-color:#1B5E9A}
+  .badge.se{background:#FBE0EE;color:#C7438C;border-color:#C7438C}
+  .badge.val{background:#F4E8D4;color:#7A4F1C;border-color:#7A4F1C}
+  .badge.ag{background:#DDF1E2;color:#1F8A4D;border-color:#1F8A4D}
+  .badge.wb{background:#EEDDF8;color:#9056C0;border-color:#9056C0}
+  .badge.ce{background:#FFE8C8;color:#B86F00;border-color:#B86F00}
+  .badge.mm{background:#E5E5FA;color:#3D3DBC;border-color:#3D3DBC}
+  #school-table{max-height:560px;overflow-y:auto;border:1px solid var(--line)}
+  #school-table thead th{position:sticky;top:0;background:var(--bg-soft);z-index:1}
+  .pill{display:inline-block;padding:1px 7px;font-size:10px;background:#fff;border:1px solid var(--line);color:var(--ink-soft);margin-right:3px}
+  .notice{background:#FFF7F5;border-left:4px solid var(--akashiro-red);padding:18px 20px;margin:24px 0;font-size:13.5px;color:var(--ink-soft)}
+  .notice strong{color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:24px 48px;color:var(--ink-soft);font-size:12px;text-align:center}
+  footer a{color:var(--akashiro-red);text-decoration:none;margin:0 12px}
+  .arch-arrow{display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-soft)}
+  .progress{height:6px;background:var(--bg-soft);border-radius:3px;overflow:hidden;margin-top:4px}
+  .progress .fill{height:100%;background:var(--akashiro-red)}
+  .ref-link{display:inline-block;padding:8px 16px;background:var(--akashiro-red);color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:0.04em;margin-right:8px;margin-top:8px}
+  .ref-link.outline{background:#fff;color:var(--akashiro-red);border:1px solid var(--akashiro-red)}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>JPMS-DB v2</h1>
+    <span class="v2-badge">VERSION 2.0</span>
+    <span class="sub">日本私立中学校 包括的基盤データベース — 統合知識基盤と予防的適合モデル</span>
+  </div>
+  <nav>
+    <a href="#overview">概要</a>
+    <a href="#layers">5層アーキテクチャ</a>
+    <a href="#outcomes">成果次元100+</a>
+    <a href="#era">時代変遷</a>
+    <a href="#culture">学校文化10次元</a>
+    <a href="#schools">全528校</a>
+    <a href="#methodology">方法論</a>
+    <a href="../dashboards/index.html">v1ダッシュボード</a>
+    <a href="../dashboards/analysis.html">v1解析</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="overview">
+  <h2>個別生徒×個別学校の適合を、<br>入学前段階で予測する</h2>
+  <p>
+    JPMS-DB v2 は、日本国内の私立中学校528校について、<strong>学校実態（Layer 1）</strong>・<strong>個人特性（Layer 2）</strong>・<strong>成果次元（Layer 3）</strong>・<strong>適合・予測モデル（Layer 4）</strong>・<strong>時代変遷モデル（Layer 5）</strong>の5層を統合する知識基盤です。
+  </p>
+  <p>
+    教育心理学・教育学・偉人研究・経営学・イノベーション研究・人類学・神話研究・未来学の知見を統合し、
+    入学前段階の生徒人格と学校特性のマッチング、卒業後20年までの活躍経路、時代変遷を踏まえた今後求められる人物像までを射程に入れます。
+    本v2は、ミラツク・インテリジェンス・パイプラインの36データベース（1,520万レコード）と接続することで、単独DBでは到達できない多層解像度を実現しています。
+  </p>
+  <div class="stats" id="stats"></div>
+  <div>
+    <a href="../dashboards/sample-12-schools.html" class="ref-link">関東圏12校レポート (v1) を開く</a>
+    <a href="../dashboards/analysis.html" class="ref-link outline">v1 深掘り解析を開く</a>
+  </div>
+</section>
+
+<section id="layers">
+  <h3>5層アーキテクチャ</h3>
+  <p style="color:var(--ink-soft);max-width:880px;margin-bottom:24px">
+    本DBは5つの独立層を持ち、それぞれが異なる問いに答えます。各層は外部のミラツク36DBへの参照点を持ち、知識基盤全体として動作します。
+  </p>
+  <div class="grid-5">
+    <div class="layer-card l1">
+      <h4>Layer 1 — 学校実態</h4>
+      <div class="num">528<small> 校</small></div>
+      <p>建学理念・カリキュラム・進路・関係者の声・公的統計を一次情報優先で集積。</p>
+    </div>
+    <div class="layer-card l2">
+      <h4>Layer 2 — 個人特性</h4>
+      <div class="num">19<small> 次元 + 10アーキタイプ</small></div>
+      <p>Big Five・GRIT・Growth Mindset・SDT・Marcia・PYDの中学生段階測定枠組み。</p>
+    </div>
+    <div class="layer-card l3">
+      <h4>Layer 3 — 成果次元</h4>
+      <div class="num">77<small> 項目（目標100+）</small></div>
+      <p>OECD/CASEL/PERMA/P21/PISA/JP独自＋偉人・経営・起業・研究の7大クラスタ。</p>
+    </div>
+    <div class="layer-card l4">
+      <h4>Layer 4 — 適合・予測</h4>
+      <div class="num">10<small> 次元 × 528校</small></div>
+      <p>学校文化10次元のスコアリング、MLM/IRT/SEM/LCA数理モデル基盤。</p>
+    </div>
+    <div class="layer-card l5">
+      <h4>Layer 5 — 時代変遷</h4>
+      <div class="num">8<small> 時代区分</small></div>
+      <p>明治〜2050年代の人材要請変遷。CLA/MT/FK/AA/AD連動。</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px">
+    <h4>ミラツク36DB接続マップ</h4>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:12px">
+      JPMS-DB v2 は単独で機能しつつ、ミラツク・インテリジェンス・パイプライン全体への参照を持ちます。優先接続TOP10:
+    </p>
+    <table>
+      <thead><tr><th style="width:80px">DB</th><th style="width:240px">名称</th><th>JPMS-DBへの貢献</th></tr></thead>
+      <tbody>
+        <tr><td><strong>GF</strong></td><td>歴史構造DB（9,178人物）</td><td>397幼少期プロファイル＋10意思決定アーキタイプを Layer 3 偉人特性に接続</td></tr>
+        <tr><td><strong>AK</strong></td><td>学術知識DB（5分野8,212）</td><td>心理学665理論を Layer 2/3 の理論基盤として参照</td></tr>
+        <tr><td><strong>FK</strong></td><td>フォーサイト基盤（309機関45K）</td><td>「2030/2040求められる能力」を Layer 5 の根拠化</td></tr>
+        <tr><td><strong>MT</strong></td><td>18メガトレンド</td><td>社会要請の多層タクソノミーを Layer 5 接続</td></tr>
+        <tr><td><strong>CLA</strong></td><td>因果階層分析（127年）</td><td>4層zeitgeist変遷を Layer 5 era_zeitgeist に接続</td></tr>
+        <tr><td><strong>MY</strong></td><td>神話DB（10,615物語）</td><td>アーキタイプ理論で Layer 2 person_archetype に深度</td></tr>
+        <tr><td><strong>MG</strong></td><td>経営学DB（3,458概念）</td><td>リーダーシップ理論で Layer 3 経営者像</td></tr>
+        <tr><td><strong>AA</strong></td><td>LLM親和領域（551言及）</td><td>AI時代の能力要件を Layer 5 接続</td></tr>
+        <tr><td><strong>IT</strong></td><td>イノベーション理論（9,998件）</td><td>起業家系譜を Layer 3 起業家像に接続</td></tr>
+        <tr><td><strong>AN</strong></td><td>人類学概念（500概念）</td><td>学校文化分類の理論基盤</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="outcomes">
+  <h3>成果次元 — 7大クラスタ × 77項目（目標100+）</h3>
+  <p style="color:var(--ink-soft);margin-bottom:20px;max-width:880px">
+    JPMS-DB v2 は卒業時・卒業後5/10/20年の達成軸として77の成果次元を定義しています。
+    既存5クラスタ（認知・社会情動・価値観道徳・主体性市民性・ウェルビーイング）に、<strong>創造・卓越</strong>と<strong>市場・経営</strong>を追加した7大クラスタ構造です。
+  </p>
+  <div class="grid-3" id="cluster-cards"></div>
+
+  <div class="card" style="margin-top:24px">
+    <h4>クラスタ別 主要次元（77項目から各5項目抜粋）</h4>
+    <div class="filter-bar">
+      <select id="filter-cluster"><option value="">全クラスタ</option></select>
+      <select id="filter-framework"><option value="">全フレームワーク</option></select>
+      <input id="search-outcome" placeholder="次元名で検索">
+    </div>
+    <table>
+      <thead><tr><th>名称</th><th>クラスタ</th><th>フレームワーク</th><th>測定方法</th><th>時間窓</th><th class="right">予測可能性</th></tr></thead>
+      <tbody id="outcome-tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="era">
+  <h3>時代変遷モデル — 明治から2050年代まで</h3>
+  <p style="color:var(--ink-soft);margin-bottom:20px;max-width:880px">
+    時代によって「育成すべき人物像」は変遷します。
+    JPMS-DB v2 は CLA・MT・FK・FS・AA・AD の知見を統合し、各時代の要請を成果次元へのウェイトとして表現します。
+    これは過去理解だけでなく、<strong>2030年代以降の人材要件を予測する基盤</strong>でもあります。
+  </p>
+  <div class="card">
+    <div class="chart-container tall"><canvas id="eraHeatmap"></canvas></div>
+    <p style="font-size:12px;color:var(--ink-soft);margin-top:12px">
+      横軸: 8時代区分（明治〜2050年代） / 縦軸: 主要成果次元 / 色濃度: 関連度（1-10）。
+      令和以降「主体性・市民性」「創造・卓越」「市場・経営」が一気に重要度を増す傾向。
+    </p>
+  </div>
+</section>
+
+<section id="culture">
+  <h3>学校文化10次元 — 528校をプロファイル</h3>
+  <p style="color:var(--ink-soft);margin-bottom:16px;max-width:880px">
+    学校特性を10次元（自律性・構造度・多様性・学業強度・メンター密度・創造性・競争性・共同体性・国際性・精神性）でスコアリング。
+    全528校×10次元=5,280スコアを構造特徴と建学理念テキストから推定。
+  </p>
+  <div class="grid-2">
+    <div class="card">
+      <h4>10次元の分布（全528校）</h4>
+      <div class="chart-container"><canvas id="cultureBoxplot"></canvas></div>
+    </div>
+    <div class="card">
+      <h4>主要校の文化プロファイル比較</h4>
+      <div class="chart-container"><canvas id="cultureRadar"></canvas></div>
+      <p style="font-size:12px;color:var(--ink-soft);margin-top:8px">5校のレーダーチャート。学校選択時の参考に。</p>
+    </div>
+  </div>
+</section>
+
+<section id="schools">
+  <h3>全528校 — 5層プロファイル</h3>
+  <div class="filter-bar">
+    <input id="search" placeholder="学校名で検索">
+    <select id="filter-pref"><option value="">全都道府県</option></select>
+    <select id="filter-gender">
+      <option value="">性別全て</option>
+      <option value="boys">男子</option>
+      <option value="girls">女子</option>
+      <option value="coed">共学</option>
+    </select>
+    <select id="filter-religion">
+      <option value="">宗教全て</option>
+      <option value="catholic">カトリック</option>
+      <option value="protestant">プロテスタント</option>
+      <option value="anglican">聖公会</option>
+      <option value="buddhist">仏教</option>
+      <option value="non_religious">無宗教</option>
+    </select>
+    <span id="result-count" style="font-size:12px;color:var(--ink-soft)"></span>
+  </div>
+  <div id="school-table">
+    <table>
+      <thead><tr>
+        <th>学校名</th><th>所在</th><th>性別</th><th>系列</th>
+        <th class="right">自律</th><th class="right">構造</th><th class="right">多様</th>
+        <th class="right">強度</th><th class="right">メンター</th><th class="right">創造</th>
+        <th class="right">競争</th><th class="right">共同</th><th class="right">国際</th><th class="right">精神</th>
+      </tr></thead>
+      <tbody id="schools-tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="methodology">
+  <h3>方法論</h3>
+  <div class="card">
+    <h4>本v2は何を超えるか</h4>
+    <p style="color:var(--ink-soft);margin-bottom:12px">
+      v1（525校×25成果次元×ヒューリスティック）から v2 への進化は次の4点。
+    </p>
+    <ol style="font-size:13.5px;line-height:1.9;color:var(--ink-soft);padding-left:24px">
+      <li><strong>データ層</strong>: 一次情報の大規模集積（建学理念99→528校目標、関係者声93件→7,800件目標）</li>
+      <li><strong>理論層</strong>: 教育心理学コア30理論＋偉人/経営/起業/研究/人類学/神話/未来学の統合</li>
+      <li><strong>成果定義層</strong>: 25→100+項目、卒業後5/10/20年の活躍経路を含む多角化（7大クラスタ）</li>
+      <li><strong>数理モデル層</strong>: MLM/IRT/SEM/LCA/GCM の5種実装（Phase F）</li>
+    </ol>
+  </div>
+
+  <div class="grid-2" style="margin-top:24px">
+    <div class="card">
+      <h4>個人特性測定の理論基盤</h4>
+      <ul style="font-size:13px;line-height:1.9;color:var(--ink-soft);padding-left:20px">
+        <li>Big Five（McCrae & Costa）— BFI-J で中学生段階測定</li>
+        <li>Growth Mindset（Dweck 2006）— MSCI</li>
+        <li>GRIT（Duckworth 2007）— Grit-S</li>
+        <li>Self-Regulated Learning（Zimmerman 2002）</li>
+        <li>SDT（Deci & Ryan）— 内発・自律・有能・関係性</li>
+        <li>Marcia Identity Status</li>
+        <li>PYD Five Cs（Lerner 2005）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>適合モデルのベンチマーク</h4>
+      <ul style="font-size:13px;line-height:1.9;color:var(--ink-soft);padding-left:20px">
+        <li>Eccles Stage-Environment Fit（中学校移行期）</li>
+        <li>Holland P-E Fit（職業選択拡張）</li>
+        <li>Tinto Departure Theory</li>
+        <li>Hoover-Dempsey & Sandler（家庭関与）</li>
+        <li>Epstein 6 Types（家庭・学校連携）</li>
+        <li>Steinberg Dual Systems（思春期脳発達）</li>
+        <li>NYC LCA 6 Types（学校類型）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>本ページの位置づけ。</strong>
+    現状は v2 のフェーズ A〜B 完了時点（基盤・理論・初期データ）です。
+    フェーズ E（一次情報大規模収集）と F（数理モデル実装）の完了を待って、各校の予測スコア・適合度・卒業生活躍データの紐付けが本格的に展開されます。
+    本ページは構造を提示するもので、個別校の評価ではありません。
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>JPMS-DB v2 — 統合知識基盤と予防的適合モデル | 2026-05-05生成 | 528校 / 77成果次元 / 5層 / 36DB接続</div>
+  <div style="margin-top:8px">
+    <a href="index.html">v2ダッシュボード</a>
+    <a href="../dashboards/index.html">v1ダッシュボード</a>
+    <a href="../dashboards/analysis.html">v1深掘り解析</a>
+    <a href="../dashboards/sample-12-schools.html">関東圏12校レポート</a>
+    <a href="https://github.com/yuyanishimura0312/jpms-db" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <div style="margin-top:8px">CC-BY-NC 4.0（Layer 1のみ）／Layer 2-5は研究者向け公開・一部非公開</div>
+</footer>
+
+<script>
+const DATA = window.JPMS_V2;
+const RED = '#CC1400';
+const GRID = '#eee';
+const CLUSTER_COLORS = {
+  cognitive:'#1B5E9A', social_emotional:'#C7438C', values_morals:'#7A4F1C',
+  agency_civic:'#1F8A4D', wellbeing:'#9056C0',
+  creative_excellence:'#B86F00', market_management:'#3D3DBC'
+};
+const CLUSTER_BADGE = {
+  cognitive:'cog', social_emotional:'se', values_morals:'val',
+  agency_civic:'ag', wellbeing:'wb',
+  creative_excellence:'ce', market_management:'mm'
+};
+const ERA_ORDER = ['meiji','taisho','showa_pre','showa_post','heisei','reiwa','2030s','2050s'];
+const ERA_NAMES = {meiji:'明治',taisho:'大正',showa_pre:'昭和前',showa_post:'昭和後',heisei:'平成',reiwa:'令和','2030s':'2030s','2050s':'2050s'};
+
+Chart.defaults.font.family = '"Noto Sans JP", sans-serif';
+Chart.defaults.color = '#444';
+
+// ===== Stats =====
+const statsHTML = [
+  {n: DATA.schools.length, l: '収録校数'},
+  {n: DATA.outcome_dims.length+'+', l: '成果次元'},
+  {n: '5', l: '層'},
+  {n: DATA.culture_dims.length, l: '学校文化次元'},
+  {n: '8', l: '時代区分'},
+  {n: '36', l: '接続DB'},
+  {n: DATA.person_traits.length, l: '個人特性次元'},
+];
+document.getElementById('stats').innerHTML = statsHTML.map(s =>
+  `<div class="stat"><div class="num">${s.n}</div><div class="label">${s.l}</div></div>`
+).join('');
+
+// ===== Cluster cards =====
+const counts = {};
+DATA.outcome_dims.forEach(d => counts[d.cluster_id] = (counts[d.cluster_id]||0)+1);
+document.getElementById('cluster-cards').innerHTML = DATA.outcome_clusters.map(c => `
+  <div class="layer-card" style="border-top-color:${CLUSTER_COLORS[c.id]}">
+    <h4 style="color:${CLUSTER_COLORS[c.id]}">${c.name_ja}</h4>
+    <div class="num">${counts[c.id]||0}<small> 項目</small></div>
+    <p>${c.description}</p>
+  </div>
+`).join('');
+
+// ===== Outcome table =====
+const filterCluster = document.getElementById('filter-cluster');
+const filterFramework = document.getElementById('filter-framework');
+const searchOutcome = document.getElementById('search-outcome');
+DATA.outcome_clusters.forEach(c => filterCluster.innerHTML += `<option value="${c.id}">${c.name_ja}</option>`);
+const fws = [...new Set(DATA.outcome_dims.map(d => d.framework).filter(Boolean))];
+fws.forEach(f => filterFramework.innerHTML += `<option value="${f}">${f}</option>`);
+
+function renderOutcomes() {
+  const cluster = filterCluster.value;
+  const framework = filterFramework.value;
+  const q = searchOutcome.value.trim();
+  const filtered = DATA.outcome_dims.filter(d => {
+    if (cluster && d.cluster_id !== cluster) return false;
+    if (framework && d.framework !== framework) return false;
+    if (q && !d.name_ja.includes(q) && !d.name_en.includes(q)) return false;
+    return true;
+  });
+  document.getElementById('outcome-tbody').innerHTML = filtered.map(d => `
+    <tr>
+      <td><strong>${d.name_ja}</strong><br><span style="font-size:11px;color:var(--ink-soft)">${d.name_en||''}</span></td>
+      <td><span class="badge ${CLUSTER_BADGE[d.cluster_id]}">${DATA.outcome_clusters.find(c=>c.id===d.cluster_id).name_ja}</span></td>
+      <td><span class="pill">${d.framework||''}</span></td>
+      <td style="font-size:12px">${d.measurement_method||''}</td>
+      <td style="font-size:12px">${d.age_window||''}</td>
+      <td class="right">${d.predictability||''}</td>
+    </tr>
+  `).join('');
+}
+[filterCluster, filterFramework, searchOutcome].forEach(e => e.addEventListener('input', renderOutcomes));
+renderOutcomes();
+
+// ===== Era heatmap =====
+const eraOutcomes = {};
+DATA.era_relevance.forEach(r => {
+  const k = r.outcome_dim_id;
+  if (!eraOutcomes[k]) eraOutcomes[k] = {};
+  eraOutcomes[k][r.era] = r.relevance;
+});
+// Pick top 12 outcomes by total era relevance
+const totals = Object.entries(eraOutcomes).map(([k,v]) => [k, Object.values(v).reduce((a,b)=>a+b,0)]).sort((a,b)=>b[1]-a[1]);
+const topOutcomes = totals.slice(0,15).map(t => t[0]);
+
+const heatData = [];
+const labels = [];
+topOutcomes.forEach(oid => {
+  const o = DATA.outcome_dims.find(x => x.id === oid);
+  if (!o) return;
+  labels.push(o.name_ja);
+  ERA_ORDER.forEach((era, eIdx) => {
+    const v = (eraOutcomes[oid] && eraOutcomes[oid][era]) || 0;
+    heatData.push({x: eIdx, y: labels.length-1, v: v});
+  });
+});
+
+const ctxHeat = document.getElementById('eraHeatmap').getContext('2d');
+new Chart(ctxHeat, {
+  type: 'scatter',
+  data: {
+    datasets: [{
+      label: '関連度',
+      data: heatData.map(d => ({x: d.x, y: d.y, r: Math.max(2, d.v*2)})),
+      backgroundColor: heatData.map(d => `rgba(204,20,0,${0.15 + (d.v/10)*0.7})`),
+      pointRadius: heatData.map(d => Math.max(4, d.v*1.6)),
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: {display:false},
+      tooltip: {callbacks: {
+        label: ctx => {
+          const d = heatData[ctx.dataIndex];
+          return `${labels[d.y]} × ${ERA_NAMES[ERA_ORDER[d.x]]}: ${d.v}/10`;
+        }
+      }}
+    },
+    scales: {
+      x: {min:-0.5, max:7.5, ticks:{stepSize:1, callback:v=>ERA_NAMES[ERA_ORDER[v]]||''}, grid:{color:GRID}},
+      y: {min:-0.5, max:labels.length-0.5, reverse:true, ticks:{stepSize:1, callback:v=>labels[v]||''}, grid:{color:GRID}}
+    }
+  }
+});
+
+// ===== Culture distribution =====
+const cultDistData = {};
+DATA.culture_dims.forEach(d => cultDistData[d.id] = []);
+Object.values(DATA.culture_scores).forEach(scores => {
+  Object.entries(scores).forEach(([dim, v]) => {
+    if (cultDistData[dim]) cultDistData[dim].push(v);
+  });
+});
+const cultLabels = DATA.culture_dims.map(d => d.name_ja);
+const cultMeans = DATA.culture_dims.map(d => {
+  const vs = cultDistData[d.id];
+  return vs.reduce((a,b)=>a+b,0)/vs.length;
+});
+const cultMins = DATA.culture_dims.map(d => Math.min(...cultDistData[d.id]));
+const cultMaxs = DATA.culture_dims.map(d => Math.max(...cultDistData[d.id]));
+
+new Chart(document.getElementById('cultureBoxplot'), {
+  type: 'bar',
+  data: {
+    labels: cultLabels,
+    datasets: [
+      {label: '平均', data: cultMeans, backgroundColor: RED, borderColor: RED},
+      {label: '最大', data: cultMaxs, backgroundColor: 'rgba(204,20,0,0.2)', borderColor: 'rgba(204,20,0,0.4)', type:'line', pointRadius:3},
+      {label: '最小', data: cultMins, backgroundColor: 'rgba(204,20,0,0.1)', borderColor: 'rgba(204,20,0,0.3)', type:'line', pointRadius:3, borderDash:[4,2]}
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins:{legend:{display:true, position:'top'}},
+    scales:{y:{min:0, max:100, grid:{color:GRID}}, x:{grid:{color:GRID}}}
+  }
+});
+
+// ===== Culture radar (5 schools) =====
+const sampleNames = ['開成中学校','桜蔭中学校','麻布中学校','聖光学院中学校','雙葉中学校'];
+const sampleSchools = sampleNames.map(n => DATA.schools.find(s => s.name_ja === n)).filter(Boolean);
+const radarColors = ['#CC1400','#1B5E9A','#7A4F1C','#1F8A4D','#9056C0'];
+
+new Chart(document.getElementById('cultureRadar'), {
+  type: 'radar',
+  data: {
+    labels: cultLabels,
+    datasets: sampleSchools.map((s, i) => ({
+      label: s.name_ja.replace('中学校',''),
+      data: DATA.culture_dims.map(d => DATA.culture_scores[s.id]?.[d.id] || 50),
+      borderColor: radarColors[i],
+      backgroundColor: radarColors[i] + '22',
+      pointRadius: 3,
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {legend:{position:'bottom', labels:{font:{size:11}}}},
+    scales: {r: {min:30, max:80, ticks:{stepSize:10, font:{size:10}}}}
+  }
+});
+
+// ===== Schools table =====
+const search = document.getElementById('search');
+const filterPref = document.getElementById('filter-pref');
+const filterGender = document.getElementById('filter-gender');
+const filterReligion = document.getElementById('filter-religion');
+const resultCount = document.getElementById('result-count');
+
+const prefs = [...new Set(DATA.schools.map(s => s.location_pref).filter(Boolean))].sort();
+prefs.forEach(p => filterPref.innerHTML += `<option value="${p}">${p}</option>`);
+
+function renderSchools() {
+  const q = search.value.trim();
+  const pref = filterPref.value;
+  const gen = filterGender.value;
+  const rel = filterReligion.value;
+  const filtered = DATA.schools.filter(s => {
+    if (q && !s.name_ja.includes(q)) return false;
+    if (pref && s.location_pref !== pref) return false;
+    if (gen && s.gender_type !== gen) return false;
+    if (rel && s.religious_affiliation !== rel) return false;
+    return true;
+  });
+  resultCount.textContent = `${filtered.length} 校 / 全${DATA.schools.length}校`;
+  const dimOrder = DATA.culture_dims.map(d => d.id);
+  const tbody = document.getElementById('schools-tbody');
+  tbody.innerHTML = filtered.slice(0,200).map(s => {
+    const sc = DATA.culture_scores[s.id] || {};
+    return `<tr>
+      <td><strong>${s.name_ja}</strong></td>
+      <td>${s.location_pref||''}</td>
+      <td>${s.gender_type||''}</td>
+      <td>${s.religious_affiliation||''}</td>
+      ${dimOrder.map(d => `<td class="right">${sc[d]||'-'}</td>`).join('')}
+    </tr>`;
+  }).join('') + (filtered.length>200 ? `<tr><td colspan="14" style="text-align:center;color:#999">先頭200校表示。フィルタで絞ってください。</td></tr>` : '');
+}
+[search, filterPref, filterGender, filterReligion].forEach(e => e.addEventListener('input', renderSchools));
+renderSchools();
+</script>
+
+</body>
+</html>
