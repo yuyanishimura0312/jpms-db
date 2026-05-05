@@ -1,0 +1,30 @@
+{
+  "team": "C-6",
+  "task": "AL (academic-landscape) -> JPMS-DB v2 national baseline linkage",
+  "completed_at": "2026-05-05T10:54:55.534149+00:00",
+  "input": {
+    "al_db": "/Users/nishimura+/projects/research/academic-landscape-db/data/academic_landscape.db",
+    "jpms_db": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db"
+  },
+  "stats": {
+    "al_journals_total": 233779,
+    "al_journals_japan": 4442,
+    "al_academic_societies_japan": 2556,
+    "al_conferences_japan": 199,
+    "schools_total": 551,
+    "school_link_records": 551,
+    "total_jsonl_rows": 552
+  },
+  "output": {
+    "jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c6_al.jsonl",
+    "min_required_candidates": 50,
+    "met_minimum": true
+  },
+  "notes": [
+    "AL DB は journal/conference/society/policy_document の機関単位メタデータのみ。",
+    "個人著者レベル・出身校レベルのデータは皆無。",
+    "JPMS schools_v2 は中学校で、ジャーナル著者の出身中学は AL からは決して導出できない。",
+    "代替として国レベル集計値（学術ランドスケープ baseline）を全校共通指標として提供。",
+    "school_official_stats への投入は 'national_academic_landscape' を一意に持ち、各校はそれを参照する形が望ましい。"
+  ]
+}

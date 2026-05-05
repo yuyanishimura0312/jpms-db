@@ -1,0 +1,32 @@
+{
+  "team": "C-8",
+  "task": "EX (experts council members) -> JPMS-DB v2 prefecture-level linkage",
+  "completed_at": "2026-05-05T10:54:56.026207+00:00",
+  "input": {
+    "ex_db": "/Users/nishimura+/projects/research/experts-db/data/experts.db",
+    "jpms_db": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db"
+  },
+  "stats": {
+    "ex_persons_total": 3995,
+    "ex_persons_with_university_affiliation": 1607,
+    "ex_total_appointments": 7047,
+    "ex_persons_with_appointment": 3995,
+    "prefectures_with_experts": 41,
+    "schools_total": 551,
+    "schools_matched_by_prefecture": 521,
+    "person_level_public_records": 1607,
+    "total_jsonl_rows": 2128
+  },
+  "output": {
+    "jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c8_ex.jsonl",
+    "min_required_candidates": 50,
+    "met_minimum": true
+  },
+  "notes": [
+    "EX persons の notes フィールドには '中学' '出身' を含むレコードがゼロ。中学校の直接紐付けは不可能。",
+    "代替として org_name (大学) -> 都道府県マッピングを適用、都道府県レベルで集計。",
+    "全国の主要大学約70校をマッピング辞書に収録（カバレッジは関東・関西中心）。",
+    "person-level レコードは public_record として anon_id 付きで保持し、トレーサビリティを確保。",
+    "本データは prefecture_council_expert_index として school_official_stats への投入を想定。"
+  ]
+}

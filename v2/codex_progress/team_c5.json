@@ -1,0 +1,30 @@
+{
+  "team": "C-5",
+  "task": "UPR (university-startups) -> JPMS-DB v2 prefecture-level linkage",
+  "completed_at": "2026-05-05T10:54:54.843521+00:00",
+  "input": {
+    "upr_db": "/Users/nishimura+/projects/apps/miratuku-news-v2/data/university-startups.db",
+    "upr_db_actual_role": "ミラツク36DB UPR枠の代替: 大学発スタートアップ 5,087件",
+    "upr_original_target_not_found": "14,016件の大学プレスリリースDBは見つからず",
+    "jpms_db": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db"
+  },
+  "stats": {
+    "schools_total": 551,
+    "schools_with_prefecture_match": 543,
+    "prefectures_covered": 49,
+    "founder_records_with_public_name": 5105,
+    "total_jsonl_rows": 5648
+  },
+  "output": {
+    "jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c5_upr.jsonl",
+    "min_required_candidates": 50,
+    "met_minimum": true
+  },
+  "notes": [
+    "原タスク 14,016件 university press release DB は ~/projects 配下に発見できず。",
+    "代替として university-startups.db (5,087件) を選択。これは大学のR&D成果の事業化記録で、UPRの本旨（大学発の研究成果アウトプット）に最も近い。",
+    "JPMS schools_v2 は中学校レベル、university-startups の founder_researchers には中学情報なし。直接の alumni linkage は不可能。",
+    "代替として都道府県レベルで集計し、school_official_stats への投入用に prefecture_university_startup_index を提供。",
+    "founder_researchers は public_record として anon_id 付きで保持（追跡可能性のため）。"
+  ]
+}
