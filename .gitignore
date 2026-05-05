@@ -1,0 +1,15 @@
+# Raw HP cache (kept local only)
+v2/raw_html_cache/
+
+# SQLite WAL/SHM
+v2/jpms_v2.db-wal
+v2/jpms_v2.db-shm
+jpms.db-wal
+jpms.db-shm
+jpms_legacy.db-wal
+jpms_legacy.db-shm
+
+# Logs
+v2/codex_logs/
+v2/fetch_log.jsonl
+*.log
