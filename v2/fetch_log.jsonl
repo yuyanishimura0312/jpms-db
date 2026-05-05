@@ -4649,3 +4649,11 @@
 {"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T21:10:55.142778"}
 {"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T21:11:00.189661"}
 {"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/events/", "status": 404, "ts": "2026-05-05T21:11:05.265704"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/event/", "status": 404, "ts": "2026-05-05T21:11:11.248972"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/progress/", "status": 404, "ts": "2026-05-05T21:11:15.247669"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/career/", "status": 404, "ts": "2026-05-05T21:11:20.202720"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/voice/", "status": 404, "ts": "2026-05-05T21:11:26.508820"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/message/", "status": 404, "ts": "2026-05-05T21:11:30.169534"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/admission/", "status": 404, "ts": "2026-05-05T21:11:35.211301"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/exam/", "status": 404, "ts": "2026-05-05T21:11:40.166097"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T21:11:40.168332"}
