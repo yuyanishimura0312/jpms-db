@@ -1,0 +1,116 @@
+{
+  "team": "C-2",
+  "task": "IC DB (EDINET) -> JPMS schools_v2 alumni linkage",
+  "started_at": "2026-05-05T10:47:30.973858Z",
+  "finished_at": "2026-05-05T10:47:31.598589Z",
+  "ir_db_path": "/Users/nishimura+/projects/apps/ir-collector/data/ir.db",
+  "ir_db_listed_company_count": 3815,
+  "ir_db_note": "EDINET 有報のうち BusinessPolicy / R&D セクションのみ収集済み。「役員の状況」セクションは未収集のため、有報からの直接的な役員学歴抽出は不可能。そのため Wikipedia 由来 (c3_business + c4_academic) の経歴文と、IR DB から取得した上場企業マスターを突き合わせ、上場企業役員/創業者として言及されている人物を IC ソースとして紐付けた。",
+  "sources_scanned": [
+    "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c3_business.jsonl",
+    "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c4_academic.jsonl"
+  ],
+  "records_scanned": 2480,
+  "records_matched": 201,
+  "rejected_no_school": 0,
+  "rejected_no_company_mention": 2279,
+  "rejected_duplicate": 0,
+  "unique_schools": 35,
+  "unique_companies": 109,
+  "output_jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c2_ic.jsonl",
+  "output_jsonl_lines": 201,
+  "integration_status": "completed",
+  "integration_inserted": 201,
+  "integration_rejected": 0,
+  "alumni_career_total_after_integration": 3359,
+  "alumni_career_breakdown_after_integration": {
+    "WP_C4": 2842,
+    "WP_C3": 281,
+    "IC": 201,
+    "GF": 35
+  },
+  "top_companies": [
+    [
+      "日本テレビホールディングス株式会社",
+      14
+    ],
+    [
+      "フリー株式会社",
+      14
+    ],
+    [
+      "株式会社ＴＢＳホールディングス",
+      12
+    ],
+    [
+      "株式会社テレビ朝日ホールディングス",
+      9
+    ],
+    [
+      "朝日放送グループホールディングス株式会社",
+      6
+    ],
+    [
+      "株式会社テレビ東京ホールディングス",
+      5
+    ],
+    [
+      "株式会社ランド",
+      5
+    ],
+    [
+      "三井物産株式会社",
+      4
+    ],
+    [
+      "インテグループ株式会社",
+      4
+    ],
+    [
+      "株式会社プロジェクトホールディングス",
+      4
+    ]
+  ],
+  "top_schools": [
+    [
+      "jpms_s_0001",
+      23
+    ],
+    [
+      "jpms_s_0479",
+      22
+    ],
+    [
+      "jpms_s_0002",
+      18
+    ],
+    [
+      "jpms_s_0025",
+      11
+    ],
+    [
+      "jpms_s_0133",
+      10
+    ],
+    [
+      "jpms_s_p3_003",
+      8
+    ],
+    [
+      "jpms_s_0016",
+      8
+    ],
+    [
+      "jpms_s_0906",
+      8
+    ],
+    [
+      "jpms_s_0457",
+      7
+    ],
+    [
+      "jpms_s_0030",
+      7
+    ]
+  ]
+}
