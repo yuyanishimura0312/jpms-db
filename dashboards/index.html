@@ -125,6 +125,53 @@
     height:8px;background:var(--bg-soft);position:relative;margin:4px 0;
   }
   .progress-bar .fill{height:100%;background:var(--akashiro-red)}
+  /* CTA button in header */
+  .cta-report{
+    margin-left:auto;display:inline-flex;align-items:center;gap:8px;
+    background:var(--akashiro-red);color:#fff !important;
+    padding:9px 18px;font-size:13px;font-weight:700;letter-spacing:0.04em;
+    text-decoration:none;border:1px solid var(--akashiro-red);
+    transition:background 0.15s, color 0.15s;
+  }
+  .cta-report:hover{background:#fff;color:var(--akashiro-red) !important}
+  .cta-report .arrow{font-family:'Noto Serif JP',serif;font-weight:400}
+  .brand{flex-wrap:wrap}
+  /* Announcement banner */
+  .announcement{
+    border:1px solid var(--akashiro-red);
+    background:linear-gradient(180deg,#FFF7F5 0%, #FFFFFF 100%);
+    padding:24px 28px;margin-bottom:40px;
+    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  }
+  .announcement .label{
+    display:inline-block;background:var(--akashiro-red);color:#fff;
+    font-size:11px;letter-spacing:0.1em;padding:3px 10px;margin-bottom:10px;
+  }
+  .announcement h3{
+    border-left:none;padding-left:0;margin-bottom:8px;
+    font-size:20px;color:var(--ink);
+  }
+  .announcement p{color:var(--ink-soft);font-size:13.5px;margin:0}
+  .announcement .meta-tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+  .announcement .meta-tags span{
+    font-size:11px;background:#fff;border:1px solid var(--line);
+    padding:3px 8px;color:var(--ink-soft);
+  }
+  .announcement .read-btn{
+    background:var(--akashiro-red);color:#fff;text-decoration:none;
+    padding:14px 24px;font-size:14px;font-weight:700;
+    border:1px solid var(--akashiro-red);white-space:nowrap;
+    transition:background 0.15s, color 0.15s;
+  }
+  .announcement .read-btn:hover{background:#fff;color:var(--akashiro-red)}
+  @media(max-width:760px){
+    .announcement{grid-template-columns:1fr}
+    .announcement .read-btn{justify-self:start}
+    .cta-report{margin:8px 0 0 0}
+  }
+  footer .footer-links{margin-top:8px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+  footer .footer-links a{color:var(--akashiro-red);text-decoration:none}
+  footer .footer-links a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -132,18 +179,42 @@
   <div class="brand">
     <h1>JPMS-DB</h1>
     <span class="sub">日本私立中学校 包括的基盤データベース</span>
+    <a href="sample-12-schools.html" class="cta-report" aria-label="サンプル12校レポートを開く">
+      サンプル12校レポート <span class="arrow">→</span>
+    </a>
   </div>
   <nav>
+    <a href="#announcement">お知らせ</a>
     <a href="#overview">概要</a>
     <a href="#schools">学校</a>
     <a href="#concepts">教育学概念</a>
     <a href="#outcomes">成果次元</a>
     <a href="#testimonials">関係者の声</a>
     <a href="#methodology">方法論</a>
+    <a href="sample-12-schools.html">サンプル12校レポート</a>
   </nav>
 </header>
 
 <main>
+  <section id="announcement" aria-label="お知らせ">
+    <div class="announcement">
+      <div>
+        <span class="label">NEW / 公開</span>
+        <h3>サンプル12校レポートを公開しました</h3>
+        <p>
+          JPMS-DBの初期サンプルとして、関東圏の代表的な私立中学校12校を取り上げ、教育理念・カリキュラム・進路・関係者の声・教育学的位置づけを統合的に記述したレポート（約102,312字）を公開しました。三層統合（学校実態×教育学概念×成長軌道仮説）の読み方をご確認いただけます。
+        </p>
+        <div class="meta-tags">
+          <span>本文約102,312字</span>
+          <span>関東圏12校</span>
+          <span>引用倫理準拠</span>
+          <span>CC-BY-NC</span>
+        </div>
+      </div>
+      <a class="read-btn" href="sample-12-schools.html">レポートを読む →</a>
+    </div>
+  </section>
+
   <section class="hero" id="overview">
     <h2>三層統合で読み解く<br>日本の私立中学校</h2>
     <p>
@@ -236,7 +307,14 @@
 </div>
 
 <footer>
-  JPMS-DB v0.1 (Phase 2) | 日本私立中学校 包括的基盤データベース | 2026-05-05生成
+  <div>JPMS-DB v0.1 (Phase 2) | 日本私立中学校 包括的基盤データベース | 525校投入済 | 2026-05-05生成</div>
+  <div class="footer-links">
+    <a href="sample-12-schools.html">サンプル12校レポート</a>
+    <a href="https://github.com/yuyanishimura0312/jpms-db" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/yuyanishimura0312/jpms-db/blob/main/PUBLIC.md" target="_blank" rel="noopener">公開ポリシー</a>
+    <a href="https://github.com/yuyanishimura0312/jpms-db/blob/main/README.md" target="_blank" rel="noopener">README</a>
+  </div>
+  <div style="margin-top:8px">ライセンス: CC-BY-NC 4.0（非営利・出典明示）</div>
 </footer>
 
 <script src="app.js"></script>

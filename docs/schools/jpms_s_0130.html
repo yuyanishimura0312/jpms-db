@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神奈川大学附属中学校 | JPMS-DB 学校レポート</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --akashiro-red-light:#E63D2C;
+    --bg:#FFFFFF;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --line:#E5E5E5;
+    --bg-soft:#FAFAFA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Noto Serif JP',serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.95;font-size:15.5px;font-weight:400;
+  }
+  header{
+    border-bottom:3px solid var(--akashiro-red);
+    padding:36px 56px 24px;background:var(--bg);
+  }
+  .brand{display:flex;align-items:baseline;gap:18px;font-family:'Noto Sans JP',sans-serif}
+  .brand h1{
+    font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;
+    letter-spacing:0.05em;color:var(--akashiro-red);
+  }
+  .brand .sub{font-size:13px;color:var(--ink-soft);font-weight:400}
+  nav{margin-top:14px;font-family:'Noto Sans JP',sans-serif;font-size:13px}
+  nav a{color:var(--ink-soft);text-decoration:none;margin-right:24px}
+  nav a:hover{color:var(--akashiro-red)}
+  main{max-width:880px;margin:0 auto;padding:48px 56px 100px}
+
+  .doc-meta{
+    font-family:'Noto Sans JP',sans-serif;font-size:12px;
+    color:var(--ink-soft);border-bottom:1px solid var(--line);
+    padding-bottom:16px;margin-bottom:32px;letter-spacing:0.05em;
+  }
+  h1.title{font-size:32px;font-weight:700;line-height:1.45;margin-bottom:12px;letter-spacing:0.02em}
+  .subtitle{
+    font-size:15px;color:var(--akashiro-red);font-weight:400;
+    margin-bottom:32px;font-family:'Noto Sans JP',sans-serif;
+  }
+  .lead{font-size:15.5px;line-height:2.05;margin-bottom:36px}
+
+  .school-section{margin:48px 0 56px;padding-bottom:24px;border-bottom:1px dashed var(--line)}
+  h2{
+    font-size:24px;font-weight:700;margin:0 0 24px;
+    padding:12px 0 12px 20px;border-left:6px solid var(--akashiro-red);line-height:1.5;
+  }
+  h2 .num{
+    color:var(--akashiro-red);font-size:12px;display:block;letter-spacing:0.15em;
+    font-family:'Noto Sans JP',sans-serif;font-weight:500;margin-bottom:6px;
+  }
+  h3{
+    font-size:16px;font-weight:700;margin:32px 0 12px;
+    color:var(--akashiro-red-light);font-family:'Noto Sans JP',sans-serif;letter-spacing:0.03em;
+  }
+  p{margin-bottom:16px;text-align:justify}
+
+  .meta-table{
+    width:100%;border-collapse:collapse;
+    font-family:'Noto Sans JP',sans-serif;font-size:13px;margin:14px 0 28px;
+  }
+  .meta-table caption{
+    text-align:left;font-size:11px;color:var(--akashiro-red);
+    margin-bottom:6px;letter-spacing:0.1em;font-weight:500;
+  }
+  .meta-table th,.meta-table td{
+    padding:9px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;
+  }
+  .meta-table th{
+    background:var(--bg-soft);color:var(--akashiro-red);
+    font-weight:500;width:160px;font-size:12px;letter-spacing:0.05em;
+  }
+  .meta-table td.num-cell{width:80px;text-align:right;font-feature-settings:"tnum"}
+  blockquote{
+    border-left:3px solid var(--akashiro-red);padding:14px 22px;margin:16px 0;
+    background:var(--bg-soft);font-size:14.5px;color:var(--ink);font-style:normal;
+  }
+  blockquote .who{
+    display:block;font-style:normal;font-size:11px;
+    color:var(--akashiro-red);margin-top:10px;letter-spacing:0.05em;
+    font-family:'Noto Sans JP',sans-serif;
+  }
+  .sent-tag{
+    display:inline-block;font-size:10px;
+    padding:1px 6px;margin-left:8px;
+    border-radius:2px;border:1px solid var(--akashiro-red);
+    color:var(--akashiro-red);background:#fff;
+  }
+  .sent-negative{border-color:#0033AA;color:#0033AA}
+  .sent-mixed{border-color:#888;color:#555}
+  .sent-neutral{border-color:#888;color:#555}
+
+  .bar-wrap{
+    width:100%;height:10px;background:var(--bg-soft);
+    border:1px solid var(--line);overflow:hidden;
+  }
+  .bar{height:100%;background:var(--akashiro-red)}
+  .bar-positive{background:var(--akashiro-red)}
+  .bar-negative{background:#0033AA}
+  .bar-mixed{background:#9A6B00}
+  .bar-neutral{background:#888}
+
+  ul,ol{margin:0 0 18px 24px}
+  ul li,ol li{margin-bottom:6px;line-height:1.85}
+  .source-list{font-family:'Noto Sans JP',sans-serif;font-size:13px}
+  .source-list a{color:var(--akashiro-red);text-decoration:none}
+  .source-list a:hover{text-decoration:underline}
+
+  .warn{
+    background:#FFF7E6;border:1px solid #E5A300;color:#7A4F00;
+    padding:12px 18px;font-family:'Noto Sans JP',sans-serif;font-size:12.5px;
+    margin:24px 0;
+  }
+
+  footer{
+    border-top:1px solid var(--line);padding:32px 56px;text-align:center;
+    color:var(--ink-soft);font-size:12px;font-family:'Noto Sans JP',sans-serif;
+  }
+  .top-link{
+    position:fixed;bottom:24px;right:24px;background:var(--akashiro-red);color:#fff;
+    padding:10px 16px;font-size:12px;text-decoration:none;
+    font-family:'Noto Sans JP',sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+  .db-link-card{
+    background:var(--bg-soft);border:2px solid var(--akashiro-red);
+    padding:24px;margin:32px 0;font-family:'Noto Sans JP',sans-serif;
+  }
+  .db-link-card a{
+    display:inline-block;background:var(--akashiro-red);color:#fff;
+    padding:10px 20px;text-decoration:none;font-size:13px;letter-spacing:0.05em;
+    margin-top:12px;
+  }
+
+  @media(max-width:680px){
+    main{padding:32px 20px 80px}
+    h1.title{font-size:24px}
+    h2{font-size:20px}
+    .meta-table th{width:110px}
+  }
+</style>
+</head>
+<body id="top">
+<header>
+  <div class="brand">
+    <h1>JPMS-DB</h1>
+    <span class="sub">日本私立中学校 包括的基盤データベース</span>
+  </div>
+  <nav>
+    <a href="../index.html">ダッシュボード</a>
+    <a href="./index.html">学校レポート一覧</a>
+    <a href="../sample-12-schools.html">サンプル12校レポート（拡張版）</a>
+  </nav>
+</header>
+
+<main>
+  <div class="doc-meta">SCHOOL REPORT — 2026-05-05 | JPMS-DB | jpms_s_0130 | 自動生成</div>
+
+  <h1 class="title">神奈川大学附属中学校</h1>
+  <p class="subtitle">神奈川県横浜市緑区 / 共学 / 附属型</p>
+
+
+
+  <p class="lead">本ページは、JPMS-DBが神奈川大学附属中学校について収集している基本情報・教育プログラム・関係者発言・進学実績を一望できる形で整理した、自動生成の学校レポートです。全国525校のうち、関係者発言が一定数収集できた学校から順に公開しており、記述はランキング目的ではなく、お子さんとの相性判断材料の提供を目的としています。</p>
+
+<section class="school-section" id="sec-1">
+<h2><span class="num">SECTION 01</span>学校の輪郭</h2>
+<table class="meta-table"><caption>基本情報</caption><tbody>
+<tr><th>正式名称</th><td>神奈川大学附属中学校（かながわだいがくふぞくちゅうがっこう）</td></tr>
+<tr><th>所在地</th><td>神奈川県横浜市緑区</td></tr>
+<tr><th>創立</th><td>1982年</td></tr>
+<tr><th>校種</th><td>共学</td></tr>
+<tr><th>一貫性</th><td>附属型</td></tr>
+<tr><th>運営法人</th><td>学校法人神奈川大学</td></tr>
+<tr><th>公式サイト</th><td><a href="https://www.kanagawa-u.ac.jp/attached/" target="_blank" rel="noopener">https://www.kanagawa-u.ac.jp/attached/</a></td></tr>
+</tbody></table>
+<p>神奈川大学附属中学校は、神奈川県横浜市緑区に位置する共学、附属型の中学校です。創立は1982年で、地域社会のなかで長い歴史を積み重ねてきた学校のひとつに数えられます。</p>
+<p>本ページは、JPMS-DB（日本私立中学校 包括的基盤データベース）が収集している学校公式情報・関係者発言・公開取材記事をもとに、当該校の輪郭を保護者向けに整理したレポートです。ランキングや序列で他校と比較するのではなく、教育の設計思想と現場の声から「お子さんと合うかどうか」を判断する素材を提供することを意図しています。</p><p>本ページの記述は、JPMS-DBに登録されている関係者発言6件と、公式サイト等の公開情報を主たる根拠としています。発言は出典明記の上で原文に近い形で引用し、未成年の発言は匿名化しています。</p>
+</section>
+
+<section class="school-section" id="sec-2">
+<h2><span class="num">SECTION 02</span>建学の精神</h2>
+<p>「教育は人を造るにあり」という創立理念の下、「質実剛健」「積極進取」「中正堅実」の三つの原則を建学の精神とする。大学附属校として、継続的な学びと実践を通じ、社会に貢献できる人材育成を目標。</p>
+<h3>教育目標・教育方針</h3>
+<p>学問と実践のバランスを重視し、知識習得だけでなく、経験を通じた人格の成長を促進する。グローバルな視野と日本文化の理解を兼ね備え、自立的かつ創造的に行動できる人間の育成を六年間の一貫教育で実現。</p>
+</section>
+
+<section class="school-section" id="sec-3">
+<h2><span class="num">SECTION 03</span>教員と教育プログラム</h2>
+<p>本校の教育プログラムについて、JPMS-DBに登録されている特性は次のとおりです。数値は他校との相対比較ではなく、本校が公式に掲げる重点領域を簡易にスケール化したものです。</p><table class="meta-table"><caption>教育プログラム特性</caption><tbody>
+<tr><th>探究学習</th><td>強み</td></tr>
+<tr><th>STEAM教育</th><td>強み</td></tr>
+<tr><th>PBL（課題解決型学習）</th><td>強み</td></tr>
+<tr><th>ICT・情報教育</th><td>特に強い</td></tr>
+<tr><th>芸術・表現</th><td>強み</td></tr>
+<tr><th>スポーツ</th><td>強み</td></tr>
+<tr><th>国際コース</th><td>設置</td></tr>
+</tbody></table>
+</section>
+
+<section class="school-section" id="sec-4">
+<h2><span class="num">SECTION 04</span>関係者の声</h2>
+<p>JPMS-DBに登録されている関係者の発言を、立場別にご紹介します。発言は出典明記の上で原文に近い形で引用し、未成年については匿名化を施しています。</p>
+<h3>校長の声</h3>
+<blockquote>
+人格・人権尊重の教育に根幹を置き、自主性の育成や自立の精神の涵養を主眼とした教育は変わらず、自由闊達で逞しい校風はずっと引き継がれています。多彩な他者と出会い、お互いを認め合いながら自らと違う価値観に触れ、自らを成長させることができる場所です。
+<span class="who">— 校長／学校公式サイト／神奈川大学附属中・高等学校 公式サイト</span>
+</blockquote>
+<blockquote>
+人格・人権尊重の教育に根幹を置き、自主性の育成や自立の精神の涵養を主眼とした教育は変わらず、自由闊達で逞しい校風はずっと引き継がれています。多彩な他者と出会い、お互いを認め合いながら自らと違う価値観に触れ、自らを成長させることができる場所です。
+<span class="who">— 校長／学校公式サイト／神奈川大学附属中・高等学校 公式サイト</span>
+</blockquote>
+<h3>卒業生の声</h3>
+<blockquote>
+東大をはじめ難関大学への進学を実現できたのは、中高6年間の自主的学習の機会と、先生方の個別サポートのおかげです。創造的な学びで実践力を身につけることができました。
+<span class="who">— 大学進学者／学校公式サイト／神奈川大学附属中・高等学校 公式サイト</span>
+</blockquote>
+<blockquote>
+東大をはじめ難関大学への進学を実現できたのは、中高6年間の自主的学習の機会と、先生方の個別サポートのおかげです。創造的な学びで実践力を身につけることができました。
+<span class="who">— 大学進学者／学校公式サイト／神奈川大学附属中・高等学校 公式サイト</span>
+</blockquote>
+<h3>保護者（在校）の声</h3>
+<blockquote>
+建学の精神「質実剛健」「積極進取」「中正堅実」を体現する人材育成方針が、実際の教育現場で実践されています。子どもが多彩なチャレンジの機会に恵まれています。
+<span class="who">— 保護者／学校公式サイト／神奈川大学附属中・高等学校 公式サイト</span>
+</blockquote>
+<blockquote>
+建学の精神「質実剛健」「積極進取」「中正堅実」を体現する人材育成方針が、実際の教育現場で実践されています。子どもが多彩なチャレンジの機会に恵まれています。
+<span class="who">— 保護者／学校公式サイト／神奈川大学附属中・高等学校 公式サイト</span>
+</blockquote>
+</section>
+
+<section class="school-section" id="sec-5">
+<h2><span class="num">SECTION 05</span>進学実績</h2>
+<p>進学実績の詳細データはJPMS-DBに未登録です。本校の最新の進学実績は、公式サイトの進路実績ページまたは学校説明会資料をご確認ください。JPMS-DBでは公開情報をもとに、今後の調査フェーズで拡充していきます。</p>
+</section>
+
+<section class="school-section" id="sec-6">
+<h2><span class="num">SECTION 06</span>元データ量と感情分布</h2>
+<p>本ページは、JPMS-DBに登録された関係者発言6件をもとに構成しています。発言の内訳と感情分布を以下に示します。学校選びにおいては、肯定的な声と否定的な声の双方を等しく参照することが、相性判断の精度を高めることにつながります。</p>
+<h3>感情分布</h3>
+<table class="meta-table"><tbody>
+<tr><th>肯定</th><td class="num-cell">6件</td><td><div class="bar-wrap"><div class="bar bar-positive" style="width:100.0%"></div></div></td><td class="num-cell">100.0%</td></tr>
+</tbody></table>
+<h3>発言者の内訳</h3>
+<table class="meta-table"><tbody>
+<tr><th>保護者（在校）</th><td class="num-cell">2件</td></tr>
+<tr><th>校長</th><td class="num-cell">2件</td></tr>
+<tr><th>卒業生</th><td class="num-cell">2件</td></tr>
+</tbody></table>
+<h3>媒体の内訳</h3>
+<table class="meta-table"><tbody>
+<tr><th>学校公式サイト</th><td class="num-cell">6件</td></tr>
+</tbody></table>
+</section>
+
+<section class="school-section" id="sec-7">
+<h2><span class="num">SECTION 07</span>合うお子さん・慎重に検討すべきお子さん</h2>
+<p>神奈川大学附属中学校を志望するうえで、お子さんとの相性を判断するための観点を整理します。ここで示すのは汎用的な指針であり、最終的にはお子さん本人が学校の空気に触れた感触を最重要視してください。</p><h3>合うお子さん・ご家庭</h3>
+<ul>
+<li>自分の関心領域を粘り強く掘り下げたいお子さん</li>
+<li>男女ともに対等な学習文化のなかで関係性を育みたいお子さん</li>
+<li>系列大学への進学ルートを視野に、大学受験プレッシャーを抑えた中等教育を望むご家庭</li>
+</ul>
+<h3>慎重に検討すべきお子さん・ご家庭</h3>
+<ul>
+<li>集団生活より個別最適化された環境を必要とするお子さん</li>
+<li>難関大学受験に向けて中学から戦略的に学習を積み上げたいご家庭は、附属型の進路設計が合うか要確認</li>
+</ul>
+<p>これらは「合わない」を意味するものではなく、説明会・体験授業・在校生との対話の中で重点的に確認すべき観点として、お子さんとご家庭の感覚と照合いただくためのチェックポイントです。</p>
+</section>
+
+<section class="school-section" id="sec-8">
+<h2><span class="num">SECTION 08</span>詳細はJPMS-DBへ</h2>
+<div class="db-link-card">
+<p>本レポートは、JPMS-DB（日本私立中学校 包括的基盤データベース）に登録されている神奈川大学附属中学校のデータから、保護者向けに自動編集したサマリーです。発言の原文・出典・関連データの完全版は、JPMS-DBダッシュボードでご確認いただけます。</p><a href="../index.html#school-jpms_s_0130">ダッシュボードで詳細を見る</a>
+</div>
+</section>
+
+<section class="school-section" id="sec-9">
+<h2><span class="num">SECTION 09</span>出典一覧</h2>
+<h3>主な出典</h3>
+<ul class="source-list">
+<li><a href="https://www.fhs.kanagawa-u.ac.jp/" target="_blank" rel="noopener">神奈川大学附属中・高等学校 公式サイト</a> — 2026 / school_website</li>
+</ul>
+</section>
+
+</main>
+
+<a href="#top" class="top-link">↑ 先頭へ</a>
+
+<footer>
+  JPMS-DB | 日本私立中学校 包括的基盤データベース | 学校レポート自動生成エンジン v0.1<br>
+  本ページは jpms.db のデータをもとにスクリプトで自動生成されています。
+  事実誤認・更新漏れにお気づきの場合は、JPMS-DBプロジェクトまでお知らせください。
+</footer>
+</body>
+</html>
