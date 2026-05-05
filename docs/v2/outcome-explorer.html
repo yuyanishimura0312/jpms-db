@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMS-DB v2 | Outcome Explorer — 成果次元×学校文化次元 マッピング</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="v2_data.js"></script>
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --akashiro-red-light:#E63D2C;
+    --bg:#FFFFFF;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --ink-mute:#6B6B6B;
+    --line:#E5E5E5;
+    --bg-soft:#FAFAFA;
+    --c-cog:#1B5E9A;
+    --c-se:#C7438C;
+    --c-val:#7A4F1C;
+    --c-ag:#1F8A4D;
+    --c-wb:#9056C0;
+    --c-ce:#B86F00;
+    --c-mm:#3D3DBC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px}
+  header{border-bottom:3px solid var(--akashiro-red);padding:32px 48px 24px;background:var(--bg)}
+  .brand{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .brand h1{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;letter-spacing:0.05em;color:var(--akashiro-red)}
+  .brand .sub{font-size:13px;color:var(--ink-soft);font-weight:400}
+  .v2-badge{background:var(--akashiro-red);color:#fff;font-size:11px;padding:3px 10px;letter-spacing:0.1em;font-weight:700}
+  nav{margin-top:14px;display:flex;gap:20px;font-size:13px;flex-wrap:wrap}
+  nav a{color:var(--ink-soft);text-decoration:none;padding-bottom:4px}
+  nav a:hover{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  nav a.current{color:var(--akashiro-red);border-bottom:2px solid var(--akashiro-red);font-weight:700}
+  main{max-width:1400px;margin:0 auto;padding:32px 48px 80px}
+  .hero{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+  .hero h2{font-family:'Noto Serif JP',serif;font-size:30px;font-weight:700;line-height:1.4;margin-bottom:16px}
+  .hero p{color:var(--ink-soft);max-width:980px;margin-bottom:8px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0}
+  .stat{background:var(--bg);padding:22px 18px}
+  .stat .num{font-family:'Noto Serif JP',serif;font-size:30px;color:var(--akashiro-red);font-weight:700;line-height:1}
+  .stat .label{font-size:11px;color:var(--ink-soft);margin-top:8px;letter-spacing:0.04em}
+  section{margin-bottom:64px}
+  h3{font-family:'Noto Serif JP',serif;font-size:22px;border-left:5px solid var(--akashiro-red);padding-left:16px;margin-bottom:18px}
+  h3 .meta{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--ink-mute);margin-left:14px;font-weight:400}
+  h4{font-size:14px;color:var(--akashiro-red);margin-bottom:12px;font-weight:700;letter-spacing:0.04em}
+  .lede{color:var(--ink-soft);max-width:980px;margin-bottom:24px;font-size:14px}
+  .grid-7{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:1100px){.grid-7{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr}}
+  @media(max-width:880px){.grid-2{grid-template-columns:1fr}}
+  .cluster-card{padding:16px 14px;border:1px solid var(--line);background:var(--bg);border-top:4px solid #999;cursor:default}
+  .cluster-card.cog{border-top-color:var(--c-cog)}
+  .cluster-card.se{border-top-color:var(--c-se)}
+  .cluster-card.val{border-top-color:var(--c-val)}
+  .cluster-card.ag{border-top-color:var(--c-ag)}
+  .cluster-card.wb{border-top-color:var(--c-wb)}
+  .cluster-card.ce{border-top-color:var(--c-ce)}
+  .cluster-card.mm{border-top-color:var(--c-mm)}
+  .cluster-card .num{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;color:var(--ink)}
+  .cluster-card .num small{font-size:11px;color:var(--ink-soft);font-weight:400}
+  .cluster-card h5{font-size:13px;color:var(--ink);font-weight:700;margin-bottom:6px}
+  .cluster-card p{font-size:11px;color:var(--ink-soft);margin-top:6px;line-height:1.55}
+  .cluster-card .samples{font-size:11px;color:var(--ink-mute);margin-top:8px;line-height:1.5}
+  .card{background:var(--bg);border:1px solid var(--line);padding:22px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--bg-soft);font-weight:500;color:var(--ink-soft);font-size:12px;letter-spacing:0.02em}
+  td.right,th.right{text-align:right}
+  td.center,th.center{text-align:center}
+  .heatmap{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
+  .heatmap th,.heatmap td{padding:6px 4px;text-align:center;border:1px solid var(--line);font-size:11px}
+  .heatmap th.row-h{text-align:left;padding-left:10px;font-weight:500;background:var(--bg-soft)}
+  .heatmap th.col-h{font-weight:500;background:var(--bg-soft);writing-mode:horizontal-tb}
+  .heatmap td.cell{font-weight:500}
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;align-items:center;padding:14px 16px;background:var(--bg-soft);border:1px solid var(--line)}
+  .filter-bar input,.filter-bar select{padding:7px 11px;border:1px solid var(--line);background:var(--bg);font-family:inherit;font-size:13px}
+  .filter-bar input{flex:1;min-width:200px}
+  .filter-bar label{font-size:11px;color:var(--ink-soft);letter-spacing:0.04em;text-transform:uppercase}
+  .filter-bar .count{font-size:12px;color:var(--ink-soft);margin-left:auto}
+  .badge{display:inline-block;padding:2px 8px;font-size:11px;background:var(--bg-soft);border:1px solid var(--line);margin-right:4px;white-space:nowrap}
+  .badge.cog{background:#E0EAF5;color:var(--c-cog);border-color:var(--c-cog)}
+  .badge.se{background:#FBE0EE;color:var(--c-se);border-color:var(--c-se)}
+  .badge.val{background:#F4E8D4;color:var(--c-val);border-color:var(--c-val)}
+  .badge.ag{background:#DDF1E2;color:var(--c-ag);border-color:var(--c-ag)}
+  .badge.wb{background:#EEDDF8;color:var(--c-wb);border-color:var(--c-wb)}
+  .badge.ce{background:#FFE8C8;color:var(--c-ce);border-color:var(--c-ce)}
+  .badge.mm{background:#E5E5FA;color:var(--c-mm);border-color:var(--c-mm)}
+  .pill{display:inline-block;padding:1px 7px;font-size:10px;background:#fff;border:1px solid var(--line);color:var(--ink-soft);margin-right:3px;border-radius:2px}
+  .chart-container{position:relative;height:340px}
+  .chart-container.tall{height:480px}
+  .chart-container.short{height:260px}
+  #od-table{max-height:560px;overflow-y:auto;border:1px solid var(--line)}
+  #od-table thead th{position:sticky;top:0;background:var(--bg-soft);z-index:1}
+  .notice{background:#FFF7F5;border-left:4px solid var(--akashiro-red);padding:16px 18px;margin:20px 0;font-size:13px;color:var(--ink-soft)}
+  .notice strong{color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:24px 48px;color:var(--ink-soft);font-size:12px;text-align:center}
+  footer a{color:var(--akashiro-red);text-decoration:none;margin:0 12px}
+  .map-table{width:100%;border-collapse:collapse;font-size:13px}
+  .map-table th,.map-table td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}
+  .map-table th{background:var(--bg-soft);font-weight:500;color:var(--ink-soft);font-size:12px}
+  .map-table .arrow{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--akashiro-red);text-align:center;font-weight:700}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 16px;font-size:11px;color:var(--ink-soft)}
+  .legend .swatch{display:inline-block;width:14px;height:14px;border:1px solid var(--line);margin-right:5px;vertical-align:middle}
+  .scale-bar{display:inline-flex;width:140px;height:10px;border:1px solid var(--line);margin:0 8px;vertical-align:middle}
+  .scale-bar span{flex:1;display:block}
+  .top-school-row td{font-size:12px}
+  .rank-pill{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;background:var(--akashiro-red);color:#fff;font-size:11px;font-weight:700;border-radius:50%;margin-right:8px}
+  .rank-pill.gray{background:var(--ink-mute)}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>JPMS-DB v2 — Outcome Explorer</h1>
+    <span class="v2-badge">PHASE G / TEAM G-2</span>
+    <span class="sub">成果次元100+ × 学校文化10次元 × 卒業生528校 マッピング</span>
+  </div>
+  <nav>
+    <a href="index.html">v2ダッシュボード戻る</a>
+    <a href="../analysis.html">analysis.html</a>
+    <a href="outcome-explorer.html" class="current">outcome-explorer (current)</a>
+    <a href="era-pivot.html">era-pivot</a>
+    <a href="family-fit.html">family-fit</a>
+    <a href="sample-report-v2.html">sample-report-v2</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="overview">
+  <h2>「何が育つか」を77項目から、<br>「どこで育つか」を528校から、立体的に見る。</h2>
+  <p>
+    Outcome Explorer は、<strong>成果次元 (outcome_dim_v2, 77項目 → 目標100+)</strong> を中心に置き、それを「学校文化10次元 (Layer 4)」「時代変遷8区分 (Layer 5)」「卒業生キャリア12カテゴリ (Phase E一次集積)」と多面的に接続する独立解析ページです。
+    各ビューは Chart.js 4.4 を用い、Phase E で蓄積した 528校 × 10次元 × 平均50点規模の文化スコア、528件のalumni実績、50件のera_relevanceデータを統合しています。
+  </p>
+  <p>
+    本ページの目的は、ある成果クラスタ（例: 認知・学術 / 創造・卓越 / 市場・経営）が、どの学校文化プロファイルを持つ環境で育ちやすいかを「予防的適合モデル」の前段として可視化することにあります。
+    全体俯瞰 → クラスタ別深堀り → TOP校プロファイル比較 の3段階で読み解く構成にしました。
+  </p>
+  <div class="stats" id="hero-stats"></div>
+</section>
+
+<!-- ===== Section 1: 7-cluster overview ===== -->
+<section id="clusters">
+  <h3>1. 7大成果クラスタの概観 <span class="meta">outcome_dims 77項目を意味で束ねたメタ層</span></h3>
+  <p class="lede">
+    成果次元77項目は、教育心理・教育学・偉人研究・経営学・イノベーション研究・人類学・神話研究の知見を踏まえて、7つの意味クラスタに集約されています。
+    クラスタは互いに排他的ではなく、特に「認知・学術 × 創造・卓越」「主体性・市民性 × 市場・経営」など隣接領域では重なりを持ちます。
+    各カードは項目数とサンプル項目を示し、後続セクションで使う共通カラーキーの起点となります。
+  </p>
+  <div class="grid-7" id="cluster-cards"></div>
+  <div class="card" style="margin-top:18px">
+    <h4>クラスタ別 成果次元数（横棒チャート）</h4>
+    <div class="chart-container short"><canvas id="chart-cluster-counts"></canvas></div>
+  </div>
+</section>
+
+<!-- ===== Section 2: 7 cluster x 10 culture matrix ===== -->
+<section id="cluster-culture">
+  <h3>2. 7成果クラスタ × 学校文化10次元 推奨マトリクス <span class="meta">理論ベースの育成親和性スコア</span></h3>
+  <p class="lede">
+    どの学校文化次元が高い学校が、どの成果クラスタを育てやすいかを示す<strong>理論ベースの推奨スコア（0-3）</strong>です。
+    OECD 2030・CASEL・PERMA・偉人研究 (GF) ・経営学 (MG) ・イノベーション理論 (IT) の文献を参照し、各クラスタが必要とする学校環境特性を整理しました。
+    数値は「最低限必要(1) / 推奨(2) / 強く推奨(3)」の3段階で、空欄は中立を意味します。
+  </p>
+  <div class="legend">
+    <span><span class="swatch" style="background:#FFF7F5"></span>0 (中立)</span>
+    <span><span class="swatch" style="background:#FBD9CC"></span>1 (最低限)</span>
+    <span><span class="swatch" style="background:#F08C70"></span>2 (推奨)</span>
+    <span><span class="swatch" style="background:#CC1400"></span>3 (強く推奨)</span>
+  </div>
+  <div class="card">
+    <table class="heatmap" id="culture-matrix"></table>
+  </div>
+  <p class="lede" style="margin-top:14px">
+    たとえば「認知・学術」クラスタは <em>学業強度・構造度</em> が高い学校でより育ちやすく、「創造・卓越」クラスタは <em>創造性奨励・自律性</em> が、「市場・経営」クラスタは <em>共同体性・国際性・競争性</em> が高い学校でより育ちやすい、という仮説的な対応を示しています。
+    これは Phase G-3 以降の MLM/SEM モデルでの実データ検証対象になります。
+  </p>
+</section>
+
+<!-- ===== Section 3: era_relevance heatmap ===== -->
+<section id="era">
+  <h3>3. 時代 × 主要成果次元 era_relevance ヒートマップ <span class="meta">明治〜令和の社会要請変遷</span></h3>
+  <p class="lede">
+    Layer 5 の era_relevance テーブル（50件）から、明治〜令和の各時代における成果次元の重要度（0-10）を抽出し、TOP15項目を縦軸に時代を横軸に並べたヒートマップです。
+    色が濃いほど当該時代に強く求められた能力です。
+    時代軸を読むと、明治〜昭和前期は「論理的思考・伝統文化尊重」、平成は「批判的思考・グリット」、令和以降は「創造性・主体性・OECD変革コンピテンシー」が立ち上がる流れが見えます。
+  </p>
+  <div class="card">
+    <table class="heatmap" id="era-heatmap"></table>
+  </div>
+  <p class="lede" style="margin-top:14px">
+    本データは過去6時代の実データに基づき、2030s/2050s 区分は CLA (因果階層分析) と FK (フォーサイト基盤) の参照を通じた推定値を含みます。
+    era_relevance は era-pivot.html (Team G-3) でより詳細に展開されます。
+  </p>
+</section>
+
+<!-- ===== Section 4: alumni_career x 7 cluster mapping ===== -->
+<section id="alumni-cluster">
+  <h3>4. 卒業生キャリア12カテゴリ × 7成果クラスタ 対応図 <span class="meta">「活躍」を「育成」に翻訳する</span></h3>
+  <p class="lede">
+    卒業生実績データ（alumni_by_category, 計 <span id="alumni-total-inline"></span> 件）はキャリアカテゴリで分類されています。各カテゴリが、Layer 3 のどの成果クラスタの「結実型」に対応するかを定義しました。
+    これにより「academic（研究者）が多い学校 = 認知・学術クラスタが結実しやすい学校」という構造的読みが可能になります。
+  </p>
+  <div class="grid-2">
+    <div class="card">
+      <h4>キャリアカテゴリ別 卒業生数</h4>
+      <div class="chart-container"><canvas id="chart-alumni-cat"></canvas></div>
+    </div>
+    <div class="card">
+      <h4>カテゴリ → 成果クラスタ 対応マップ</h4>
+      <table class="map-table" id="career-map"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 5: 77 items full filterable table ===== -->
+<section id="full-list">
+  <h3>5. 成果次元77項目 フルリスト <span class="meta">クラスタ・フレームワーク・予測力で絞り込み可能</span></h3>
+  <p class="lede">
+    全77項目を、cluster / framework / predictability / age_window で絞り込み可能なテーブルです。
+    predictability は理論的に予測力が高いほど 5 に近く、age_window は測定タイミング（在校中 / 卒業5年 / 10年 / 20年）です。
+    framework は OECD・CASEL・PERMA・P21・PISA・GF（偉人）・MG（経営）・IT（イノベ）・JP独自・MEXT等の出典を示します。
+  </p>
+  <div class="filter-bar">
+    <input id="search-input" type="text" placeholder="検索（項目名・定義・出典）">
+    <select id="cluster-filter">
+      <option value="">クラスタ：すべて</option>
+    </select>
+    <select id="framework-filter">
+      <option value="">フレーム：すべて</option>
+    </select>
+    <select id="predict-filter">
+      <option value="">予測力：すべて</option>
+      <option value="5">5（最高）</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+    </select>
+    <select id="age-filter">
+      <option value="">年齢窓：すべて</option>
+      <option value="in_school">在校中</option>
+      <option value="graduate_5y">卒業5年</option>
+      <option value="graduate_10y">卒業10年</option>
+      <option value="graduate_20y">卒業20年</option>
+    </select>
+    <span class="count" id="row-count"></span>
+  </div>
+  <div id="od-table">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:140px">クラスタ</th>
+          <th style="width:200px">項目名</th>
+          <th>定義</th>
+          <th style="width:90px">フレーム</th>
+          <th style="width:80px" class="center">予測力</th>
+          <th style="width:100px">年齢窓</th>
+        </tr>
+      </thead>
+      <tbody id="od-tbody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== Section 6: 10 culture x 7 cluster recommendation matrix (data-driven) ===== -->
+<section id="culture-cluster">
+  <h3>6. 学校文化10次元 × 7成果クラスタ「実データ平均スコア」 <span class="meta">528校×10次元から逆引き</span></h3>
+  <p class="lede">
+    Phase E で蓄積した 528校 × 10文化次元のスコアを、各クラスタごとに「上位alumni排出校」がどの文化次元で高いスコアを持つかで集計しました。
+    これは Section 2 の「理論ベース推奨」と対になる「実データ観測」レンズで、両者の差異が今後の検証ポイントになります。
+  </p>
+  <div class="grid-2">
+    <div class="card">
+      <h4>TOP15 alumni排出校 平均文化プロファイル（レーダー）</h4>
+      <div class="chart-container tall"><canvas id="chart-top15-radar"></canvas></div>
+    </div>
+    <div class="card">
+      <h4>10次元別 528校全体の分布</h4>
+      <div class="chart-container tall"><canvas id="chart-culture-dist"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Section 7: TOP10 schools profile comparison ===== -->
+<section id="top10">
+  <h3>7. TOP10 alumni排出校 文化プロファイル比較 <span class="meta">名門校が共有する文化次元、固有な文化次元</span></h3>
+  <p class="lede">
+    alumni_top_schools 上位10校の学校文化10次元スコアを並べたヒートマップとレーダーチャートです。
+    多くの名門校に共通する次元（メンター密度・自律性）と、学校ごとに固有な次元（精神性・国際性・競争性）が浮かび上がります。
+    なお灘・武蔵・桜蔭等で <span id="missing-count"></span> 校は文化スコア未取得（jpms_s_id重複・データ欠損）のため、ここでは取得済みのものを表示しています。
+  </p>
+  <div class="card" style="margin-bottom:20px">
+    <table class="heatmap" id="top10-heatmap"></table>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h4>TOP5校 重ね合わせレーダー</h4>
+      <div class="chart-container tall"><canvas id="chart-top5-radar"></canvas></div>
+    </div>
+    <div class="card">
+      <h4>TOP10校 alumni数（横棒）</h4>
+      <div class="chart-container tall"><canvas id="chart-top10-bar"></canvas></div>
+    </div>
+  </div>
+  <div class="notice" style="margin-top:24px">
+    <strong>解釈上の留意：</strong>
+    本ページは Phase G の「観測・地図」レイヤーであり、因果推論を主張するものではありません。
+    アルムナイ実績は歴史的・社会的バイアス（時代別の機会格差・ジェンダー比率・地域性）を含むため、
+    「育てる文化スコア」と「結果としての活躍」の関係は Phase G-3 / G-4 の MLM/SEM 解析で因果同定を試みます。
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>JPMS-DB v2 — Outcome Explorer | 2026-05-05生成 | 528校 / 77成果次元 / 10学校文化次元 / 8時代区分 / 36DB接続</div>
+  <div style="margin-top:8px">
+    <a href="index.html">v2ダッシュボード</a>
+    <a href="../analysis.html">v1解析</a>
+    <a href="outcome-explorer.html">outcome-explorer</a>
+    <a href="era-pivot.html">era-pivot</a>
+    <a href="family-fit.html">family-fit</a>
+    <a href="sample-report-v2.html">sample-report-v2</a>
+    <a href="https://github.com/yuyanishimura0312/jpms-db" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <div style="margin-top:8px">CC-BY-NC 4.0（Layer 1のみ）／Layer 2-5は研究者向け公開・一部非公開</div>
+</footer>
+
+<script>
+const DATA = window.JPMS_V2;
+const RED = '#CC1400';
+const RED_LIGHT = '#E63D2C';
+const INK = '#0E0E0E';
+const INK_SOFT = '#3A3A3A';
+const LINE = '#E5E5E5';
+
+// --- Cluster color map (matches CSS .badge) ---
+const CLUSTER_COLOR = {
+  cognitive: '#1B5E9A',
+  social_emotional: '#C7438C',
+  values_morals: '#7A4F1C',
+  agency_civic: '#1F8A4D',
+  wellbeing: '#9056C0',
+  creative_excellence: '#B86F00',
+  market_management: '#3D3DBC'
+};
+const CLUSTER_BADGE_CLASS = {
+  cognitive: 'cog',
+  social_emotional: 'se',
+  values_morals: 'val',
+  agency_civic: 'ag',
+  wellbeing: 'wb',
+  creative_excellence: 'ce',
+  market_management: 'mm'
+};
+
+// --- Helpers ---
+function el(tag, attrs={}, children=[]) {
+  const e = document.createElement(tag);
+  for (const k in attrs) {
+    if (k === 'class') e.className = attrs[k];
+    else if (k === 'style') e.setAttribute('style', attrs[k]);
+    else if (k.startsWith('on') && typeof attrs[k] === 'function') e.addEventListener(k.substring(2), attrs[k]);
+    else e.setAttribute(k, attrs[k]);
+  }
+  (Array.isArray(children) ? children : [children]).forEach(c => {
+    if (c == null) return;
+    e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+  });
+  return e;
+}
+function lerp(a, b, t) { return a + (b - a) * t; }
+function rgb(r,g,b) { return `rgb(${r|0},${g|0},${b|0})`; }
+function redScale(t) {
+  // 0 -> very light pink, 1 -> deep red
+  t = Math.max(0, Math.min(1, t));
+  return rgb(lerp(255, 204, t), lerp(247, 20, t), lerp(245, 0, t));
+}
+function eraScale(t) {
+  // 0 -> very light, 1 -> red
+  t = Math.max(0, Math.min(1, t));
+  return rgb(lerp(255, 204, t), lerp(247, 20, t), lerp(245, 0, t));
+}
+function cultScoreScale(s) {
+  // school culture score 0-100 -> background color
+  const t = Math.max(0, Math.min(1, (s - 30) / 60));
+  return rgb(lerp(255, 204, t), lerp(247, 20, t), lerp(245, 0, t));
+}
+
+// ============================================================
+// Hero stats
+// ============================================================
+(function () {
+  const m = DATA.meta || {};
+  const stats = [
+    { num: DATA.outcome_dims.length, label: '成果次元（目標100+）' },
+    { num: DATA.outcome_clusters.length, label: '成果クラスタ' },
+    { num: DATA.culture_dims.length, label: '学校文化次元' },
+    { num: Object.keys(DATA.culture_scores).length, label: '文化スコア取得校' },
+    { num: DATA.eras.length, label: '時代区分' },
+    { num: DATA.era_relevance.length, label: 'era_relevance件' },
+    { num: Object.values(DATA.alumni_by_category).reduce((a,b)=>a+b,0).toLocaleString(), label: 'alumni実績件数' },
+    { num: DATA.alumni_top_schools.length, label: 'alumni TOP校（提示）' }
+  ];
+  const root = document.getElementById('hero-stats');
+  stats.forEach(s => {
+    const div = el('div', { class: 'stat' }, [
+      el('div', { class: 'num' }, String(s.num)),
+      el('div', { class: 'label' }, s.label)
+    ]);
+    root.appendChild(div);
+  });
+})();
+
+// ============================================================
+// Section 1: cluster cards + bar chart
+// ============================================================
+(function () {
+  const root = document.getElementById('cluster-cards');
+  const counts = {};
+  const samples = {};
+  DATA.outcome_dims.forEach(o => {
+    counts[o.cluster_id] = (counts[o.cluster_id] || 0) + 1;
+    if (!samples[o.cluster_id]) samples[o.cluster_id] = [];
+    if (samples[o.cluster_id].length < 3) samples[o.cluster_id].push(o.name_ja);
+  });
+  DATA.outcome_clusters.forEach(c => {
+    const card = el('div', { class: 'cluster-card ' + CLUSTER_BADGE_CLASS[c.id] }, [
+      el('h5', {}, c.name_ja),
+      el('div', { class: 'num' }, [
+        document.createTextNode(String(counts[c.id] || 0)),
+        el('small', {}, ' 項目')
+      ]),
+      el('p', {}, c.description),
+      el('div', { class: 'samples' }, '例：' + (samples[c.id] || []).join('・'))
+    ]);
+    root.appendChild(card);
+  });
+
+  const labels = DATA.outcome_clusters.map(c => c.name_ja);
+  const data = DATA.outcome_clusters.map(c => counts[c.id] || 0);
+  const colors = DATA.outcome_clusters.map(c => CLUSTER_COLOR[c.id]);
+  new Chart(document.getElementById('chart-cluster-counts'), {
+    type: 'bar',
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { displayColors: false } },
+      scales: { x: { beginAtZero: true, ticks: { stepSize: 5 } } }
+    }
+  });
+})();
+
+// ============================================================
+// Section 2: cluster x culture-dim recommendation matrix
+// ============================================================
+const CLUSTER_CULTURE_REC = {
+  cognitive:           { cult_autonomy:2, cult_structure:3, cult_diversity:1, cult_intensity:3, cult_mentor:2, cult_creativity:1, cult_competition:2, cult_community:1, cult_internationality:2, cult_spirituality:0 },
+  social_emotional:    { cult_autonomy:1, cult_structure:1, cult_diversity:2, cult_intensity:0, cult_mentor:3, cult_creativity:1, cult_competition:0, cult_community:3, cult_internationality:1, cult_spirituality:1 },
+  values_morals:       { cult_autonomy:1, cult_structure:2, cult_diversity:1, cult_intensity:1, cult_mentor:2, cult_creativity:0, cult_competition:0, cult_community:3, cult_internationality:1, cult_spirituality:3 },
+  agency_civic:        { cult_autonomy:3, cult_structure:1, cult_diversity:2, cult_intensity:1, cult_mentor:2, cult_creativity:2, cult_competition:1, cult_community:2, cult_internationality:2, cult_spirituality:1 },
+  wellbeing:           { cult_autonomy:2, cult_structure:1, cult_diversity:1, cult_intensity:0, cult_mentor:3, cult_creativity:2, cult_competition:0, cult_community:3, cult_internationality:1, cult_spirituality:2 },
+  creative_excellence: { cult_autonomy:3, cult_structure:0, cult_diversity:2, cult_intensity:2, cult_mentor:2, cult_creativity:3, cult_competition:1, cult_community:1, cult_internationality:2, cult_spirituality:2 },
+  market_management:   { cult_autonomy:2, cult_structure:2, cult_diversity:2, cult_intensity:2, cult_mentor:2, cult_creativity:2, cult_competition:3, cult_community:3, cult_internationality:3, cult_spirituality:0 }
+};
+(function () {
+  const t = document.getElementById('culture-matrix');
+  const cultureDims = DATA.culture_dims;
+  const clusters = DATA.outcome_clusters;
+  // header row
+  const trh = el('tr');
+  trh.appendChild(el('th', { class: 'row-h', style: 'width:160px' }, 'クラスタ ＼ 文化次元'));
+  cultureDims.forEach(d => trh.appendChild(el('th', { class: 'col-h' }, d.name_ja)));
+  t.appendChild(trh);
+  clusters.forEach(c => {
+    const tr = el('tr');
+    const labelCell = el('th', { class: 'row-h' });
+    labelCell.appendChild(el('span', { class: 'badge ' + CLUSTER_BADGE_CLASS[c.id] }, c.name_ja));
+    tr.appendChild(labelCell);
+    const rec = CLUSTER_CULTURE_REC[c.id] || {};
+    cultureDims.forEach(d => {
+      const v = rec[d.id] || 0;
+      const td = el('td', { class: 'cell' }, v ? String(v) : '');
+      const t01 = v / 3;
+      td.style.background = redScale(t01);
+      if (v >= 2) td.style.color = '#fff';
+      td.title = `${c.name_ja} × ${d.name_ja} : ${v}`;
+      tr.appendChild(td);
+    });
+    t.appendChild(tr);
+  });
+})();
+
+// ============================================================
+// Section 3: era_relevance heatmap (era x top15 outcome dims)
+// ============================================================
+(function () {
+  const t = document.getElementById('era-heatmap');
+  // pick top 15 outcome dims that appear in era_relevance
+  const odCount = {};
+  DATA.era_relevance.forEach(r => { odCount[r.outcome_dim_id] = (odCount[r.outcome_dim_id]||0)+1; });
+  const odIds = Object.keys(odCount).sort((a,b) => odCount[b]-odCount[a]).slice(0,15);
+  const odMap = {};
+  DATA.outcome_dims.forEach(o => { odMap[o.id] = o; });
+  const eraIds = DATA.eras.map(e => e.id);
+  // build relevance lookup
+  const lookup = {}; // odId -> eraId -> relevance
+  DATA.era_relevance.forEach(r => {
+    if (!lookup[r.outcome_dim_id]) lookup[r.outcome_dim_id] = {};
+    lookup[r.outcome_dim_id][r.era] = r.relevance;
+  });
+  // header
+  const trh = el('tr');
+  trh.appendChild(el('th', { class: 'row-h', style: 'width:200px' }, '成果次元 ＼ 時代'));
+  DATA.eras.forEach(e => trh.appendChild(el('th', { class: 'col-h' }, e.name_ja)));
+  t.appendChild(trh);
+  odIds.forEach(odId => {
+    const o = odMap[odId];
+    if (!o) return;
+    const tr = el('tr');
+    const lbl = el('th', { class: 'row-h' });
+    lbl.appendChild(el('span', { class: 'badge ' + CLUSTER_BADGE_CLASS[o.cluster_id] }, o.name_ja));
+    tr.appendChild(lbl);
+    eraIds.forEach(eid => {
+      const v = lookup[odId] && lookup[odId][eid];
+      if (v == null) {
+        tr.appendChild(el('td', { class: 'cell', style: 'background:#FAFAFA;color:#BBB' }, '–'));
+      } else {
+        const td = el('td', { class: 'cell' }, String(v));
+        td.style.background = eraScale(v / 10);
+        if (v >= 7) td.style.color = '#fff';
+        td.title = `${o.name_ja} / ${eid}: ${v} — ${(DATA.era_relevance.find(r=>r.outcome_dim_id===odId && r.era===eid)||{}).reasoning||''}`;
+        tr.appendChild(td);
+      }
+    });
+    t.appendChild(tr);
+  });
+})();
+
+// ============================================================
+// Section 4: alumni category x cluster mapping
+// ============================================================
+const CAREER_TO_CLUSTER = {
+  academic:     { cluster: 'cognitive',           note: '研究・学術探究 → 批判的思考・深い専門性' },
+  artist:       { cluster: 'creative_excellence', note: '芸術・表現 → 創造性・Domain Mastery・Flow' },
+  writer:       { cluster: 'creative_excellence', note: '言語表現・文学 → 創造性・自己内省' },
+  cultural:     { cluster: 'values_morals',       note: '文化人・伝統承継 → 価値観・道徳・地域貢献' },
+  executive:    { cluster: 'market_management',   note: '組織経営・リーダーシップ → 経営判断・意思決定' },
+  entrepreneur: { cluster: 'market_management',   note: '起業・新規事業 → Effectuation・市場開拓' },
+  statesman:    { cluster: 'agency_civic',        note: '政治・公共 → 主体性・市民性・OECD変革コンピテンシー' },
+  thinker:      { cluster: 'cognitive',           note: '思想・哲学 → 批判的思考・知の統合' },
+  economist:    { cluster: 'cognitive',           note: '経済学的思考 → 論理・分析力' },
+  merchant:     { cluster: 'market_management',   note: '商業・経営実務 → 起業家精神' },
+  monarch:      { cluster: 'agency_civic',        note: '伝統的指導 → 共同体性・象徴的役割' },
+  other:        { cluster: 'wellbeing',           note: '多様キャリア → ウェルビーイング・自己実現' }
+};
+(function () {
+  const total = Object.values(DATA.alumni_by_category).reduce((a,b)=>a+b,0);
+  document.getElementById('alumni-total-inline').textContent = total.toLocaleString();
+  // Bar chart
+  const cats = Object.keys(DATA.alumni_by_category).sort((a,b)=>DATA.alumni_by_category[b]-DATA.alumni_by_category[a]);
+  const labels = cats.map(c => c);
+  const counts = cats.map(c => DATA.alumni_by_category[c]);
+  const colors = cats.map(c => CLUSTER_COLOR[(CAREER_TO_CLUSTER[c]||{}).cluster] || '#999');
+  new Chart(document.getElementById('chart-alumni-cat'), {
+    type: 'bar',
+    data: { labels, datasets: [{ data: counts, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: {
+          label: ctx => {
+            const c = labels[ctx.dataIndex];
+            const m = CAREER_TO_CLUSTER[c] || {};
+            const cl = DATA.outcome_clusters.find(x=>x.id===m.cluster) || {};
+            return `${ctx.parsed.x}名 → ${cl.name_ja||'-'}`;
+          }
+        }
+      }},
+      scales: { x: { beginAtZero: true } }
+    }
+  });
+  // Map table
+  const t = document.getElementById('career-map');
+  const head = el('tr', {}, [
+    el('th', { style:'width:120px' }, 'カテゴリ'),
+    el('th', { style:'width:60px;text-align:center' }, '件数'),
+    el('th', { style:'width:40px;text-align:center' }, '→'),
+    el('th', { style:'width:160px' }, '対応クラスタ'),
+    el('th', {}, '対応の根拠')
+  ]);
+  t.appendChild(head);
+  cats.forEach(c => {
+    const m = CAREER_TO_CLUSTER[c] || { cluster: 'cognitive', note: '–' };
+    const cl = DATA.outcome_clusters.find(x=>x.id===m.cluster);
+    const tr = el('tr');
+    tr.appendChild(el('td', {}, c));
+    tr.appendChild(el('td', { class:'center' }, String(DATA.alumni_by_category[c])));
+    tr.appendChild(el('td', { class:'arrow' }, '→'));
+    const cell = el('td', {});
+    cell.appendChild(el('span', { class: 'badge ' + CLUSTER_BADGE_CLASS[m.cluster] }, cl ? cl.name_ja : m.cluster));
+    tr.appendChild(cell);
+    tr.appendChild(el('td', { style:'font-size:12px;color:var(--ink-soft)' }, m.note));
+    t.appendChild(tr);
+  });
+})();
+
+// ============================================================
+// Section 5: 77 items full filterable table
+// ============================================================
+(function () {
+  const tbody = document.getElementById('od-tbody');
+  const cf = document.getElementById('cluster-filter');
+  const ff = document.getElementById('framework-filter');
+  const pf = document.getElementById('predict-filter');
+  const af = document.getElementById('age-filter');
+  const si = document.getElementById('search-input');
+  const cnt = document.getElementById('row-count');
+
+  const clusters = DATA.outcome_clusters;
+  const frameworks = Array.from(new Set(DATA.outcome_dims.map(o => o.framework))).sort();
+  clusters.forEach(c => cf.appendChild(el('option', { value: c.id }, c.name_ja)));
+  frameworks.forEach(f => ff.appendChild(el('option', { value: f }, f)));
+
+  function clusterName(id) {
+    const c = clusters.find(x => x.id === id);
+    return c ? c.name_ja : id;
+  }
+  function ageJa(a) {
+    return ({in_school:'在校中', graduate_5y:'卒業5年', graduate_10y:'卒業10年', graduate_20y:'卒業20年'})[a] || a;
+  }
+  function render() {
+    tbody.innerHTML = '';
+    const q = si.value.trim().toLowerCase();
+    const cv = cf.value, fv = ff.value, pv = pf.value, av = af.value;
+    let n = 0;
+    DATA.outcome_dims.forEach(o => {
+      if (cv && o.cluster_id !== cv) return;
+      if (fv && o.framework !== fv) return;
+      if (pv && String(o.predictability) !== pv) return;
+      if (av && o.age_window !== av) return;
+      if (q) {
+        const blob = (o.name_ja+' '+o.name_en+' '+o.definition+' '+o.framework+' '+o.literature_ref+' '+o.source_db_ref).toLowerCase();
+        if (!blob.includes(q)) return;
+      }
+      const tr = el('tr');
+      const c1 = el('td');
+      c1.appendChild(el('span', { class: 'badge ' + CLUSTER_BADGE_CLASS[o.cluster_id] }, clusterName(o.cluster_id)));
+      tr.appendChild(c1);
+      const c2 = el('td');
+      c2.appendChild(el('div', { style: 'font-weight:500' }, o.name_ja));
+      c2.appendChild(el('div', { style: 'font-size:11px;color:var(--ink-mute)' }, o.name_en));
+      tr.appendChild(c2);
+      tr.appendChild(el('td', { style:'font-size:12px' }, o.definition + (o.literature_ref ? ' / ' + o.literature_ref : '')));
+      const c4 = el('td');
+      c4.appendChild(el('span', { class: 'pill' }, o.framework));
+      if (o.source_db_ref) c4.appendChild(el('span', { class: 'pill' }, o.source_db_ref));
+      tr.appendChild(c4);
+      // predictability cell visualized
+      const pc = el('td', { class: 'center' });
+      const dots = el('span', {}, '');
+      for (let i = 1; i <= 5; i++) {
+        const d = el('span', { style: `display:inline-block;width:7px;height:7px;border-radius:50%;margin:0 1px;background:${i<=o.predictability?RED:'#DDD'}` });
+        dots.appendChild(d);
+      }
+      pc.appendChild(dots);
+      pc.appendChild(el('div', { style:'font-size:10px;color:var(--ink-mute);margin-top:3px' }, String(o.predictability)));
+      tr.appendChild(pc);
+      tr.appendChild(el('td', { style:'font-size:11px' }, ageJa(o.age_window)));
+      tbody.appendChild(tr);
+      n++;
+    });
+    cnt.textContent = `${n} / ${DATA.outcome_dims.length} 項目`;
+  }
+  [cf, ff, pf, af].forEach(s => s.addEventListener('change', render));
+  si.addEventListener('input', render);
+  render();
+})();
+
+// ============================================================
+// Section 6: TOP15 alumni schools radar + culture distribution
+// ============================================================
+(function () {
+  const dims = DATA.culture_dims;
+  // Map alumni_top_schools.name -> schools.id via name_ja
+  const nameToId = {};
+  DATA.schools.forEach(s => { nameToId[s.name_ja] = s.id; });
+  // Pull the TOP15 with culture scores available
+  const topRows = DATA.alumni_top_schools.map(t => {
+    const id = nameToId[t.name];
+    const score = id ? DATA.culture_scores[id] : null;
+    return { name: t.name, id, count: t.count, score };
+  });
+  const withScore = topRows.filter(r => r.score);
+
+  // Radar: average across the available top15
+  const avg = {};
+  dims.forEach(d => avg[d.id] = 0);
+  withScore.forEach(r => dims.forEach(d => avg[d.id] += (r.score[d.id]||0)));
+  dims.forEach(d => avg[d.id] = withScore.length ? avg[d.id] / withScore.length : 0);
+
+  // 528-school overall average
+  const allAvg = {};
+  dims.forEach(d => allAvg[d.id] = 0);
+  let nAll = 0;
+  Object.values(DATA.culture_scores).forEach(s => {
+    nAll++;
+    dims.forEach(d => allAvg[d.id] += (s[d.id]||0));
+  });
+  dims.forEach(d => allAvg[d.id] = nAll ? allAvg[d.id] / nAll : 0);
+
+  new Chart(document.getElementById('chart-top15-radar'), {
+    type: 'radar',
+    data: {
+      labels: dims.map(d => d.name_ja),
+      datasets: [
+        {
+          label: `TOP${withScore.length} alumni排出校 平均 (n=${withScore.length})`,
+          data: dims.map(d => avg[d.id]),
+          backgroundColor: 'rgba(204,20,0,0.18)',
+          borderColor: RED,
+          borderWidth: 2,
+          pointBackgroundColor: RED,
+          pointRadius: 3
+        },
+        {
+          label: `全528校 平均 (n=${nAll})`,
+          data: dims.map(d => allAvg[d.id]),
+          backgroundColor: 'rgba(58,58,58,0.10)',
+          borderColor: '#666',
+          borderWidth: 1.5,
+          pointBackgroundColor: '#666',
+          pointRadius: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } },
+      scales: { r: { min: 30, max: 80, ticks: { stepSize: 10, font: { size: 10 } }, pointLabels: { font: { size: 11 } } } }
+    }
+  });
+
+  // Distribution chart: stacked-ish range bars (mean +/- range) for 10 dims
+  const distData = dims.map(d => {
+    const vals = Object.values(DATA.culture_scores).map(s => s[d.id]||0);
+    vals.sort((a,b)=>a-b);
+    const mean = vals.reduce((a,b)=>a+b,0)/vals.length;
+    const min = vals[0], max = vals[vals.length-1];
+    const p25 = vals[Math.floor(vals.length*0.25)];
+    const p75 = vals[Math.floor(vals.length*0.75)];
+    return { name: d.name_ja, mean, min, max, p25, p75 };
+  });
+  new Chart(document.getElementById('chart-culture-dist'), {
+    type: 'bar',
+    data: {
+      labels: distData.map(d => d.name),
+      datasets: [
+        { label: '平均', data: distData.map(d => d.mean), backgroundColor: 'rgba(204,20,0,0.7)', borderColor: RED, borderWidth: 1 },
+        { label: '25%-75%レンジ幅', data: distData.map(d => d.p75 - d.p25), backgroundColor: 'rgba(204,20,0,0.18)', borderWidth: 0 }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } },
+      scales: { x: { beginAtZero: true, max: 100, title: { display: true, text: '文化スコア (0-100)', font: { size: 11 } } } }
+    }
+  });
+})();
+
+// ============================================================
+// Section 7: TOP10 schools heatmap + radar overlay + bar
+// ============================================================
+(function () {
+  const dims = DATA.culture_dims;
+  const nameToId = {};
+  DATA.schools.forEach(s => { nameToId[s.name_ja] = s.id; });
+
+  const top = DATA.alumni_top_schools.slice(0, 10).map(t => {
+    const id = nameToId[t.name];
+    const score = id ? DATA.culture_scores[id] : null;
+    return { name: t.name, id, count: t.count, score };
+  });
+
+  const withScore = top.filter(r => r.score);
+  const missing = top.length - withScore.length;
+  document.getElementById('missing-count').textContent = missing;
+
+  // Heatmap
+  const t = document.getElementById('top10-heatmap');
+  const trh = el('tr');
+  trh.appendChild(el('th', { class:'row-h', style:'width:200px' }, '校名 ＼ 文化次元'));
+  trh.appendChild(el('th', { class:'col-h', style:'width:70px' }, 'alumni'));
+  dims.forEach(d => trh.appendChild(el('th', { class:'col-h' }, d.name_ja)));
+  t.appendChild(trh);
+  top.forEach((r, i) => {
+    const tr = el('tr');
+    const nameCell = el('th', { class:'row-h' });
+    nameCell.appendChild(el('span', { class: 'rank-pill' + (r.score?'':' gray') }, String(i+1)));
+    nameCell.appendChild(document.createTextNode(r.name));
+    tr.appendChild(nameCell);
+    tr.appendChild(el('td', { class:'cell', style:'background:#FAFAFA;font-weight:500' }, String(r.count)));
+    if (!r.score) {
+      const td = el('td', { class:'cell', colspan: dims.length, style:'background:#FAFAFA;color:#BBB;text-align:center' }, '文化スコア未取得');
+      tr.appendChild(td);
+    } else {
+      dims.forEach(d => {
+        const v = r.score[d.id] || 0;
+        const td = el('td', { class:'cell' }, v.toFixed(0));
+        td.style.background = cultScoreScale(v);
+        if (v >= 65) td.style.color = '#fff';
+        td.title = `${r.name} / ${d.name_ja}: ${v}`;
+        tr.appendChild(td);
+      });
+    }
+    t.appendChild(tr);
+  });
+
+  // TOP5 radar overlay
+  const top5 = withScore.slice(0, 5);
+  const colors5 = ['#CC1400', '#1B5E9A', '#1F8A4D', '#B86F00', '#9056C0'];
+  new Chart(document.getElementById('chart-top5-radar'), {
+    type: 'radar',
+    data: {
+      labels: dims.map(d => d.name_ja),
+      datasets: top5.map((s, i) => ({
+        label: s.name,
+        data: dims.map(d => s.score[d.id]||0),
+        borderColor: colors5[i],
+        backgroundColor: colors5[i] + '22',
+        borderWidth: 2,
+        pointRadius: 2
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 10 } } } },
+      scales: { r: { min: 30, max: 90, ticks: { stepSize: 10, font: { size: 10 } }, pointLabels: { font: { size: 10 } } } }
+    }
+  });
+
+  // TOP10 bar chart
+  new Chart(document.getElementById('chart-top10-bar'), {
+    type: 'bar',
+    data: {
+      labels: top.map(r => r.name),
+      datasets: [{
+        data: top.map(r => r.count),
+        backgroundColor: top.map(r => r.score ? RED : '#BBB'),
+        borderWidth: 0
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: {
+          label: ctx => `${ctx.parsed.x} 名` + (top[ctx.dataIndex].score ? '' : ' (文化スコア未取得)')
+        }
+      }},
+      scales: { x: { beginAtZero: true } }
+    }
+  });
+})();
+</script>
+</body>
+</html>
