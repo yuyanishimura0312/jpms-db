@@ -1,0 +1,49 @@
+{
+  "team": "team_l1",
+  "updated_at": "2026-05-05T19:58:00",
+  "status": "completed",
+  "extraction": {
+    "schools_scanned": 223,
+    "schools_with_extractions": 150,
+    "admission_rows_extracted": 42,
+    "progress_rows_extracted": 207,
+    "facility_rows_extracted": 265
+  },
+  "integration": {
+    "admission_rows_inserted": 42,
+    "progress_rows_inserted": 207,
+    "facility_rows_inserted": 265,
+    "rejected": 0
+  },
+  "db_totals_after_l1": {
+    "school_admission_v2": 42,
+    "school_progress_record_v2": 207,
+    "school_facility_v2": 265,
+    "distinct_schools_admission": 39,
+    "distinct_schools_progress": 72,
+    "distinct_schools_facility": 110
+  },
+  "output_files": {
+    "admission": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_l1_admission.jsonl",
+    "progress": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_l1_progress.jsonl",
+    "facility": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_l1_facility.jsonl"
+  },
+  "scripts": {
+    "extractor": "/Users/nishimura+/projects/research/jpms-db/v2/scripts/extract_team_l1.py",
+    "integrator": "/Users/nishimura+/projects/research/jpms-db/v2/scripts/integrate_l1_facilities.py"
+  },
+  "notes": [
+    "HTML cache covered 223 schools (224 dirs incl. one unrelated 'wp_team_c3').",
+    "Realistic data ceilings observed: only 47/223 schools have admission.html, 35/223 have progress.html, 43/223 have about.html.",
+    "Most schools publish admission/progress data via PDF, not inline HTML, limiting numeric extraction.",
+    "Facility extraction draws from about/philosophy/curriculum/schoollife/root pages with 24 keyword patterns.",
+    "Progress extraction uses 100+ university name patterns; rows include both numeric counts (33) and presence-only mentions (171).",
+    "Admission extraction yields quota figures (募集 X名), exam dates, subject/timing/scoring metadata.",
+    "All rows include source_url and rights_level='archive_only' (set by integrator)."
+  ],
+  "spec_targets_vs_actual": {
+    "admission": {"target": "100+", "actual": 42, "ceiling_reason": "Only 39 schools have parseable admission HTML; rest reference PDFs"},
+    "progress": {"target": "500+", "actual": 207, "ceiling_reason": "Only 72 schools have university-name-bearing pages; PDFs not parsed"},
+    "facility": {"target": "200+", "actual": 265, "status": "MET"}
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "metadata": {
+    "phase": "F-4 GCM",
+    "computed_at": "2026-05-05T10:58:37.466215+00:00",
+    "db_path": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db",
+    "n_students": 100,
+    "n_timepoints": 6,
+    "n_observations": 600,
+    "n_unique_schools": 90,
+    "n_total_schools_in_db": 528,
+    "rng_seed": 20260505,
+    "timepoints": [
+      {
+        "label": "T1",
+        "time": 0.0,
+        "phase": "入学前(age 12)"
+      },
+      {
+        "label": "T2",
+        "time": 1.0,
+        "phase": "中1"
+      },
+      {
+        "label": "T3",
+        "time": 2.0,
+        "phase": "中2"
+      },
+      {
+        "label": "T4",
+        "time": 3.0,
+        "phase": "中3"
+      },
+      {
+        "label": "T5",
+        "time": 6.0,
+        "phase": "高3"
+      },
+      {
+        "label": "T6",
+        "time": 11.0,
+        "phase": "社会人5年"
+      }
+    ],
+    "true_parameters": {
+      "linear": {
+        "beta0": 50.0,
+        "beta1": 3.5,
+        "sigma_u": 6.0,
+        "sigma_e": 5.0
+      },
+      "quadratic": {
+        "beta0": 50.0,
+        "beta1": 6.0,
+        "beta2": -0.25,
+        "sigma_u": 6.0,
+        "sigma_e": 5.0
+      },
+      "piecewise": {
+        "beta0": 50.0,
+        "beta1_pre": 5.0,
+        "beta1_post": 1.5,
+        "knot": 3.0,
+        "sigma_u": 6.0,
+        "sigma_e": 5.0
+      }
+    },
+    "simulation_note": "JPMS-DB v2 has no longitudinal panel; this is a synthetic panel generated for framework validation. Outcomes y_linear, y_quadratic, y_piecewise are simulated under three known data-generating processes; the recovered coefficients are expected to approximate the true parameters.",
+    "library": {
+      "statsmodels": "0.14.6",
+      "pandas": "3.0.2",
+      "numpy": "2.4.4"
+    }
+  },
+  "models": {
+    "M0_null": {
+      "formula": "y_linear ~ 1 + (1|school_id)",
+      "icc": 0.041345121186938005,
+      "fixed_effects": [
+        {
+          "term": "Intercept",
+          "estimate": 63.69241189447268,
+          "std_error": 0.6900957722273774,
+          "z": 92.2950327443636,
+          "p_value": 0.0,
+          "ci_low": 62.33984903502366,
+          "ci_high": 65.0449747539217
+        }
+      ],
+      "random_effects": {
+        "group_var_intercept": 9.456042660356745,
+        "residual_var": 219.2539571870776,
+        "n_groups": 90
+      },
+      "log_likelihood": -2478.67515730895,
+      "aic": NaN
+    },
+    "M1_linear": {
+      "formula": "y_linear ~ time + (1|school_id)",
+      "icc": 0.6027200204240519,
+      "fixed_effects": [
+        {
+          "term": "Intercept",
+          "estimate": 50.446724392753396,
+          "std_error": 0.726846303616248,
+          "z": 69.40494041418098,
+          "p_value": 0.0,
+          "ci_low": 49.022131815369484,
+          "ci_high": 51.87131697013731
+        },
+        {
+          "term": "time",
+          "estimate": 3.4525356796085984,
+          "std_error": 0.055948765764940046,
+          "z": 61.708880122823174,
+          "p_value": 0.0,
+          "ci_low": 3.3428781137298484,
+          "ci_high": 3.5621932454873484
+        }
+      ],
+      "random_effects": {
+        "group_var_intercept": 39.33734972299,
+        "residual_var": 25.92902336897012,
+        "n_groups": 90
+      },
+      "log_likelihood": -1935.6700904526263,
+      "aic": NaN,
+      "pseudo_r2_level1": 0.8817397701659437
+    },
+    "M2_quadratic": {
+      "formula": "y_quadratic ~ time + time_sq + (1|school_id)",
+      "icc": 0.6209255926336616,
+      "fixed_effects": [
+        {
+          "term": "Intercept",
+          "estimate": 49.80750063389793,
+          "std_error": 0.7420532845929884,
+          "z": 67.12119152092566,
+          "p_value": 0.0,
+          "ci_low": 48.35310292148602,
+          "ci_high": 51.26189834630984
+        },
+        {
+          "term": "time",
+          "estimate": 6.07668772579127,
+          "std_error": 0.19794637908242763,
+          "z": 30.69865563573079,
+          "p_value": 5.931735302943895e-207,
+          "ci_low": 5.6887199519196,
+          "ci_high": 6.464655499662941
+        },
+        {
+          "term": "time_sq",
+          "estimate": -0.2547775740499214,
+          "std_error": 0.01705253106009934,
+          "z": -14.940748276721635,
+          "p_value": 1.7895439831075602e-50,
+          "ci_low": -0.28819992077296674,
+          "ci_high": -0.22135522732687607
+        }
+      ],
+      "random_effects": {
+        "group_var_intercept": 36.96728630204462,
+        "residual_var": 22.568488580816194,
+        "n_groups": 90
+      },
+      "log_likelihood": -1899.9215488589043,
+      "aic": NaN
+    },
+    "M3_piecewise": {
+      "formula": "y_piecewise ~ time_pre + time_post + (1|school_id)",
+      "icc": 0.5912582802107562,
+      "fixed_effects": [
+        {
+          "term": "Intercept",
+          "estimate": 49.873209411855626,
+          "std_error": 0.7944161982652299,
+          "z": 62.7796985015713,
+          "p_value": 0.0,
+          "ci_low": 48.31618227452054,
+          "ci_high": 51.43023654919071
+        },
+        {
+          "term": "time_pre",
+          "estimate": 4.845010668972007,
+          "std_error": 0.21902931957329794,
+          "z": 22.12037492702263,
+          "p_value": 2.0124899899099676e-108,
+          "ci_low": 4.415721091050029,
+          "ci_high": 5.274300246893985
+        },
+        {
+          "term": "time_post",
+          "estimate": 1.5487310421847025,
+          "std_error": 0.0852301478031551,
+          "z": 18.171164571503542,
+          "p_value": 8.73250840253342e-74,
+          "ci_low": 1.3816830220934928,
+          "ci_high": 1.7157790622759121
+        }
+      ],
+      "random_effects": {
+        "group_var_intercept": 39.62343192170205,
+        "residual_var": 27.392004898190155,
+        "n_groups": 90
+      },
+      "log_likelihood": -1950.0395145528937,
+      "aic": NaN
+    }
+  }
+}
