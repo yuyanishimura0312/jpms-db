@@ -1,79 +1,83 @@
 {
   "task_id": "group_e",
   "role": "quality_audit_v2",
-  "ts": "2026-05-05T11:45:59.269482+00:00",
+  "ts": "2026-05-05T11:59:16.541760+00:00",
   "stats": {
-    "total": 4539,
-    "duplicates_exact": 18,
-    "duplicates_prefix": 6,
-    "duplicates_similar": 126,
-    "rejected_length": 16,
+    "total": 6551,
+    "duplicates_exact": 53,
+    "duplicates_prefix": 14,
+    "duplicates_similar": 183,
+    "rejected_length": 792,
     "rejected_garbled": 88,
     "rejected_error_string": 1,
     "rejected_dummy": 1,
-    "rights_downgraded": 1,
-    "pii_masked": 755,
-    "role_reclassified": 2,
+    "rights_downgraded": 4,
+    "pii_masked": 359,
+    "role_reclassified": 7,
     "role_nullified_needs_review": 0,
     "source_invalid": 0,
-    "approved": 4284
+    "approved": 5417
   },
   "status_breakdown": [
     {
       "status": "approved",
-      "count": 4284
+      "count": 5417
+    },
+    {
+      "status": "qm1_passed_v5",
+      "count": 206
     },
     {
       "status": "flagged_dup_similar",
-      "count": 125
+      "count": 182
     },
     {
       "status": "rejected",
-      "count": 106
+      "count": 111
     },
     {
       "status": "flagged_dup_exact",
-      "count": 18
+      "count": 53
     },
     {
       "status": "flagged_dup_prefix",
-      "count": 5
+      "count": 13
     },
     {
       "status": "anonymized_only_forced",
-      "count": 1
+      "count": 4
     }
   ],
   "role_breakdown": [
     {
       "role": "parent",
-      "count": 1052
+      "count": 1114
     },
     {
       "role": "principal",
-      "count": 1272
+      "count": 1367
     },
     {
       "role": "student_alumni",
-      "count": 391
+      "count": 1399
     },
     {
       "role": "student_current",
-      "count": 1172
+      "count": 1344
     },
     {
       "role": "teacher",
-      "count": 652
+      "count": 762
     }
   ],
   "rights_breakdown": [
     {
       "rights": "anonymized_only",
-      "count": 2532
+      "count": 2785
     },
     {
       "rights": "quoted_with_attribution",
-      "count": 2007
+      "count": 3201
     }
   ],
   "delete_candidates": [
