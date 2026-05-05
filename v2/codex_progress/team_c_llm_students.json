@@ -1,0 +1,48 @@
+{
+  "task_id": "team_c_llm_students",
+  "team": "C-2 (LLM-style relaxed v2)",
+  "task": "student/alumni voices deep extraction",
+  "started_at": "2026-05-05T11:25:06.341374+00:00",
+  "total_schools_scanned": 224,
+  "schools_with_extractions": 12,
+  "items": 31,
+  "role_counts": {
+    "student_current": 20,
+    "student_alumni": 11
+  },
+  "max_current_per_school": 5,
+  "max_alumni_per_school": 3,
+  "min_quote_len": 25,
+  "max_quote_len": 380,
+  "existing_hashes_loaded": 1051,
+  "output_path": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c_llm_students.jsonl",
+  "rights_level": "anonymized_only",
+  "ethics_notes": [
+    "未成年は完全匿名化",
+    "学年/部活名/個人名/期数は generic 化",
+    "speaker_attribute=中学生 or 卒業生 のみ",
+    "rights_level=anonymized_only",
+    "引用 < 400字（QM-1 ゲート互換）",
+    "school_id × text[:60] で重複除外",
+    "保護者/校長/教員語彙は除外"
+  ],
+  "page_files_scanned": [
+    "voice.html",
+    "schoollife.html",
+    "progress.html",
+    "about.html",
+    "admission.html",
+    "events.html",
+    "root.html",
+    "curriculum.html",
+    "philosophy.html",
+    "mission.html"
+  ],
+  "extraction_strategy": [
+    "Strong narrative: 一人称 + 学校生活キーワード + 体験動詞",
+    "Soft narrative: 一人称トークン + 体験動詞≥2 + 学校生活キーワード≥2",
+    "見出し優先: ALUMNI_HEADER / CURRENT_HEADER 直下",
+    "ライフサイクルマーカー: 卒業/進学/合格/母校 → alumni",
+    "ページレベルヒント: title/h1 が voice 系且つ NON_STUDENT 系でない"
+  ]
+}
