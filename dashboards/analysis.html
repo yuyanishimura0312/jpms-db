@@ -6,6 +6,7 @@
 <title>JPMS-DB | 全525校 成果次元・関係性 深掘り解析</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="school_profiles.js"></script>
 <style>
   :root{
     --akashiro-red:#CC1400;
@@ -452,8 +453,12 @@ const GENDER_JA = {boys:'男子', girls:'女子', coed:'共学'};
 let DATA = null;
 
 async function load(){
-  const r = await fetch('school_profiles.json');
-  DATA = await r.json();
+  if (window.JPMS_PROFILES) {
+    DATA = window.JPMS_PROFILES;
+  } else {
+    const r = await fetch('school_profiles.json');
+    DATA = await r.json();
+  }
   renderPrimaryCounts();
   renderClusterTraits();
   renderComboTable();
