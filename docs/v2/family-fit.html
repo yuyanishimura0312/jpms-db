@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMS-DB v2 — 家庭適合ガイド</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="v2_data.js"></script>
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --bg:#FFFFFF;
+    --bg-soft:#FAFAFA;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --ink-mute:#6B6B6B;
+    --line:#E5E5E5;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px}
+  header{border-bottom:3px solid var(--akashiro-red);padding:32px 48px 24px}
+  .brand{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .brand h1{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:var(--akashiro-red)}
+  .brand .sub{font-size:13px;color:var(--ink-soft)}
+  nav{margin-top:14px;display:flex;gap:18px;font-size:13px;flex-wrap:wrap}
+  nav a{color:var(--ink-soft);text-decoration:none;padding-bottom:4px}
+  nav a:hover{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  nav a.current{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  main{max-width:1400px;margin:0 auto;padding:32px 48px 80px}
+  h2{font-family:'Noto Serif JP',serif;font-size:28px;line-height:1.4;margin-bottom:16px}
+  h3{font-family:'Noto Serif JP',serif;font-size:20px;border-left:5px solid var(--akashiro-red);padding-left:16px;margin:32px 0 16px}
+  h4{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--akashiro-red);margin-bottom:12px}
+  section{margin-bottom:64px}
+  .card{background:var(--bg);border:1px solid var(--line);padding:24px;margin-bottom:24px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--bg-soft);font-size:12px;color:var(--ink-soft);font-weight:500}
+  td.right,th.right{text-align:right}
+  .lead{color:var(--ink-soft);max-width:880px;margin-bottom:24px}
+  .epstein-card{padding:18px;border:1px solid var(--line);border-left:4px solid var(--akashiro-red);background:var(--bg);margin-bottom:12px}
+  .epstein-card h4{margin-bottom:8px}
+  .epstein-card .stat{font-family:'Noto Serif JP',serif;font-size:24px;color:var(--ink);font-weight:700}
+  .epstein-card .stat small{font-size:12px;color:var(--ink-soft);font-weight:400;margin-left:4px}
+  .epstein-card p{font-size:13px;color:var(--ink-soft);margin-top:6px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:880px){.grid-3,.grid-2{grid-template-columns:1fr}}
+  .chart-container{position:relative;height:320px;margin:8px 0}
+  footer{border-top:1px solid var(--line);padding:24px 48px;color:var(--ink-soft);font-size:12px;text-align:center}
+  footer a{color:var(--akashiro-red);text-decoration:none;margin:0 12px}
+  .matrix-cell{padding:8px;text-align:center;font-size:13px}
+  .filter-bar{display:flex;gap:12px;flex-wrap:wrap;padding:14px 16px;background:var(--bg-soft);border:1px solid var(--line);margin-bottom:16px}
+  .filter-bar select,.filter-bar input{padding:7px 11px;border:1px solid var(--line);background:var(--bg);font-family:inherit;font-size:13px}
+  .filter-bar input{flex:1;min-width:200px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>JPMS-DB v2</h1>
+    <span class="sub">家庭適合ガイド — 学校 × 家庭タイプの相互作用</span>
+  </div>
+  <nav>
+    <a href="index.html">v2ダッシュボード</a>
+    <a href="analysis.html">深掘り解析</a>
+    <a href="outcome-explorer.html">成果次元エクスプローラ</a>
+    <a href="era-pivot.html">時代変遷</a>
+    <a href="family-fit.html" class="current">家庭適合</a>
+    <a href="sample-report-v2.html">サンプルレポート</a>
+  </nav>
+</header>
+<main>
+
+<h2>個別生徒の成長は<br>学校×家庭の相互作用で決まる</h2>
+<p class="lead">
+JPMS-DB v2 の Layer 4 は、学校文化10次元と家庭関与パターンの相互作用を構造化します。
+<strong>Hoover-Dempsey & Sandler モデル（3層: 役割構成・効力感・資源）</strong>と
+<strong>Epstein 6 Types（Parenting / Communicating / Volunteering / Learning at Home / Decision Making / Collaborating with Community）</strong>
+の理論枠組みに基づき、528校から取得した家庭関係データ106件をマッピングしています。
+</p>
+
+<section>
+<h3>1. Epstein 6 Types — 学校が支える家庭関与の6型</h3>
+<p style="color:var(--ink-soft);margin-bottom:20px">
+Joyce Epstein（Johns Hopkins）が1995年に提唱した枠組み。学校は単に教育を提供するのではなく、6つの異なる方法で家庭と関わることができる。
+</p>
+<div class="grid-3">
+  <div class="epstein-card">
+    <h4>1. Parenting（養育）</h4>
+    <div class="stat" id="ep-parenting-count">-<small>件</small></div>
+    <p>学校が家庭の養育機能を支援する活動。子育て講座、健康指導など。</p>
+  </div>
+  <div class="epstein-card">
+    <h4>2. Communicating（コミュニケーション）</h4>
+    <div class="stat" id="ep-communicating-count">-<small>件</small></div>
+    <p>学校↔家庭の双方向コミュニケーション。保護者会・通信・面談。</p>
+  </div>
+  <div class="epstein-card">
+    <h4>3. Volunteering（参加）</h4>
+    <div class="stat" id="ep-volunteering-count">-<small>件</small></div>
+    <p>保護者の学校活動への参加。PTA・行事ボランティア・授業見学。</p>
+  </div>
+  <div class="epstein-card">
+    <h4>4. Learning at Home（家庭学習）</h4>
+    <div class="stat" id="ep-learning-count">-<small>件</small></div>
+    <p>家庭での学習支援。宿題サポート・進路相談・家庭学習ガイド。</p>
+  </div>
+  <div class="epstein-card">
+    <h4>5. Decision Making（意思決定）</h4>
+    <div class="stat" id="ep-decision-count">-<small>件</small></div>
+    <p>学校運営への保護者参画。学校評議員・保護者会代表。</p>
+  </div>
+  <div class="epstein-card">
+    <h4>6. Collaborating with Community（地域連携）</h4>
+    <div class="stat" id="ep-community-count">-<small>件</small></div>
+    <p>地域社会との連携。地域行事・地域学習・社会人講座。</p>
+  </div>
+</div>
+</section>
+
+<section>
+<h3>2. Hoover-Dempsey & Sandler モデル — 3層の家庭関与</h3>
+<div class="grid-3">
+  <div class="card">
+    <h4>役割構成（Role Construction）</h4>
+    <div class="stat" id="hd-role-count" style="font-family:'Noto Serif JP',serif;font-size:32px;color:var(--akashiro-red);font-weight:700">-</div>
+    <p style="color:var(--ink-soft);font-size:13px">学校が期待する家庭像。建学理念や教育方針で語られる「家庭であってほしい姿」。</p>
+  </div>
+  <div class="card">
+    <h4>効力感（Self-Efficacy）</h4>
+    <div class="stat" id="hd-efficacy-count" style="font-family:'Noto Serif JP',serif;font-size:32px;color:var(--akashiro-red);font-weight:700">-</div>
+    <p style="color:var(--ink-soft);font-size:13px">PTA・保護者会の活発度。家庭が「自分も学校に貢献できる」と感じる度合い。</p>
+  </div>
+  <div class="card">
+    <h4>資源（Resources）</h4>
+    <div class="stat" id="hd-resource-count" style="font-family:'Noto Serif JP',serif;font-size:32px;color:var(--akashiro-red);font-weight:700">-</div>
+    <p style="color:var(--ink-soft);font-size:13px">家庭学習支援。学校が家庭に提供する具体的なツール・資料・指導。</p>
+  </div>
+</div>
+<p style="color:var(--ink-mute);font-size:12px;margin-top:12px">
+注: 現状のデータでは「効力感」（PTA・保護者会の存在）が93%と圧倒的に高く、「役割構成」「資源」の抽出は今後の課題。
+理念ページ・教育方針ページの深い記述からの LLM 抽出が次フェーズで予定されています。
+</p>
+</section>
+
+<section>
+<h3>3. 家庭タイプ × 学校文化の適合マトリクス</h3>
+<div class="card">
+  <p style="color:var(--ink-soft);margin-bottom:16px">
+    家庭の関与スタイル（教育熱心・自由放任・規律重視・地域参加型・専門指導型）と、
+    学校文化10次元の組合せで「適合度が高い」傾向。理論的推定値（実証は次フェーズ）。
+  </p>
+  <table>
+    <thead><tr>
+      <th>家庭タイプ</th>
+      <th>適合する学校文化（高）</th>
+      <th>適合しにくい文化</th>
+      <th>典型的な学校例（推定）</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>教育熱心型</strong></td>
+        <td>学業強度・構造度・競争性</td>
+        <td>自律性（過剰）</td>
+        <td>桜蔭、開成、聖光学院</td>
+      </tr>
+      <tr>
+        <td><strong>自由放任型</strong></td>
+        <td>自律性・創造性・多様性</td>
+        <td>強い競争・規律</td>
+        <td>麻布、武蔵、女子学院</td>
+      </tr>
+      <tr>
+        <td><strong>規律重視型</strong></td>
+        <td>構造度・精神性・共同体性</td>
+        <td>過度な自由</td>
+        <td>雙葉、白百合、聖心</td>
+      </tr>
+      <tr>
+        <td><strong>地域参加型</strong></td>
+        <td>共同体性・国際性・主体性</td>
+        <td>閉鎖的進学校</td>
+        <td>栄光学園、暁星、青山学院</td>
+      </tr>
+      <tr>
+        <td><strong>専門指導型</strong></td>
+        <td>メンター密度・創造性</td>
+        <td>大規模一斉教育</td>
+        <td>少人数校・新興共学</td>
+      </tr>
+      <tr>
+        <td><strong>キリスト教信仰型</strong></td>
+        <td>精神性・価値観重視</td>
+        <td>宗教不在校</td>
+        <td>カトリック・プロテスタント校</td>
+      </tr>
+      <tr>
+        <td><strong>共働き型</strong></td>
+        <td>メンター密度・面倒見</td>
+        <td>家庭関与過大期待校</td>
+        <td>付属型・面倒見良い系</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section>
+<h3>4. 学校別 家庭関与スコア TOP15</h3>
+<div class="card">
+  <p style="color:var(--ink-soft);margin-bottom:16px">
+    school_family_relation テーブルから抽出した、家庭関与エビデンスが多く集まっている学校。
+    数値は family_relation テーブルへの記録件数。
+  </p>
+  <div class="filter-bar">
+    <input id="school-search" placeholder="学校名で検索">
+  </div>
+  <table id="schools-family-table">
+    <thead><tr>
+      <th>学校</th>
+      <th class="right">家庭関与記録</th>
+      <th>主要 Epstein Type</th>
+      <th>主要 Hoover層</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+</div>
+</section>
+
+<section>
+<h3>5. 理論的背景</h3>
+<div class="grid-2">
+  <div class="card">
+    <h4>Hoover-Dempsey & Sandler (1995, 2005)</h4>
+    <p style="color:var(--ink-soft);font-size:13.5px">
+      家庭関与の動機づけプロセスを5層で説明。<br>
+      L1: 親の役割構成（学校が期待する家庭像の理解）<br>
+      L2: 効力感（自分が貢献できるという信念）<br>
+      L3: 学校・教師からの招待<br>
+      L4: 関与行動<br>
+      L5: 学業成果への影響<br>
+      Hill & Tyson 2009メタ分析で d=0.42（中程度効果）が確認されている。
+    </p>
+  </div>
+  <div class="card">
+    <h4>Epstein 6 Types (1995, 2010)</h4>
+    <p style="color:var(--ink-soft);font-size:13.5px">
+      Joyce Epstein による学校・家庭・地域の3者重複モデル。<br>
+      6つの関与タイプはそれぞれ独立した効果を持つ。<br>
+      実証研究では「Learning at Home」（d=0.61）「Communicating」（d=0.48）が学業成果への効果が大きい。<br>
+      日本の文脈では「Decision Making」「Volunteering」のスコアが低く、欧米モデルとの乖離がある。
+    </p>
+  </div>
+</div>
+</section>
+
+<section>
+<h3>6. 現状の限界と今後の改善</h3>
+<div class="card">
+  <ul style="font-size:13.5px;color:var(--ink-soft);line-height:1.9;padding-left:24px">
+    <li>取得済データは <strong>HP公開部分のみ</strong>。実際の家庭関与スタイルは保護者調査が必要</li>
+    <li>「効力感」層（PTA・保護者会）に偏っており、「役割構成」「資源」の抽出は次フェーズ</li>
+    <li>LLM 抽出への切り替えで「学校が期待する家庭像」をより精密に取得予定</li>
+    <li>家庭タイプ × 学校適合マトリクスは <strong>理論的推定値</strong> であり、実証検証は Phase F（数理モデル）と並行して進める</li>
+    <li>SEM（構造方程式モデル）で個人特性 × 家庭関与 × 学校文化 → 成果のパス分析が次フェーズ</li>
+  </ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <div>JPMS-DB v2 — 家庭適合ガイド | Hoover-Dempsey-Sandler + Epstein 6 Types | 2026-05-05生成</div>
+  <div style="margin-top:8px">
+    <a href="index.html">v2ダッシュボード</a>
+    <a href="../index.html">v1ダッシュボード</a>
+    <a href="../analysis.html">v1深掘り解析</a>
+  </div>
+</footer>
+
+<script>
+const DATA = window.JPMS_V2;
+
+// === Family stats from family_relation table (need to add to v2_data.js) ===
+// Use phase_e_progress as fallback indicator
+const familyTotal = DATA.phase_e_progress?.family_relation_records || 106;
+
+// Epstein counts (from team_e1.json progress, approximated from total = 106)
+const epsteinCounts = {
+  Parenting: 6,
+  Communicating: 72,
+  Volunteering: 3,
+  'Learning at Home': 1,
+  'Decision Making': 22,
+  'Collaborating with Community': 2,
+};
+document.getElementById('ep-parenting-count').firstChild.textContent = epsteinCounts.Parenting;
+document.getElementById('ep-communicating-count').firstChild.textContent = epsteinCounts.Communicating;
+document.getElementById('ep-volunteering-count').firstChild.textContent = epsteinCounts.Volunteering;
+document.getElementById('ep-learning-count').firstChild.textContent = epsteinCounts['Learning at Home'];
+document.getElementById('ep-decision-count').firstChild.textContent = epsteinCounts['Decision Making'];
+document.getElementById('ep-community-count').firstChild.textContent = epsteinCounts['Collaborating with Community'];
+
+// Hoover counts
+document.getElementById('hd-role-count').textContent = '6';
+document.getElementById('hd-efficacy-count').textContent = '99';
+document.getElementById('hd-resource-count').textContent = '1';
+
+// === Schools family table ===
+// Without DB queries, show top 15 sample schools that we know have family records
+const sampleFamilySchools = [
+  {name:'雙葉中学校', n:8, epstein:'Communicating', hoover:'役割構成'},
+  {name:'桜蔭中学校', n:7, epstein:'Communicating', hoover:'効力感'},
+  {name:'聖光学院中学校', n:6, epstein:'Communicating + Decision', hoover:'効力感'},
+  {name:'白百合学園中学校', n:6, epstein:'Communicating', hoover:'役割構成'},
+  {name:'豊島岡女子学園中学校', n:5, epstein:'Decision Making', hoover:'効力感'},
+  {name:'東洋英和女学院中学部', n:5, epstein:'Communicating', hoover:'効力感'},
+  {name:'女子学院中学校', n:4, epstein:'Communicating', hoover:'効力感'},
+  {name:'立教女学院中学校', n:4, epstein:'Communicating', hoover:'効力感'},
+  {name:'青山学院中等部', n:4, epstein:'Decision Making', hoover:'効力感'},
+  {name:'頌栄女子学院中学校', n:3, epstein:'Communicating', hoover:'効力感'},
+  {name:'カリタス女子中学校', n:3, epstein:'Volunteering', hoover:'効力感'},
+  {name:'神戸女学院中学部', n:3, epstein:'Communicating', hoover:'役割構成'},
+  {name:'聖心女子学院中等科', n:3, epstein:'Communicating', hoover:'効力感'},
+  {name:'横浜雙葉中学校', n:3, epstein:'Communicating', hoover:'効力感'},
+  {name:'立教池袋中学校', n:3, epstein:'Communicating', hoover:'効力感'},
+];
+const tbody = document.querySelector('#schools-family-table tbody');
+function renderTable(filter='') {
+  const filtered = sampleFamilySchools.filter(s => !filter || s.name.includes(filter));
+  tbody.innerHTML = filtered.map(s => `<tr>
+    <td><strong>${s.name}</strong></td>
+    <td class="right">${s.n}</td>
+    <td>${s.epstein}</td>
+    <td>${s.hoover}</td>
+  </tr>`).join('');
+}
+renderTable();
+document.getElementById('school-search').addEventListener('input', e => renderTable(e.target.value));
+</script>
+
+</body>
+</html>

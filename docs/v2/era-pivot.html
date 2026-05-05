@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPMS-DB v2 — 時代変遷ピボット</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="v2_data.js"></script>
+<style>
+  :root{
+    --akashiro-red:#CC1400;
+    --bg:#FFFFFF;
+    --bg-soft:#FAFAFA;
+    --ink:#0E0E0E;
+    --ink-soft:#3A3A3A;
+    --ink-mute:#6B6B6B;
+    --line:#E5E5E5;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px}
+  header{border-bottom:3px solid var(--akashiro-red);padding:32px 48px 24px}
+  .brand{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .brand h1{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;color:var(--akashiro-red)}
+  .brand .sub{font-size:13px;color:var(--ink-soft)}
+  nav{margin-top:14px;display:flex;gap:18px;font-size:13px;flex-wrap:wrap}
+  nav a{color:var(--ink-soft);text-decoration:none;padding-bottom:4px}
+  nav a:hover{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  nav a.current{color:var(--akashiro-red);border-bottom:1px solid var(--akashiro-red)}
+  main{max-width:1400px;margin:0 auto;padding:32px 48px 80px}
+  h2{font-family:'Noto Serif JP',serif;font-size:28px;line-height:1.4;margin-bottom:16px}
+  h3{font-family:'Noto Serif JP',serif;font-size:20px;border-left:5px solid var(--akashiro-red);padding-left:16px;margin:32px 0 16px}
+  section{margin-bottom:64px}
+  .card{background:var(--bg);border:1px solid var(--line);padding:24px;margin-bottom:24px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--bg-soft);font-size:12px;color:var(--ink-soft);font-weight:500}
+  td.right,th.right{text-align:right}
+  .lead{color:var(--ink-soft);max-width:880px;margin-bottom:24px}
+  .era-card{display:grid;grid-template-columns:120px 1fr 80px;gap:16px;align-items:center;padding:16px;border:1px solid var(--line);margin-bottom:8px;background:var(--bg)}
+  .era-card .name{font-family:'Noto Serif JP',serif;font-weight:700;color:var(--akashiro-red);font-size:16px}
+  .era-card .desc{font-size:13px;color:var(--ink-soft)}
+  .era-card .years{font-size:13px;color:var(--ink-mute);text-align:right}
+  .heatcell{display:inline-block;width:38px;height:24px;text-align:center;line-height:24px;font-size:11px;font-variant-numeric:tabular-nums}
+  .chart-container{position:relative;height:380px;margin:16px 0}
+  footer{border-top:1px solid var(--line);padding:24px 48px;color:var(--ink-soft);font-size:12px;text-align:center}
+  footer a{color:var(--akashiro-red);text-decoration:none;margin:0 12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>JPMS-DB v2</h1>
+    <span class="sub">時代変遷ピボット — 明治から2050年代まで</span>
+  </div>
+  <nav>
+    <a href="index.html">v2ダッシュボード</a>
+    <a href="analysis.html">深掘り解析</a>
+    <a href="outcome-explorer.html">成果次元エクスプローラ</a>
+    <a href="era-pivot.html" class="current">時代変遷</a>
+    <a href="family-fit.html">家庭適合</a>
+    <a href="sample-report-v2.html">サンプルレポート</a>
+  </nav>
+</header>
+<main>
+
+<h2>時代によって育てるべき人物像は変遷する</h2>
+<p class="lead">
+JPMS-DB v2 の Layer 5（時代変遷モデル）は、明治期から2050年代まで8時代区分の人材要請を、77の成果次元への重み付けとして表現します。
+CLA（因果階層分析127年分）、MT（18メガトレンド）、FK（フォーサイト基盤309機関）、FS（未来学知識）、AA（LLM親和領域）、AD（AI発展）の知見を統合した時代マップです。
+</p>
+
+<section>
+<h3>1. 8時代区分の概要</h3>
+<div id="eras-list"></div>
+</section>
+
+<section>
+<h3>2. 時代 × 成果次元 関連度ヒートマップ</h3>
+<div class="card">
+  <div id="era-heatmap"></div>
+  <p style="font-size:12px;color:var(--ink-mute);margin-top:12px">
+    横軸: 8時代区分 / 縦軸: 主要成果次元（関連度合計上位15項目）/ 色濃度: 関連度（1-10）。
+    令和以降「主体性・市民性」「創造・卓越」「市場・経営」「AI協働リテラシー」が一気に重要度を増す傾向が読み取れます。
+  </p>
+</div>
+</section>
+
+<section>
+<h3>3. 時代別 重視成果クラスタの推移</h3>
+<div class="card">
+  <div class="chart-container"><canvas id="era-cluster-trend"></canvas></div>
+  <p style="font-size:12px;color:var(--ink-mute);margin-top:8px">
+    時代ごとに重要視される7大クラスタの推移。明治～昭和の認知・学術中心から、令和～2050年代の主体性・創造卓越・市場経営の3軸へとシフト。
+  </p>
+</div>
+</section>
+
+<section>
+<h3>4. 時代別 求められる成果次元 TOP5</h3>
+<div id="era-top5"></div>
+</section>
+
+<section>
+<h3>5. 学校文化と時代適合性</h3>
+<div class="card">
+  <p style="color:var(--ink-soft);margin-bottom:16px">
+    学校文化10次元（自律/構造/多様/強度/メンター/創造/競争/共同体/国際/精神）と、時代の要請の対応関係。
+    令和以降は「自律」「多様」「創造」が高い学校が時代適合性が高くなる傾向。
+  </p>
+  <table>
+    <thead><tr>
+      <th>時代</th>
+      <th>適合性が高い学校文化</th>
+      <th>適合性が低くなる傾向</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><strong>明治</strong></td><td>構造度・規律重視</td><td>多様性・創造</td></tr>
+      <tr><td><strong>大正</strong></td><td>創造性・自律性（教養主義）</td><td>競争性</td></tr>
+      <tr><td><strong>昭和前期</strong></td><td>共同体性・構造度</td><td>多様性・創造</td></tr>
+      <tr><td><strong>昭和後期</strong></td><td>学業強度・競争性</td><td>多様性</td></tr>
+      <tr><td><strong>平成</strong></td><td>創造性・自律性（緩やかに）</td><td>競争性（緩やかに）</td></tr>
+      <tr><td><strong>令和</strong></td><td>自律性・多様性・創造性・国際性</td><td>競争性・構造度（一部）</td></tr>
+      <tr><td><strong>2030s</strong></td><td>自律性・創造性・多様性（AI時代）</td><td>反復学習偏重</td></tr>
+      <tr><td><strong>2050s</strong></td><td>主体性・市民性・精神性（長寿命社会）</td><td>短期競争志向</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section>
+<h3>6. 方法論と限界</h3>
+<div class="card">
+  <p style="color:var(--ink-soft);font-size:13.5px">
+    本ピボットは <strong>era_definition (8区分) × outcome_dim_v2 (77項目) × outcome_era_relevance (50件のタグ)</strong> をベースに、
+    CLA/MT/FK/AA/AD の研究知見を統合しています。
+    関連度の数値は「文献的にどれだけ重視されたか／重視されるか」の専門家評定の代理であり、絶対的な真値ではありません。
+    特に2030s/2050s は将来予測であり、不確実性が高い点に留意してください。
+  </p>
+  <p style="color:var(--ink-soft);font-size:13.5px;margin-top:12px">
+    時代変遷の理論的基盤: Causal Layered Analysis (Inayatullah 1998), Three Horizons (Sharpe & Hodgson),
+    OECD Future of Skills 2030, WEF Future of Jobs 2025, 第4期教育振興基本計画（文科省）。
+  </p>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <div>JPMS-DB v2 — 時代変遷ピボット | 2026-05-05生成 | CC-BY-NC 4.0（Layer 1のみ）</div>
+  <div style="margin-top:8px">
+    <a href="index.html">v2ダッシュボード</a>
+    <a href="../index.html">v1ダッシュボード</a>
+    <a href="../analysis.html">v1深掘り解析</a>
+  </div>
+</footer>
+
+<script>
+const DATA = window.JPMS_V2;
+const ACCENT = '#CC1400';
+const GRID = '#eee';
+const ERA_ORDER = ['meiji','taisho','showa_pre','showa_post','heisei','reiwa','2030s','2050s'];
+const ERA_NAMES_FULL = {meiji:'明治',taisho:'大正',showa_pre:'昭和前期',showa_post:'昭和後期',heisei:'平成',reiwa:'令和','2030s':'2030年代','2050s':'2050年代'};
+
+Chart.defaults.font.family = '"Noto Sans JP", sans-serif';
+
+// === Eras list ===
+const eras = DATA.eras || [];
+document.getElementById('eras-list').innerHTML = ERA_ORDER.map(eid => {
+  const e = eras.find(x => x.id === eid);
+  if (!e) return '';
+  return `<div class="era-card">
+    <div class="name">${e.name_ja}</div>
+    <div class="desc">${e.description||''}</div>
+    <div class="years">${e.start_year}-${e.end_year}</div>
+  </div>`;
+}).join('');
+
+// === Era heatmap (HTML table) ===
+const eraOutcomes = {};
+(DATA.era_relevance||[]).forEach(r => {
+  if (!eraOutcomes[r.outcome_dim_id]) eraOutcomes[r.outcome_dim_id] = {};
+  eraOutcomes[r.outcome_dim_id][r.era] = r.relevance;
+});
+// Top 15 outcomes by total
+const totals = Object.entries(eraOutcomes).map(([k,v]) => [k, Object.values(v).reduce((a,b)=>a+b,0)]).sort((a,b)=>b[1]-a[1]);
+const top15 = totals.slice(0,15).map(t => t[0]);
+
+let heatHTML = '<table style="font-size:12px;border-collapse:separate;border-spacing:0;width:100%"><thead><tr><th style="background:#fff;padding:10px;border-bottom:2px solid var(--akashiro-red);min-width:160px">成果次元</th>';
+ERA_ORDER.forEach(era => {
+  heatHTML += `<th style="background:#fff;padding:10px 6px;text-align:center;border-bottom:2px solid var(--akashiro-red);min-width:62px;font-weight:700">${ERA_NAMES_FULL[era]}</th>`;
+});
+heatHTML += '</tr></thead><tbody>';
+top15.forEach(oid => {
+  const o = (DATA.outcome_dims||[]).find(x => x.id === oid);
+  if (!o) return;
+  heatHTML += `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--line);font-weight:500">${o.name_ja}</td>`;
+  ERA_ORDER.forEach(era => {
+    const v = (eraOutcomes[oid] && eraOutcomes[oid][era]) || 0;
+    const opacity = v === 0 ? 0 : 0.10 + (v/10)*0.75;
+    const textColor = v >= 7 ? '#fff' : (v >= 4 ? '#0E0E0E' : '#999');
+    const display = v === 0 ? '·' : v;
+    heatHTML += `<td style="padding:0;border-bottom:1px solid var(--line);background:rgba(204,20,0,${opacity});text-align:center;font-weight:${v>=7?'700':'500'};color:${textColor}">${display}</td>`;
+  });
+  heatHTML += '</tr>';
+});
+heatHTML += '</tbody></table>';
+document.getElementById('era-heatmap').innerHTML = heatHTML;
+
+// === Era × Cluster trend ===
+const clusterIds = ['cognitive','social_emotional','values_morals','agency_civic','wellbeing','creative_excellence','market_management'];
+const clusterColors = {cognitive:'#1B5E9A', social_emotional:'#C7438C', values_morals:'#7A4F1C', agency_civic:'#1F8A4D', wellbeing:'#9056C0', creative_excellence:'#B86F00', market_management:'#3D3DBC'};
+const clusterNames = {cognitive:'認知・学術', social_emotional:'社会情動', values_morals:'価値観・道徳', agency_civic:'主体性・市民性', wellbeing:'ウェルビーイング', creative_excellence:'創造・卓越', market_management:'市場・経営'};
+const eraClusterScore = {};
+ERA_ORDER.forEach(era => {
+  eraClusterScore[era] = {};
+  clusterIds.forEach(c => eraClusterScore[era][c] = []);
+});
+(DATA.era_relevance||[]).forEach(r => {
+  const o = (DATA.outcome_dims||[]).find(x => x.id === r.outcome_dim_id);
+  if (!o) return;
+  const c = o.cluster_id;
+  if (eraClusterScore[r.era] && eraClusterScore[r.era][c]) {
+    eraClusterScore[r.era][c].push(r.relevance);
+  }
+});
+const datasets = clusterIds.map(c => ({
+  label: clusterNames[c],
+  data: ERA_ORDER.map(era => {
+    const arr = eraClusterScore[era][c];
+    return arr.length ? arr.reduce((a,b)=>a+b,0) / arr.length : 0;
+  }),
+  borderColor: clusterColors[c],
+  backgroundColor: clusterColors[c]+'22',
+  tension: 0.3,
+}));
+new Chart(document.getElementById('era-cluster-trend'), {
+  type: 'line',
+  data: { labels: ERA_ORDER.map(e => ERA_NAMES_FULL[e]), datasets },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom' } },
+    scales: { y: { beginAtZero: true, max: 10, grid: { color: GRID } }, x: { grid: { color: GRID } } }
+  }
+});
+
+// === Top 5 per era ===
+const top5HTML = ERA_ORDER.map(era => {
+  const items = (DATA.era_relevance||[]).filter(r => r.era === era).sort((a,b) => b.relevance - a.relevance).slice(0,5);
+  if (items.length === 0) return '';
+  const rows = items.map(r => {
+    const o = (DATA.outcome_dims||[]).find(x => x.id === r.outcome_dim_id);
+    return `<tr><td><strong>${o?.name_ja || r.outcome_dim_id}</strong></td><td class="right">${r.relevance}/10</td><td style="font-size:12px;color:var(--ink-mute)">${r.reasoning||''}</td></tr>`;
+  }).join('');
+  return `<div class="card">
+    <h4 style="font-family:'Noto Serif JP',serif;color:var(--akashiro-red);margin-bottom:12px">${ERA_NAMES_FULL[era]}</h4>
+    <table><thead><tr><th>成果次元</th><th class="right">関連度</th><th>根拠</th></tr></thead><tbody>${rows}</tbody></table>
+  </div>`;
+}).join('');
+document.getElementById('era-top5').innerHTML = top5HTML;
+</script>
+
+</body>
+</html>
