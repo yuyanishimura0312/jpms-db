@@ -1,0 +1,531 @@
+{
+  "task_id": "group_e",
+  "role": "quality_audit_v2",
+  "ts": "2026-05-05T11:45:59.269482+00:00",
+  "stats": {
+    "total": 4539,
+    "duplicates_exact": 18,
+    "duplicates_prefix": 6,
+    "duplicates_similar": 126,
+    "rejected_length": 16,
+    "rejected_garbled": 88,
+    "rejected_error_string": 1,
+    "rejected_dummy": 1,
+    "rights_downgraded": 1,
+    "pii_masked": 755,
+    "role_reclassified": 2,
+    "role_nullified_needs_review": 0,
+    "source_invalid": 0,
+    "approved": 4284
+  },
+  "status_breakdown": [
+    {
+      "status": "approved",
+      "count": 4284
+    },
+    {
+      "status": "flagged_dup_similar",
+      "count": 125
+    },
+    {
+      "status": "rejected",
+      "count": 106
+    },
+    {
+      "status": "flagged_dup_exact",
+      "count": 18
+    },
+    {
+      "status": "flagged_dup_prefix",
+      "count": 5
+    },
+    {
+      "status": "anonymized_only_forced",
+      "count": 1
+    }
+  ],
+  "role_breakdown": [
+    {
+      "role": "parent",
+      "count": 1052
+    },
+    {
+      "role": "principal",
+      "count": 1272
+    },
+    {
+      "role": "student_alumni",
+      "count": 391
+    },
+    {
+      "role": "student_current",
+      "count": 1172
+    },
+    {
+      "role": "teacher",
+      "count": 652
+    }
+  ],
+  "rights_breakdown": [
+    {
+      "rights": "anonymized_only",
+      "count": 2532
+    },
+    {
+      "rights": "quoted_with_attribution",
+      "count": 2007
+    }
+  ],
+  "delete_candidates": [
+    {
+      "id": 1061,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0008"
+    },
+    {
+      "id": 1082,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0015"
+    },
+    {
+      "id": 1088,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1089,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1090,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1091,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1092,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1093,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1094,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1095,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1096,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1097,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1098,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1099,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1100,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1101,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1102,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1103,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1104,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1105,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0016"
+    },
+    {
+      "id": 1112,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0024"
+    },
+    {
+      "id": 1113,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0024"
+    },
+    {
+      "id": 1140,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0031"
+    },
+    {
+      "id": 1173,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0038"
+    },
+    {
+      "id": 1177,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0041"
+    },
+    {
+      "id": 1185,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0048"
+    },
+    {
+      "id": 1194,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0067"
+    },
+    {
+      "id": 1288,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0408"
+    },
+    {
+      "id": 1355,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0428"
+    },
+    {
+      "id": 1374,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0435"
+    },
+    {
+      "id": 1426,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0476"
+    },
+    {
+      "id": 1443,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0493"
+    },
+    {
+      "id": 1444,
+      "reason": "error_log_string",
+      "school_id": "jpms_s_0493"
+    },
+    {
+      "id": 1445,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0493"
+    },
+    {
+      "id": 1555,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0005"
+    },
+    {
+      "id": 1563,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0005"
+    },
+    {
+      "id": 1573,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0008"
+    },
+    {
+      "id": 1574,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0008"
+    },
+    {
+      "id": 1577,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0008"
+    },
+    {
+      "id": 1588,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0015"
+    },
+    {
+      "id": 1606,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0022"
+    },
+    {
+      "id": 1646,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0027"
+    },
+    {
+      "id": 1658,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0028"
+    },
+    {
+      "id": 1659,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0028"
+    },
+    {
+      "id": 1684,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0030"
+    },
+    {
+      "id": 1685,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0031"
+    },
+    {
+      "id": 1686,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0031"
+    },
+    {
+      "id": 1689,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0031"
+    },
+    {
+      "id": 1830,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0061"
+    },
+    {
+      "id": 1832,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0062"
+    },
+    {
+      "id": 1833,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0062"
+    },
+    {
+      "id": 1907,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0188"
+    },
+    {
+      "id": 1925,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0199"
+    },
+    {
+      "id": 1926,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0199"
+    },
+    {
+      "id": 1931,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0200"
+    },
+    {
+      "id": 1949,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0208"
+    },
+    {
+      "id": 1960,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0210"
+    },
+    {
+      "id": 2010,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0408"
+    },
+    {
+      "id": 2054,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0420"
+    },
+    {
+      "id": 2092,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0435"
+    },
+    {
+      "id": 2093,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0435"
+    },
+    {
+      "id": 2127,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0452"
+    },
+    {
+      "id": 2139,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0455"
+    },
+    {
+      "id": 2151,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0465"
+    },
+    {
+      "id": 2238,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0496"
+    },
+    {
+      "id": 2345,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_p3_003"
+    },
+    {
+      "id": 2443,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0205"
+    },
+    {
+      "id": 2467,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0402"
+    },
+    {
+      "id": 2469,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0402"
+    },
+    {
+      "id": 2471,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0402"
+    },
+    {
+      "id": 2472,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0402"
+    },
+    {
+      "id": 2553,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0416"
+    },
+    {
+      "id": 2554,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0416"
+    },
+    {
+      "id": 2569,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0423"
+    },
+    {
+      "id": 2595,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0433"
+    },
+    {
+      "id": 3012,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0063"
+    },
+    {
+      "id": 3112,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0200"
+    },
+    {
+      "id": 3281,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0410"
+    },
+    {
+      "id": 4056,
+      "reason": "dummy_text",
+      "school_id": "jpms_s_0496"
+    },
+    {
+      "id": 4684,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0210"
+    },
+    {
+      "id": 4740,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0224"
+    },
+    {
+      "id": 4927,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0454"
+    },
+    {
+      "id": 5022,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0462"
+    },
+    {
+      "id": 5023,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0462"
+    },
+    {
+      "id": 5081,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0471"
+    },
+    {
+      "id": 5164,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0487"
+    },
+    {
+      "id": 5245,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0498"
+    },
+    {
+      "id": 5246,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0498"
+    },
+    {
+      "id": 5345,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0881"
+    },
+    {
+      "id": 5350,
+      "reason": "garbled_binary",
+      "school_id": "jpms_s_0881"
+    }
+  ]
+}

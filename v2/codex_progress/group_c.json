@@ -1,0 +1,17 @@
+{
+  "task_id": "group_c",
+  "schools_in_cache": 245,
+  "schools_with_quote": 84,
+  "total_items_extracted": 337,
+  "per_group": {
+    "C01": 228,
+    "C02": 53,
+    "C03": 4,
+    "C04": 26,
+    "C05": 26
+  },
+  "db_inserted": 337,
+  "db_rejected": 0,
+  "output_jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/group_c_page_specialized.jsonl",
+  "ts": "2026-05-05T20:49:50.800308Z"
+}
