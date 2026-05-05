@@ -1,0 +1,16 @@
+{
+  "team": "D-1",
+  "task": "公的統計データ取り込み",
+  "timestamp": "2026-05-05T13:26:54.695701",
+  "total_records": 104,
+  "categories": {
+    "pisa_2022": 10,
+    "timss_2023": 5,
+    "mext_basic": 50,
+    "mext_health": 13,
+    "mext_learning_fee": 6,
+    "mext_enrollment": 20
+  },
+  "output_file": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_d1_stats.jsonl",
+  "status": "completed"
+}

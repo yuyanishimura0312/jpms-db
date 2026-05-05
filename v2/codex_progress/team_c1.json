@@ -1,0 +1,30 @@
+{
+  "team": "C-1",
+  "task": "GF DB -> JPMS-DB v2 alumni/founder/teacher matching",
+  "completed_at": "2026-05-05T04:27:51.890806+00:00",
+  "input": {
+    "gf_db": "/Users/nishimura+/projects/research/great-figures-db/great_figures.db",
+    "jpms_db": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db",
+    "filter": "country_modern='Japan' AND birth_year>=1850"
+  },
+  "stats": {
+    "persons_in_cohort": 164,
+    "persons_processed": 164,
+    "placeholder_skipped": 56,
+    "schools_total": 529,
+    "candidates_total": 18,
+    "candidates_curated_rule": 18,
+    "candidates_text_alias": 0,
+    "unique_persons_matched": 8
+  },
+  "output": {
+    "jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c1_gf.jsonl",
+    "min_required_candidates": 30,
+    "met_minimum": false
+  },
+  "notes": [
+    "JPMS-DB v2 contains only 中学校 (junior-high) institutions, so旧制中学・旧制高校・公立進学校 (e.g., 日比谷高校) cannot be matched.",
+    "GF DB childhood_profiles are sparse for this cohort (~11 of 164 persons have notes), limiting text-based matches.",
+    "Curated rules cover well-documented founder/alumni links for 慶應/早稲田/学習院/同志社 等の伝統校."
+  ]
+}

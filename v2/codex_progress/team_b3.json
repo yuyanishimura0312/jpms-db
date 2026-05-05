@@ -1,0 +1,19 @@
+{
+  "team": "B-3",
+  "task": "teacher/subject voices extraction",
+  "generated_at": "2026-05-05T04:27:44.431285+00:00",
+  "total_schools_scanned": 114,
+  "schools_with_extractions": 38,
+  "schools_without_extractions": 76,
+  "total_records": 94,
+  "max_per_school": 5,
+  "min_quote_len": 30,
+  "max_quote_len": 300,
+  "output_path": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_b3_teachers.jsonl",
+  "rights_level": "quoted_with_attribution",
+  "ethics_notes": [
+    "公開情報のみを対象。",
+    "個人名は最小限に抑え、ページ全体の文脈で公開済みの記述のみ抽出。",
+    "ナビゲーション/著作権表示等の非実体テキストは除外。"
+  ]
+}

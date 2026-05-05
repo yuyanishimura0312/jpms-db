@@ -1,0 +1,68 @@
+{
+  "task_id": "team_e1",
+  "team": "E-1",
+  "subject": "家庭関係データ抽出",
+  "total_schools_in_cache": 115,
+  "schools_with_html": 97,
+  "schools_processed": 97,
+  "schools_with_records": 32,
+  "records_written": 106,
+  "epstein_counts": {
+    "Communicating": 72,
+    "Decision Making": 22,
+    "Volunteering": 3,
+    "Parenting": 6,
+    "Collaborating with Community": 2,
+    "Learning at Home": 1
+  },
+  "hoover_counts": {
+    "効力感": 99,
+    "役割構成": 6,
+    "資源": 1
+  },
+  "top_rules": [
+    [
+      "保護者言及（汎用）",
+      47
+    ],
+    [
+      "後援会",
+      14
+    ],
+    [
+      "保護者向け案内",
+      12
+    ],
+    [
+      "PTA活動",
+      6
+    ],
+    [
+      "保護者会・懇談会",
+      5
+    ],
+    [
+      "家庭的校風",
+      4
+    ],
+    [
+      "保護者向け通信",
+      3
+    ],
+    [
+      "行事への保護者参加",
+      3
+    ],
+    [
+      "保護者会組織",
+      2
+    ],
+    [
+      "保護者評価",
+      2
+    ]
+  ],
+  "output_path": "codex_output/team_e1_family.jsonl",
+  "status": "completed",
+  "ts": "2026-05-05T04:28:38.433364+00:00"
+}
