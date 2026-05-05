@@ -45,7 +45,7 @@ OUT_PATH = ROOT / "codex_output" / "team_b2_students.jsonl"
 PROGRESS_PATH = ROOT / "codex_progress" / "team_b2.json"
 DB_PATH = ROOT / "jpms_v2.db"
 
-MIN_LEN = 30
+MIN_LEN = 35
 MAX_LEN = 300
 MAX_PER_SCHOOL = 5
 
@@ -72,15 +72,17 @@ FILE_CONTEXT_DEFAULT = {
 
 # Section header keywords (look back ~600 chars from a candidate block)
 ALUMNI_HEADER_KEYS = [
-    "卒業生の声", "卒業生インタビュー", "卒業生メッセージ", "卒業生からのメッセージ",
-    "先輩の声", "先輩からのメッセージ", "先輩メッセージ",
-    "OBインタビュー", "OGインタビュー", "卒業生コラム", "OB・OGの声", "OBOGの声",
+    "卒業生の声", "卒業生の話", "卒業生のことば", "卒業生インタビュー",
+    "卒業生メッセージ", "卒業生からのメッセージ", "卒業生からの言葉",
+    "先輩の声", "先輩からのメッセージ", "先輩メッセージ", "先輩から",
+    "OBインタビュー", "OGインタビュー", "卒業生コラム",
+    "OB・OGの声", "OBOGの声", "OBOGメッセージ",
 ]
 
 CURRENT_HEADER_KEYS = [
-    "在校生の声", "在校生インタビュー", "在校生からのメッセージ",
-    "生徒の声", "生徒インタビュー", "生徒メッセージ",
-    "在校生メッセージ", "現役生の声",
+    "在校生の声", "在校生の話", "在校生インタビュー", "在校生からのメッセージ",
+    "生徒の声", "生徒の話", "生徒インタビュー", "生徒メッセージ",
+    "在校生メッセージ", "現役生の声", "在校生の言葉",
 ]
 
 # Personal narrative indicators (Japanese pronouns and verb endings)
@@ -244,6 +246,7 @@ NON_STUDENT_PATTERNS = [
     # Voices clearly not from students
     "学園長", "校長として", "教員一同", "理事長",
     "本学院は", "我が校", "創立以来", "建学の精神",
+    "本校では", "本校の", "本学園は", "本学園の",
     # Principal addressing students (speeches)
     "皆さんは", "皆さんが", "皆さんに", "皆さんの",
     "してほしいと思います", "話したいと思います",
@@ -257,6 +260,7 @@ NON_STUDENT_PATTERNS = [
     # Scheduling / event copy
     "受験生には", "ご参加お待ち", "ご予約受付",
     "を予定しています", "電子版です",
+    "話してもらいます", "に来校していただき", "考える機会となります",
     # PR-style verb endings (school subject)
     "を実現します。", "を目指します。", "を養成します。",
     "を支える環境", "を整えています", "に取り組んでいます",
@@ -267,35 +271,51 @@ NON_STUDENT_PATTERNS = [
 ]
 
 
+SCHOOL_PR_RE = re.compile(r"^[^。]*?(中学校|高等学校|学園|学院|高校|中等部)[^。]{0,3}(では|として|の特長|の特色|の教育)")
+
+
 def is_non_student_voice(text: str) -> bool:
-    return any(p in text for p in NON_STUDENT_PATTERNS)
+    if any(p in text for p in NON_STUDENT_PATTERNS):
+        return True
+    # School-PR opening: "○○学校では…"
+    if SCHOOL_PR_RE.match(text):
+        return True
+    return False
+
+
+# Headings that indicate the block is NOT a student voice section
+NON_STUDENT_HEADINGS = [
+    "校長", "学園長", "学長", "理事長", "教員",
+    "学校紹介", "教育方針", "建学", "沿革",
+    "本校の特色", "教育目標", "校長あいさつ", "校長メッセージ",
+    "校長挨拶", "教育理念", "教員紹介", "教員一覧",
+    "校長ブログ", "学園だより", "玉縄の風",
+]
 
 
 def classify_role(text: str, heading: str, full_page_text: str,
                   block_pos: int) -> tuple[str, str, str] | None:
     """Decide (speaker_role, speaker_attribute, context).
 
-    Decision order:
-    1. heading contains an alumni/current keyword
-    2. preceding ~600 chars in full_page_text contain an alumni/current keyword
-    3. block text itself contains 卒業/在校 markers
+    Priority: explicit heading > block text. Avoid relying on navigation links.
     """
-    # Combine heading + context window
-    context_window = full_page_text[max(0, block_pos - 600):block_pos]
-    candidate_texts = [heading or "", context_window, text]
-
-    for txt in candidate_texts:
+    # 1) Heading-based: highest signal
+    if heading:
+        # First check for non-student headings (principal/teacher) — disqualifying
+        for nh in NON_STUDENT_HEADINGS:
+            if nh in heading:
+                return None
         for kw in ALUMNI_HEADER_KEYS:
-            if kw in txt:
+            if kw in heading:
                 return ("student_alumni", "卒業生", kw)
         for kw in CURRENT_HEADER_KEYS:
-            if kw in txt:
+            if kw in heading:
                 return ("student_current", "中学生", kw)
 
-    # Looser detection in block text
-    if "卒業生" in text and ("メッセージ" in text or "後輩" in text or "在校生" in text):
+    # 2) Block text intrinsic signals (loose)
+    if "卒業生" in text and ("メッセージ" in text or "後輩へ" in text):
         return ("student_alumni", "卒業生", "卒業生メッセージ")
-    if "在校生" in text and ("学校生活" in text or "授業" in text or "毎日" in text):
+    if "在校生" in text and ("毎日" in text or "学校生活" in text):
         return ("student_current", "中学生", "在校生インタビュー")
 
     return None
@@ -361,14 +381,31 @@ def extract_for_school(school_id: str, school_dir: Path,
 
         default_ctx = FILE_CONTEXT_DEFAULT.get(fname, "在校生・卒業生メッセージ")
 
-        # Page-level role hint from <title>
+        # Page-level role hint from <title> AND <h1>; require both to agree
         page_role_hint = None
         title_tag = soup.find("title")
-        if title_tag:
-            title_text = title_tag.get_text() or ""
-            if any(k in title_text for k in ALUMNI_HEADER_KEYS):
+        title_text = title_tag.get_text().strip() if title_tag else ""
+        # Strip school name suffix to focus on page subject
+        page_subject = re.split(r"[|｜\-－〜:：]", title_text)[0].strip()
+        # Reject if title clearly indicates principal/teacher/school PR
+        principal_pr_titles = ["校長", "学長", "学園長", "理事長", "教員紹介",
+                                "教員一覧", "教員", "校長あいさつ", "校長メッセージ",
+                                "教育方針", "建学", "沿革"]
+        if any(k in page_subject for k in principal_pr_titles):
+            page_role_hint = None
+        elif any(k in page_subject for k in ALUMNI_HEADER_KEYS):
+            page_role_hint = ("student_alumni", "卒業生", "卒業生インタビュー")
+        elif any(k in page_subject for k in CURRENT_HEADER_KEYS):
+            page_role_hint = ("student_current", "中学生", "在校生インタビュー")
+        # Use h1 as authoritative voice-page indicator
+        h1 = soup.find("h1")
+        if h1:
+            h1_text = h1.get_text(strip=True)
+            if any(k in h1_text for k in principal_pr_titles):
+                page_role_hint = None
+            elif any(k in h1_text for k in ALUMNI_HEADER_KEYS):
                 page_role_hint = ("student_alumni", "卒業生", "卒業生インタビュー")
-            elif any(k in title_text for k in CURRENT_HEADER_KEYS):
+            elif any(k in h1_text for k in CURRENT_HEADER_KEYS):
                 page_role_hint = ("student_current", "中学生", "在校生インタビュー")
 
         blocks = select_blocks(soup)
@@ -397,8 +434,9 @@ def extract_for_school(school_id: str, school_dir: Path,
             if not classified and page_role_hint:
                 classified = page_role_hint
             if not classified and fname == "voice.html":
-                # voice.html implies student/alumni context
-                classified = ("student_alumni", "卒業生", default_ctx)
+                # voice.html implies voice context, but only accept if text has narrative voice
+                if has_student_narrative(text):
+                    classified = ("student_alumni", "卒業生", default_ctx)
             # Strong student-narrative blocks: trust them even outside explicit voice context
             if not classified and has_student_narrative(text):
                 # Decide alumni vs current based on lifecycle markers
@@ -531,6 +569,15 @@ def main() -> int:
             "個人名・学年は除外、speaker_attributeは generic（中学生/卒業生）。",
             "公開情報のみを対象。",
             "ナビゲーション/著作権表示等の非実体テキストは除外。",
+            "校長メッセージ・教員紹介・学校PRは speaker_role=student_* から除外。",
+            "school-PR句（『〇〇学校では…』）と404/イベント告知は機械的に除外。",
+        ],
+        "data_constraints": [
+            "raw_html_cache に存在する HTML は学校トップ＋数ページのみ。",
+            "実際の在校生・卒業生インタビューは多くの場合、リンク先の別URLにあり未取得。",
+            "voice.html を持つ学校は12校、schoollife.html を持つ学校は14校のみ。",
+            "残り90+校は root.html しかなく、ナビゲーション構造のみ。",
+            "目標200-500件は、別ページ取得（Phase E延長）が必要。",
         ],
     }
     with open(PROGRESS_PATH, "w", encoding="utf-8") as f:

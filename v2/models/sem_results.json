@@ -1,7 +1,7 @@
 {
   "metadata": {
     "phase": "F-3 SEM",
-    "computed_at": "2026-05-05T10:53:53.795817+00:00",
+    "computed_at": "2026-05-05T10:56:24.263126+00:00",
     "db_path": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db",
     "n_schools": 33,
     "engine": "semopy",
@@ -46,8 +46,7 @@
       "n_iter": null,
       "success": true
     },
-    "SRMR": null,
-    "SRMR_error": "cannot use 'numpy.ndarray' as a dict key (unhashable type: 'numpy.ndarray')"
+    "SRMR": 0.07081821632380096
   },
   "parameters": {
     "parameters": [

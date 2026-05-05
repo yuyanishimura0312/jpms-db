@@ -54,8 +54,8 @@ TARGET_SCHOOLS = [
     ('jpms_s_0067', '攻玉社中学校', '攻玉社中学校・高等学校', '攻玉社中学校・高等学校の人物一覧'),
     ('jpms_s_0023', '慶應義塾中等部', '慶應義塾中等部', None),
     ('jpms_s_0133', '慶應義塾普通部', '慶應義塾普通部', '慶應義塾普通部の人物一覧'),
-    ('jpms_s_0410', '武蔵中学校', '武蔵高等学校・中学校 (旧制武蔵高等学校)', '武蔵高等学校・中学校 (旧制武蔵高等学校)の人物一覧'),
-    ('jpms_s_0479', '桐朋中学校', '桐朋中学校・桐朋高等学校', '桐朋中学校・桐朋高等学校の人物一覧'),
+    ('jpms_s_0410', '武蔵中学校', '武蔵高等学校中学校', '武蔵高等学校中学校の人物一覧'),
+    ('jpms_s_0479', '桐朋中学校', '桐朋中学校・高等学校', '桐朋中学校・高等学校の人物一覧'),
     ('jpms_s_0009', '神戸女学院中学部', '神戸女学院中学部・高等学部', '神戸女学院中学部・高等学部の人物一覧'),
     ('jpms_s_0004', '雙葉中学校', '雙葉中学校・高等学校', '雙葉中学校・高等学校の人物一覧'),
     ('jpms_s_0016', '女子学院中学校', '女子学院中学校・高等学校', '女子学院中学校・高等学校の人物一覧'),
@@ -66,14 +66,14 @@ TARGET_SCHOOLS = [
     ('jpms_s_0039', '早稲田中学校', '早稲田中学校・高等学校', '早稲田中学校・高等学校の人物一覧'),
     ('jpms_s_0062', '駒場東邦中学校', '駒場東邦中学校・高等学校', '駒場東邦中学校・高等学校の人物一覧'),
     ('jpms_s_p3_001', '栄光学園中学校', '栄光学園中学校・高等学校', '栄光学園中学校・高等学校の人物一覧'),
-    ('jpms_s_p3_003', '聖光学院中学校', '聖光学院中学校・高等学校 (神奈川県)', '聖光学院中学校・高等学校 (神奈川県)の人物一覧'),
+    ('jpms_s_p3_003', '聖光学院中学校', '聖光学院中学校・高等学校', '聖光学院中学校・高等学校の人物一覧'),
     ('jpms_s_0631', '甲陽学院中学校', '甲陽学院中学校・高等学校', '甲陽学院中学校・高等学校の人物一覧'),
     ('jpms_s_0646', '東大寺学園中学校', '東大寺学園中学校・高等学校', '東大寺学園中学校・高等学校の人物一覧'),
     ('jpms_s_0007', '洛南高等学校附属中学校', '洛南高等学校・附属中学校', '洛南高等学校・附属中学校の人物一覧'),
     ('jpms_s_0906', 'ラ・サール中学校', 'ラ・サール中学校・高等学校', 'ラ・サール中学校・高等学校の人物一覧'),
     ('jpms_s_0622', '同志社中学校', '同志社中学校・高等学校', '同志社中学校・高等学校の人物一覧'),
     ('jpms_s_0635', '関西学院中学部', '関西学院中学部・高等部', '関西学院中学部・高等部の人物一覧'),
-    ('jpms_s_0700', '東海中学校', '東海中学校・高等学校 (愛知県)', '東海中学校・高等学校 (愛知県)の人物一覧'),
+    ('jpms_s_0700', '東海中学校', '東海中学校・高等学校', '東海中学校・高等学校の人物一覧'),
     ('jpms_s_0027', '聖心女子学院中等科', '聖心女子学院初等科・中等科・高等科', '聖心女子学院初等科・中等科・高等科の人物一覧'),
     ('jpms_s_0400', '豊島岡女子学園中学校', '豊島岡女子学園中学校・高等学校', '豊島岡女子学園中学校・高等学校の人物一覧'),
 ]
@@ -83,6 +83,7 @@ TARGET_SCHOOLS = [
 # 経営, 法曹, 軍人, スポーツ, 芸能（俳優中心）, アナウンサー, 信仰（宗教者は cultural として一部拾う）
 SECTION_CATEGORY = {
     '学者': 'academic',
+    '学問': 'academic',
     '学界': 'academic',
     '学術': 'academic',
     '学術・教育': 'academic',
@@ -93,6 +94,8 @@ SECTION_CATEGORY = {
     '教育・学術': 'academic',
     '教育': 'academic',
     '教育者': 'academic',
+    '大学教員': 'academic',
+    '大学教員・教育界': 'academic',
     '医学': 'academic',
     '医学者': 'academic',
     '医療': 'academic',
@@ -112,6 +115,9 @@ SECTION_CATEGORY = {
     '信仰': 'cultural',
     '哲学': 'academic',
     '文学': 'writer',
+    '文学・思想': 'writer',
+    '文学・芸術': 'writer',
+    '文芸・芸術': 'writer',
     '小説': 'writer',
     '小説家': 'writer',
     '作家': 'writer',
@@ -119,7 +125,6 @@ SECTION_CATEGORY = {
     '評論家': 'writer',
     '俳人・歌人': 'writer',
     '詩人': 'writer',
-    '文学・思想': 'writer',
     '文芸': 'writer',
     '出版': 'cultural',
     '芸術': 'artist',
@@ -131,16 +136,29 @@ SECTION_CATEGORY = {
     '建築家': 'artist',
     'デザイン': 'artist',
     '音楽': 'artist',
+    '音楽・美術': 'artist',
     '映画': 'artist',
     '映画・テレビ': 'artist',
     '伝統芸能': 'artist',
     '芸能': 'artist',  # but we will further filter by EXCLUDE_KW per line
+    '文化・芸術': 'artist',
     'マスコミ': 'cultural',
+    'マスコミ・出版': 'cultural',
     'メディア': 'cultural',
     'マスメディア': 'cultural',
     '報道': 'cultural',
     'ジャーナリズム': 'cultural',
     'ジャーナリスト': 'cultural',
+    'アナウンサー': 'cultural',
+    '文化・芸能': 'artist',  # bias to artist; line filter handles 俳優・タレント
+}
+
+# Generic top-level alumni headers that contain a flat list (no sub-section per category).
+# When we hit one of these, we must categorize each line by its description text.
+GENERIC_ALUMNI_SECTIONS = {
+    '著名な出身者', '主な出身者', '主な卒業生', '著名な卒業生', '主な人物',
+    '著名な関係者', '関連人物', '関係者', 'その他関係者',
+    '中学・高等学校関係者一覧',
 }
 
 # Skip these sections entirely
@@ -312,6 +330,34 @@ def is_excluded_line(desc):
     return any(kw in desc for kw in LINE_EXCLUDE_KW)
 
 
+# Description-based category inference (for flat alumni sections).
+DESC_PATTERNS = [
+    # (regex_or_keyword, category)
+    (re.compile(r'(名誉教授|大学院?教授|研究員|研究所長|学者|学博士|博士号|ノーベル|文化勲章|学士院会員|准教授|助教授|工学者|医学者|物理学者|化学者|生物学者|数学者|歴史学者|社会学者|経済学者|人類学者|哲学者|心理学者|言語学者|考古学者|法学者|政治学者|文学研究者|宗教学者|地質学者|地理学者|脳科学者|神経科学者|遺伝学者|天文学者|植物学者|動物学者|生理学者|薬学者|教育学者|建築学者|統計学者)'), 'academic'),
+    (re.compile(r'(小説家|作家|詩人|歌人|俳人|随筆家|エッセイスト|脚本家|劇作家|児童文学|文芸評論家|文学者|翻訳家|戯曲家|作詞家)'), 'writer'),
+    (re.compile(r'(画家|彫刻家|版画家|書家|陶芸家|工芸家|建築家|写真家|映画監督|映像作家|美術家|日本画家|洋画家|作曲家|指揮者|ピアニスト|ヴァイオリニスト|チェリスト|演奏家|音楽家|現代美術|デザイナー|グラフィックデザイナー|プロダクトデザイナー|ファッションデザイナー|染色家|能楽師|歌舞伎役者|狂言師|落語家|文楽)'), 'artist'),
+    (re.compile(r'(ジャーナリスト|評論家(?!家)|社会評論家|報道記者|新聞記者|新聞社主筆|放送記者|解説委員|コラムニスト|編集者|編集長|主筆)'), 'cultural'),
+    (re.compile(r'(僧侶|宗教家|司祭|神父|牧師|住職|住持|管長|大僧正)'), 'cultural'),
+]
+
+
+def categorize_line(desc):
+    """Return category for a flat alumni line based on description text, or None."""
+    if not desc:
+        return None
+    if any(kw in desc for kw in LINE_EXCLUDE_KW):
+        return None
+    # Politicians, businessmen, athletes, military -> skip (handled by C-3 or out of scope)
+    if re.search(r'(衆議院議員|参議院議員|内閣総理大臣|大臣(?:政務官)?|知事|市長|事務次官|官房長|外交官|大使|裁判官|検察官|弁護士|社長|会長|頭取|オーナー|CEO|代表取締役|取締役|軍人|陸軍|海軍|空軍|自衛官)', desc):
+        # but allow if academic markers also present
+        if not any(kw in desc for kw in ['名誉教授', '教授', '学者', '研究者', '博士', '作家', '詩人', '画家', '建築家', '作曲家']):
+            return None
+    for pat, cat in DESC_PATTERNS:
+        if pat.search(desc):
+            return cat
+    return None
+
+
 def derive_subcategory(section_name, desc):
     """Refine category: e.g. someone in '芸術・芸能' could be 俳優 (excluded) vs 画家 (artist).
     Returns category or None (None = skip).
@@ -392,24 +438,74 @@ def main():
         sections = parse_sections(wikitext)
         added_for_school = 0
 
-        # Track current top-level alumni group (e.g. 出身者 vs 教職員)
+        # Track current top-level alumni group (e.g. 出身者 vs 教職員) and whether it is "flat"
         in_alumni_group = False
+        flat_alumni_group = False
         for level, name, body in sections:
-            # Top-level (level == 2): determine if we are inside alumni or skip group
+            # Level-2 transitions
             if level == 2:
-                if name in {'出身者', '主な出身者', '主な卒業生', '著名な卒業生',
-                            '主な人物', '関連人物', '関係者', '中学・高等学校関係者一覧',
-                            '関連団体・関係者一覧', '関連人物・関係者'}:
+                in_alumni_group = False
+                flat_alumni_group = False
+                # Recognize alumni groups: explicit list OR contains 出身者/卒業生/関係者/同窓
+                is_alumni_l2 = (
+                    name in GENERIC_ALUMNI_SECTIONS
+                    or name in {'出身者', '関連団体・関係者一覧', '関連人物・関係者',
+                                '出身者・教職員・組織', '著名な教職員',
+                                '同窓生', '主な同窓生'}
+                    or '出身者' in name
+                    or '卒業生' in name
+                    or name.endswith('関係者')
+                )
+                # Exclude pure staff/teacher groups
+                if name in {'教職員', '教職員一覧', '理事長・学園長', '理事長・学園長・校長',
+                            '歴代理事長', '歴代校長', '歴代学園長'}:
+                    is_alumni_l2 = False
+                if is_alumni_l2:
                     in_alumni_group = True
-                else:
-                    in_alumni_group = False
-                # When the level-2 section itself has list items, also process if it maps to a category
+                    flat_alumni_group = True  # may have flat list and/or sub-sections
                 cat_l2 = SECTION_CATEGORY.get(name)
                 if cat_l2:
-                    in_alumni_group = True  # treat level-2 categorized section as alumni
+                    # Level-2 itself is a category section (e.g. '== 学者 ==')
+                    in_alumni_group = True
+                    # Process its body lines below by falling through with name = level-2 name
                 else:
-                    # Don't process body of unmapped level-2 sections directly
-                    continue
+                    if not in_alumni_group:
+                        continue
+                    # If alumni group with flat list, process body lines now
+                    if flat_alumni_group and body.strip():
+                        lines = parse_alumni_lines(body)
+                        for line_info in lines:
+                            pname = line_info['name']
+                            desc = line_info['description']
+                            raw_line = line_info['raw_line']
+                            if (pname, sid) in emitted:
+                                continue
+                            cat = categorize_line(desc)
+                            if not cat:
+                                continue
+                            birth = extract_birth_from_line(desc, raw_line)
+                            evidence = (desc or raw_line)[:220].strip()
+                            if not evidence:
+                                evidence = f'Wikipedia「{source_title}」{name}の節に掲載'
+                            source_url = WP_VIEW + urllib.parse.quote(source_title)
+                            rec = {
+                                'name': pname,
+                                'birth': birth,
+                                'category': cat,
+                                'matched_school_id': sid,
+                                'matched_school_name': sname,
+                                'match_type': 'alumni',
+                                'evidence_text': evidence,
+                                'source': 'Wikipedia ja',
+                                'source_url': source_url,
+                                'confidence': 3,
+                            }
+                            out_f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                            out_f.flush()
+                            emitted.add((pname, sid))
+                            total_records += 1
+                            added_for_school += 1
+                    continue  # don't process further this iteration
 
             if not in_alumni_group:
                 continue
@@ -419,8 +515,6 @@ def main():
                 continue
 
             cat_for_section = SECTION_CATEGORY.get(name)
-            if not cat_for_section:
-                continue  # unmapped sub-section: skip
 
             lines = parse_alumni_lines(body)
             for line_info in lines:
@@ -429,7 +523,13 @@ def main():
                 raw_line = line_info['raw_line']
                 if (pname, sid) in emitted:
                     continue
-                cat = derive_subcategory(name, desc)
+                if cat_for_section:
+                    cat = derive_subcategory(name, desc)
+                else:
+                    # unmapped sub-section under a generic alumni group -> per-line categorize
+                    if not flat_alumni_group:
+                        continue
+                    cat = categorize_line(desc)
                 if not cat:
                     continue
                 birth = extract_birth_from_line(desc, raw_line)

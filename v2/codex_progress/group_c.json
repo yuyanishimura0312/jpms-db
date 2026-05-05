@@ -1,17 +1,17 @@
 {
   "task_id": "group_c",
-  "schools_in_cache": 252,
-  "schools_with_quote": 69,
-  "total_items_extracted": 220,
+  "schools_in_cache": 253,
+  "schools_with_quote": 71,
+  "total_items_extracted": 241,
   "per_group": {
-    "C01": 165,
-    "C02": 26,
-    "C03": 4,
+    "C01": 175,
+    "C02": 34,
+    "C03": 3,
     "C04": 7,
-    "C05": 18
+    "C05": 22
   },
-  "db_inserted": 220,
+  "db_inserted": 241,
   "db_rejected": 0,
   "output_jsonl": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/group_c_page_specialized.jsonl",
-  "ts": "2026-05-05T21:00:56.541942Z"
+  "ts": "2026-05-05T21:07:17.511079Z"
 }
