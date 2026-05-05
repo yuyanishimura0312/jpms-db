@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "phase": "F-1 MLM",
+    "computed_at": "2026-05-05T10:47:46.496368+00:00",
+    "db_path": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db",
+    "n_schools_total": 528,
+    "n_schools_with_alumni": 50,
+    "n_schools_with_achievement": 50,
+    "n_typology_classes": 6,
+    "culture_dims": [
+      "cult_autonomy",
+      "cult_community",
+      "cult_competition",
+      "cult_creativity",
+      "cult_diversity",
+      "cult_intensity",
+      "cult_internationality",
+      "cult_mentor",
+      "cult_spirituality",
+      "cult_structure"
+    ],
+    "library": {
+      "statsmodels": "0.14.6",
+      "pandas": "3.0.2",
+      "numpy": "2.4.4"
+    }
+  },
+  "models": {
+    "M0_null_log_alumni": {
+      "formula": "log_alumni_count ~ 1 + (1|typology_class)",
+      "icc": 0.21726891167131346,
+      "fixed_effects": [
+        {
+          "term": "Intercept",
+          "estimate": 2.933886227996063,
+          "std_error": 0.3732117901261509,
+          "z": 7.861183128765487,
+          "p_value": 3.805219859041939e-15,
+          "ci_low": 2.202404560743086,
+          "ci_high": 3.66536789524904
+        }
+      ],
+      "random_effects": {
+        "group_var_intercept": 0.48326146884369614,
+        "residual_var": 1.7409935574565178,
+        "n_groups": 6,
+        "group_sizes": {
+          "class_0": 1,
+          "class_1": 1,
+          "class_2": 1,
+          "class_5": 1,
+          "class_6": 1,
+          "class_7": 1
+        }
+      },
+      "log_likelihood": -87.71592838120166,
+      "aic": NaN
+    },
+    "M1_culture_log_alumni": {
+      "formula": "log_alumni_count ~ cult_autonomy_z + cult_community_z + cult_competition_z + cult_creativity_z + cult_diversity_z + cult_intensity_z + cult_internationality_z + cult_mentor_z + cult_spirituality_z + cult_structure_z + (1|typology_class)",
+      "icc": 1.0146107688415985e-07,
+      "fixed_effects": [
+        {
+          "term": "Intercept",
+          "estimate": 3.1894946809415368,
+          "std_error": 0.2533381659674037,
+          "z": 12.58987041594009,
+          "p_value": 2.4006714795253164e-36,
+          "ci_low": 2.6929609997359947,
+          "ci_high": 3.686028362147079
+        },
+        {
+          "term": "cult_autonomy_z",
+          "estimate": 0.6183152767355675,
+          "std_error": 0.855199051918621,
+          "z": 0.7230074394357551,
+          "p_value": 0.46967531363915704,
+          "ci_low": -1.0578440646377294,
+          "ci_high": 2.2944746181088647
+        },
+        {
+          "term": "cult_community_z",
+          "estimate": 3.323990316366709,
+          "std_error": 2.1905273698940224,
+          "z": 1.5174383858657394,
+          "p_value": 0.1291560385634361,
+          "ci_low": -0.9693644357748239,
+          "ci_high": 7.617345068508242
+        },
+        {
+          "term": "cult_competition_z",
+          "estimate": -2.744093682077835,
+          "std_error": 1.660433297684954,
+          "z": -1.65263710737659,
+          "p_value": 0.0984047412709593,
+          "ci_low": -5.99848314427142,
+          "ci_high": 0.5102957801157495
+        },
+        {
+          "term": "cult_creativity_z",
+          "estimate": -0.2829503579218807,
+          "std_error": 0.6000395388951222,
+          "z": -0.47155285540497716,
+          "p_value": 0.6372459842155731,
+          "ci_low": -1.4590062434563413,
+          "ci_high": 0.8931055276125798
+        },
+        {
+          "term": "cult_diversity_z",
+          "estimate": -0.016599361317976104,
+          "std_error": 0.5816360062155514,
+          "z": -0.028539088262401112,
+          "p_value": 0.9772321927902475,
+          "ci_low": -1.156584985612172,
+          "ci_high": 1.12338626297622
+        },
+        {
+          "term": "cult_intensity_z",
+          "estimate": 0.9551164706003287,
+          "std_error": 1.3800450483496787,
+          "z": 0.6920907920668973,
+          "p_value": 0.4888803138334257,
+          "ci_low": -1.749722121207879,
+          "ci_high": 3.6599550624085366
+        },
+        {
+          "term": "cult_internationality_z",
+          "estimate": -0.0317059447444121,
+          "std_error": 0.5959607370767455,
+          "z": -0.0532013986356439,
+          "p_value": 0.957571441245335,
+          "ci_low": -1.1997675256147777,
+          "ci_high": 1.1363556361259535
+        },
+        {
+          "term": "cult_mentor_z",
+          "estimate": -1.6688093924558791,
+          "std_error": 1.0473042800103871,
+          "z": -1.5934331829898833,
+          "p_value": 0.11106304656620192,
+          "ci_low": -3.7214880621308897,
+          "ci_high": 0.38386927721913167
+        },
+        {
+          "term": "cult_spirituality_z",
+          "estimate": -1.3896735991546736,
+          "std_error": 1.4777403782202159,
+          "z": -0.9404044307352489,
+          "p_value": 0.34701015036211225,
+          "ci_low": -4.2859915189668945,
+          "ci_high": 1.5066443206575473
+        },
+        {
+          "term": "cult_structure_z",
+          "estimate": -1.594632893015648,
+          "std_error": 1.0578932600465607,
+          "z": -1.5073665304810278,
+          "p_value": 0.13171673285515453,
+          "ci_low": -3.6680655821945725,
+          "ci_high": 0.4787997961632766
+        }
+      ],
+      "random_effects": {
+        "group_var_intercept": 1.4853948049998962e-07,
+        "residual_var": 1.464004424067019,
+        "n_groups": 6,
+        "group_sizes": {
+          "class_0": 1,
+          "class_1": 1,
+          "class_2": 1,
+          "class_5": 1,
+          "class_6": 1,
+          "class_7": 1
+        }
+      },
+      "log_likelihood": -75.17070713004874,
+      "aic": NaN,
+      "pseudo_r2_level1": 0.15909831038901867
+    },
+    "M2_culture_achievement": {
+      "formula": "alumni_mean_ach ~ cult_autonomy_z + cult_community_z + cult_competition_z + cult_creativity_z + cult_diversity_z + cult_intensity_z + cult_internationality_z + cult_mentor_z + cult_spirituality_z + cult_structure_z + (1|typology_class)",
+      "icc": 0.39504222290961016,
+      "fixed_effects": [
+        {
+          "term": "Intercept",
+          "estimate": 3.340964262212592,
+          "std_error": 0.15371987985641114,
+          "z": 21.734106644718743,
+          "p_value": 9.766507581827411e-105,
+          "ci_low": 3.039678833986202,
+          "ci_high": 3.642249690438982
+        },
+        {
+          "term": "cult_autonomy_z",
+          "estimate": -0.2819037209876859,
+          "std_error": 0.27614140949477994,
+          "z": -1.0208672487891204,
+          "p_value": 0.3073173378656926,
+          "ci_low": -0.8231309382375815,
+          "ci_high": 0.25932349626220974
+        },
+        {
+          "term": "cult_community_z",
+          "estimate": -0.12720292616448564,
+          "std_error": 0.8021274898423542,
+          "z": -0.15858193089665262,
+          "p_value": 0.8739982656869617,
+          "ci_low": -1.6993439172650178,
+          "ci_high": 1.4449380649360466
+        },
+        {
+          "term": "cult_competition_z",
+          "estimate": 0.8156056478701359,
+          "std_error": 0.5774300595858588,
+          "z": 1.4124752155353673,
+          "p_value": 0.15781008332619795,
+          "ci_low": -0.3161364725089648,
+          "ci_high": 1.9473477682492366
+        },
+        {
+          "term": "cult_creativity_z",
+          "estimate": 0.18081437600285807,
+          "std_error": 0.2007005436357009,
+          "z": 0.9009162243778525,
+          "p_value": 0.3676328641541956,
+          "ci_low": -0.21255146120072524,
+          "ci_high": 0.5741802132064414
+        },
+        {
+          "term": "cult_diversity_z",
+          "estimate": -0.10334130615153832,
+          "std_error": 0.20592089829794155,
+          "z": -0.5018495305999321,
+          "p_value": 0.6157733689844116,
+          "ci_low": -0.506938850479639,
+          "ci_high": 0.30025623817656244
+        },
+        {
+          "term": "cult_intensity_z",
+          "estimate": -0.4255427652878505,
+          "std_error": 0.5253947298191406,
+          "z": -0.8099486750358865,
+          "p_value": 0.4179696747530216,
+          "ci_low": -1.4552975134005184,
+          "ci_high": 0.6042119828248174
+        },
+        {
+          "term": "cult_internationality_z",
+          "estimate": 0.1097560959990204,
+          "std_error": 0.20603900335643024,
+          "z": 0.5326957236788393,
+          "p_value": 0.5942442268258165,
+          "ci_low": -0.2940729299901102,
+          "ci_high": 0.513585121988151
+        },
+        {
+          "term": "cult_mentor_z",
+          "estimate": -0.07504593809337977,
+          "std_error": 0.3746657626084717,
+          "z": -0.20030102983229695,
+          "p_value": 0.841245157179207,
+          "ci_low": -0.8093773390462179,
+          "ci_high": 0.6592854628594583
+        },
+        {
+          "term": "cult_spirituality_z",
+          "estimate": 0.27484121774844006,
+          "std_error": 0.5577125588364867,
+          "z": 0.4928008404935696,
+          "p_value": 0.6221533167943464,
+          "ci_low": -0.8182553112967499,
+          "ci_high": 1.36793774679363
+        },
+        {
+          "term": "cult_structure_z",
+          "estimate": -0.08362259676336378,
+          "std_error": 0.3551074143199709,
+          "z": -0.235485358489348,
+          "p_value": 0.8138320416076744,
+          "ci_low": -0.7796203394736498,
+          "ci_high": 0.6123751459469222
+        }
+      ],
+      "random_effects": {
+        "group_var_intercept": 0.09797769403755889,
+        "residual_var": 0.15004058946622045,
+        "n_groups": 6,
+        "group_sizes": {
+          "class_0": 1,
+          "class_1": 1,
+          "class_2": 1,
+          "class_5": 1,
+          "class_6": 1,
+          "class_7": 1
+        }
+      },
+      "log_likelihood": -32.24110446622353,
+      "aic": NaN
+    }
+  }
+}
