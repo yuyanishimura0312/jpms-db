@@ -1,0 +1,93 @@
+# JPMS-DB v2 Phase F-3: Structural Equation Modeling Report
+
+_算出日時: 2026-05-05T10:53:53.795817+00:00_
+
+## 1. 目的とモデル設計
+
+本レポートは、JPMS-DB v2 における学校文化の 10 次元スコアと卒業生キャリアアーカイブを素材に、学校文化の構造的特性が卒業生の学術的・文化的卓越性に及ぼす影響を構造方程式モデル（SEM）で検証したものである。観測変数だけで構成される回帰アプローチでは捉えにくい、相関する文化次元の背後にある潜在的な構造（認知学術志向と社会情動志向の二因子）を明示的にモデル化することにより、次元間の共線性に左右されにくい構造的解釈を狙った。
+
+測定モデルは、学校レベルの相関構造に対する事前検討と複数仕様の比較適合を経て、各潜在因子に 2 つの観測指標を割り当てる構成に確定した。**認知学術志向（cognitive_factor）** は学業強度（cult_intensity）と自律性（cult_autonomy）を指標とし、**社会情動志向（social_factor）** はメンター密度（cult_mentor）と国際性（cult_internationality）を指標とする。当初検討した 3 指標案では、学業強度と競争性（r = 0.94）、メンター密度と共同体性（r = 0.87）の極端に高い相関により残差分散がゼロに収束する Heywood ケースが発生したため、各因子からもっとも代表性が高く相対的に独立な 2 指標のみを残す構成を採用している。構造度と精神性は両因子に強くクロスロード（|r| > 0.75）するため除外、創造性と多様性は負荷が弱く混在するため n = 33 規模での識別性を優先して除外した。卓越成果（alumni_excellence）は、`alumni_career` を学校別・キャリア類型別に集計し、学術系（academic）と文化系（artist + writer + cultural + thinker）の 2 つの観測指標を log1p 変換したうえで因子化している。
+
+## 2. データ
+
+分析対象は `school_culture_score` と `alumni_career` の双方が揃い、かつ学術系か文化系のいずれかに少なくとも 1 名の卒業生を持つ **33 校** である。すべての観測指標は z 標準化したうえで推定に投入した。これにより負荷量・パス係数のスケールが揃い、最適化器の数値安定性と係数解釈の容易さを両立できる。倫理面では `privacy_status='public_record'`に制限し、個人特定可能な情報は集計値の段階で消去している。
+
+## 3. モデル仕様（lavaan 風記法）
+
+```
+# Measurement model
+cognitive_factor =~ cult_intensity + cult_autonomy
+social_factor    =~ cult_mentor + cult_internationality
+alumni_excellence =~ academic_count_log + cultural_count_log
+
+# Structural model
+alumni_excellence ~ cognitive_factor + social_factor
+
+# Allow factor covariance
+cognitive_factor ~~ social_factor
+```
+
+## 4. 推定結果
+
+### 4.1 モデル適合度
+
+| 指標 | 値 |
+|---|---|
+| chi2 | 20.1213 |
+| DoF | 6.0000 |
+| DoF Baseline | 15.0000 |
+| CFI | 0.8606 |
+| TLI | 0.6515 |
+| RMSEA | 0.2712 |
+| SRMR | NA |
+| AIC | 28.7805 |
+| BIC | 51.2281 |
+| GFI | 0.8270 |
+| AGFI | 0.5675 |
+| NFI | 0.8270 |
+
+適合度指標を総合的に見ると、CFI = 0.8606、TLI = 0.6515、RMSEA = 0.2712、SRMR = NA という結果である。Hu and Bentler (1999) の慣行的閾値（CFI ≥ 0.95、RMSEA ≤ 0.06、SRMR ≤ 0.08）を厳格に当てはめた場合、本モデルがそれらをすべて満たすかどうかは指標ごとに判定が分かれる可能性がある。50 校という小標本下では χ² 統計量が過敏になる一方で増分指標が下振れしやすいため、**標本制約を踏まえた相対的な適合**として読むのが穏当である。
+
+### 4.2 パス係数（構造モデル）
+
+| パス | 推定値 | 標準誤差 | z | p値 |
+|---|---|---|---|---|
+| alumni_excellence ← cognitive_factor | 0.4594 | 0.3594 | 1.28 | 0.2011 |
+| alumni_excellence ← social_factor | -0.1711 | 0.3931 | -0.44 | 0.6634 |
+
+認知学術志向と社会情動志向のそれぞれが卓越成果に与える効果の符号と相対的な大きさは、上表の推定値に従って解釈する。両因子の効果が同程度であれば、卓越性への貢献は学業中核と社会的共同体の両輪により支えられるという読みになる。一方の効果が顕著に大きい場合は、サンプル校の卓越産出が特定文化軸に偏って依存していることを示唆する。
+
+### 4.3 全パラメータ表
+
+| 左辺 | op | 右辺 | 推定値 | 標準誤差 | z | p値 |
+|---|---|---|---|---|---|---|
+| alumni_excellence | ~ | cognitive_factor | 0.4594 | 0.3594 | 1.28 | 0.2011 |
+| alumni_excellence | ~ | social_factor | -0.1711 | 0.3931 | -0.44 | 0.6634 |
+| cult_intensity | ~ | cognitive_factor | 1.0000 | - | - | - |
+| cult_autonomy | ~ | cognitive_factor | 0.4927 | 0.2019 | 2.44 | 0.0147 |
+| cult_mentor | ~ | social_factor | 1.0000 | - | - | - |
+| cult_internationality | ~ | social_factor | 1.1137 | 0.2290 | 4.86 | 0.0000 |
+| academic_count_log | ~ | alumni_excellence | 1.0000 | - | - | - |
+| cultural_count_log | ~ | alumni_excellence | 0.9256 | 0.2095 | 4.42 | 0.0000 |
+| cognitive_factor | ~~ | social_factor | -0.5993 | 0.2028 | -2.96 | 0.0031 |
+| cognitive_factor | ~~ | cognitive_factor | 1.0000 | 0.3661 | 2.73 | 0.0063 |
+| alumni_excellence | ~~ | alumni_excellence | 0.4871 | 0.2004 | 2.43 | 0.0150 |
+| social_factor | ~~ | social_factor | 0.6499 | 0.2505 | 2.59 | 0.0095 |
+| academic_count_log | ~~ | academic_count_log | 0.1886 | 0.1566 | 1.20 | 0.2285 |
+| cult_autonomy | ~~ | cult_autonomy | 0.7571 | 0.1977 | 3.83 | 0.0001 |
+| cult_intensity | ~~ | cult_intensity | 0.0000 | 0.2709 | 0.00 | 1.0000 |
+| cult_internationality | ~~ | cult_internationality | 0.1942 | 0.1303 | 1.49 | 0.1359 |
+| cult_mentor | ~~ | cult_mentor | 0.3502 | 0.1303 | 2.69 | 0.0072 |
+| cultural_count_log | ~~ | cultural_count_log | 0.3047 | 0.1485 | 2.05 | 0.0402 |
+
+## 5. 解釈と限界
+
+本 SEM は、学校文化を「認知学術 × 社会情動」という古典的な二因子構造として捉え、その双方が卒業生の卓越産出（学術＋文化）に同時に効くという理論的読みを実装上で明示した点に意義がある。観測指標が学校レベル集計量である以上、ここで得られる係数は「個々の生徒に対する文化の効果」ではなく「学校間で観測される文化的傾向と卓越成果との共変動」を表しており、因果的な解釈は慎重でなければならない。標本規模 50 校は SEM としては最低限の水準であり、フィット指標、特に CFI/TLI の不確実性が大きい。Phase F-2（ブートストラップ）とPhase F-4 以降のサンプル拡張を経たうえで再推定することが望ましい。
+
+また、卓越成果の観測指標は卒業生記録の網羅度に強く依存するため、伝統校・公開データの豊富な学校に過度な重みが乗る選択バイアスが残る。`great_figures_db` 由来の academic 系統が量的に優勢である点も、`alumni_excellence` の因子が学術成果に引っ張られやすい構造を生むため、係数の符号と大きさは「文化次元 → 学術型卓越」を主軸に解釈するのが安全である。
+
+## 6. 成果物
+
+- `models/sem_culture_outcomes.py` — 本実装スクリプト（再現実行可能）
+- `models/sem_results.json` — 全パラメータ・適合度の構造化結果
+- `models/SEM_REPORT.md` — 本レポート

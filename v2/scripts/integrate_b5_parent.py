@@ -48,7 +48,8 @@ def main():
                 rejected += 1
     db.commit()
     print(f"Inserted: {inserted}, Rejected: {rejected}")
-    print(f"Total parent testimonials: {db.execute(\"SELECT COUNT(*) FROM testimonials_v2 WHERE speaker_role='parent'\").fetchone()[0]}")
+    n = db.execute("SELECT COUNT(*) FROM testimonials_v2 WHERE speaker_role='parent'").fetchone()[0]
+    print(f"Total parent testimonials: {n}")
     db.close()
 
 

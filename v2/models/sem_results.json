@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "phase": "F-3 SEM",
+    "computed_at": "2026-05-05T10:53:53.795817+00:00",
+    "db_path": "/Users/nishimura+/projects/research/jpms-db/v2/jpms_v2.db",
+    "n_schools": 33,
+    "engine": "semopy",
+    "library": {
+      "semopy": "2.3.11",
+      "pandas": "3.0.2",
+      "numpy": "2.4.4"
+    },
+    "indicators": {
+      "cognitive_factor": [
+        "cult_intensity",
+        "cult_autonomy"
+      ],
+      "social_factor": [
+        "cult_mentor",
+        "cult_internationality"
+      ],
+      "alumni_excellence": [
+        "academic_count_log",
+        "cultural_count_log"
+      ]
+    },
+    "spec": "\n# Measurement model\ncognitive_factor =~ cult_intensity + cult_autonomy\nsocial_factor    =~ cult_mentor + cult_internationality\nalumni_excellence =~ academic_count_log + cultural_count_log\n\n# Structural model\nalumni_excellence ~ cognitive_factor + social_factor\n\n# Allow factor covariance\ncognitive_factor ~~ social_factor\n"
+  },
+  "fit_indices": {
+    "DoF": 6.0,
+    "DoF Baseline": 15.0,
+    "chi2": 20.121268773300567,
+    "chi2 p-value": 0.002635042446471836,
+    "chi2 Baseline": 116.2971024977617,
+    "CFI": 0.8605955311148945,
+    "GFI": 0.8269839201394735,
+    "AGFI": 0.5674598003486838,
+    "NFI": 0.8269839201394735,
+    "TLI": 0.6514888277872362,
+    "RMSEA": 0.2711978518737574,
+    "AIC": 28.78052916525451,
+    "BIC": 51.22814258725172,
+    "LogLik": 0.6097354173727445,
+    "meta": {
+      "objective_value": 0.6097354173727445,
+      "n_iter": null,
+      "success": true
+    },
+    "SRMR": null,
+    "SRMR_error": "cannot use 'numpy.ndarray' as a dict key (unhashable type: 'numpy.ndarray')"
+  },
+  "parameters": {
+    "parameters": [
+      {
+        "lval": "alumni_excellence",
+        "op": "~",
+        "rval": "cognitive_factor",
+        "estimate": 0.45940700817369984,
+        "std_error": 0.3593607699416199,
+        "z": 1.2784005562072194,
+        "p_value": 0.20110822803987194
+      },
+      {
+        "lval": "alumni_excellence",
+        "op": "~",
+        "rval": "social_factor",
+        "estimate": -0.17109757729476835,
+        "std_error": 0.39314291892139924,
+        "z": -0.43520452502043044,
+        "p_value": 0.6634139783624922
+      },
+      {
+        "lval": "cult_intensity",
+        "op": "~",
+        "rval": "cognitive_factor",
+        "estimate": 1.0,
+        "std_error": "-",
+        "z": "-",
+        "p_value": "-"
+      },
+      {
+        "lval": "cult_autonomy",
+        "op": "~",
+        "rval": "cognitive_factor",
+        "estimate": 0.49266829310266147,
+        "std_error": 0.20189390376012792,
+        "z": 2.440233627289535,
+        "p_value": 0.014677766100282819
+      },
+      {
+        "lval": "cult_mentor",
+        "op": "~",
+        "rval": "social_factor",
+        "estimate": 1.0,
+        "std_error": "-",
+        "z": "-",
+        "p_value": "-"
+      },
+      {
+        "lval": "cult_internationality",
+        "op": "~",
+        "rval": "social_factor",
+        "estimate": 1.113673871430468,
+        "std_error": 0.22901410384209206,
+        "z": 4.862905178073645,
+        "p_value": 1.1567526931877126e-06
+      },
+      {
+        "lval": "academic_count_log",
+        "op": "~",
+        "rval": "alumni_excellence",
+        "estimate": 1.0,
+        "std_error": "-",
+        "z": "-",
+        "p_value": "-"
+      },
+      {
+        "lval": "cultural_count_log",
+        "op": "~",
+        "rval": "alumni_excellence",
+        "estimate": 0.9256315785701033,
+        "std_error": 0.20947770006867028,
+        "z": 4.418759506440289,
+        "p_value": 9.926903457468939e-06
+      },
+      {
+        "lval": "cognitive_factor",
+        "op": "~~",
+        "rval": "social_factor",
+        "estimate": -0.5993262269187628,
+        "std_error": 0.20275824933529266,
+        "z": -2.9558660566492008,
+        "p_value": 0.0031179246283776774
+      },
+      {
+        "lval": "cognitive_factor",
+        "op": "~~",
+        "rval": "cognitive_factor",
+        "estimate": 0.9999569945896982,
+        "std_error": 0.36605543593881845,
+        "z": 2.7317091795738193,
+        "p_value": 0.00630067299592163
+      },
+      {
+        "lval": "alumni_excellence",
+        "op": "~~",
+        "rval": "alumni_excellence",
+        "estimate": 0.48709745498189416,
+        "std_error": 0.2003518460220825,
+        "z": 2.4312102166793896,
+        "p_value": 0.015048480665069919
+      },
+      {
+        "lval": "social_factor",
+        "op": "~~",
+        "rval": "social_factor",
+        "estimate": 0.6499353155396589,
+        "std_error": 0.2504704149088307,
+        "z": 2.594858621420959,
+        "p_value": 0.009462983501376865
+      },
+      {
+        "lval": "academic_count_log",
+        "op": "~~",
+        "rval": "academic_count_log",
+        "estimate": 0.18859828074848778,
+        "std_error": 0.15660585458111295,
+        "z": 1.204286271747269,
+        "p_value": 0.228478950920727
+      },
+      {
+        "lval": "cult_autonomy",
+        "op": "~~",
+        "rval": "cult_autonomy",
+        "estimate": 0.7571475913234931,
+        "std_error": 0.19765581720414488,
+        "z": 3.830636517708242,
+        "p_value": 0.0001278121964001233
+      },
+      {
+        "lval": "cult_intensity",
+        "op": "~~",
+        "rval": "cult_intensity",
+        "estimate": 7.131330189800686e-19,
+        "std_error": 0.2709164709633123,
+        "z": 2.632298495701317e-18,
+        "p_value": 1.0
+      },
+      {
+        "lval": "cult_internationality",
+        "op": "~~",
+        "rval": "cult_internationality",
+        "estimate": 0.19423229161399524,
+        "std_error": 0.1302514460732894,
+        "z": 1.4912102511569363,
+        "p_value": 0.13590630311857144
+      },
+      {
+        "lval": "cult_mentor",
+        "op": "~~",
+        "rval": "cult_mentor",
+        "estimate": 0.3502399141264284,
+        "std_error": 0.1302957193982555,
+        "z": 2.688038530668949,
+        "p_value": 0.0071873102722022075
+      },
+      {
+        "lval": "cultural_count_log",
+        "op": "~~",
+        "rval": "cultural_count_log",
+        "estimate": 0.3046622039694824,
+        "std_error": 0.14848192028670784,
+        "z": 2.0518471432693617,
+        "p_value": 0.04018452006030837
+      }
+    ]
+  }
+}
