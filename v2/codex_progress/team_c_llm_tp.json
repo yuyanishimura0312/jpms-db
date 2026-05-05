@@ -1,0 +1,23 @@
+{
+  "team": "C-3 LLM teacher_parent",
+  "task": "deep teacher/parent voice extraction",
+  "generated_at": "2026-05-05T11:21:41.807810+00:00",
+  "total_schools_scanned": 223,
+  "schools_with_teacher_added": 22,
+  "schools_with_parent_added": 5,
+  "teacher_records": 34,
+  "parent_records": 5,
+  "total_records": 39,
+  "min_quote_len": 60,
+  "max_quote_len": 380,
+  "max_teacher_per_school": 5,
+  "max_parent_per_school": 4,
+  "output_path": "/Users/nishimura+/projects/research/jpms-db/v2/codex_output/team_c_llm_teacher_parent.jsonl",
+  "ethics_notes": [
+    "公開情報のみを対象。",
+    "教員: quoted_with_attribution、保護者: anonymized_only。",
+    "個人特定情報（氏名・連絡先）が含まれる段落はパスする。",
+    "引用は 380 字以下に整形（400 字未満を厳守）。",
+    "既存 testimonials_v2 と重複する quote_text は除外。"
+  ]
+}
