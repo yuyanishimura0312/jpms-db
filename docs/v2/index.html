@@ -131,6 +131,17 @@
   </div>
 </section>
 
+<section id="phase-e-progress">
+  <h3>Phase E — 一次情報大規模収集 進捗</h3>
+  <p style="color:var(--ink-soft);max-width:880px;margin-bottom:24px">
+    一次情報の地道な集積を倫理規律（robots.txt 厳守・5秒/req遅延・User-Agent明示）のもとで進行中です。HP取得・URL補完・関係者声抽出・公的統計取り込みを並列で展開しています。
+  </p>
+  <div class="stats" id="phase-e-stats"></div>
+  <p style="color:var(--ink-mute);font-size:12px;margin-top:12px">
+    HP取得校・関係者声・公的統計の数値は、Codex 30-40並列ワーカー協力体制が稼働するごとに更新されます。
+  </p>
+</section>
+
 <section id="layers">
   <h3>5層アーキテクチャ</h3>
   <p style="color:var(--ink-soft);max-width:880px;margin-bottom:24px">
@@ -375,6 +386,24 @@ const statsHTML = [
 document.getElementById('stats').innerHTML = statsHTML.map(s =>
   `<div class="stat"><div class="num">${s.n}</div><div class="label">${s.l}</div></div>`
 ).join('');
+
+// ===== Phase E Progress =====
+const pe = DATA.phase_e_progress || {};
+const totalSchools = DATA.schools.length - 1; // exclude NATIONAL_AGG
+const phaseEStats = [
+  {n: pe.schools_with_url || 0, t: totalSchools, l: 'URL登録校 / 528'},
+  {n: pe.schools_with_pages || 0, t: 528, l: 'HP取得済校 / 528'},
+  {n: pe.pages_fetched || 0, t: '5,280', l: 'HP取得ページ / 目標'},
+  {n: pe.philosophies_total || 0, t: '528+', l: '建学理念データ件数'},
+  {n: pe.testimonials || 0, t: '7,000', l: '関係者声 / 目標'},
+  {n: pe.official_stats || 0, t: '50+', l: '公的統計指標'},
+  {n: pe.career_archetypes || 0, t: '20+', l: 'キャリアアーキタイプ'},
+];
+document.getElementById('phase-e-stats').innerHTML = phaseEStats.map(s => {
+  const pct = typeof s.t === 'number' ? Math.min(100, (s.n*100/s.t).toFixed(1)) : null;
+  const bar = pct !== null ? `<div class="progress" style="margin-top:8px"><div class="fill" style="width:${pct}%"></div></div>` : '';
+  return `<div class="stat"><div class="num">${s.n.toLocaleString()}</div><div class="label">${s.l}</div>${bar}</div>`;
+}).join('');
 
 // ===== Cluster cards =====
 const counts = {};

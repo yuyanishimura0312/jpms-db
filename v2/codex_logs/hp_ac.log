@@ -1,0 +1,203 @@
+Targets: 1 schools
+
+[1/1] jpms_s_0191 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0192 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0193 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0195 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0196 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0197 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0198 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0199 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0200 
+  → {'school_id': 'jpms_s_0200', 'name': '狭山ヶ丘高等学校付属中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'curriculum', 'events', 'progress', 'voice', 'admission'], 'philosophies_added': 14, 'testimonials_added': 0, 'completeness': 100}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 14
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0201 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0202 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0203 
+  → {'school_id': 'jpms_s_0203', 'name': '昌平中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'voice'], 'philosophies_added': 1, 'testimonials_added': 0, 'completeness': 54}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 1
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0204 
+  → {'school_id': 'jpms_s_0204', 'name': '自由の森学園中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0205 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0206 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0207 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0208 
+  → {'school_id': 'jpms_s_0208', 'name': '西武台新座中学校', 'status': 'ok', 'pages_fetched': ['root', 'schoollife', 'events', 'progress', 'admission'], 'philosophies_added': 5, 'testimonials_added': 0, 'completeness': 80}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 5
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0209 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0210 
+  → {'school_id': 'jpms_s_0210', 'name': '立教新座中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'philosophy', 'principal', 'mission', 'curriculum', 'schoollife', 'events', 'progress', 'voice', 'admission'], 'philosophies_added': 1, 'testimonials_added': 0, 'completeness': 100}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 1
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0211 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0212 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0213 
+  → {'school_id': 'jpms_s_0213', 'name': '細田学園中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'philosophy', 'principal', 'mission', 'curriculum', 'schoollife', 'events', 'progress', 'voice', 'admission'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 100}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0214 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0215 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0216 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0217 
+  → {'school_id': 'jpms_s_0217', 'name': '聖望学園中学校', 'status': 'ok', 'pages_fetched': ['root', 'schoollife', 'admission'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 51}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0218 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0

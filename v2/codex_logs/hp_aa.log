@@ -1,0 +1,201 @@
+Targets: 1 schools
+
+[1/1] jpms_s_0005 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0006 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0007 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0008 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0009 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0010 
+  → {'school_id': 'jpms_s_0010', 'name': '渋谷教育学園渋谷中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0011 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0012 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0013 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0014 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0015 
+  → {'school_id': 'jpms_s_0015', 'name': '麹町学園女子中学校', 'status': 'ok', 'pages_fetched': ['curriculum', 'events', 'progress', 'voice', 'admission'], 'philosophies_added': 2, 'testimonials_added': 4, 'completeness': 79}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 2
+Testimonials added: 4
+Targets: 1 schools
+
+[1/1] jpms_s_0017 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0018 
+  → {'school_id': 'jpms_s_0018', 'name': '千代田中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 1, 'testimonials_added': 0, 'completeness': 40}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 1
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0019 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0020 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0021 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0022 
+  → {'school_id': 'jpms_s_0022', 'name': '開智日本橋学園中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'curriculum', 'progress', 'admission'], 'philosophies_added': 2, 'testimonials_added': 0, 'completeness': 71}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 2
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0023 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0024 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0026 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0027 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0028 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0029 
+  → {'school_id': 'jpms_s_0029', 'name': '東海大学付属高輪台高等学校中等部', 'status': 'ok', 'pages_fetched': ['root', 'principal', 'schoollife', 'admission'], 'philosophies_added': 2, 'testimonials_added': 3, 'completeness': 70}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 2
+Testimonials added: 3
+Targets: 1 schools
+
+[1/1] jpms_s_0030 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0031 
+  → {'school_id': 'jpms_s_0031', 'name': '広尾学園中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0032 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0033 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0

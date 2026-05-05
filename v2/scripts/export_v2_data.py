@@ -30,6 +30,19 @@ def main():
     for r in db.execute("SELECT key, value FROM schema_metadata").fetchall():
         out['meta'][r['key']] = r['value']
 
+    # Phase E progress stats
+    out['phase_e_progress'] = {
+        'schools_with_url': db.execute("SELECT COUNT(*) FROM schools_v2 WHERE homepage_url IS NOT NULL AND homepage_url != ''").fetchone()[0],
+        'schools_with_pages': db.execute("SELECT COUNT(DISTINCT school_id) FROM school_homepage_assets").fetchone()[0],
+        'pages_fetched': db.execute("SELECT COUNT(*) FROM school_homepage_assets").fetchone()[0],
+        'philosophies_total': db.execute("SELECT COUNT(*) FROM school_philosophy_v2").fetchone()[0],
+        'philosophies_extracted': db.execute("SELECT COUNT(*) FROM school_philosophy_v2 WHERE philosophy_type LIKE 'extracted_%'").fetchone()[0],
+        'testimonials': db.execute("SELECT COUNT(*) FROM testimonials_v2").fetchone()[0],
+        'career_archetypes': db.execute("SELECT COUNT(*) FROM career_archetype").fetchone()[0],
+        'official_stats': db.execute("SELECT COUNT(*) FROM school_official_stats").fetchone()[0],
+        'lca_assignments': db.execute("SELECT COUNT(*) FROM school_typology_lca").fetchone()[0],
+    }
+
     # Schools
     for r in db.execute("""SELECT id, legacy_id, name_ja, name_kana, establishment_year,
                                   school_corporation, religious_affiliation, gender_type,

@@ -1,0 +1,1210 @@
+{"event": "batch_start", "count": 12, "ts": "2026-05-05T11:44:05.662161"}
+{"event": "no_url", "school_id": "jpms_s_0715", "name": "静岡聖光学院中学校", "ts": "2026-05-05T11:44:05.662254"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T11:44:15.915725"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/philosophy/", "status": 404, "ts": "2026-05-05T11:44:20.925745"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/principal/", "status": 404, "ts": "2026-05-05T11:44:26.009775"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/about/principal/", "status": 404, "ts": "2026-05-05T11:44:30.954008"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/mission/", "status": 404, "ts": "2026-05-05T11:44:35.987465"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/about/mission/", "status": 404, "ts": "2026-05-05T11:44:40.940798"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/schoollife/", "status": 404, "ts": "2026-05-05T11:44:50.989182"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/school_life/", "status": 404, "ts": "2026-05-05T11:44:56.001904"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/events/", "status": 404, "ts": "2026-05-05T11:45:01.294496"}
+{"event": "http_error", "url": "https://kaiseigakuen.jp/progress/", "status": 404, "ts": "2026-05-05T11:45:10.973660"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T11:45:36.937299"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T11:45:41.796164"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/principal/", "status": 404, "ts": "2026-05-05T11:45:46.592973"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T11:45:51.647777"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/mission/", "status": 404, "ts": "2026-05-05T11:45:56.607104"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T11:46:01.614849"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T11:46:06.692953"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/events/", "status": 404, "ts": "2026-05-05T11:46:21.631462"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/event/", "status": 404, "ts": "2026-05-05T11:46:26.713256"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/progress/", "status": 404, "ts": "2026-05-05T11:46:31.627664"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/career/", "status": 404, "ts": "2026-05-05T11:46:36.724927"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/voice/", "status": 404, "ts": "2026-05-05T11:46:41.638286"}
+{"event": "http_error", "url": "https://www.azabu-jh.ed.jp/message/", "status": 404, "ts": "2026-05-05T11:46:46.717107"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T11:47:52.949054"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T11:47:57.714187"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/principal/", "status": 404, "ts": "2026-05-05T11:48:03.185159"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T11:48:08.209207"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/mission/", "status": 404, "ts": "2026-05-05T11:48:13.177823"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T11:48:18.096479"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T11:48:28.099511"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T11:48:32.956999"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/events/", "status": 404, "ts": "2026-05-05T11:48:38.014598"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/progress/", "status": 404, "ts": "2026-05-05T11:48:48.172264"}
+{"event": "http_error", "url": "https://www.oin.ed.jp/voice/", "status": 404, "ts": "2026-05-05T11:48:58.020542"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/about/", "status": 404, "ts": "2026-05-05T11:49:15.550398"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T11:49:20.764582"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T11:49:25.912817"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T11:49:30.633567"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/principal/", "status": 404, "ts": "2026-05-05T11:49:35.537178"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T11:49:40.596081"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/mission/", "status": 404, "ts": "2026-05-05T11:49:45.613717"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T11:49:51.119814"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T11:49:55.602642"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/education/", "status": 404, "ts": "2026-05-05T11:50:00.655019"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/events/", "status": 404, "ts": "2026-05-05T11:50:10.620174"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/event/", "status": 404, "ts": "2026-05-05T11:50:15.721365"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/progress/", "status": 404, "ts": "2026-05-05T11:50:21.189774"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/career/", "status": 404, "ts": "2026-05-05T11:50:25.685025"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/voice/", "status": 404, "ts": "2026-05-05T11:50:30.759264"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/message/", "status": 404, "ts": "2026-05-05T11:50:35.648302"}
+{"event": "http_error", "url": "https://www.joshigakuin.ed.jp/admission/", "status": 404, "ts": "2026-05-05T11:50:40.644165"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T11:50:57.424761"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T11:51:02.436135"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/principal/", "status": 404, "ts": "2026-05-05T11:51:07.363203"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T11:51:12.505702"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/mission/", "status": 404, "ts": "2026-05-05T11:51:17.401896"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T11:51:22.316524"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T11:51:27.361779"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/education/", "status": 404, "ts": "2026-05-05T11:51:32.444298"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T11:51:37.514782"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T11:51:42.346960"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/events/", "status": 404, "ts": "2026-05-05T11:51:47.500097"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/event/", "status": 404, "ts": "2026-05-05T11:51:52.391079"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/progress/", "status": 404, "ts": "2026-05-05T11:51:57.470002"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/career/", "status": 404, "ts": "2026-05-05T11:52:02.354453"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/voice/", "status": 404, "ts": "2026-05-05T11:52:07.923911"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/message/", "status": 404, "ts": "2026-05-05T11:52:12.368438"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/admission/", "status": 404, "ts": "2026-05-05T11:52:17.400303"}
+{"event": "http_error", "url": "https://www.futabagakuen-jh.ed.jp/exam/", "status": 404, "ts": "2026-05-05T11:52:22.413564"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/about/", "status": 404, "ts": "2026-05-05T11:54:14.311973"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/about/index.html", "status": 404, "ts": "2026-05-05T11:54:19.286617"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T11:54:24.320416"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/philosophy/", "status": 404, "ts": "2026-05-05T11:54:29.259760"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/principal/", "status": 404, "ts": "2026-05-05T11:54:34.293897"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/about/principal/", "status": 404, "ts": "2026-05-05T11:54:39.305313"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/mission/", "status": 404, "ts": "2026-05-05T11:54:44.270029"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/about/mission/", "status": 404, "ts": "2026-05-05T11:54:49.252334"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/curriculum/", "status": 404, "ts": "2026-05-05T11:54:54.318402"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/education/", "status": 404, "ts": "2026-05-05T11:55:00.282217"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/schoollife/", "status": 404, "ts": "2026-05-05T11:55:04.283413"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/school_life/", "status": 404, "ts": "2026-05-05T11:55:09.351304"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/events/", "status": 404, "ts": "2026-05-05T11:55:14.266676"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/progress/", "status": 404, "ts": "2026-05-05T11:55:24.285927"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/career/", "status": 404, "ts": "2026-05-05T11:55:29.332614"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/voice/", "status": 404, "ts": "2026-05-05T11:55:34.288428"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/message/", "status": 404, "ts": "2026-05-05T11:55:39.295993"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/admission/", "status": 404, "ts": "2026-05-05T11:55:44.304547"}
+{"event": "http_error", "url": "https://www.shiba.ac.jp/exam/", "status": 404, "ts": "2026-05-05T11:55:49.306451"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:55:49.417769"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:55:54.578673"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/index.html", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:55:59.460912"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:04.478955"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:09.442684"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:14.602669"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:19.442152"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:24.537885"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:30.450322"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/curriculum/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:34.452000"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/education/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:39.538800"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/schoollife/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:44.467993"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/school_life/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:49.503621"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/events/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:54.553314"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/event/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:56:59.824144"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/progress/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:57:04.485364"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/career/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:57:09.556013"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/voice/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:57:14.485646"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/message/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:57:19.495113"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/admission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:57:24.500035"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/exam/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T11:57:29.502714"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:57:29.532963"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:57:34.538080"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:57:39.539841"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:57:44.544409"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:57:49.550274"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:57:54.555430"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:57:59.556974"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:04.561394"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:09.563523"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:14.566835"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:19.572123"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:24.576400"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:29.580770"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:34.586512"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:39.591719"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:44.594810"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:49.599964"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:54.602509"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:58:59.607909"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:59:04.611671"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T11:59:09.616064"}
+{"event": "school_error", "school_id": "jpms_s_0133", "err": "database is locked", "ts": "2026-05-05T11:59:14.835355"}
+{"event": "batch_end", "success": 10, "total": 11, "ts": "2026-05-05T11:59:14.835791"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:30:57.999120"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:30:57.999123"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:30:57.999139"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:30:57.999356"}
+{"event": "school_error", "school_id": "jpms_s_0035", "err": "database is locked", "ts": "2026-05-05T12:31:04.094358"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:04.094558"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:04.142921"}
+{"event": "school_error", "school_id": "jpms_s_0191", "err": "database is locked", "ts": "2026-05-05T12:31:04.187445"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:04.187630"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:04.232768"}
+{"event": "school_error", "school_id": "jpms_s_0005", "err": "database is locked", "ts": "2026-05-05T12:31:04.344684"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:04.344949"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:04.394726"}
+{"event": "school_error", "school_id": "jpms_s_0400", "err": "database is locked", "ts": "2026-05-05T12:31:04.527622"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:04.527776"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:04.594977"}
+{"event": "school_error", "school_id": "jpms_s_0006", "err": "database is locked", "ts": "2026-05-05T12:31:09.804626"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:09.805134"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:09.874478"}
+{"event": "school_error", "school_id": "jpms_s_0036", "err": "database is locked", "ts": "2026-05-05T12:31:10.664933"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:10.665359"}
+{"event": "school_error", "school_id": "jpms_s_0402", "err": "database is locked", "ts": "2026-05-05T12:31:10.724511"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:10.724662"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:10.732556"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:10.769213"}
+{"event": "school_error", "school_id": "jpms_s_0192", "err": "database is locked", "ts": "2026-05-05T12:31:10.898348"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:10.898587"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:10.949536"}
+{"event": "school_error", "school_id": "jpms_s_0007", "err": "database is locked", "ts": "2026-05-05T12:31:16.553582"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:16.554489"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:16.629565"}
+{"event": "school_error", "school_id": "jpms_s_0193", "err": "database is locked", "ts": "2026-05-05T12:31:16.819721"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:16.820227"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:16.880185"}
+{"event": "school_error", "school_id": "jpms_s_0037", "err": "database is locked", "ts": "2026-05-05T12:31:16.983850"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:16.984092"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:17.034219"}
+{"event": "school_error", "school_id": "jpms_s_0409", "err": "database is locked", "ts": "2026-05-05T12:31:17.420141"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:17.420676"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:17.489844"}
+{"event": "school_error", "school_id": "jpms_s_0195", "err": "database is locked", "ts": "2026-05-05T12:31:22.581626"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:22.582410"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:22.653223"}
+{"event": "school_error", "school_id": "jpms_s_0040", "err": "database is locked", "ts": "2026-05-05T12:31:23.087250"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:23.088061"}
+{"event": "school_error", "school_id": "jpms_s_0410", "err": "database is locked", "ts": "2026-05-05T12:31:23.137373"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:23.137598"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:23.163498"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:23.185665"}
+{"event": "school_error", "school_id": "jpms_s_0008", "err": "database is locked", "ts": "2026-05-05T12:31:25.316276"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:25.316701"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:25.386950"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:31:25.537090"}
+{"event": "school_error", "school_id": "jpms_s_0196", "err": "database is locked", "ts": "2026-05-05T12:31:28.127918"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:28.128566"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:28.200551"}
+{"event": "school_error", "school_id": "jpms_s_0490", "err": "database is locked", "ts": "2026-05-05T12:31:28.822157"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:28.822355"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:28.870880"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:31:28.912769"}
+{"event": "school_error", "school_id": "jpms_s_0070", "err": "database is locked", "ts": "2026-05-05T12:31:28.952888"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:28.953077"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:29.001514"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:31:29.118005"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/about/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:31:30.545474"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:31:33.920469"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:31:34.127757"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/about/index.html", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:31:35.551523"}
+{"event": "school_error", "school_id": "jpms_s_0197", "err": "database is locked", "ts": "2026-05-05T12:31:36.256325"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:36.257029"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:36.330495"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:31:38.924288"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/index.html", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:31:39.132303"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/about/philosophy/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:31:40.565735"}
+{"event": "school_error", "school_id": "jpms_s_0198", "err": "database is locked", "ts": "2026-05-05T12:31:42.583999"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:42.584591"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:42.658984"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:31:43.929153"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:31:44.138643"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/philosophy/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:31:45.681605"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:31:48.934797"}
+{"event": "school_error", "school_id": "jpms_s_0199", "err": "database is locked", "ts": "2026-05-05T12:31:49.087025"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:31:49.087673"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:31:49.138835"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:31:49.160330"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/principal/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:31:51.200233"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:31:53.939648"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:31:54.150694"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/about/principal/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:31:55.605484"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:31:58.941857"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:31:59.244418"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:32:00.609451"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/mission/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:00.873270"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:03.947628"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:04.158900"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/about/mission/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:05.602330"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:32:06.095828"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:08.950459"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/about/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:09.787567"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/curriculum/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:11.063871"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:32:11.492804"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:13.954657"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/curriculum/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:14.170739"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:32:15.494596"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/education/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:15.576490"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:18.959435"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/education/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:19.197773"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:32:20.543648"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/schoollife/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:20.580710"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:23.965301"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/schoollife/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:24.179157"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:32:25.595415"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/school_life/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:25.982790"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:28.965456"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/school_life/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:29.176855"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:32:30.581582"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/events/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:30.594028"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:33.971500"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/events/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:34.185884"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/event/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:35.617926"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:38.976155"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/event/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:39.193592"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/progress/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:41.437634"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:32:41.964426"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:43.981601"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/progress/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:44.201481"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/career/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:45.605267"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T12:32:45.810375"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:48.983604"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/career/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:49.394510"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:32:50.655962"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/voice/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:50.666239"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:53.988646"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/voice/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:54.202740"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/message/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:32:55.612214"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:32:58.993326"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/message/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:32:59.210060"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:33:00.589748"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/admission/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:33:00.641767"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:03.998273"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/admission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:33:04.284444"}
+{"event": "fetch_error", "url": "https://www.kobejogakuin-h.ed.jp/exam/", "err": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1081)>", "ts": "2026-05-05T12:33:05.622211"}
+{"event": "fetch_error", "url": "https://www.hosei2.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:09.003084"}
+{"event": "fetch_error", "url": "https://www.asano.ac.jp/exam/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.asano.ac.jp'. (_ssl.c:1081)>", "ts": "2026-05-05T12:33:09.250938"}
+{"event": "http_error", "url": "http://www.sayamagaoka-h.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:33:10.664523"}
+{"event": "school_error", "school_id": "jpms_s_0009", "err": "database is locked", "ts": "2026-05-05T12:33:10.818489"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:33:10.819058"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:33:10.893418"}
+{"event": "school_error", "school_id": "jpms_s_0491", "err": "database is locked", "ts": "2026-05-05T12:33:14.223566"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:33:14.224348"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:33:14.300064"}
+{"event": "school_error", "school_id": "jpms_s_0122", "err": "database is locked", "ts": "2026-05-05T12:33:14.492270"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:33:14.492583"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:33:14.552229"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:14.596561"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:19.602877"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:33:21.162698"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:33:21.230144"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/about/", "status": 404, "ts": "2026-05-05T12:33:21.385823"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:24.605754"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:33:26.462423"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:29.607547"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:33:31.418033"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:34.610671"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:33:36.459737"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:39.614093"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/principal/", "status": 404, "ts": "2026-05-05T12:33:41.487781"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:44.619077"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:33:46.408404"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:49.621378"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/mission/", "status": 404, "ts": "2026-05-05T12:33:51.625202"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:54.627361"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:33:56.407842"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:33:59.631503"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:34:01.435585"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:04.636086"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/education/", "status": 404, "ts": "2026-05-05T12:34:06.650872"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:09.640955"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:34:11.422432"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:14.645973"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/school_life/", "status": 404, "ts": "2026-05-05T12:34:16.426848"}
+{"event": "school_error", "school_id": "jpms_s_0492", "err": "database is locked", "ts": "2026-05-05T12:34:16.823529"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:34:16.824211"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:34:16.898546"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:19.648583"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/events/", "status": 404, "ts": "2026-05-05T12:34:21.510984"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:24.652922"}
+{"event": "school_error", "school_id": "jpms_s_0201", "err": "database is locked", "ts": "2026-05-05T12:34:24.952771"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:34:24.953213"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:34:25.021729"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/event/", "status": 404, "ts": "2026-05-05T12:34:26.430561"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:29.657557"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/progress/", "status": 404, "ts": "2026-05-05T12:34:31.500886"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:34.663828"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/career/", "status": 404, "ts": "2026-05-05T12:34:36.441020"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:39.666074"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/voice/", "status": 404, "ts": "2026-05-05T12:34:41.462668"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:44.671755"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/message/", "status": 404, "ts": "2026-05-05T12:34:46.497397"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:49.672877"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/admission/", "status": 404, "ts": "2026-05-05T12:34:51.459632"}
+{"event": "fetch_error", "url": "https://www.kanagawa-gakuen.ed.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:34:54.677867"}
+{"event": "http_error", "url": "https://www.shibushibu.jp/exam/", "status": 404, "ts": "2026-05-05T12:34:56.457194"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:34:56.458290"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:34:56.527479"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/about/", "status": 404, "ts": "2026-05-05T12:34:57.040717"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:35:01.925377"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:35:06.795661"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:35:11.822351"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/mission/", "status": 404, "ts": "2026-05-05T12:35:22.053374"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:35:26.697262"}
+{"event": "school_error", "school_id": "jpms_s_0202", "err": "database is locked", "ts": "2026-05-05T12:35:27.757943"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:35:27.758080"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:35:27.801171"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:35:31.861356"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/education/", "status": 403, "ts": "2026-05-05T12:35:36.622374"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/schoollife/", "status": 403, "ts": "2026-05-05T12:35:41.775892"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/school_life/", "status": 404, "ts": "2026-05-05T12:35:47.087104"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/events/", "status": 404, "ts": "2026-05-05T12:35:52.574372"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/event/", "status": 404, "ts": "2026-05-05T12:35:56.769859"}
+{"event": "school_error", "school_id": "jpms_s_0126", "err": "database is locked", "ts": "2026-05-05T12:35:57.118427"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:35:57.118717"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:35:57.170885"}
+{"event": "school_error", "school_id": "jpms_s_0011", "err": "database is locked", "ts": "2026-05-05T12:35:59.307486"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:35:59.308346"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:35:59.398915"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/progress/", "status": 404, "ts": "2026-05-05T12:36:01.890807"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/career/", "status": 404, "ts": "2026-05-05T12:36:08.940713"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/voice/", "status": 404, "ts": "2026-05-05T12:36:11.852070"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/message/", "status": 404, "ts": "2026-05-05T12:36:16.981482"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/admission/", "status": 403, "ts": "2026-05-05T12:36:21.685226"}
+{"event": "http_error", "url": "https://www.morimura.ac.jp/exam/", "status": 404, "ts": "2026-05-05T12:36:27.174291"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:36:27.175227"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:36:27.248092"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:36:27.496964"}
+{"event": "http_error", "url": "https://www.jara.or.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:36:32.245226"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/about/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:36:32.614023"}
+{"event": "http_error", "url": "https://www.jara.or.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:36:37.374780"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/about/index.html", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:36:37.519025"}
+{"event": "http_error", "url": "https://www.jara.or.jp/principal/", "status": 404, "ts": "2026-05-05T12:36:42.265590"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/about/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:36:42.514831"}
+{"event": "http_error", "url": "https://www.jara.or.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:36:47.291192"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:36:47.607022"}
+{"event": "http_error", "url": "https://www.jara.or.jp/mission/", "status": 404, "ts": "2026-05-05T12:36:52.394429"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:36:52.565303"}
+{"event": "http_error", "url": "https://www.jara.or.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:36:57.272642"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/about/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:36:57.608206"}
+{"event": "school_error", "school_id": "jpms_s_0128", "err": "database is locked", "ts": "2026-05-05T12:36:59.936653"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:36:59.937185"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:37:00.015553"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/attached/", "status": 404, "ts": "2026-05-05T12:37:00.324709"}
+{"event": "school_error", "school_id": "jpms_s_0012", "err": "database is locked", "ts": "2026-05-05T12:37:02.484205"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:37:02.484493"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:37:02.542813"}
+{"event": "http_error", "url": "https://www.jara.or.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:37:03.071029"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:04.562865"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/about/", "status": 404, "ts": "2026-05-05T12:37:05.327802"}
+{"event": "http_error", "url": "https://www.jara.or.jp/education/", "status": 404, "ts": "2026-05-05T12:37:07.285825"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/about/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:07.608296"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:37:12.252105"}
+{"event": "http_error", "url": "https://www.jara.or.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:37:12.305842"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/curriculum/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:12.568430"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:37:15.428498"}
+{"event": "http_error", "url": "https://www.jara.or.jp/school_life/", "status": 404, "ts": "2026-05-05T12:37:17.303540"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/education/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:17.574563"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:37:20.336745"}
+{"event": "http_error", "url": "https://www.jara.or.jp/events/", "status": 404, "ts": "2026-05-05T12:37:22.294989"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/schoollife/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:22.558213"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/principal/", "status": 404, "ts": "2026-05-05T12:37:25.423810"}
+{"event": "http_error", "url": "https://www.jara.or.jp/event/", "status": 404, "ts": "2026-05-05T12:37:28.195712"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/school_life/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:28.230941"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:37:30.675951"}
+{"event": "http_error", "url": "https://www.jara.or.jp/progress/", "status": 404, "ts": "2026-05-05T12:37:32.392171"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/events/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:33.223799"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/mission/", "status": 404, "ts": "2026-05-05T12:37:35.400145"}
+{"event": "http_error", "url": "https://www.jara.or.jp/career/", "status": 404, "ts": "2026-05-05T12:37:37.309239"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/event/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:37.558075"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:37:40.362581"}
+{"event": "http_error", "url": "https://www.jara.or.jp/voice/", "status": 404, "ts": "2026-05-05T12:37:42.347842"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/progress/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:42.793393"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:37:45.366271"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/career/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:47.591991"}
+{"event": "http_error", "url": "https://www.jara.or.jp/admission/", "status": 404, "ts": "2026-05-05T12:37:52.311226"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/voice/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:52.622232"}
+{"event": "http_error", "url": "https://www.jara.or.jp/exam/", "status": 404, "ts": "2026-05-05T12:37:57.387229"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:37:57.389341"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:37:57.465346"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:37:57.502287"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/message/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:37:57.578932"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/school_life/", "status": 404, "ts": "2026-05-05T12:38:02.583675"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/admission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:38:02.665017"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/events/", "status": 404, "ts": "2026-05-05T12:38:07.508057"}
+{"event": "school_error", "school_id": "jpms_s_0013", "err": "database is locked", "ts": "2026-05-05T12:38:07.522637"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:38:07.523085"}
+{"event": "fetch_error", "url": "https://www.fujisawa.hs.nihon-u.ac.jp/exam/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:38:07.588578"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:38:07.596666"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/progress/", "status": 404, "ts": "2026-05-05T12:38:17.523627"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/voice/", "status": 404, "ts": "2026-05-05T12:38:27.540090"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/message/", "status": 404, "ts": "2026-05-05T12:38:32.624209"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/admission/", "status": 404, "ts": "2026-05-05T12:38:37.531159"}
+{"event": "http_error", "url": "https://www.kanagawa-u.ac.jp/exam/", "status": 404, "ts": "2026-05-05T12:38:42.533571"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:38:42.535026"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:38:42.616516"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:38:42.658192"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/about/", "status": 404, "ts": "2026-05-05T12:38:42.695929"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:38:47.665002"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:38:47.773829"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:38:52.664772"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:38:52.698346"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:38:57.670082"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:38:57.793134"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:02.670752"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/principal/", "status": 404, "ts": "2026-05-05T12:39:02.722937"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:07.675274"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:39:07.768456"}
+{"event": "school_error", "school_id": "jpms_s_0494", "err": "database is locked", "ts": "2026-05-05T12:39:09.901025"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:39:09.901564"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:39:09.976756"}
+{"event": "school_error", "school_id": "jpms_s_0014", "err": "database is locked", "ts": "2026-05-05T12:39:10.188229"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:39:10.188639"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:39:10.257819"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/index.html", "status": 404, "ts": "2026-05-05T12:39:10.647423"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:12.680802"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/mission/", "status": 404, "ts": "2026-05-05T12:39:12.724314"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:39:15.686354"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:17.683552"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:39:17.718543"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:39:20.705874"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:22.688428"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:39:23.004091"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:39:25.652888"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:27.692032"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/education/", "status": 404, "ts": "2026-05-05T12:39:27.729646"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:39:30.675169"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:32.696670"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:39:32.807905"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:39:35.661777"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:37.701682"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/school_life/", "status": 404, "ts": "2026-05-05T12:39:37.755021"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:39:40.765622"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:42.704776"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/events/", "status": 404, "ts": "2026-05-05T12:39:43.313479"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:39:45.690711"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:47.710188"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/event/", "status": 404, "ts": "2026-05-05T12:39:47.728530"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:39:50.751958"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:52.715435"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/progress/", "status": 404, "ts": "2026-05-05T12:39:52.847696"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:39:57.717620"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/career/", "status": 404, "ts": "2026-05-05T12:39:57.740196"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:40:02.721748"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/voice/", "status": 404, "ts": "2026-05-05T12:40:02.806501"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:40:07.726926"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/message/", "status": 404, "ts": "2026-05-05T12:40:07.747906"}
+{"event": "school_error", "school_id": "jpms_s_0495", "err": "database is locked", "ts": "2026-05-05T12:40:12.570799"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:40:12.571013"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:40:12.622379"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:40:12.731473"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/admission/", "status": 404, "ts": "2026-05-05T12:40:12.769088"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:40:17.734530"}
+{"event": "http_error", "url": "http://www.jiyunomori.ac.jp/exam/", "status": 404, "ts": "2026-05-05T12:40:17.848623"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:40:17.849327"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:40:17.909740"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:40:18.118859"}
+{"event": "fetch_error", "url": "https://www.hs.nihon-u.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:40:22.739656"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T12:40:23.097971"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:40:28.096889"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:40:39.478726"}
+{"event": "http_error", "url": "http://www.kojimachi.ed.jp/admission/", "status": 404, "ts": "2026-05-05T12:40:53.206771"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:40:58.408171"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:40:58.452619"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:41:03.623500"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:41:08.721879"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:41:13.566720"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:41:18.574040"}
+{"event": "school_error", "school_id": "jpms_s_0205", "err": "database is locked", "ts": "2026-05-05T12:41:21.060331"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:41:21.060743"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:41:21.127547"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:41:23.580072"}
+{"event": "school_error", "school_id": "jpms_s_0131", "err": "database is locked", "ts": "2026-05-05T12:41:25.119474"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:41:25.119926"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:41:25.188681"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:41:25.232751"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:41:28.643788"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:41:30.238410"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:41:35.242073"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:41:40.245729"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:41:43.593340"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:41:45.251065"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:41:50.255777"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:41:53.610121"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:41:55.261273"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:00.265937"}
+{"event": "school_error", "school_id": "jpms_s_0017", "err": "database is locked", "ts": "2026-05-05T12:42:01.138638"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:42:01.139210"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:42:01.212066"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:42:03.593397"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:05.267218"}
+{"event": "http_error", "url": "https://www.caritas.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:42:08.668291"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:10.269675"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:42:13.725217"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:42:13.794705"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:42:13.900367"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:15.272523"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:42:18.846295"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:20.276887"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:42:23.904695"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:25.278914"}
+{"event": "school_error", "school_id": "jpms_s_0206", "err": "database is locked", "ts": "2026-05-05T12:42:28.466619"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:42:28.467186"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:42:28.541035"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:42:29.013455"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:30.281047"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:42:33.925409"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:35.286096"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:42:38.987551"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:40.290270"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:42:45.175024"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:45.292508"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:42:48.991818"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:50.297395"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:42:53.940847"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:42:55.302980"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/education/", "status": 404, "ts": "2026-05-05T12:42:58.949478"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:43:00.306209"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:43:03.944352"}
+{"event": "fetch_error", "url": "https://www.yoto.keio.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:43:05.307993"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T12:43:08.951295"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:43:14.016661"}
+{"event": "school_error", "school_id": "jpms_s_0497", "err": "database is locked", "ts": "2026-05-05T12:43:16.523519"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:43:16.523968"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:43:16.585263"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/event/", "status": 404, "ts": "2026-05-05T12:43:18.962466"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:43:24.036428"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/career/", "status": 404, "ts": "2026-05-05T12:43:28.978947"}
+{"event": "school_error", "school_id": "jpms_s_0207", "err": "database is locked", "ts": "2026-05-05T12:43:32.179652"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:43:32.180235"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:43:32.253029"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:43:34.042648"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:43:39.248333"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/admission/", "status": 404, "ts": "2026-05-05T12:43:44.043360"}
+{"event": "http_error", "url": "https://shirasagi-jhs.tokushima-ec.ed.jp/exam/", "status": 404, "ts": "2026-05-05T12:43:49.001695"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:43:49.003391"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:43:49.076482"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:43:50.712628"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:43:54.474920"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:43:59.648221"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:44:04.776255"}
+{"event": "school_error", "school_id": "jpms_s_0133", "err": "database is locked", "ts": "2026-05-05T12:44:07.527697"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:44:07.528336"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:44:07.604783"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:07.658082"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:44:09.594867"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:12.663789"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:44:14.911353"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:17.664066"}
+{"event": "school_error", "school_id": "jpms_s_0498", "err": "database is locked", "ts": "2026-05-05T12:44:19.532208"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:44:19.532610"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:44:19.553354"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:44:19.602748"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:22.668636"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:44:24.539467"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:27.671179"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:44:29.551186"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:32.675455"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/education/", "status": 404, "ts": "2026-05-05T12:44:34.472623"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:37.680699"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:42.684223"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:44:44.572323"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:47.688442"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:52.695139"}
+{"event": "school_error", "school_id": "jpms_s_0019", "err": "database is locked", "ts": "2026-05-05T12:44:53.141570"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:44:53.142298"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:44:53.222110"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:44:53.396215"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:44:54.681254"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:44:57.912469"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/about/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:44:58.608022"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:02.701858"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/about/index.html", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:03.412931"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:45:04.646798"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:07.706297"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/about/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:08.536472"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:45:09.650385"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:12.707273"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/philosophy/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:13.625285"}
+{"event": "http_error", "url": "https://www.seibudai.ed.jp/admission/", "status": 404, "ts": "2026-05-05T12:45:14.605196"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:17.708084"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:18.425358"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:45:20.898663"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:45:20.948715"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:45:21.596979"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:22.714087"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/about/principal/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:23.556147"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:45:26.557301"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:27.718530"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:28.445588"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:45:31.515882"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:32.723345"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/about/mission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:33.667325"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:37.729526"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/curriculum/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:38.814250"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:45:39.387492"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:45:41.710778"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:42.732435"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/education/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:43.519557"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:45:46.501274"}
+{"event": "fetch_error", "url": "https://www.toin.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:45:47.735723"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/schoollife/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:48.466413"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:45:51.402553"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/school_life/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:53.557175"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:45:56.754402"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/events/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:45:58.464540"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:46:01.662056"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/event/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:46:03.470008"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/education/", "status": 404, "ts": "2026-05-05T12:46:06.367759"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/progress/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:46:08.504800"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:46:11.336236"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/career/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:46:13.477974"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T12:46:16.544710"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/voice/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:46:18.569479"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:46:21.392717"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/message/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:46:23.505247"}
+{"event": "school_error", "school_id": "jpms_s_0209", "err": "database is locked", "ts": "2026-05-05T12:46:24.679125"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:46:24.679892"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:46:24.765242"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/event/", "status": 404, "ts": "2026-05-05T12:46:26.459498"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/admission/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:46:28.606981"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:46:31.509930"}
+{"event": "fetch_error", "url": "https://www.miwada.ac.jp/exam/", "err": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>", "ts": "2026-05-05T12:46:34.505362"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:46:41.478409"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:46:46.391075"}
+{"event": "school_error", "school_id": "jpms_s_0134", "err": "database is locked", "ts": "2026-05-05T12:46:51.415240"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:46:51.416035"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:46:51.508587"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/admission/", "status": 404, "ts": "2026-05-05T12:46:51.638020"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:46:51.690712"}
+{"event": "http_error", "url": "https://www.tohrei-fujisawa.ed.jp/exam/", "status": 404, "ts": "2026-05-05T12:46:56.470036"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:46:56.471697"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:46:56.555355"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:46:56.700971"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:01.711549"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:06.710997"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:11.715673"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:16.716253"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:21.721852"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:26.723152"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:31.727135"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:36.730728"}
+{"event": "school_error", "school_id": "jpms_s_0020", "err": "database is locked", "ts": "2026-05-05T12:47:37.442335"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:47:37.443005"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:47:37.531638"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:47:41.651615"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:41.732928"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:47:41.735524"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:47:42.714417"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:46.739461"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:47:47.181875"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:51.739651"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:47:52.172785"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:47:56.741740"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:47:57.176802"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:48:01.747792"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:48:06.750551"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:48:07.200837"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:48:11.754516"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:48:12.372613"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:48:16.760907"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:48:17.210090"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:48:21.764776"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/education/", "status": 404, "ts": "2026-05-05T12:48:22.659779"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:48:26.769754"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:48:28.387926"}
+{"event": "fetch_error", "url": "https://www.tokogakuen.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:48:31.774939"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T12:48:32.269642"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:48:37.216492"}
+{"event": "school_error", "school_id": "jpms_s_0021", "err": "database is locked", "ts": "2026-05-05T12:48:41.765757"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:48:41.766466"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:48:41.845561"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/event/", "status": 404, "ts": "2026-05-05T12:48:42.231490"}
+{"event": "school_error", "school_id": "jpms_s_0211", "err": "database is locked", "ts": "2026-05-05T12:48:46.217016"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:48:46.217386"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:48:46.288139"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:48:47.783357"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/career/", "status": 404, "ts": "2026-05-05T12:48:52.240721"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:48:57.240346"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:49:02.363099"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/admission/", "status": 404, "ts": "2026-05-05T12:49:07.290805"}
+{"event": "http_error", "url": "https://www.hayato.ed.jp/exam/", "status": 404, "ts": "2026-05-05T12:49:12.232709"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:49:12.234637"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:49:12.277965"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:49:12.321241"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:49:12.333120"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:12.374719"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:17.381544"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:49:18.804658"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:22.386838"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:49:23.894812"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:27.388993"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:49:28.925950"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:32.394029"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:49:33.853140"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:37.399520"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:49:38.883841"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:42.402449"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:49:45.014189"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:47.404207"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:49:48.854216"}
+{"event": "school_error", "school_id": "jpms_s_0212", "err": "database is locked", "ts": "2026-05-05T12:49:51.764085"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:49:51.764570"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:49:51.854644"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:52.410005"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:49:57.410662"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:49:58.843731"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:02.413349"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T12:50:03.926462"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:07.415314"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:50:08.762541"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:12.415493"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/event/", "status": 404, "ts": "2026-05-05T12:50:13.998543"}
+{"event": "school_error", "school_id": "jpms_s_0501", "err": "database is locked", "ts": "2026-05-05T12:50:15.549043"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:50:15.549808"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:50:15.633669"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:17.420411"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:50:18.780785"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:22.424997"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:27.429383"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:50:28.827940"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:32.433557"}
+{"event": "http_error", "url": "https://www.kng.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:50:33.665985"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:37.438895"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:50:42.292761"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:50:42.384846"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:42.439669"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:47.441654"}
+{"event": "fetch_error", "url": "https://www.kamakura-gakuen.ed.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:50:52.447704"}
+{"event": "school_error", "school_id": "jpms_s_0502", "err": "database is locked", "ts": "2026-05-05T12:51:18.685944"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:51:18.686551"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:51:18.761510"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:51:27.644498"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:51:27.719240"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/about/", "status": 404, "ts": "2026-05-05T12:51:28.993323"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:51:33.975312"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:51:39.007591"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:51:44.025488"}
+{"event": "school_error", "school_id": "jpms_s_0023", "err": "database is locked", "ts": "2026-05-05T12:51:44.947675"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:51:44.948087"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:51:45.018928"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/principal/", "status": 404, "ts": "2026-05-05T12:51:49.010198"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:51:54.117706"}
+{"event": "school_error", "school_id": "jpms_s_0137", "err": "database is locked", "ts": "2026-05-05T12:51:54.792433"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:51:54.793097"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:51:54.868346"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/mission/", "status": 404, "ts": "2026-05-05T12:51:59.037701"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:52:04.136078"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:52:09.042459"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/education/", "status": 403, "ts": "2026-05-05T12:52:12.802737"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/schoollife/", "status": 403, "ts": "2026-05-05T12:52:17.808090"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/school_life/", "status": 404, "ts": "2026-05-05T12:52:24.094531"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/events/", "status": 404, "ts": "2026-05-05T12:52:29.075565"}
+{"event": "school_error", "school_id": "jpms_s_0214", "err": "database is locked", "ts": "2026-05-05T12:52:30.917153"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:52:30.917685"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:52:30.987783"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/event/", "status": 404, "ts": "2026-05-05T12:52:34.488337"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/progress/", "status": 404, "ts": "2026-05-05T12:52:39.026985"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/career/", "status": 404, "ts": "2026-05-05T12:52:44.231731"}
+{"event": "school_error", "school_id": "jpms_s_0024", "err": "database is locked", "ts": "2026-05-05T12:52:49.264303"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:52:49.264988"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:52:49.338747"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/voice/", "status": 404, "ts": "2026-05-05T12:52:49.717155"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/message/", "status": 403, "ts": "2026-05-05T12:52:52.901623"}
+{"event": "school_error", "school_id": "jpms_s_0140", "err": "database is locked", "ts": "2026-05-05T12:52:57.776487"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:52:57.776877"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:52:57.839352"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/admission/", "status": 404, "ts": "2026-05-05T12:52:59.133789"}
+{"event": "http_error", "url": "https://www.kitakama.ac.jp/exam/", "status": 404, "ts": "2026-05-05T12:53:04.124635"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:53:04.125930"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:53:04.198820"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:53:04.237171"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:53:09.239852"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:53:14.336901"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:53:19.262786"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:53:24.360530"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:53:29.274354"}
+{"event": "school_error", "school_id": "jpms_s_0215", "err": "database is locked", "ts": "2026-05-05T12:53:33.724306"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:53:33.725233"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:53:33.800232"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:53:34.354042"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:53:39.270427"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:53:45.364764"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/education/", "status": 403, "ts": "2026-05-05T12:53:49.280317"}
+{"event": "school_error", "school_id": "jpms_s_0026", "err": "database is locked", "ts": "2026-05-05T12:53:51.929125"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:53:51.929732"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:53:52.000849"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:53:54.281278"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T12:54:00.780604"}
+{"event": "school_error", "school_id": "jpms_s_0504", "err": "database is locked", "ts": "2026-05-05T12:54:06.952259"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:54:06.952902"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:54:07.023263"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:07.079337"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:54:07.496343"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/event/", "status": 404, "ts": "2026-05-05T12:54:09.530995"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:12.086269"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:54:14.493638"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:17.087216"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/career/", "status": 404, "ts": "2026-05-05T12:54:19.352766"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:22.092184"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:54:24.335482"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:27.097240"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:54:29.388141"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:32.100260"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/admission/", "status": 403, "ts": "2026-05-05T12:54:34.316062"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:37.101581"}
+{"event": "school_error", "school_id": "jpms_s_0216", "err": "database is locked", "ts": "2026-05-05T12:54:37.823826"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:54:37.824162"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:54:37.880645"}
+{"event": "http_error", "url": "https://www.senzoku-gakuen.ed.jp/exam/", "status": 404, "ts": "2026-05-05T12:54:39.372432"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:54:39.373382"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:54:39.440049"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:39.483642"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:42.102300"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/about/", "status": 404, "ts": "2026-05-05T12:54:44.006767"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:44.484688"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:47.107599"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:54:48.965624"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:49.490730"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:52.112304"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:54:54.061710"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:54.495665"}
+{"event": "school_error", "school_id": "jpms_s_0027", "err": "database is locked", "ts": "2026-05-05T12:54:54.640224"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:54:54.640771"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:54:54.709145"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:57.112713"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:54:58.959526"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:54:59.500357"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:02.117673"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/principal/", "status": 404, "ts": "2026-05-05T12:55:04.050071"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:04.500438"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:07.123080"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:55:09.310468"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:09.505912"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:12.129288"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/mission/", "status": 404, "ts": "2026-05-05T12:55:14.068870"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:14.509917"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:17.132370"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:55:18.999129"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:19.515344"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:22.137922"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:55:24.065814"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:24.519342"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:27.139489"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:29.523755"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/education/", "status": 404, "ts": "2026-05-05T12:55:29.995558"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:32.144290"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:34.527818"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:37.150807"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:39.531048"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/events/", "status": 404, "ts": "2026-05-05T12:55:40.089761"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:42.154115"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/event/", "status": 404, "ts": "2026-05-05T12:55:44.003739"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:44.535960"}
+{"event": "fetch_error", "url": "https://www.rokkojh.org/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:47.159495"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/progress/", "status": 404, "ts": "2026-05-05T12:55:49.098631"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:49.541346"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/career/", "status": 404, "ts": "2026-05-05T12:55:54.104881"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:54.543610"}
+{"event": "school_error", "school_id": "jpms_s_0028", "err": "database is locked", "ts": "2026-05-05T12:55:58.395800"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:55:58.396083"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:55:58.468991"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/voice/", "status": 404, "ts": "2026-05-05T12:55:59.108833"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:55:59.548070"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/message/", "status": 404, "ts": "2026-05-05T12:56:04.080256"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:56:04.550005"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:56:09.554590"}
+{"event": "http_error", "url": "http://www.seibou.ac.jp/admission/", "status": 404, "ts": "2026-05-05T12:56:10.847380"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:56:14.064555"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:56:14.113826"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:56:14.559375"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:56:14.730507"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:56:19.501630"}
+{"event": "fetch_error", "url": "https://www.toshipp.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:56:19.560243"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:56:24.510960"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:56:29.463694"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:56:34.528120"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:56:45.295192"}
+{"event": "school_error", "school_id": "jpms_s_0633", "err": "database is locked", "ts": "2026-05-05T12:56:49.572628"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:56:49.573123"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:56:49.640096"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:56:49.651560"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:56:49.707212"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:56:54.712971"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:56:54.892865"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/education/", "status": 404, "ts": "2026-05-05T12:56:59.561268"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:56:59.717638"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:04.723757"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/events/", "status": 404, "ts": "2026-05-05T12:57:09.597195"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:09.725850"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/event/", "status": 404, "ts": "2026-05-05T12:57:14.510600"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:14.729854"}
+{"event": "school_error", "school_id": "jpms_s_0218", "err": "database is locked", "ts": "2026-05-05T12:57:16.894381"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:57:16.895105"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/progress/", "status": 404, "ts": "2026-05-05T12:57:19.535265"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:19.730661"}
+{"event": "school_error", "school_id": "jpms_s_0145", "err": "database is locked", "ts": "2026-05-05T12:57:21.879179"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:57:21.879464"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:57:21.943622"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/career/", "status": 404, "ts": "2026-05-05T12:57:24.481737"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:24.737475"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/voice/", "status": 404, "ts": "2026-05-05T12:57:29.491826"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:29.736379"}
+{"event": "http_error", "url": "https://www.takanawadai.tokai.ed.jp/message/", "status": 404, "ts": "2026-05-05T12:57:34.514028"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:34.740776"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:39.741585"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:57:40.000574"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:57:40.069192"}
+{"event": "http_error", "url": "https://www.jishukan.jp/about/", "status": 404, "ts": "2026-05-05T12:57:40.496134"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:44.746377"}
+{"event": "http_error", "url": "https://www.jishukan.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:57:45.956426"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:49.751224"}
+{"event": "http_error", "url": "https://www.jishukan.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:57:51.758143"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:54.757256"}
+{"event": "http_error", "url": "https://www.jishukan.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:57:56.989641"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:57:59.761093"}
+{"event": "http_error", "url": "https://www.jishukan.jp/principal/", "status": 404, "ts": "2026-05-05T12:58:00.802876"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:58:04.766715"}
+{"event": "http_error", "url": "https://www.jishukan.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:58:06.914522"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:58:09.771756"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:58:14.775710"}
+{"event": "http_error", "url": "https://www.jishukan.jp/mission/", "status": 404, "ts": "2026-05-05T12:58:17.640473"}
+{"event": "http_error", "url": "https://www.jishukan.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:58:18.832105"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:58:19.777158"}
+{"event": "http_error", "url": "https://www.jishukan.jp/curriculum/", "status": 404, "ts": "2026-05-05T12:58:23.540659"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:58:24.783791"}
+{"event": "http_error", "url": "https://www.jishukan.jp/education/", "status": 404, "ts": "2026-05-05T12:58:29.001134"}
+{"event": "fetch_error", "url": "https://www.kurume-fu.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:58:29.786521"}
+{"event": "http_error", "url": "https://www.jishukan.jp/schoollife/", "status": 404, "ts": "2026-05-05T12:58:33.517107"}
+{"event": "http_error", "url": "https://www.jishukan.jp/school_life/", "status": 404, "ts": "2026-05-05T12:58:39.229430"}
+{"event": "school_error", "school_id": "jpms_s_0030", "err": "database is locked", "ts": "2026-05-05T12:58:42.710934"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:58:42.711144"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:58:42.761406"}
+{"event": "http_error", "url": "https://www.jishukan.jp/events/", "status": 404, "ts": "2026-05-05T12:58:44.859350"}
+{"event": "http_error", "url": "https://www.jishukan.jp/event/", "status": 404, "ts": "2026-05-05T12:58:49.586758"}
+{"event": "http_error", "url": "https://www.jishukan.jp/progress/", "status": 404, "ts": "2026-05-05T12:59:00.064741"}
+{"event": "http_error", "url": "https://www.jishukan.jp/career/", "status": 404, "ts": "2026-05-05T12:59:00.414506"}
+{"event": "http_error", "url": "https://www.jishukan.jp/voice/", "status": 404, "ts": "2026-05-05T12:59:05.872658"}
+{"event": "http_error", "url": "https://www.jishukan.jp/message/", "status": 404, "ts": "2026-05-05T12:59:11.417979"}
+{"event": "http_error", "url": "https://www.jishukan.jp/admission/", "status": 404, "ts": "2026-05-05T12:59:15.456812"}
+{"event": "http_error", "url": "https://www.jishukan.jp/exam/", "status": 404, "ts": "2026-05-05T12:59:20.527625"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T12:59:20.528165"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:59:20.580229"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:20.635249"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/about/", "status": 404, "ts": "2026-05-05T12:59:20.709037"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:25.640464"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T12:59:25.698857"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:30.646324"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T12:59:30.782437"}
+{"event": "school_error", "school_id": "jpms_s_0870", "err": "database is locked", "ts": "2026-05-05T12:59:32.044042"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T12:59:32.044824"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T12:59:32.122340"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:35.650734"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T12:59:35.716854"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:40.656651"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/principal/", "status": 404, "ts": "2026-05-05T12:59:40.780955"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:45.660317"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T12:59:45.724287"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:50.665609"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/mission/", "status": 404, "ts": "2026-05-05T12:59:51.229325"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T12:59:55.671732"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T12:59:55.726429"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:00.676157"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T13:00:00.965699"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:05.679910"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/education/", "status": 404, "ts": "2026-05-05T13:00:05.735298"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:10.682159"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T13:00:10.872682"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:15.687326"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T13:00:15.878812"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:20.692184"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/events/", "status": 404, "ts": "2026-05-05T13:00:20.772740"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:25.696181"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/event/", "status": 404, "ts": "2026-05-05T13:00:25.846563"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:30.702683"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/progress/", "status": 404, "ts": "2026-05-05T13:00:30.771174"}
+{"event": "school_error", "school_id": "jpms_s_0906", "err": "database is locked", "ts": "2026-05-05T13:00:35.497937"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T13:00:35.498430"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:00:35.568470"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:35.704839"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/career/", "status": 404, "ts": "2026-05-05T13:00:35.879641"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:40.711484"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/voice/", "status": 404, "ts": "2026-05-05T13:00:40.831859"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:45.713704"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/message/", "status": 404, "ts": "2026-05-05T13:00:46.120391"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:50.715421"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/admission/", "status": 404, "ts": "2026-05-05T13:00:50.779568"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:00:55.719886"}
+{"event": "http_error", "url": "https://www.hiroogakuen.ed.jp/exam/", "status": 404, "ts": "2026-05-05T13:00:55.877274"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:00:55.878433"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:00:55.951304"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/about/", "status": 404, "ts": "2026-05-05T13:00:55.968399"}
+{"event": "fetch_error", "url": "https://www.sagamijoshi.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:01:00.724305"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T13:01:01.046271"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T13:01:05.981435"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T13:01:11.015807"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/principal/", "status": 404, "ts": "2026-05-05T13:01:19.065315"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T13:01:21.074335"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/mission/", "status": 404, "ts": "2026-05-05T13:01:25.992799"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T13:01:30.988819"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T13:01:35.987282"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/education/", "status": 404, "ts": "2026-05-05T13:01:41.011902"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T13:01:46.081890"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T13:01:51.012893"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/events/", "status": 404, "ts": "2026-05-05T13:01:56.116495"}
+{"event": "school_error", "school_id": "jpms_s_0032", "err": "database is locked", "ts": "2026-05-05T13:01:58.520822"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T13:01:58.521069"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:01:58.587009"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/event/", "status": 404, "ts": "2026-05-05T13:02:01.073001"}
+{"event": "school_error", "school_id": "jpms_s_0149", "err": "database is locked", "ts": "2026-05-05T13:02:03.083850"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T13:02:03.084288"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:02:03.155717"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/progress/", "status": 404, "ts": "2026-05-05T13:02:06.054729"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/career/", "status": 404, "ts": "2026-05-05T13:02:11.062482"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/voice/", "status": 404, "ts": "2026-05-05T13:02:16.046937"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/message/", "status": 404, "ts": "2026-05-05T13:02:21.052517"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/admission/", "status": 404, "ts": "2026-05-05T13:02:26.058630"}
+{"event": "http_error", "url": "https://www.nodai-1-h.ed.jp/exam/", "status": 404, "ts": "2026-05-05T13:02:33.051832"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:02:33.052629"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:02:33.119415"}
+{"event": "http_error", "url": "https://www.azabu-u.ac.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T13:02:38.531937"}
+{"event": "school_error", "school_id": "jpms_s_0033", "err": "database is locked", "ts": "2026-05-05T13:03:01.812695"}
+{"event": "batch_end", "success": 0, "total": 0, "ts": "2026-05-05T13:03:01.813433"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:03:23.417811"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:03:23.462830"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:23.688945"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:28.693804"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:33.696437"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:38.701104"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:43.705444"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:48.710629"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:53.715280"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:03:58.720949"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:03.725723"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:08.730366"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:04:13.693888"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:13.735941"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:18.740650"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:23.745411"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:28.750970"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:33.755216"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:38.759618"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:43.760057"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:48.764519"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:53.770186"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:04:58.774809"}
+{"event": "fetch_error", "url": "https://www.soyo.ed.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:03.777810"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:05:03.783843"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:05:03.844748"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:03.888672"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/about/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:08.894897"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/about/index.html", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:13.899732"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/about/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:18.905334"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/philosophy/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:23.910190"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:28.910875"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/about/principal/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:33.919032"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:38.921228"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/about/mission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:43.923844"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/curriculum/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:48.928870"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/education/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:53.933985"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/schoollife/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:05:58.938311"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/school_life/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:03.943103"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/events/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:08.949085"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/event/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:13.954178"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/progress/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:18.954127"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/career/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:23.959301"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/voice/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:28.962062"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/message/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:33.962989"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/admission/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:38.966687"}
+{"event": "fetch_error", "url": "https://www.tachibana-gakuen.ac.jp/exam/", "err": "<urlopen error [Errno 8] nodename nor servname provided, or not known>", "ts": "2026-05-05T13:06:43.971802"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:06:43.972917"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:06:44.032399"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/about/", "status": 404, "ts": "2026-05-05T13:06:54.979588"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T13:07:02.385445"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T13:07:05.106137"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T13:07:11.121022"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/principal/", "status": 404, "ts": "2026-05-05T13:07:14.871354"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T13:07:22.465834"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/mission/", "status": 404, "ts": "2026-05-05T13:07:24.882224"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T13:07:30.367486"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T13:07:35.601439"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/education/", "status": 404, "ts": "2026-05-05T13:07:40.003150"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T13:07:45.026174"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T13:07:50.237105"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/events/", "status": 404, "ts": "2026-05-05T13:07:56.395816"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/event/", "status": 404, "ts": "2026-05-05T13:08:00.464301"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/progress/", "status": 404, "ts": "2026-05-05T13:08:05.484216"}
+{"event": "non_html", "url": "https://www.honjo-higashi.ed.jp/career/", "content_type": "application/pdf", "ts": "2026-05-05T13:08:10.171955"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/voice/", "status": 404, "ts": "2026-05-05T13:08:15.316920"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/message/", "status": 404, "ts": "2026-05-05T13:08:20.417152"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/admission/", "status": 404, "ts": "2026-05-05T13:08:24.786709"}
+{"event": "http_error", "url": "https://www.honjo-higashi.ed.jp/exam/", "status": 404, "ts": "2026-05-05T13:08:31.503875"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:08:31.505397"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:08:31.569263"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/about/", "status": 404, "ts": "2026-05-05T13:08:37.482250"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T13:08:42.354766"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T13:08:47.385249"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T13:08:52.390944"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/principal/", "status": 404, "ts": "2026-05-05T13:08:57.397495"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T13:09:02.843731"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/mission/", "status": 404, "ts": "2026-05-05T13:09:07.391002"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T13:09:12.339444"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T13:09:17.323787"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/education/", "status": 404, "ts": "2026-05-05T13:09:22.319885"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T13:09:27.431647"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T13:09:32.455589"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/events/", "status": 404, "ts": "2026-05-05T13:09:37.408395"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/event/", "status": 404, "ts": "2026-05-05T13:09:42.466227"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/progress/", "status": 404, "ts": "2026-05-05T13:09:47.418378"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/career/", "status": 404, "ts": "2026-05-05T13:09:53.687028"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/voice/", "status": 404, "ts": "2026-05-05T13:09:57.471502"}
+{"event": "http_error", "url": "https://www.urawa-akenohoshi.ed.jp/message/", "status": 404, "ts": "2026-05-05T13:10:02.710118"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:10:08.072576"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:10:08.127868"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/about/", "status": 404, "ts": "2026-05-05T13:10:14.263350"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T13:10:19.178937"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T13:10:24.088411"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T13:10:30.875829"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/principal/", "status": 404, "ts": "2026-05-05T13:10:34.024427"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T13:10:39.093033"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/mission/", "status": 404, "ts": "2026-05-05T13:10:44.346063"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T13:10:49.089740"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T13:10:54.073150"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/education/", "status": 404, "ts": "2026-05-05T13:10:59.014947"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T13:11:04.146592"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T13:11:09.028086"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/events/", "status": 404, "ts": "2026-05-05T13:11:13.998553"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/event/", "status": 404, "ts": "2026-05-05T13:11:21.394473"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/progress/", "status": 404, "ts": "2026-05-05T13:11:25.196621"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/career/", "status": 404, "ts": "2026-05-05T13:11:30.133229"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/voice/", "status": 404, "ts": "2026-05-05T13:11:34.091861"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/message/", "status": 404, "ts": "2026-05-05T13:11:39.721551"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/admission/", "status": 404, "ts": "2026-05-05T13:11:56.531238"}
+{"event": "http_error", "url": "https://www.urajitsu.ed.jp/exam/", "status": 404, "ts": "2026-05-05T13:11:57.218007"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:11:57.220998"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:11:57.294156"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/about/", "status": 404, "ts": "2026-05-05T13:12:04.365349"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/about/index.html", "status": 404, "ts": "2026-05-05T13:12:10.358113"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T13:12:14.349435"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T13:12:19.425159"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/principal/", "status": 404, "ts": "2026-05-05T13:12:24.538549"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T13:12:30.180678"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/mission/", "status": 404, "ts": "2026-05-05T13:12:34.468266"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T13:12:44.455973"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T13:12:45.468426"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/education/", "status": 404, "ts": "2026-05-05T13:12:50.370210"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/schoollife/", "status": 404, "ts": "2026-05-05T13:12:55.461672"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/school_life/", "status": 404, "ts": "2026-05-05T13:13:00.984988"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/events/", "status": 404, "ts": "2026-05-05T13:13:05.542383"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/event/", "status": 404, "ts": "2026-05-05T13:13:10.414539"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/progress/", "status": 404, "ts": "2026-05-05T13:13:18.862096"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/career/", "status": 404, "ts": "2026-05-05T13:13:24.421058"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/voice/", "status": 404, "ts": "2026-05-05T13:13:26.199495"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/message/", "status": 404, "ts": "2026-05-05T13:13:31.761230"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/admission/", "status": 404, "ts": "2026-05-05T13:13:35.430841"}
+{"event": "http_error", "url": "https://www.uls.ed.jp/exam/", "status": 404, "ts": "2026-05-05T13:13:49.067973"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:13:49.071618"}
+{"event": "batch_start", "count": 1, "ts": "2026-05-05T13:13:49.144257"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/about/philosophy/", "status": 404, "ts": "2026-05-05T13:13:59.433937"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/philosophy/", "status": 404, "ts": "2026-05-05T13:14:04.512954"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/principal/", "status": 404, "ts": "2026-05-05T13:14:09.514872"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/about/principal/", "status": 404, "ts": "2026-05-05T13:14:14.448829"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/mission/", "status": 404, "ts": "2026-05-05T13:14:19.526539"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/about/mission/", "status": 404, "ts": "2026-05-05T13:14:24.802853"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/curriculum/", "status": 404, "ts": "2026-05-05T13:14:29.547051"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/progress/", "status": 404, "ts": "2026-05-05T13:14:49.498370"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/voice/", "status": 404, "ts": "2026-05-05T13:15:00.043573"}
+{"event": "http_error", "url": "https://www.otsuma.ed.jp/message/", "status": 404, "ts": "2026-05-05T13:15:04.715234"}
+{"event": "batch_end", "success": 1, "total": 1, "ts": "2026-05-05T13:15:09.829917"}

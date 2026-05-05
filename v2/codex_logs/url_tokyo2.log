@@ -1,0 +1,10 @@
+Targets: 96 schools without URL
+  jpms_s_0038 目白研心中学校: no WP result
+Traceback (most recent call last):
+  File "/Users/nishimura+/projects/research/jpms-db/v2/scripts/discover_urls.py", line 137, in <module>
+    main()
+    ~~~~^^
+  File "/Users/nishimura+/projects/research/jpms-db/v2/scripts/discover_urls.py", line 125, in main
+    db.execute("UPDATE schools_v2 SET homepage_url=? WHERE id=?", (url, sid))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="〈一人ひとりを大切にし、 ほんとうの知性と感性を育てる教育を〉埼玉県飯能市にある、自由の森学園中学校・高等学校の公式ホームページです。">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://www.jiyunomori.ac.jp/favicon.ico">
+<meta name="author" content="学校法人自由の森学園">
+<meta property="og:site_name" content="自由の森学園中学校・高等学校">
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="https://www.jiyunomori.ac.jp/">
+<meta property="og:description" content="〈一人ひとりを大切にし、 ほんとうの知性と感性を育てる教育を〉埼玉県飯能市にある、自由の森学園中学校・高等学校の公式ホームページです。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="">
+<title>自由の森学園中学校・高等学校</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kiso.css@latest/kiso.css">
+<link rel="stylesheet" href="https://www.jiyunomori.ac.jp/style.css?20260204">
+<script src="https://www.jiyunomori.ac.jp/lib/jquery-3.7.1.min.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVZGM85');</script>
+<!-- End Google Tag Manager -->
+
+<script>
+$(function() {
+	// メニューの開閉
+	$('#menu-button').on('click', function() {
+		$('header').toggleClass('menuon');
+		$('.catetop, .block').removeClass('nsel ysel');
+	});
+	$(".catebutton").on('click', function(){
+		$(this).parent().siblings().toggleClass('nsel');
+		$(this).parent().toggleClass('ysel');
+	});
+
+	$(".modoru").on('click', function(){
+		event.stopPropagation();
+		$('.catetop, .block').removeClass('nsel ysel');
+	});
+
+	$(document).on('click', function(event) {
+		if (!$(event.target).closest('#menu').length) {
+			$('header').removeClass('menuon');
+		$('.catetop, .block').removeClass('nsel ysel');
+		}
+	});
+});
+</script>
+
+<link rel="stylesheet" href="index.css?20251201-2">
+<link rel="stylesheet" href="https://www.jiyunomori.ac.jp/lib/swiper/swiper.bundle.min.css">
+<script src="https://www.jiyunomori.ac.jp/lib/swiper/swiper.bundle.min.js"></script>
+
+<script>
+$(function(){
+	const topfade = new Swiper('.topfade', {
+		loop: true,
+		effect: 'fade',
+		speed: 2000,
+		fadeEffect: {
+			crossFade: true,
+		},
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		allowTouchMove: false,
+		preloadImages: false,
+		lazy: {
+			loadPrevNext: true,
+		},
+	});
+
+	const topslide = new Swiper('.topslide', {
+		effect: 'coverflow',
+		grabCursor: true,
+		centeredSlides: true,
+		slidesPerView: 1.5,
+		coverflowEffect: {
+			rotate: 0,
+			stretch: 150,
+			depth: 300,
+			modifier: 1,
+			slideShadows: false,
+		},
+		loop: false,
+		speed: 1000, 
+		autoplay: {
+			delay: 3000,
+		},
+		breakpoints: {
+			768: {
+				coverflowEffect: {
+					stretch: 200,
+					depth: 350,
+				},
+			}
+		}
+	});
+});
+</script>
+
+<style>
+#top-image .topfade .page1 .caption {
+	width: 30%;
+	top: 67%;
+	left: 7%;
+}
+#top-image .topfade .page2 .caption {
+	width: 28%;
+	top: 40%;
+	left: 23%;
+}
+#top-image .topfade .page3 .caption {
+	width: 30%;
+	top: 44%;
+	left: 7%;
+}
+#top-image .topfade .page4 .caption {
+	width: 30%;
+	top: 60%;
+	left: 7%;
+}
+
+@media screen and (min-width: 768px) {
+	#top-image .topfade .page1 .caption {
+		width: 12%;
+		top: 84%;
+		left: 86%;
+	}
+	#top-image .topfade .page2 .caption {
+		width: 11%;
+		top: 31%;
+		left: 54%;
+	}
+	#top-image .topfade .page3 .caption {
+		width: 10%;
+		top: 59%;
+		left: 68%;
+	}
+	#top-image .topfade .page4 .caption {
+		width: 12%;
+		top: 60%;
+		left: 72%;
+	}
+}
+</style>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVZGM85"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+<div id="menu">
+<div id="menu-button">
+<div class="line1"></div>
+<div class="line2"></div>
+<div class="line3"></div>
+</div>
+
+<nav id="mainmenu">
+	<div class="catetop">
+	<div class="catebutton gakuen">本学園について</div>
+	<div class="listmenu">
+	<ul class="accordion">
+<li><a href="https://www.jiyunomori.ac.jp/gakuen/rinen.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-2.png" alt="教育理念"></a><div class="cursor"></div></li>
+<li><a href="https://www.jiyunomori.ac.jp/gakuen/seikatsu.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-3.png" alt="自由の森学園の生活"></a><div class="cursor"></div></li>
+<li><a href="https://www.jiyunomori.ac.jp/gakuen/enkaku.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-4.png" alt="沿革・構成"></a><div class="cursor"></div></li>
+<li class="down"><div class="cursor"></div><img src="https://www.jiyunomori.ac.jp/img//menu/1-5.png" alt="環境・施設"><div class="underline"></div>
+	<ul >
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/phototour_top.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-5-1.png" alt="自由の森Photo tour!"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/shokudou.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-5-2.png" alt="食堂"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/dormitory.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-5-3.png" alt="寮生活"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/library.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-5-4.png" alt="図書館"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/hannou.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-5-5.png" alt="飯能ってどんな場所？"></a><div class="cursor""></div></li>
+	</ul>
+</li>
+<li><a href="https://www.jiyunomori.ac.jp/gakuen/teikei.php"><img src="https://www.jiyunomori.ac.jp/img//menu/1-6.png" alt="提携校・協力企業・団体"></a><div class="cursor"></div></li>
+</ul>
+	<button class="modoru">もどる</button>
+	</div>
+	</div>
+
+	<div class="catetop">
+	<div class="catebutton kyouka">教科・各種活動</div>
+	<div class="listmenu">
+	<ul >
+	<li><a href="https://www.jiyunomori.ac.jp/kyouka/suugaku.php"><img src="https://www.jiyunomori.ac.jp/img//menu/2-1.png" alt="教科概要"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/kyouka/sentaku.php"><img src="https://www.jiyunomori.ac.jp/img//menu/2-2.png" alt="選択講座"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/kyouka/kagai.php"><img src="https://www.jiyunomori.ac.jp/img//menu/2-3.png" alt="課外活動"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/kyouka/gyouji.php"><img src="https://www.jiyunomori.ac.jp/img//menu/2-4.png" alt="行事づくり"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/kyouka/kokusai.php"><img src="https://www.jiyunomori.ac.jp/img//menu/2-5.png" alt="国際交流"></a><div class="cursor"></div></li>
+</ul>
+	<button class="modoru">もどる</button>
+	</div>
+	</div>
+
+	<div class="catetop">
+	<div class="catebutton nyugaku">入学希望者・<br>保護者の方へ</div>
+	<div class="listmenu">
+	<ul >
+	<li><a href="https://www.jiyunomori.ac.jp/nyugaku/event.php"><img src="https://www.jiyunomori.ac.jp/img//menu/3-1.png" alt="説明会・イベント日程"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/nyugaku/youkou.php"><img src="https://www.jiyunomori.ac.jp/img//menu/3-2.png?20231017" alt="募集要項・入学願書"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/nyugaku/shiryou.php"><img src="https://www.jiyunomori.ac.jp/img//menu/3-3.png" alt="資料等請求"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/nyugaku/shiken_chugaku.php"><img src="https://www.jiyunomori.ac.jp/img//menu/3-4.png" alt="出願期間・試験日程"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/nyugaku/gakuhi.php"><img src="https://www.jiyunomori.ac.jp/img//menu/3-5.png" alt="学費について"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/nyugaku/shinro.php"><img src="https://www.jiyunomori.ac.jp/img//menu/3-6.png" alt="進路について"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/nyugaku/question_nyusi.php"><img src="https://www.jiyunomori.ac.jp/img//menu/3-7.png" alt="よくいただく質問"></a><div class="cursor"></div></li>
+</ul>
+	<buton class="modoru">もどる</button>
+	</div>
+	</div>
+
+	<div class="catetop">
+	<div class="catebutton zaikou">在校生・<br>保護者の方へ</div>
+	<div class="listmenu">
+	<ul >
+	<li><a href="https://www.jiyunomori.ac.jp/zaikou/calender.php"><img src="https://www.jiyunomori.ac.jp/img//menu/4-1.png" alt="カレンダー"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/zaikou/hogosha_list.php"><img src="https://www.jiyunomori.ac.jp/img//menu/4-2.png" alt="保護者お知らせ板"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/zaikou/shinseisho_login.php"><img src="https://www.jiyunomori.ac.jp/img//menu/4-3k.png" alt="各種申請書"></a><div class="cursor"></div></li>
+</ul>
+	<buton class="modoru">もどる</buton>
+	</div>
+	</div>
+
+	<div class="catetop">
+	<div class="catebutton sotsugyou">卒業生の方へ</div>
+	<div class="listmenu">
+	<ul >
+	<li><a href="https://www.jiyunomori.ac.jp/sotsugyou/dousoukai_list.php"><img src="https://www.jiyunomori.ac.jp/img//menu/5-1.png" alt="自由の森学園同窓会"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/sotsugyou/jusho_henkou.php"><img src="https://www.jiyunomori.ac.jp/img//menu/5-2.png" alt="住所確認のお願い"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/sotsugyou/shoumeisho.php"><img src="https://www.jiyunomori.ac.jp/img//menu/5-4.png" alt="各種証明書発行"></a><div class="cursor"></div></li>
+</ul>
+	<buton class="modoru">もどる</buton>
+	</div>
+	</div>
+
+	<div class="block"></div>
+
+
+	<div class="catetop">
+	<div class="catebutton archive">アーカイブ</div>
+	<div class="listmenu smartcate">
+	<ul >
+	<li><a href="https://jiyunomori-nikki.blogspot.jp" target="_blank"><img src="https://www.jiyunomori.ac.jp/img//menu/6-1.png" alt="自由の森ブログ"></a></li>
+	<li><a href="https://www.jiyunomori.ac.jp/archive/annai.php"><img src="https://www.jiyunomori.ac.jp/img//menu/6-2.png" alt="デジタル学校案内"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/morinoat/"><img src="https://www.jiyunomori.ac.jp/img//menu/6-3.png" alt="もりのあと"></a></li>
+	<li><a href="https://www.jiyunomori.ac.jp/archive/media.php"><img src="https://www.jiyunomori.ac.jp/img//menu/6-4.png" alt="メディア掲載"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/archive/kankou_gakuen.php"><img src="https://www.jiyunomori.ac.jp/img//menu/6-5.png" alt="刊行物一覧"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/archive/jouhou_gakusoku.php"><img src="https://www.jiyunomori.ac.jp/img//menu/6-6.png" alt="情報公開"></a><div class="cursor"></div></li>
+</ul>
+	<buton class="modoru">もどる</buton>
+	</div>
+	</div>
+
+	<div class="catetop">
+	<div class="catebutton support">ご支援のお願い</div>
+	<div class="listmenu smartcate">
+	<ul >
+	<li><a href="https://www.jiyunomori.ac.jp/support/aisatsu.php"><img src="https://www.jiyunomori.ac.jp/img//menu/7-1.png" alt="ごあいさつ"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/support/kifu.php"><img src="https://www.jiyunomori.ac.jp/img//menu/7-2.png" alt="寄付概要"></a><div class="cursor"></div></li>
+		<li><a href="https://www.jiyunomori.ac.jp/support/tax.php"><img src="https://www.jiyunomori.ac.jp/img//menu/7-4.png" alt="税制優遇について"></a><div class="cursor"></div></li>
+	<li><a href="https://www.jiyunomori.ac.jp/support/jisseki.php"><img src="https://www.jiyunomori.ac.jp/img//menu/7-5.png" alt="実績報告"></a><div class="cursor"></div></li>
+</ul>
+	<buton class="modoru">もどる</buton>
+	</div>
+	</div>
+</nav>
+</div>
+
+<div id="top-messsage">
+<p>5/10（日）私立中学校フェア@大宮　参加します</p>
+</div>
+</header>
+
+<main>
+<section id="top-image">
+	<div class="logo">
+		<h1><picture><source media="(min-width: 768px)" srcset="https://www.jiyunomori.ac.jp/img/top/koumei_logo_pc.png"><img src="https://www.jiyunomori.ac.jp/img/top/koumei_logo_sp.png" alt="自由の森学園中学校・高等学校 JIYUNOMORI GAKUEN JUNIOR & SENIOR HIGH SCHOOL"></picture></h1>
+	</div>
+	<a href="https://www.jiyunomori.ac.jp/nyugaku/">
+	<button class="nyugaku-kibou-button">受験生サイト</button>
+	</a>
+
+	<a href="https://www.jiyunomori.ac.jp/nyugaku/shiryou.php" role="button" class="shiryou top-button">
+		<div class="icon"><img src="https://www.jiyunomori.ac.jp/img/top/shiryouseikyu_icon.svg" alt="資料請求アイコン"></div>
+		<div class="icon-text">資料請求</div>
+	</a>
+
+	<a href="https://www.jiyunomori.ac.jp/gakuen/inquery.php" role="button" class="otoiawase top-button">
+		<img src="https://www.jiyunomori.ac.jp/img/top/otoiawase_icon.png" alt="お問い合せアイコン" class="otoiawase-icon">
+		<div class="icon-text">お問い合せ</div>
+	</a>
+
+
+	<div class="swiper topfade">
+		<div class="swiper-wrapper">
+						<div class="swiper-slide page1">
+				<picture>
+					<source media="(min-width: 768px)" srcset="https://www.jiyunomori.ac.jp/img/top/fade/pc_top1.webp">
+					<img src="https://www.jiyunomori.ac.jp/img/top/fade/sp_top1.webp" alt="自由の森学園の生活">
+				</picture>
+				<a href="https://www.jiyunomori.ac.jp/gakuen/seikatsu.php"><img src="https://www.jiyunomori.ac.jp/img/top/fade/top1_caption.png" class="caption" alt="自由の森学園の生活"></a>
+			</div>
+						<div class="swiper-slide page2">
+				<picture>
+					<source media="(min-width: 768px)" srcset="https://www.jiyunomori.ac.jp/img/top/fade/pc_top2.webp">
+					<img src="https://www.jiyunomori.ac.jp/img/top/fade/sp_top2.webp" alt="鬼剣舞">
+				</picture>
+				<a href="https://www.jiyunomori.ac.jp/kyouka/taiiku.php"><img src="https://www.jiyunomori.ac.jp/img/top/fade/top2_caption.png" class="caption" alt="鬼剣舞"></a>
+			</div>
+						<div class="swiper-slide page3">
+				<picture>
+					<source media="(min-width: 768px)" srcset="https://www.jiyunomori.ac.jp/img/top/fade/pc_top3.webp">
+					<img src="https://www.jiyunomori.ac.jp/img/top/fade/sp_top3.webp" alt="森の時間">
+				</picture>
+				<a href="https://www.jiyunomori.ac.jp/archive/guide/annai2026/#page=23"><img src="https://www.jiyunomori.ac.jp/img/top/fade/top3_caption.png" class="caption" alt="森の時間"></a>
+			</div>
+						<div class="swiper-slide page4">
+				<picture>
+					<source media="(min-width: 768px)" srcset="https://www.jiyunomori.ac.jp/img/top/fade/pc_top4.webp">
+					<img src="https://www.jiyunomori.ac.jp/img/top/fade/sp_top4.webp" alt="理科">
+				</picture>
+				<a href="https://www.jiyunomori.ac.jp/kyouka/rika.php"><img src="https://www.jiyunomori.ac.jp/img/top/fade/top4_caption.png" class="caption" alt="理科"></a>
+			</div>
+					</div>
+	</div>
+	<div class="swiper topslide">
+		<div class="swiper-wrapper">
+						<div class="swiper-slide">
+				<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20260311174151"><img src="https://www.jiyunomori.ac.jp/img/top/slides/20110511.webp" alt="2011/5/11（日） 埼玉県私立中学校フェア埼玉2026 大宮開催 ミニ授業開催予定です。"></a>
+			</div>
+						<div class="swiper-slide">
+				<a href="https://www.jiyunomori.ac.jp/archive/annai.php"><img src="https://www.jiyunomori.ac.jp/img/top/slides/archive_slide.webp" alt="デジタル学校案内を公開しています"></a>
+			</div>
+					</div>
+	</div>
+</section>
+
+<section id="quick-links">
+<ul>
+<li>
+	<a href="https://www.jiyunomori.ac.jp/zaikou/kondate.php" role="button" class="shokudo top-button">
+		<div class="icon"><img src="https://www.jiyunomori.ac.jp/img/top/shokudo_icon.svg" alt="食堂アイコン"></div>
+		<div class="name">食堂MENU</div>
+	</a>
+</li>
+<li>
+	<a href="https://www.jiyunomori.ac.jp/gakuen/bus.php" role="button" class="bus top-button">
+		<div class="icon"><img src="https://www.jiyunomori.ac.jp/img/top/bus_icon.svg" alt="スクールバスアイコン"></div>
+		<div class="name">バスダイヤ</div>
+	</a>
+</li>
+</ul>
+</section>
+
+<section id="information">
+<h2>INFORMATION</h2>
+<ul class="infoslide">
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20180416101234">
+		<div class="date">2026.5.1</div>
+		<div class="type">お知らせ</div>
+		<h3>採用募集のお知らせ</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20240502111552">
+		<div class="date">2026.4.15</div>
+		<div class="type">お知らせ</div>
+		<h3>5/17 高校校長参加のイベントのご案内</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20151106160311">
+		<div class="date">2026.4.1</div>
+		<div class="type">お知らせ</div>
+		<h3>もりのあと52号がwebでご覧いただけるようになりました</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20260311174151">
+		<div class="date">2026.3.11</div>
+		<div class="type">更新</div>
+		<h3>5/10(日)私立中学校フェア@大宮に参加します（ミニ授業有り）</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20260211105327">
+		<div class="date">2026.2.11</div>
+		<div class="type">更新</div>
+		<h3>彩の国埼玉環境大賞【優秀賞】受賞のお知らせ</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20260128162341">
+		<div class="date">2026.1.28</div>
+		<div class="type">お知らせ</div>
+		<h3>【ESD・ユネスコスクール活動】高い評価をいただきました</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=2019123013012">
+		<div class="date">2026.1.1</div>
+		<div class="type">お知らせ</div>
+		<h3>新年のごあいさつを掲載しました。</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20251222142614">
+		<div class="date">2025.12.25</div>
+		<div class="type">お知らせ</div>
+		<h3>【施工者募集】新食堂の建設工事について</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20251225205549">
+		<div class="date">2025.12.25</div>
+		<div class="type">お知らせ</div>
+		<h3>受験生用サイトを公開しました</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20251206172410">
+		<div class="date">2025.12.6</div>
+		<div class="type">メディア掲載</div>
+		<h3>再生可能エネルギーによる学校経営について、テレビ朝日で紹介されました</h3>
+		</a>
+	</li>
+		<li>
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20251126145344">
+		<div class="date">2025.11.26</div>
+		<div class="type">メディア掲載</div>
+		<h3>webマガジン『国際教育ナビ』英語教育掲載のお知らせ</h3>
+		</a>
+	</li>
+	</ul>
+<a href="https://www.jiyunomori.ac.jp/gakuen/info.php""><button class="more">もっと見る</button></a>
+</section>
+
+<section id="panels">
+	<article class="middle">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/rinen.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/kyouiku.webp" alt="一人ひとりが感じたこと考えたことを大事に「自由の森学園の教育」"></a>
+	</article>
+	<article class="middle">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/seikatsu.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/sannen.webp" alt="自由の森学園 中学の3年 高校の3年"></a>
+	</article>
+	<article class="middle">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/info_detail.php?id=20250508114211"><img src="https://www.jiyunomori.ac.jp/img/top/panels/booklet40th.webp" alt="ブックレット刊行のお知らせ 2024年の内田樹さん講演会を収録した
+ブックレットを刊行しました"></a>
+	</article>
+	<article class="middle">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/phototour_top.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/phototour.webp" alt="自由の森学園 Photo tour 学園の様子を紹介します"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/esd_1.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/unesco_school.png" alt="自由の森学園はユネスコスクールのメンバーです"></a>
+	</article>
+	<article class="small">
+		<a href="https://jiyunomori-nikki.blogspot.com/" target="_blank"><img src="https://www.jiyunomori.ac.jp/img/top/panels/jiyunomori_nikki.jpg" alt="学園の毎日を教員が紹介するブログ「自由の森日記」"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/newshokudou.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/newshokudou.webp" alt="新食堂建設に関するご案内です"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/morinoat/"><img src="https://www.jiyunomori.ac.jp/img/top/panels/morinoat.png" alt="卒業生の今にふれる「季刊もりのあと」デジタルアーカイブ"></a>
+	</article>
+	<article class="large">
+		<a href="https://www.jiyunomori.ac.jp/jimowm/jimowm.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/webzine.webp" alt="jiyunomori Webzine 自由の森学園をさまざまな角度から見つめる"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/zaikou/calender.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/calender.png" alt="自由の森学園カレンダー"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/dormitory.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/ryouseikatsu.png" alt="自由の森学園の寮生活"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/shokudou.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/shokuseikatsubu.png" alt="自由の森学園 食生活部"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/library.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/libraly.png" alt="自由の森学園 図書館"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/40th/"><img src="https://www.jiyunomori.ac.jp/img/top/panels/40th.webp" alt="自由の森学園40周年"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.jiyunomori.ac.jp/gakuen/teikei.php#kigyou" target="_blank"><img src="https://www.jiyunomori.ac.jp/img/top/panels/montbell.png" alt="mont-bell"></a>
+	</article>
+	<article class="small">
+		<a href="https://www.shinkin.co.jp/hanno/personal/loan/education01/" target="_blank"><img src="https://www.jiyunomori.ac.jp/img/top/panels/kyouikuloan.jpg" alt="飯能信用金庫 教育ローン"></a>
+	</article>
+	<article class="small">
+		<a href="https://lp.kishapon.com/jiyunomori/" target="_blank"><img src="https://www.jiyunomori.ac.jp/img/top/panels/kishapon.png" alt="きしゃぽん"></a>
+	</article>
+	<article class="small">
+		<a href="http://jimori-sasaeru.org/" target="_blank"><img src="https://www.jiyunomori.ac.jp/img/top/panels/sasaerukai.png" alt="自由の森学園を支える会"></a>
+	</article>
+	<article class="small">
+		<a href="/zaikou/welcomebox_support_login.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/jugyou_space.png" alt="自由の森 授業スペース 生徒専用サイトです"></a>
+	</article>
+	<article class="small">
+		<a href="/zaikou/haishin_login.php"><img src="https://www.jiyunomori.ac.jp/img/top/panels/jiyutube.png" alt="JIYUTube 生徒専用サイトです"></a>
+	</article>
+</section>
+
+<section id="footer-links">
+<ul>
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/access.php">アクセス<br><span>access</span></a></li>
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/message.php">校長メッセージ<br><span>message</span></a></li>
+	<li><a href="https://www.jiyunomori.ac.jp/support/kifu.php">寄付について<br><span>donation</span></a></li>
+	<li><a href="https://www.jiyunomori.ac.jp/gakuen/saiyou.php">教職員採用<br><span>recruitment</span></a></li>
+</ul>
+</section>
+
+</main>
+
+<footer>
+<div>
+<div class="info">
+自由の森学園中学校・高等学校<br>
+〒357-8550 埼玉県飯能市小岩井 613 番地<br>
+TEL:042-972-3131 FAX:042-973-7103<br>
+<br>
+COPYRIGHT © 2026 jiyunomori gakuen<br>
+掲載されている、すべての記事や写真等などの無断転載を禁じます
+</div>
+<div class="unesco-logo">
+<a href="https://www.unesco-school.mext.go.jp" target="_blank"><img src="https://www.jiyunomori.ac.jp/img//etc/unesco_school.png" alt="unesco Member of the Associated School Network"></a>
+</div>
+</div>
+</footer>
+</body>
+</html>

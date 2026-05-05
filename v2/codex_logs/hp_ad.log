@@ -1,0 +1,182 @@
+Targets: 1 schools
+
+[1/1] jpms_s_0400 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0402 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0409 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0410 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0490 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0491 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0492 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0493 
+  → {'school_id': 'jpms_s_0493', 'name': '森村学園中等部', 'status': 'ok', 'pages_fetched': ['root', 'principal'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 44}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0494 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0495 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0496 
+  → {'school_id': 'jpms_s_0496', 'name': 'カリタス女子中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'curriculum', 'schoollife', 'events', 'progress', 'admission'], 'philosophies_added': 4, 'testimonials_added': 0, 'completeness': 91}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 4
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0497 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0498 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0499 
+  → {'school_id': 'jpms_s_0499', 'name': '藤嶺学園藤沢中学校', 'status': 'ok', 'pages_fetched': ['root', 'progress'], 'philosophies_added': 1, 'testimonials_added': 0, 'completeness': 47}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 1
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0500 
+  → {'school_id': 'jpms_s_0500', 'name': '横浜隼人中学校', 'status': 'ok', 'pages_fetched': ['root', 'principal'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 44}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0501 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0502 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0503 
+  → {'school_id': 'jpms_s_0503', 'name': '北鎌倉女子学園中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0504 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0633 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0870 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0906 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_p3_002 
+  → {'school_id': 'jpms_s_p3_002', 'name': '東京農業大学第一中等部', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 1, 'testimonials_added': 0, 'completeness': 40}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 1
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_p3_003 
+  → {'school_id': 'jpms_s_p3_003', 'name': '聖光学院中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'philosophy', 'principal', 'mission', 'curriculum', 'schoollife', 'events', 'progress', 'voice', 'admission'], 'philosophies_added': 6, 'testimonials_added': 2, 'completeness': 100}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 6
+Testimonials added: 2

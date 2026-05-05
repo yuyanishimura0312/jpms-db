@@ -1,0 +1,213 @@
+Targets: 1 schools
+
+[1/1] jpms_s_0035 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0036 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0037 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0040 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0070 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0122 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0126 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0128 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0130 
+  → {'school_id': 'jpms_s_0130', 'name': '神奈川大学附属中学校', 'status': 'ok', 'pages_fetched': ['curriculum', 'events', 'progress'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 51}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0131 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0133 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0134 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0135 
+  → {'school_id': 'jpms_s_0135', 'name': '桐光学園中学校', 'status': 'ok', 'pages_fetched': [], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 30}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0137 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0140 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0141 
+  → {'school_id': 'jpms_s_0141', 'name': '洗足学園中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0145 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0148 
+  → {'school_id': 'jpms_s_0148', 'name': '自修館中等教育学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0149 
+  ERROR: database is locked
+
+=== Summary ===
+Successful: 0/0
+Targets: 1 schools
+
+[1/1] jpms_s_0150 
+  → {'school_id': 'jpms_s_0150', 'name': '麻布大学附属中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'philosophy', 'principal', 'mission', 'curriculum', 'schoollife', 'events', 'progress', 'voice', 'admission'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 100}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0151 
+  → {'school_id': 'jpms_s_0151', 'name': '相洋中学校', 'status': 'ok', 'pages_fetched': [], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 30}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0152 
+  → {'school_id': 'jpms_s_0152', 'name': '橘学苑中学校', 'status': 'ok', 'pages_fetched': [], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 30}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0186 
+  → {'school_id': 'jpms_s_0186', 'name': '本庄東高等学校附属中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 2, 'testimonials_added': 0, 'completeness': 43}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 2
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0187 
+  → {'school_id': 'jpms_s_0187', 'name': '浦和明の星女子中学校', 'status': 'ok', 'pages_fetched': ['root', 'admission'], 'philosophies_added': 2, 'testimonials_added': 0, 'completeness': 50}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 2
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0188 
+  → {'school_id': 'jpms_s_0188', 'name': '浦和実業学園中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0189 
+  → {'school_id': 'jpms_s_0189', 'name': '浦和ルーテル学院中学校', 'status': 'ok', 'pages_fetched': ['root'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 37}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0
+Targets: 1 schools
+
+[1/1] jpms_s_0190 
+  → {'school_id': 'jpms_s_0190', 'name': '大妻嵐山中学校', 'status': 'ok', 'pages_fetched': ['root', 'about', 'curriculum', 'schoollife', 'events', 'progress', 'admission'], 'philosophies_added': 0, 'testimonials_added': 0, 'completeness': 79}
+
+=== Summary ===
+Successful: 1/1
+Philosophies added: 0
+Testimonials added: 0

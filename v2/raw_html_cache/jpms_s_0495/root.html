@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<!-- Google Analytics  ↓↓↓↓↓  -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2XKL9GX9FD"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-2XKL9GX9FD');
+	</script>
+
+	<meta charset="UTF-8">
+	<title>トップページ｜鶴見大学附属中学校／高等学校</title>
+	<meta name="viewport" content="width=device-width">
+	<link href="common/css/style.css?20260505-123910" rel="stylesheet" type="text/css" />
+	<link href="common/img/favicon.ico" rel="shortcut icon">
+	<link href="common/img/icon.png" rel="apple-touch-icon-precomposed">
+	<script type="text/javascript" src="common/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="common/js/script.js"></script>
+	<script type="text/javascript" src="common/js/jquery.inview.min.js"></script>
+
+	<!-- showmore ↓↓↓↓↓  -->
+	<script src="common/js/jquery.showmore.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.showmore').showMore({
+				speedDown: 300,
+				speedUp: 300,
+				height: '500px',
+				showText: '<img src="common/img/btn_view_all.png">',
+				hideText: '<img src="common/img/btn_close.png">'
+			});
+		});
+	</script>
+
+	<!-- swiper ↓↓↓↓↓  -->
+	<link href="common/swiper/swiper.min.css" rel="stylesheet">
+	<script src="common/swiper/swiper.min.js"></script>
+
+	<!-- drawer-dropdown ↓↓↓↓↓  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- drawer ↓↓↓↓↓  -->
+	<script src="common/js/drawer.js"></script>
+	<script src="common/js/iscroll.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.drawer').drawer();
+			$('.drawer-close').on('click', function() {
+				$('.drawer').drawer('close');
+			});
+		});
+	</script>
+
+	<!-- accordion ↓↓↓↓↓  -->
+	<script type="text/javascript" src="common/js/accordion.js"></script>
+
+
+	<!-- fancybox ↓↓↓↓↓  -->
+	<link rel="stylesheet" href="common/fancybox3/dist/jquery.fancybox.css">
+	<script type="text/javascript" src="common/fancybox3/dist/jquery.fancybox.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('[data-fancybox]').fancybox({
+				// オプションを下記に記載していきます
+				loop: true, // 複数画像表示時に最初と最後をループさせる
+				toolbar: false, // ツールバーの非表示
+				smallBtn: true, // 小さいCloseボタン利用する
+				iframe: { // iframe 関連の処理
+					preload: false //iframeのプリロードをしない
+				}
+			});
+		});
+	</script>
+
+</head>
+
+
+<body>
+	<div class="container">
+				<div class="header_ge">
+			<div class="header-cont">
+
+				<div class="logo">
+					<a href="https://tsurumi-fuzoku.ed.jp/index.php"><img src="https://tsurumi-fuzoku.ed.jp/common/img/logo_ge.png" alt=""></a>
+				</div>
+
+				<div class="inq">
+					<ul>
+						<li><a href="https://forms.gle/95sCRsnwgYPQdvn58" target="_blank">資料請求</a></li>
+						<li><a href="https://tsurumi-fuzoku.ed.jp/access.php">アクセス</a></li>
+						<li><a href="https://tsurumi-fuzoku.ed.jp/inq/form.php">お問合せ</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- header -->
+
+		<!-- メニュー上 -->
+		<div class="navi-area">
+			<ul class="navi__wrap">
+				<li class="navi__list"><a href="https://tsurumi-fuzoku.ed.jp/index.php">TOP</a></li>
+				<li class="navi__list"><a href="https://tsurumi-fuzoku.ed.jp/jr/index.php">中学校</a></li>
+				<li class="navi__list"><a href="https://tsurumi-fuzoku.ed.jp/hi/index.php">高等学校</a></li>
+				<li class="navi__list"><a href="https://tsurumi-fuzoku.ed.jp/osirase/index.php">新入生・在校生</a></li>
+				<li class="navi__list"><a href="https://tsurumi-fuzoku.ed.jp/graduate/form.php">卒業生</a></li>
+			</ul>
+		</div>
+
+		<!-- メニュー下 -->
+		<div class="gnavi_area_ge">
+			<div class="gnavi__wrap">
+				<ul class="gnavi__lists">
+					<li class="gnavi__list_ge"><a href="https://tsurumi-fuzoku.ed.jp/greet.php">ごあいさつ</a></li>
+					<li class="gnavi__list_ge"><a href="https://tsurumi-fuzoku.ed.jp/rinen.php">教育理念</a></li>
+					<li class="gnavi__list_ge"><a href="https://tsurumi-fuzoku.ed.jp/education_system.php">教育システム</a></li>
+					<li class="gnavi__list_ge"><a href="https://tsurumi-fuzoku.ed.jp/uniform.php">制服・校章・校歌</a></li>
+					<li class="gnavi__list_ge"><a href="https://tsurumi-fuzoku.ed.jp/sisetu.php">施設紹介</a></li>
+					<li class="gnavi__list_ge"><a href="https://tsurumi-fuzoku.ed.jp/panf.php">デジタルパンフ</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- スマホ用メニュー -->
+		<div class="forTS">
+			<div class="drawer drawer--right">
+				<header role="banner">
+					<!-- ハンバーガーボタン -->
+					<button type="button" class="drawer-toggle drawer-hamburger">
+						<span class="sr-only">toggle navigation</span>
+						<span class="drawer-hamburger-icon"></span>
+					</button>
+					<!-- ナビゲーションの中身 -->
+					<nav class="drawer-nav" role="navigation">
+						<ul class="drawer-menu">
+							<li><a class="drawer-menu-item_ge bt" href="https://tsurumi-fuzoku.ed.jp/index.php">学校紹介（TOP）</a></li>
+
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/greet.php">　ごあいさつ</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/rinen.php">　教育理念・建学の精神</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/education_system.php">　独自の教育システム</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/kyoka_area.php">　教科エリア+ホームベース型校舎</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/ict_ai.php">　ICT・AI活用</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/uniform.php">　制服・校章・校歌</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/sisetu.php">　360°施設紹介</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/panf.php">　デジタルパンフレット</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/rules.php">　学則</a></li>
+							<li><a class="drawer-menu-item_ge" href="https://tsurumi-fuzoku.ed.jp/kokoroe_img/kokoroe-2026.pdf" target="_blank">　生徒心得</a></li>
+							<li><a class="drawer-menu-item_ge bb" href="https://tsurumi-fuzoku.ed.jp/privacy_policy.php">　プライバシーポリシー</a></li>
+							<li><a class="drawer-menu-item_jr bb" href="https://tsurumi-fuzoku.ed.jp/jr/index.php">中学校</a></li>
+							<li><a class="drawer-menu-item_hi bb" href="https://tsurumi-fuzoku.ed.jp/hi/index.php">高等学校</a></li>
+							<li><a class="drawer-menu-item" href="https://forms.gle/95sCRsnwgYPQdvn58" target="_blank">資料請求</a></li>
+							<li><a class="drawer-menu-item" href="https://tsurumi-fuzoku.ed.jp/access.php">アクセス</a></li>
+							<li><a class="drawer-menu-item" href="https://tsurumi-fuzoku.ed.jp/inq/form.php">お問合せ</a></li>
+							<li><a class="drawer-menu-item" href="https://tsurumi-fuzoku.ed.jp/osirase/index.php">新入生・在校生</a></li>
+							<li><a class="drawer-menu-item" href="https://tsurumi-fuzoku.ed.jp/graduate/form.php">卒業生</a></li>
+						</ul>
+					</nav>
+				</header>
+			</div>
+		</div>
+		<!-- スマホ用メニュー -->
+		<div class="header_btn">
+			<a href="jr/setumeikai.php"><img src="index_img/btn_minasama_jr.png" alt="中学校説明会" class="over1"></a>
+
+			<!-- <a href="https://mirai-compass.net/usr/turumifj/common/login.jsf" target="_blank"><img src="index_img/btn_web_jr.png" alt="中学校WEB出願" class="over1"></a> -->
+
+
+			<!-- <a href="https://www.school-2020.net/turumi-fuzoku/jr/index.php" target="_blank"><img src="index_img/btn_nyusi_jr.png" alt="中学校入試について" class="over1"></a> -->
+			<!-- <img src="index_img/btn_space.png" alt="">空ボタン -->
+
+			<!-- <img src="index_img/btn_space.png" alt=""> --><!-- 空ボタン -->
+
+			<a href="hi/setumeikai.php"><img src="index_img/btn_minasama_hi.png" alt="高等学校説明会" class="over1"> </a>
+
+			<!-- <a href="https://mirai-compass.net/usr/turumifh/common/login.jsf" target="_blank"><img src="index_img/btn_web_hi.png" alt="高等学校WEB出願" class="over1"></a> -->
+
+			<!-- <a href="https://www.school-2020.net/turumi-fuzoku/hi/index.php" target="_blank"><img src="index_img/btn_nyusi_hi.png" alt="高等学校入試について" class="over1"></a> -->
+
+			<!-- 空ボタン -->
+			<!-- <img src="index_img/btn_space.png" alt=""> -->
+
+		</div>
+		<!-- <div class="header_btn_minasama">
+			<a href="index_img/minasama.pdf" target="_blank"><img src="index_img/btn_minasama.png" alt="高校入試出願の皆様へ" class="over1"></a>
+		</div> -->
+
+
+		<div class="kinen_btn_1">
+			<a href="100th_greet.php"><img src="index_img/btn_100th.png" alt="100周年記念ページ" class="over1">
+			</a>
+		</div>
+
+		<div id="top" class="parallax">
+			<div class="conts">
+
+				<div class="emergency">
+					<iframe src="iframe-emergency.php" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
+				</div><!-- emergency-end -->
+
+				<div class="top-copy inview fadeIn">
+					<a href="education_system.php#kyoka_area"><img src="index_img/top-copy_2024.png" alt="教科エリア+ホームベース型校舎"></a>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- swiper_news -->
+		<div class="swiper_news">
+
+
+			<div class="swiper inview fadeIn">
+				<!-- スライダー全体を括るメインコンテナ -->
+				<div class="swiper-container">
+					<!-- 全スライドをまとめるラッパー -->
+					<div class="swiper-wrapper">
+						<!-- 各スライド -->
+						<div class="swiper-slide">
+							<div class="slide-img">
+								<a href="kyoka_area.php"><img src="index_img/swiper-01.jpg" alt="教科エリア+ホームベース型校舎"></a>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-img">
+								<a href="hi/setumeikai.php"><img src="hi/index_img/swiper-01.jpg" alt="高等学校説明会・イベント"></a>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-img">
+								<a href="jr/setumeikai.php"><img src="jr/index_img/swiper-01.jpg" alt="中学校説明会・イベント"></a>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-img">
+								<a href="panf.php"><img src="hi/index_img/swiper-02.jpg" alt="高校デジタルパンフ"></a>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="slide-img">
+								<a href="panf.php"><img src="jr/index_img/swiper-02.jpg" alt="中学校デジタルパンフ"></a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div><!-- swiper -->
+
+
+			<div class="news">
+				<h2 class="h2">NEWS</h2>
+				<!-- iframe高さの自動取得 -->
+				<iframe id="resizableIframe" src="iframe-news.php" scrolling="no" style="width: 100%;"></iframe>
+			</div>
+			<script>
+				window.addEventListener('message', (e) => {
+					if (e.data.hasOwnProperty('iframeHeight')) {
+						const iframe = document.getElementById('resizableIframe');
+						iframe.style.height = `${e.data.iframeHeight}px`;
+					}
+				});
+			</script>
+		</div>
+		<!-- swiper_news -->
+
+
+		<!-- topics -->
+		<div class="bg_white">
+			<h2 class="h2">TOPICS</h2>
+			<div class="showmore">
+				<ul class="tab-area">
+					<li class="tab active">すべて</li>
+					<li class="tab">中学</li>
+					<li class="tab">高校</li>
+					<li class="tab">中高共通</li>
+				</ul>
+				<div class="panel-area">
+					<div class="panel active"><!-- すべて -->
+						<iframe src="iframe-topics.php?cat=1,2,3,4" width="100%" height="1100" frameborder="0" scrolling="auto"></iframe>
+					</div>
+					<div class="panel"><!-- 中学 -->
+						<iframe src="iframe-topics.php?cat=2" width="100%" height="1100" frameborder="0" scrolling="auto"></iframe>
+					</div>
+					<div class="panel"><!-- 高校 -->
+						<iframe src="iframe-topics.php?cat=3" width="100%" height="1100" frameborder="0" scrolling="auto"></iframe>
+					</div>
+					<div class="panel"><!-- 中高共通 -->
+						<iframe src="iframe-topics.php?cat=4" width="100%" height="1100" frameborder="0" scrolling="auto"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- topics -->
+
+		<!-- greet-concept -->
+		<div class="bg_gray cf">
+			<div class="wrap">
+				<div class="greet inview fadeIn-left">
+					<img src="index_img/greet.png" alt="ごあいさつ">
+					<div class="btn_view_more">
+						<a href="greet.php"><img src="common/img/btn_view_more.png" alt=""></a>
+					</div>
+				</div>
+				<div class="concept inview fadeIn-right">
+					<img src="index_img/concept.png" alt="教育理念・建学の精神">
+					<div class="btn_view_more">
+						<a href="rinen.php"><img src="common/img/btn_view_more.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- greet-concept -->
+
+		<!-- education-system -->
+		<div class="bg_white cf">
+			<div class="wrap">
+				<div class="education-system inview fadeIn-left">
+					<img src="index_img/education-system.png" alt="独自の教育システム">
+					<div class="btn_view_more">
+						<a href="education_system.php"><img src="common/img/btn_view_more.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- education-system -->
+
+		<!-- uniform-emblem -->
+		<div class="bg_gray cf">
+			<div class="wrap">
+				<div class="uniform inview fadeIn-left">
+					<img src="index_img/uniform.png" alt="制服紹介">
+					<div class="btn_view_more">
+						<a href="uniform.php"><img src="common/img/btn_view_more.png" alt=""></a>
+					</div>
+				</div>
+				<div class="emblem inview fadeIn-right">
+					<img src="index_img/emblem.png" alt="校章・校歌">
+					<div class="btn_view_more">
+						<a href="uniform.php#emblem"><img src="common/img/btn_view_more.png" alt=""></a>
+					</div>
+				</div>
+				<div class="panorama inview fadeIn-right">
+					<img src="index_img/panorama.png" alt="360°施設紹介">
+					<div class="btn_view_more">
+						<a href="sisetu.php"><img src="common/img/btn_view_more.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- uniform-emblem -->
+
+		<!-- digital-guide -->
+		<div class="bg_transparent cf">
+			<div class="wrap">
+				<div class="digital-guide inview fadeIn-left">
+					<a href="panf.php"><img src="index_img/panf.png" alt="デジタルパンフレット">
+						<div class="btn_view_more">
+							<img src="common/img/btn_view_more.png" alt="">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- digital-guide -->
+
+		<!-- koho -->
+
+
+		<div class="bg_gray cf">
+			<div class="wrap">
+				<div class="koho">
+
+					<a href="koho/index.php">つぶやき</a>
+
+				</div>
+			</div>
+		</div>
+		<!-- koho -->
+
+		<!-- リンクサイト -->
+				<div class="bg_white">
+			<div class="wrap mb50">
+				<dl>
+					<div class="accordion cf">
+						<dt class="accordion_title">
+							リンクサイト
+						</dt>
+						<dd class="accordion_content">
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/sien_2024.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/02.png" alt="教育支援寄付金"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/menzei.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/03.png" alt="免税措置"></a>
+							<a href="https://mirai-compass.net/dnt/turumifh/common/dntEntry.jsf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/sien_site.jpg" alt="免税措置"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/tennyugaku_2026.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/tennyugaku.jpg" alt="転入学・編入学について"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/90th.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/01.png" alt="90周年記念誌"></a>
+							<a href="http://tsurudaihuzoku-toshokan.blogspot.com/" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/04.png" alt="図書館だより"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/senshu.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/05.png" alt="仏教専修科"></a>
+							<a href="https://move-michishirube.net/school.php?tag1=102" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/06.png" alt="movie"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/crane-2024.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/crane.jpg" alt="翼プロジェクト"></a>
+							<a href="https://www.yomiuri.co.jp/kyoiku/support/" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/08.png" alt="読売新聞"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/sisetu.php" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/09.png" alt="360°施設紹介"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/gakuhi_sien_2024.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/10.png" alt="私立高等学校等学費支援"></a>
+							<a href="https://sites.google.com/tsurumi-fuzoku.ed.jp/library-official/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/11.png" alt="図書館"></a>
+							<a href="https://www.tsurumi-u.ac.jp/" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/12.png" alt="鶴見大学"></a>
+							<a href="https://www.youtube.com/watch?v=6jIRZlGxVQk" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/13.png" alt="鶴翔寮"></a>
+							<a href="https://www.youtube.com/watch?v=LflWHz0QUAs" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/15.png" alt="もっと知りたい！鶴翔寮の日常"></a>
+							<a href="https://tsurumi-fuzoku.ed.jp/index_img/link/hyoka.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/hyoka.jpg" alt="学校評価"></a>
+							<a href="https://sites.google.com/tsurumi-fuzoku.ed.jp/kakuyudosokai/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/dosokai.jpg" alt="鶴友同窓会"></a>
+							<a href="https://salat.club/licca/tsurumi/" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/licca.jpg" alt="リカちゃん"></a>
+							<!-- <a href="https://tsurumi-fuzoku.ed.jp/index_img/link/kyoin_boshu_2026-2.pdf" target="_blank"><img src="https://tsurumi-fuzoku.ed.jp/index_img/link/kyoin_boshu_2026.jpg" alt="教員募集"></a> -->
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+		<div class="navi-area" style="padding-bottom: 50px;">
+			<ul class="navi__wrap">
+				<li class="navi__list"><a href="https://forms.gle/95sCRsnwgYPQdvn58" target="_blank">資料請求</a></li>
+				<li class="navi__list"><a href="access.php">アクセス</a></li>
+				<li class="navi__list"><a href="rules.php">学則</a></li>
+				<li class="navi__list"><a href="https://tsurumi-fuzoku.ed.jp/kokoroe_img/kokoroe-2026.pdf" target="_blank">生徒心得</a></li>
+				<li class="navi__list"><a href="privacy_policy.php">プライバシーポリシー</a></li>
+			</ul>
+		</div>
+
+			<div class="footer_ge">
+		<div class="footer-cont">
+					<div class="footer-menu-wrap">
+				<div class="footer-menu">
+					<li>
+						<ul>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/index.php">学校紹介（トップ）</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/greet.php">ごあいさつ</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/rinen.php">教育理念・建学の精神</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/education_system.php">独自の教育システム</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/kyoka_area.php">教科エリア+ホームベース型校舎</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/ict_ai.php">ICT・AI活用</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/uniform.php">制服・校章・校歌</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/sisetu.php">360°施設紹介</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/panf.php">デジタルパンフレット</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/access.php">アクセス</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/rules.php">学則</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/kokoroe_img/kokoroe-2026.pdf" target="_blank">生徒心得</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/privacy_policy.php">プライバシーポリシー</a></li>
+							<li>・・・・・・・・・・・・・</li>
+							<li><a href="https://forms.gle/95sCRsnwgYPQdvn58" target="_blank">資料請求</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/inq/form.php">お問合せ</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/recruit.php">教職員採用情報</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/osirase/index.php">新入生・在校生</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/graduate/form.php">卒業生</a></li>
+						</ul>
+					</li>
+				</div>
+
+				<div class="footer-menu">
+					<li>
+						<ul>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/jr/index.php">中学校</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/jr/manabi.php">学び</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/manabi.php#3_stage">３ステージ制</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/manabi.php#shutaisei">主体性を持った学び</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/manabi.php#2_course">2コース制</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/manabi.php#tokucho">学びの特徴</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/manabi.php#sido">進路指導</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/jr/school_life.php">学園生活</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/school_life.php#club">部活動</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/school_life.php#day">生徒の一日</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/school_life.php#event">年間行事</a></li>
+							<!-- <li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/school_life.php#q&a">中学Q&A</a></li> -->
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/school_life.php#message">つるふからのメッセージ</a></li>
+							<li>入試情報</li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/setumeikai.php">中学校説明会・イベント</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/kokai_gyoji.php">公開行事</a></li>
+							<!-- <li>　- <a href="https://tsurumi-fuzoku.ed.jp/jr/nyusi_info.php">入試特設サイト</a></li> -->
+						</ul>
+					</li>
+				</div>
+				<div class="footer-menu">
+					<li>
+						<ul>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/hi/index.php">高等学校</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/hi/manabi.php">学び</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/manabi.php#shutaisei">主体性を持った学び</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/manabi.php#2_course">2コース制</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/manabi.php#tokucho">学びの特徴</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/manabi.php#sido">進路指導</a></li>
+							<li><a href="https://tsurumi-fuzoku.ed.jp/hi/school_life.php">学園生活</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/school_life.php#club">部活動</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/school_life.php#day">生徒の一日</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/school_life.php#event">年間行事</a></li>
+							<!-- <li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/school_life.php#q&a">高校Q&A</a></li> -->
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/school_life.php#message">つるふからのメッセージ</a></li>
+							<li>入試情報</li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/setumeikai.php">高等学校説明会・イベント</a></li>
+							<li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/kokai_gyoji.php">公開行事</a></li>
+							<!-- <li>　- <a href="https://tsurumi-fuzoku.ed.jp/hi/nyusi_info.php">入試特設サイト</a></li> -->
+						</ul>
+					</li>
+				</div>
+			</div>
+			<!-- 			<div class="footer-map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d522.7221238814881!2d139.6663865856856!3d35.50532418714881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185e73cfe7e161%3A0x5f3f45e2375bdf98!2z44CSMjMwLTAwNjMg56We5aWI5bed55yM5qiq5rWc5biC6ba06KaL5Yy66ba06KaL77yS5LiB55uu77yS4oiS77yRIOm2tOimi-Wkp-WtpumZhOWxnumrmOetieWtpuagoQ!5e0!3m2!1sja!2sjp!4v1692433345810!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div> -->
+
+			<div class="page_top">
+				<div class="arrow">
+				</div>
+			</div>
+			<div class="footer_btn">
+				<a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=354ldaxg" rel="external"><img src="https://tsurumi-fuzoku.ed.jp/common/img/btn_line.png" alt="" class="over1">
+				</a>
+				<a href="https://www.instagram.com/tsurudaifuzoku/" rel="external"><img src="https://tsurumi-fuzoku.ed.jp/common/img/btn_instagram.png" alt="" class="over1">
+				</a>
+				<a href="https://www.youtube.com/channel/UCnRzi1yQbS2bSi-rLOgsHAA
+" rel="external"><img src="https://tsurumi-fuzoku.ed.jp/common/img/btn_youtube.png" alt="" class="over1">
+				</a>
+			</div>			<div class="clb"></div>
+			<div class="footer-logo">
+				<img src="https://tsurumi-fuzoku.ed.jp/common/img/footer_logo_ge.png" alt="">
+			</div>
+		</div>
+	</div><!-- footer -->
+
+
+	</div>
+
+	<!-- swiper script -->
+	<script>
+		let swipeOption = {
+			loop: true,
+			effect: 'fade',
+			autoplay: {
+				delay: 6000,
+				disableOnInteraction: false,
+			},
+			speed: 2000,
+		}
+		new Swiper('.swiper-container', swipeOption);
+	</script>
+
+	<!-- inview -->
+	<script>
+		$(function() {
+			$(".inview").on("inview", function(event, isInView) {
+				if (isInView) {
+					$(this).stop().addClass("is-show");
+				}
+			});
+		});
+	</script>
+
+	<!-- タブ切り替え script -->
+	<script>
+		$(function() {
+			$('.tab').on('click', function() {
+				$('.tab, .panel').removeClass('active');
+				$(this).addClass('active');
+				var index = $('.tab').index(this);
+				$('.panel').eq(index).addClass('active');
+			});
+		});
+	</script>
+
+	<!-- 別ページでのリンクズレ防止 -->
+	<!-- 	<script type="text/javascript">
+		window.onload = function() {
+			if(window.location.hash==""){return;}
+			document.getElementById(window.location.hash.slice(1)).scrollIntoView(true);
+		}
+	</script> -->
+
+</body>
+
+</html>
